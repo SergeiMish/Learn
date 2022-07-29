@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b846257f-e49f-4ae4-927b-7de6cbbbebaa" name="Changes" comment="task 534">
+      <changelist_data name="Sergei Mishalevskii" email="108402627+sergeimish@users.noreply.github.com" />
+      <change afterPath="$PROJECT_DIR$/../IntegerExperiments/IntegerExperiments.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IntegerExperiments/out/production/IntegerExperiments/Container.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IntegerExperiments/out/production/IntegerExperiments/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IntegerExperiments/src/Container.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IntegerExperiments/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.2/out/production/Javarush 1.2/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.3 1/out/production/Javarush 1.3 1/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.3 2/out/production/Javarush 1.3 2/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.3/out/production/Javarush 1.3/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.3/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.4 2/out/production/Javarush 1.4 2/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.6/out/production/Javarush 1.6/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.7 1/out/production/Javarush 1.7 1/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.7 2/out/production/Javarush 1.7 2/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Javarush 1.7/out/production/Javarush 1.7/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyFirstProject/out/production/MyFirstProject/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyFirstProject/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Number/out/production/Number/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Number/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StringExperiments/StringExperiments.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StringExperiments/out/production/StringExperiments/Loader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StringExperiments/src/Loader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task 3/out/production/Task 3/Main$Vector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task 3/out/production/Task 3/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task 5/out/production/Task 5/Vector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 1/out/production/task 1/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 10/out/production/task 10/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 14/out/production/task 14/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 15/out/production/task 15/Hospital.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 2/out/production/task 2/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 28/out/production/task 28/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 29/out/production/task 29/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 30/out/production/task 30/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 31/out/production/task 31/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 32/out/production/task 32/MaIN.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 33/out/production/task 33/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 34/out/production/task 34/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 40/out/production/task 40/ClassesAndObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 40/out/production/task 40/Person.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 41/out/production/task 41/Main$Human.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 41/out/production/task 41/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 42/out/production/task 42/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 43/out/production/task 43/Human.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 43/out/production/task 43/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 44/out/production/task 44/Input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 44/out/production/task 44/divination/Divination.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 44/src/Input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 45/out/production/task 45/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 46/out/production/task 46/Human.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 46/out/production/task 46/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 47/out/production/task 47/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 47/task 47.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 48/out/production/task 48/Animal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 48/out/production/task 48/Dog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 48/out/production/task 48/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 48/task 48.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 49/out/production/task 49/Animal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 49/out/production/task 49/Interface/Animal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 49/out/production/task 49/Interface/Info.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 49/out/production/task 49/Interface/Person.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 49/out/production/task 49/Interface/Test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 49/task 49.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 50/out/production/task 50/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 50/task 50.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 51/out/production/task 51/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 51/task 51.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 52/out/production/task 52/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 52/task 52.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 53/out/production/task 53/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 53/task 53.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../task 9/out/production/task 9/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.2/Javarush 1.2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.2/Javarush 1.2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.3 1/Javarush 1.3 1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.3 1/Javarush 1.3 1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.3 2/Javarush 1.3 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.3 2/Javarush 1.3 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.3 2/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.3 2/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.3/Javarush 1.3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.3/Javarush 1.3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.4 1/Javarush 1.4 1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.4 1/Javarush 1.4 1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.4 1/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.4 1/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.4 2/Javarush 1.4 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.4 2/Javarush 1.4 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.4 2/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.4 2/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.4/Javarush 1.4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.4/Javarush 1.4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.4/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.4/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.6/Javarush 1.6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.6/Javarush 1.6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.6/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.6/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.7 1/Javarush 1.7 1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.7 1/Javarush 1.7 1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.7 1/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.7 1/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.7 2/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.7 2/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.7/Javarush 1.7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.7/Javarush 1.7.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javarush 1.7/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Javarush 1.7/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyFirstProject/MyFirstProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyFirstProject/MyFirstProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Number/Number.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Number/Number.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Task 3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Task 3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 4/Task 4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 4/Task 4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 4/src/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 4/src/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 5/Task 5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 5/Task 5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 5/src/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 5/src/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 6/Task 6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 6/Task 6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 6/src/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 6/src/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 1/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 1/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 1/task 1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 1/task 1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 10/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 10/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 10/task 10.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 10/task 10.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 11/task 11.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 11/task 11.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 14/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 14/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 14/task 14.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 14/task 14.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 15/src/Hospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 15/src/Hospital.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 15/task 15.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 15/task 15.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 17/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 17/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 17/task 17.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 17/task 17.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 18/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 18/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 18/task 18.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 18/task 18.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 19/src/szzs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 19/src/szzs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 19/task 19.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 19/task 19.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 2/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 2/task 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 2/task 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 20/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 20/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 20/task 20.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 20/task 20.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 21/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 21/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 21/task 21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 21/task 21.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 22/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 22/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 22/task 22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 22/task 22.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 23/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 23/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 23/task 23.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 23/task 23.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 24/task 24.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 24/task 24.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 25/task 25.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 25/task 25.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 26/task 26.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 26/task 26.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 27/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 27/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 27/task 27.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 27/task 27.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 28/task 28.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 28/task 28.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 29/task 29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 29/task 29.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 30/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 30/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 30/task 30.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 30/task 30.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 31/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 31/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 31/task 31.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 31/task 31.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 32/src/MaIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 32/src/MaIN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 32/task 32.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 32/task 32.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 33/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 33/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 33/task 33.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 33/task 33.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 34/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 34/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 34/task 34.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 34/task 34.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 35/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 35/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 35/task 35.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 35/task 35.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 36/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 36/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 36/task 36.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 36/task 36.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 37/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 37/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 37/task 37.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 37/task 37.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 38/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 38/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 38/task 38.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 38/task 38.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 39/src/ClassesAndObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 39/src/ClassesAndObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 39/task 39.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 39/task 39.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 40/src/ClassesAndObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 40/src/ClassesAndObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 40/task 40.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 40/task 40.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 41/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 41/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 41/task 41.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 41/task 41.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 42/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 42/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 42/task 42.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 42/task 42.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 43/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 43/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 43/task 43.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 43/task 43.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 44/src/divination/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 44/src/divination/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 44/task 44.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 44/task 44.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 45/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 45/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 45/task 45.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 45/task 45.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 46/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 46/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 46/task 46.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 46/task 46.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 47/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 47/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 48/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 48/src/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 48/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 48/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 48/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 48/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 49/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 49/src/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 49/src/Interface/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 49/src/Interface/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 49/src/Interface/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 49/src/Interface/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 49/src/Interface/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 49/src/Interface/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 49/src/Interface/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 49/src/Interface/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 50/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 50/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 51/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 51/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 52/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 52/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 53/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 53/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 7/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 7/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 7/task 7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 7/task 7.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 8/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 8/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 8/task 8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 8/task 8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 9/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task 9/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task 9/task 9.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../task 9/task 9.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Sergei Mishalevskii &lt;108402627+sergeimish@users.noreply.github.com&gt;" />
+      </list>
+    </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CbjUGHDayLFhPU1mdgNkKfjZon" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b846257f-e49f-4ae4-927b-7de6cbbbebaa" name="Changes" comment="" />
+      <created>1659078194109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659078194109</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="task 534" />
+    <option name="LAST_COMMIT_MESSAGE" value="task 534" />
+  </component>
+</project>
