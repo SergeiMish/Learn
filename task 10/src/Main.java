@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 public class Main {
     public static void main(String[] args) {
         for (char i = 'a'; i <= 'z'; i++) {
@@ -5,4 +6,13 @@ public class Main {
             System.out.println(i + " :" + c + ".");
         }
     }
+=======
+public class Main {
+    public static void main(String[] args) {
+        for (char i = 'a'; i <= 'z'; i++) {
+            int c = i;
+            System.out.println(i + " :" + c + ".");
+        }
+    }
+>>>>>>> origin/main
 }

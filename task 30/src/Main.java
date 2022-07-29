@@ -13,8 +13,8 @@ public class Main {
         while (true) {
             if (!name.equals(yes)) System.out.println("Ищи лучше!");
             name = scr.nextLine();
-            if (name.equals(yes)) System.out.println("Пупсичка обнаружена!!!"); {break;}
-            if (name.equals(R)) System.out.println("Это же брат Руслан!");
+            if (name.equals(yes)) System.out.println("Пупсичка обнаружена!!!");
+            else if (name.equals(R)) System.out.println("Это же брат Руслан!");
             else if (name.equals(S)) System.out.println("Это Света, подруга ");
             else if (name.equals(M)) System.out.println("Это же твой МУЖ!!!");
         }
