@@ -6,5 +6,6 @@ public class Main {
         Date date = new Date();
         SimpleDateFormat dateForNow = new SimpleDateFormat("y - M - d HH:mm");
         System.out.println("Сейчас " + dateForNow.format(date));
+
     }
 }
