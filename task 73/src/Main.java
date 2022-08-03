@@ -12,5 +12,6 @@ public class Main {
         List<String> animals2 = new ArrayList<>();
         animals2.add("Морж");
 
+
     }
 }
