@@ -9,11 +9,12 @@ public class Main {
         test(animal1);
         List<Dog> dog1 = new ArrayList<>();
         dog1.add(new Dog());
+        test(dog1);
 
     }
-    public static void test(List<Animal>animals){
+    public static void test(List<? extends Animal>animals){
         for (Animal ani: animals){
-            System.out.println(ani);
+            ani.eat();
         }
     }
 }
