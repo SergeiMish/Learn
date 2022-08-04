@@ -13,14 +13,16 @@ public class Main {
         File file = new File(path);
         Scanner scanner = new Scanner(file);
         String line = scanner.nextLine();
+        String[] names = line.split(" ");
         int[] numbers = new int [8];
         int counter = 0;
-        String[] names = line.split(" ");
-        for (String number : names){
-            numbers [counter++] = Integer.parseInt(number);
-            System.out.println(Arrays.toString(numbers));
+
+        for (String number : names) {
+            numbers[counter++] = Integer.parseInt(number);
         }
+            System.out.println(Arrays.toString(numbers));
         scanner.close();
+        }
+
     }
-}
 //"C:\Users\HP M\Desktop\Текстовый документ.txt"
