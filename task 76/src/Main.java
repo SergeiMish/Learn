@@ -1,16 +1,26 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         String separator = File.separator;
-        String path = separator + "C:" + separator + "Users" + separator + "HP M"+ separator + "Desktop"+ separator +"Текстовый документ.txt";
+        String path = separator + "C:" + separator + "Users"
+                + separator + "HP M"+ separator + "Desktop"
+                + separator +"Текстовый документ.txt";
         File file = new File(path);
         Scanner scanner = new Scanner(file);
-        while (scanner.hasNextLine()){
-            System.out.println(scanner.nextLine());
+        String line = scanner.nextLine();
+        int[] numbers = new int [8];
+        int counter = 0;
+        String[] names = line.split(" ");
+        for (String number : names){
+            numbers [counter++] = Integer.parseInt(number);
+            System.out.println(Arrays.toString(numbers));
         }
+        scanner.close();
     }
 }
 //"C:\Users\HP M\Desktop\Текстовый документ.txt"
