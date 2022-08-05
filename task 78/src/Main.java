@@ -11,7 +11,7 @@ public class Main {
         }
         for (int[] table:numbers){
             for (int table2:table){
-                System.out.print(table2 + " ");
+                System.out.print(table2 + "\t ");
             }
             System.out.println();
         }
