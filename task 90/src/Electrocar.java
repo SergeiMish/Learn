@@ -9,6 +9,6 @@ public class Electrocar {
         this.id = id;
     }
     public void start() {
-        System.out.println("Електромобиль" + id + "Мотор работает");
+        System.out.println("Електромобиль " + id + " Мотор работает");
     }
 }
