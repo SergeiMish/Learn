@@ -9,7 +9,5 @@ public class ReadObjects {
         System.out.println(person1);
         System.out.println(person2);
         ois.close();
-
-
     }
 }
