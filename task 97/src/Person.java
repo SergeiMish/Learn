@@ -16,4 +16,7 @@ public class Person implements Serializable {
     public String getName() {
         return name;
     }
+    public String toString(){
+        return id + ":" + name;
+    }
 }
