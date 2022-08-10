@@ -9,12 +9,8 @@ public class Write {
                 new Person(33, "Ичиго")};
         try {FileOutputStream fos = new FileOutputStream("People.bin");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(people.length);
-            for (Person person : people) {
-                oos.writeObject(person);
-
-        }
-            oos.close();
+            oos.writeObject(people);
+            fos.close();
 
         }catch (IOException e){
             e.printStackTrace();
