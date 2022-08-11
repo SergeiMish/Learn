@@ -17,5 +17,6 @@ public class Test {
         }
         for (Integer x: arrayList)
             System.out.println(x);
+        arrayList.remove(9);
     }
 }
