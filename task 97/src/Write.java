@@ -7,10 +7,9 @@ public class Write {
     public static void main(String[] args) {
         Person[] people = {new Person(5, "Люся"), new Person(32, "Ибрагим"),
                 new Person(33, "Ичиго")};
-        try {FileOutputStream fos = new FileOutputStream("People.bin");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("People.bin")))
+        {
             oos.writeObject(people);
-            fos.close();
 
         }catch (IOException e){
             e.printStackTrace();
