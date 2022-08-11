@@ -12,5 +12,8 @@ public class Test {
         System.out.println(arrayList);
         System.out.println(arrayList.get(10));
         System.out.println(arrayList.get(100));
+        for (int i = 0; i < arrayList.size(); i++){
+            System.out.println(arrayList.get(i));
+        }
     }
 }
