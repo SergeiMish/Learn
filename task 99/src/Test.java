@@ -1,9 +1,10 @@
 public class Test {
     public static void main(String[] args) {
-        someMethod();
+        counter(5);
     }
-    public static void someMethod(){
-        System.out.println("Hello World");
-        someMethod();
+    public static void counter(int n){
+        if (n == 0) return;
+        System.out.println(n);
+        counter(n-1);
     }
 }
