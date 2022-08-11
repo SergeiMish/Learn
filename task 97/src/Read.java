@@ -5,12 +5,9 @@ import java.util.Arrays;
 
 public class Read {
     public static void main(String[] args) {
-        try {
-            FileInputStream fis = new FileInputStream("People.bin");
-            ObjectInputStream ois = new ObjectInputStream(fis);
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("People.bin"))){
             Person [] people = (Person[]) ois.readObject();
             System.out.println(Arrays.toString(people));
-              ois.close();
         }catch (IOException e){
             e.printStackTrace();
         }catch (ClassNotFoundException e){
