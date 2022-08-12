@@ -9,6 +9,14 @@ public class Test {
         System.out.println("Я проснулся");
     }
 }
+class Runner implements Runnable{
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 1000; i++)
+            System.out.println("Я в потоке " + i);
+    }
+}
 //class MyThread extends Thread{
 //    public void run(){
 //        for (int i = 0; i < 1000; i++)
