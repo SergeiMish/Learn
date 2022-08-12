@@ -10,7 +10,7 @@ public class Test {
     }
     }
     class MyThread extends Thread{
-    public boolean running = true;
+    public volatile boolean running = true;
     public void run(){
         while (running){
         System.out.println("Hello");
