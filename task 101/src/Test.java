@@ -12,16 +12,17 @@ public class Test {
     class MyThread extends Thread{
     public boolean running = true;
     public void run(){
-        while (running)
+        while (running){
         System.out.println("Hello");
         try {
-            MyThread.sleep(100);
+            MyThread.sleep(1000);
         } catch (InterruptedException e) {
-            System.out.println("Поток прерван!");;
+            System.out.println("Поток прерван!");
+            ;
+        }
         }
     }
     public void shutDown(){
         this.running = false;
     }
-
     }
