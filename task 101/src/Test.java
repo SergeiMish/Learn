@@ -1,25 +1,27 @@
-public class Test {
-    public static void main(String[] args) throws InterruptedException {
-//        MyThread myThread = new MyThread();
-//        myThread.start();
-//        MyThread myThread2 = new MyThread();
-//        myThread2.start();
-        System.out.println("Я сплю");
-        Thread.sleep(3000);
-        System.out.println("Я проснулся");
-    }
-}
-class Runner implements Runnable{
+import java.util.Scanner;
 
-    @Override
-    public void run() {
-        for (int i = 0; i < 1000; i++)
-            System.out.println("Я в потоке " + i);
+public class Test {
+    public static void main(String[] args) {
+        MyThread myThread = new MyThread();
+        myThread.start();
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+        myThread.shutDown();
     }
-}
-//class MyThread extends Thread{
-//    public void run(){
-//        for (int i = 0; i < 1000; i++)
-//            System.out.println("Я в потоке " + i);
-//    }
-//}
+    }
+    class MyThread extends Thread{
+    public boolean running = true;
+    public void run(){
+        while (running)
+        System.out.println("Hello");
+        try {
+            MyThread.sleep(100);
+        } catch (InterruptedException e) {
+            System.out.println("Поток прерван!");;
+        }
+    }
+    public void shutDown(){
+        this.running = false;
+    }
+
+    }
