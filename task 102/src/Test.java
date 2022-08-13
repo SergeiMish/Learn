@@ -2,13 +2,12 @@ import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) {
-        {
-            int[] array1 = {50, -20, 0};
-            int[] array2 = {5, -50, 10};
-            System.out.println("Array1: " + Arrays.toString(array1));
-            System.out.println("Array2: " + Arrays.toString(array2));
-            int[] array_new = {array1[0], array2[2]};
-            System.out.println("New Array: " + Arrays.toString(array_new));
-        }
+        int[] array_nums = {5, 7};
+        System.out.println("Original Array: "+Arrays.toString(array_nums));
+        if(array_nums[0] == 4 || array_nums[0] == 7)
+            System.out.println("True");
+        else
+            System.out.println(array_nums[1] == 4 || array_nums[1] == 7);
+
     }
 }
