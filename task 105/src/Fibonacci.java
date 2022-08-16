@@ -12,6 +12,7 @@ public class Fibonacci {
         if (mem[n] !=-1) return mem[n];
         if (n <=1) return n;
         long result =  fibNaive(n - 1, mem) + fibNaive(n - 2, mem);
+        mem[n] = result;
         return result;
     }
 
