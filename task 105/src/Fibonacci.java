@@ -8,6 +8,7 @@ public class Fibonacci {
         System.out.println(fibNaive(n, mem));
 
     }
+    // O(2^n) до мемеизации
     private static long fibNaive(int n, long[] mem) {
         if (mem[n] !=-1) return mem[n];
         if (n <=1) return n;
