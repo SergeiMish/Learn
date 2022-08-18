@@ -26,7 +26,8 @@ public class Test {
         int result = 0;
         int currentStop = 0;
         while (currentStop < station.length){
-
+            int nextStop = currentStop;
+            while ()
         }
     }
 }
