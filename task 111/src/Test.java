@@ -32,8 +32,9 @@ public class Test {
             if (currentStop == nextStop)
                 return -1;
             if (currentStop < station.length -1)
-
+                result++;
+            currentStop = nextStop;
             }
+        return result;
         }
     }
-}
