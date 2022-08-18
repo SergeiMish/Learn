@@ -23,6 +23,10 @@ public class Test {
 //
 //        return result;
     public static int minStops(int[] station, int capacity){
+        int result = 0;
+        int currentStop = 0;
+        while (currentStop < station.length){
 
+        }
     }
 }
