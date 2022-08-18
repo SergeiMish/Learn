@@ -7,9 +7,12 @@ public class Test {
     }
     public static String maxNumbOfDig(int[] digits){
         Arrays.sort(digits);
+
         String result = "";
-        for (int i = digits.length; i <= 0; i--)
+
+        for (int i = digits.length - 1; i >= 0; i--)
             result += digits[i];
+
         return result;
     }
 }
