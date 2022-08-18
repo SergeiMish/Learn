@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
 
 public class Test {
     public static void main(String[] args) {
@@ -6,13 +8,18 @@ public class Test {
         System.out.println(maxNumbOfDig(digits));
     }
     public static String maxNumbOfDig(int[] digits){
-        Arrays.sort(digits);
+                 return String.join("", Arrays.stream(digits).boxed()
+                         .sorted(Comparator.reverseOrder())
+                       .map(String::valueOf)
+                       .toArray(String[]::new));
 
-        String result = "";
-
-        for (int i = digits.length - 1; i >= 0; i--)
-            result += digits[i];
-
-        return result;
+//        Arrays.sort(digits);
+//
+//        String result = "";
+//
+//        for (int i = digits.length - 1; i >= 0; i--)
+//            result += digits[i];
+//
+//        return result;
     }
 }
