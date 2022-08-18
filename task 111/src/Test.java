@@ -25,9 +25,15 @@ public class Test {
     public static int minStops(int[] station, int capacity){
         int result = 0;
         int currentStop = 0;
-        while (currentStop < station.length){
+        while (currentStop < station.length -1){
             int nextStop = currentStop;
-            while ()
+            while (nextStop < station.length && station[nextStop + 1] - station[currentStop ] <=capacity)
+                nextStop++;
+            if (currentStop == nextStop)
+                return -1;
+            if (currentStop < station.length -1)
+
+            }
         }
     }
 }
