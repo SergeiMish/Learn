@@ -27,7 +27,7 @@ public class Test {
         int currentStop = 0;
         while (currentStop < station.length -1){
             int nextStop = currentStop;
-            while (nextStop < station.length && station[nextStop + 1] - station[currentStop ] <=capacity)
+            while (nextStop < station.length -1 && station[nextStop + 1] - station[currentStop ] <=capacity)
                 nextStop++;
             if (currentStop == nextStop)
                 return -1;
