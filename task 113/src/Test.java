@@ -12,4 +12,10 @@ public class Test {
                 testd = true;
 
             if(testd && array_nums[i] == y)
-}
+            {
+                System.out.printf( String.valueOf(true));
+                result = 1		 ;
+            }
+        }
+        if (result==0)
+        {
