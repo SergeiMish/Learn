@@ -12,4 +12,10 @@ public class Test {
             {
                 System.out.printf( String.valueOf(true));
                 result = 1 ;
+            }if(i <= array_nums.length - 3 && array_nums[i] == x && array_nums[i+2] == x)
+            {
+                System.out.printf( String.valueOf(true));
+                result = 1 ;
             }
+        }
+
