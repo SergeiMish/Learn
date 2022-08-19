@@ -18,4 +18,10 @@ public class Test {
                 result = 1 ;
             }
         }
-
+        if (result==0)
+        {
+            System.out.printf( String.valueOf(false));
+        }
+        System.out.printf("\n");
+    }
+}
