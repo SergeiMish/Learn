@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import static java.util.Collections.reverse;
 
 public class Test {
@@ -11,10 +13,15 @@ public class Test {
         reverse(A, 0, len - offset - 1);
         reverse(A, len - offset, len - 1);
         reverse(A, 0, len - 1);
-        System.out.println("\n"+Arrays.toString(A));
+        System.out.println("\n"+ Arrays.toString(A));
     }
     private static void reverse(char[] str, int start, int end) {
         while (start < end) {
             char temp = str[start];
             str[start] = str[end];
+            str[end] = temp;
+            start++;
+            end--;
+        }
+    }
 }
