@@ -1,14 +1,13 @@
+import java.util.Scanner;
+
+import static java.lang.Math.sqrt;
+
 public class Test {
-    public static void main(String[] args) {
-        for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.printf("\n%d: fizz buzz", i);
-            } else if (i % 5 == 0) {
-                System.out.printf("\n%d: buzz", i);
-            } else if (i % 3 == 0) {
-                System.out.printf("\n%d: fizz", i);
-            }
-        }
-        System.out.printf("\n");
-    }
-}
+    public static void main(String[] args)
+    {
+        int num;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input a positive integer: ");
+        int n = in.nextInt();
+        System.out.printf("Square root of %d is: ",n);
+        System.out.println(sqrt(n));
