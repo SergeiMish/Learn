@@ -10,4 +10,13 @@ public class Test {
         System.out.print("Input a positive integer: ");
         int n = in.nextInt();
         System.out.printf("Square root of %d is: ",n);
-        System.out.println(sqrt(n));
+        System.out.println(sqrt(n)); }
+
+    private static int sqrt(int num) {
+        if (num == 0 || num == 1) {
+            return num;
+        }
+        int a = 0;
+        int b = num;
+        while (a <= b) {
+            int mid = (a + b) >> 1;
