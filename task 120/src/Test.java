@@ -20,3 +20,14 @@ public class Test {
         int b = num;
         while (a <= b) {
             int mid = (a + b) >> 1;
+            if (num / mid < mid) {
+                b = mid - 1;
+            } else {
+                if (num / (mid + 1) <= mid) {
+                    return mid;
+                }
+                a = mid + 1;
+            }
+        }
+        return a;
+    }
