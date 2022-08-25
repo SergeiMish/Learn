@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
-public class Test {int array1[]=new int[8];
+public class Test {
+    int array1[]=new int[8];
     array1[0]=1;
     array1[1]=2;
     array1[2]=3;
@@ -13,5 +14,16 @@ public class Test {int array1[]=new int[8];
         while (i >= 0 && j >= 0) {
         if (array1[i] > array2[j]) {
             array1[index--] = array1[i--];
-        } else {
+        } else {  array1[index--] = array2[j--];
+        }
+    }
+        while (i >= 0) {
+        array1[index--] = array1[i--];
+    }
+        while (j >= 0) {
+        array1[index--] = array2[j--];
+    }
+
+    	System.out.println("\nMerged array: "+Arrays.toString(array1));
+}
 }
