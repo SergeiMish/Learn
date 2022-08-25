@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class Test {
+    public static void main(String[] args) {
     int array1[]=new int[8];
     array1[0]=1;
     array1[1]=2;
