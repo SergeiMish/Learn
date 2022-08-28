@@ -11,4 +11,15 @@ public class Test {
             {
                 System.out.printf( String.valueOf(false));
                 result = 1;
+            }
+            if(array_nums[i] == 20)
+                count++;
+        }
+
+        if (result==0)
+        {
+            System.out.printf( String.valueOf(count == 3));
+        }
+        System.out.printf("\n");
+    }
     }
