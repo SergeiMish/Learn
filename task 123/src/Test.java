@@ -9,5 +9,12 @@ public class Test {public static void main(String[] args)
             result = 1;
         }
     }
-    if (result==0)
+    if (result==0) {
+        System.out.printf( String.valueOf(true));
+    }
+    else
+    {
+        System.out.printf( String.valueOf(false));
+    }
+}
 }
