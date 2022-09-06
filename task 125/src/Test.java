@@ -15,5 +15,7 @@ public class Test {
         System.out.print(Boolean.toString(false));
         test = 1;
     }
-		if (test==0)
+		if (test==0)		System.out.print(Boolean.toString((n & 0x55555555) != 0));
 }
+		System.out.print("\n");
+                }
