@@ -10,6 +10,8 @@ public class Test {
         final Item[] items = {item1, item2, item3}; // Набор всех объектов.
 
         Arrays.sort(items, Comparator.comparingDouble(Item::valuePerUnitOfWheight).reversed());
+
+        System.out.println(Arrays.toString(items));
     }
 }
 
