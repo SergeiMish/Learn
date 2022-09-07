@@ -11,6 +11,10 @@ class Item{
         this.value = value;
     }
 
+    public double valuePerUnitOfWheight(){
+        return value / (double) weigth;
+    }
+
     public int getWeigth() {
         return weigth;
     }
