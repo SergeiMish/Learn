@@ -36,6 +36,6 @@ class Item{
         return value;
     }
     public String toString(){
-        return "{w: " + weigth + "v: " + value + "}";
+        return "{w: " + weigth + ", v: " + value + "}";
     }
 }
