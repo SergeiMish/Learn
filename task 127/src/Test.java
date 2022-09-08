@@ -4,6 +4,9 @@ public class Test {
     }
 
     public static int binarySearch (int[] a, int key) {
+        int low = 0;
+        int high = a.length -1;
+
 
     }
 }
