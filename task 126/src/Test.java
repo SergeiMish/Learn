@@ -28,7 +28,7 @@ public class Test {
                 // Берем чать объекта
                 valueSoFar += ((W - weightSoFar) / (double) items[currentItem].getWeigth()) *
                         items[currentItem].getValue();
-
+                weightSoFar = W; // Полный рюкзак
             }
         }
 
