@@ -12,6 +12,13 @@ public class Test {
         Arrays.sort(items, Comparator.comparingDouble(Item::valuePerUnitOfWheight).reversed());
 
         System.out.println(Arrays.toString(items));
+
+        final int W = 7;
+        int weightSoFar = 0;
+        int valueSoFar = 0;
+        int currentItem = 0;
+
+
     }
 }
 
