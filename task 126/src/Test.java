@@ -18,7 +18,13 @@ public class Test {
         int valueSoFar = 0;
         int currentItem = 0;
 
-        while (currentItem < items.length && weightSoFar != W)
+        while (currentItem < items.length && weightSoFar != W){
+            if (weightSoFar + items[currentItem].getWeigth() < W){
+                // Берем объект целиком
+                valueSoFar += items[currentItem].getValue();
+
+            } else
+        }
 
     }
 }
