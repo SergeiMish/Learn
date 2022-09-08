@@ -18,6 +18,7 @@ public class Test {
         int valueSoFar = 0;
         int currentItem = 0;
 
+        while (currentItem < items.length && weightSoFar != W)
 
     }
 }
