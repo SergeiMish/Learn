@@ -30,8 +30,9 @@ public class Test {
                         items[currentItem].getValue();
                 weightSoFar = W; // Полный рюкзак
             }
+            currentItem++;
         }
-
+        System.out.println("Ценность наилучшего набора: " + valueSoFar);
     }
 }
 
