@@ -11,4 +11,6 @@
           class="org.example.RockMusic">
     </bean>
 
+    <bean id="musicPlayer"></bean>
+
 </beans>
