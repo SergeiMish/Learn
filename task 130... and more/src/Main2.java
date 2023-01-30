@@ -1,6 +1,10 @@
 public class Main2 {
     public static void main(String[] args) {
-        boolean b  = true;
-        System.out.println(b);
+        int value = 0;
+        while (value < 5) {
+            System.out.println("Расчет строк");
+           value = value+1;
+        }
+
     }
 }
