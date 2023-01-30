@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        String name = "Сергей";
-        System.out.println("Привет " + name + ", с возвращением!");
-    }
+       for (int i = 0; i < 22; i = i++) {
+        System.out.println("Привет" + i);
+    }}
 }
