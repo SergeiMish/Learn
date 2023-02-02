@@ -4,7 +4,10 @@ public class Main {
          double x = Math.random();
          int k = (int) Math.round(x * 10);
          int [] nubmers = new int[10];
-         nubmers[0] = k;
+         for (int i = 0; i<k; i++){
+             nubmers[i]= k+1;
+             System.out.println(nubmers[k]);
+         }
         System.out.println(nubmers[0]);
     }
 }
