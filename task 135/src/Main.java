@@ -1,11 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-      String[] names = new String[5];
-      names[0] = "Bob";
-      names[1] = "Marry";
-      names[3] = "John";
-      for (String string: names){
-          System.out.println(string);
-      }
+       double [][] numbers = new double[10][10];
+       double i =  Math.random();
+        System.out.println(numbers[(int) i][(int) i]);
     }
 }
