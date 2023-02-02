@@ -1,13 +1,15 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-         double x = Math.random();
-         int k = (int) Math.round(x * 10);
-         int [] nubmers = new int[10];
-         for (int i = 0; i<nubmers.length; i++){
-             nubmers[i]= k+1;
-             System.out.println(nubmers[k]);
-         }
-        System.out.println(nubmers[0]);
+        int []numbers = new int[10];
+        Random rran = new Random();
+        numbers = rran.ints().limit(numbers.length).toArray();
+        System.out.println("Рандомные числа: ");
+        for (int i = 0; i< numbers.length; i++){
+            System.out.println(Arrays.toString(numbers));
+        }
     }
 }
