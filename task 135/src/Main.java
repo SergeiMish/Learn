@@ -2,12 +2,10 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int [][] number = {{1,5,6},
-                           {3,8,2},
-                           {4,5,1}};
-        for (int[]numbers : number){
-            System.out.println(Arrays.toString(numbers));
-        }
-
+         double x = Math.random();
+         int k = (int) Math.round(x * 10);
+         int [][] nubmers = new int[10][10];
+         nubmers [k] [0] =
+        System.out.println(
     }
 }
