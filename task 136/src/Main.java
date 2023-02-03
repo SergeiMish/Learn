@@ -10,7 +10,7 @@ public class Main {
         String name;
         int age;
         void ride(){
-            System.out.println("Я еду на" + name);
+            System.out.println("Я еду на " + name);
         }
     }
 }
