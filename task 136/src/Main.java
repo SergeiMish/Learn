@@ -5,7 +5,7 @@ public class Main {
       Moto moto2= new Moto();
       moto2.name = "Yamaxa";
       moto1.ride();
-      moto2.ride();
+      moto2.gasOnTop();
 
 
     }
@@ -15,6 +15,11 @@ public class Main {
         void ride(){
             for (int i = 0; i<3; i++){
                 System.out.println("Я еду на " + name);
+            }
+        }
+        void gasOnTop(){
+            for (int i = 0; i<3; i++){
+                System.out.println("Ручку в упор, тапку в пол на " + name);
             }
         }
     }
