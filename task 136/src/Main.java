@@ -3,8 +3,8 @@ public class Main {
         Moto moto1 = new Moto();
         moto1.setName("Yamaha");
         moto1.setAge(12);
-        System.out.println("Выводи на экран в main методе: " + moto1.getName());
-        System.out.println("Выводи на экран в main методе: " + moto1.getAge());
+        System.out.println("Выводим на экран в main методе: " + moto1.getName());
+        System.out.println("Выводим на экран в main методе: " + moto1.getAge());
 
 
     }
