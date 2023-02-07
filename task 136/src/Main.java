@@ -1,25 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        Moto moto1 = new Moto();
-        moto1.setName("");
-        moto1.setAge(12);
-        System.out.println("Выводим на экран в main методе: " + moto1.getName());
-        System.out.println("Выводим на экран в main методе: " + moto1.getAge());
-
+        Human human1 = new Human();
+        human1.setName("Михаил");
+        human1.setAge(25);
+        System.out.println("Меня зовут " + human1.getName() + " мне " + human1.getAge());
 
     }
 }
-    class Moto {
+    class Human {
         private String name;
         private int age;
 
-        public void setName(String userName) {
-            if (userName.isEmpty()){
-                System.out.println("Вы не ввели имя");
-            }
-            else {
-                name = userName;
-            }
+        public void setName(String name) {
+            this.name = name;
         }
 
         public void setAge(int age) {
@@ -33,9 +26,4 @@ public class Main {
         public int getAge() {
             return age;
         }
-    void goRide() {
-        System.out.println("Я еду на " + name + " и ему всего " + age);
     }
-
-}
-
