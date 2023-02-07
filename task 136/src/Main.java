@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         Moto moto1 = new Moto();
-        moto1.setName("Yamaha");
+        moto1.setName("");
         moto1.setAge(12);
         System.out.println("Выводим на экран в main методе: " + moto1.getName());
         System.out.println("Выводим на экран в main методе: " + moto1.getAge());
