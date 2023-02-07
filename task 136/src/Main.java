@@ -1,15 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        Human human1 = new Human();
-        human1.setName("Михаил");
-        human1.setAge(25);
-        System.out.println("Меня зовут " + human1.getName() + " мне " + human1.getAge());
+        Human human1 = new Human("Мерлин", 180);
 
     }
 }
     class Human {
         private String name;
         private int age;
+
+        public Human(String name, int age){
+        this.name = name;
+        this.age = age;
+
+        }
 
         public void setName(String name) {
             this.name = name;
