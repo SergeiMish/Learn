@@ -13,8 +13,13 @@ public class Main {
         private String name;
         private int age;
 
-        public void setName(String name) {
-            this.name = name;
+        public void setName(String userName) {
+            if (userName.isEmpty()){
+                System.out.println("Вы не ввели имя");
+            }
+            else {
+                name = userName;
+            }
         }
 
         public void setAge(int age) {
