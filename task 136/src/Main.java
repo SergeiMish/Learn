@@ -1,8 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        StringBuilder sb = new StringBuilder("Hello ");
-        sb.append(5);
-        sb.append(" Опять");
-        System.out.println(sb.toString());
+        System.out.printf("String, %d \n", 14);
+        System.out.printf("Число %2f \n", 22.2233443);
     }
 }
