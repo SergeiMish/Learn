@@ -1,8 +1,8 @@
 public class Animal {
     public void eat(){
-        System.out.println("Я ем");
+        System.out.println("Животное ест");
             }
     public void sleep(){
-        System.out.println("Я сплю");
+        System.out.println("Животное спит");
     }
 }
