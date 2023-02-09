@@ -1,6 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.printf("String, %d \n", 14);
-        System.out.printf("Число %2f \n", 22.2233443);
+     Human h1 = new Human("Томас", 25);
+
+
+        System.out.println(h1);
     }
+}
+
+class Human{
+    String name;
+    int age;
+
+      public Human(String name, int age){
+      this.name = name;
+      this.age = age;
+      }
 }
