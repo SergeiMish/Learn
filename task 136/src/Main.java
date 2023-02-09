@@ -3,7 +3,7 @@ public class Main {
      Human h1 = new Human("Томас", 25);
 
 
-        System.out.println(h1);
+        System.out.println(h1.toString());
     }
 }
 
