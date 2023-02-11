@@ -1,6 +1,6 @@
 package Interfeces;
 
-public class Human {
+public class Human implements Info {
     public String name;
 
     public Human(String name){
@@ -9,6 +9,11 @@ public class Human {
 
     public void hello(){
         System.out.println("Привет");
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println("Имя человека " + this.name);
     }
 }
 
