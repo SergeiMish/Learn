@@ -1,11 +1,11 @@
 import Interfeces.Animal;
+import Interfeces.Human;
 
 public class Main {
     public static void main(String[] args) {
         Animal animal = new Animal(25);
+        Human human = new Human("Марго");
         animal.sleep();
-        Dog dog = new Dog();
-        dog.eat();
-        dog.bark();
+        human.hello();
     }
 }
