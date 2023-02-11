@@ -12,7 +12,7 @@ public class Human implements Info {
     }
 
     @Override
-    public void showInfo() {
+    public void  showInfo() {
         System.out.println("Имя человека " + this.name);
     }
 }
