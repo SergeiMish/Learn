@@ -1,5 +1,5 @@
 import Interfeces.Animal;
 
-public class Dog {
+public class Dog extends Animal {
 
     }
