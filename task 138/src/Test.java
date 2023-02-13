@@ -7,6 +7,15 @@ public class Test {
         animals.add(new Animal(24));
         animals.add(new Animal(44));
         test(animals);
+
+        List<Dog> dogs = new ArrayList<>();
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+
+    }
+
+    private static void test(List<Dog> dogs){
+
     }
 
     private static void test(List<Animal> animals) {
