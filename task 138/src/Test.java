@@ -3,17 +3,14 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-//        List<String> list = new ArrayList<String>();
-//        list.add("Собака");
-//        list.add("Не собака");
-//        list.add("Рыбка");
-//
-//        String animal = list.get(1);
+      List<Animal> animals = new ArrayList<>();
 
-        List<String> list2 = new ArrayList<String>();
-        list2.add("ASdasf");
-        list2.add("FFFFsss");
-
-        System.out.println(list2.get(0));
     }
+
+    private void test(List<Animal> animals){
+        for (Animal animal : animals){
+            System.out.println(animal);
+        }
+    }
+
 }
