@@ -1,4 +1,4 @@
-public abstract class Animal {
+public class Animal {
 
     private int id;
     public Animal (int id) {
