@@ -1,5 +1,5 @@
-public class Dog extends Animal{
-    @Override
+public class Dog{
+
     public void eat(){
         System.out.println("Собака ест");
     }

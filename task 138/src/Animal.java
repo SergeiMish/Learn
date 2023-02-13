@@ -1,5 +1,10 @@
-public class Animal {
-    public void eat(){
-        System.out.println("Животное ест");
-    }
+public abstract class Animal {
+
+    private int id;
+    public Animal (int id) {
+            this.id = id;
+}
+    public String toString() {
+            return String.valueOf(id);
+        }
 }
