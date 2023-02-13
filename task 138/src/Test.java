@@ -3,5 +3,7 @@ public class Test {
           Dog dog = new Dog();
           Animal animal = dog;
 
+          Dog dog2 = (Dog) animal;
+
     }
 }
