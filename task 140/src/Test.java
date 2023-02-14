@@ -1,5 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Test {
@@ -11,7 +14,9 @@ public class Test {
         Scanner scanner = new Scanner(file);
         while (scanner.hasNextLine()){
             System.out.println(scanner.nextLine());
+            scanner.close();
         }
+
     }
 }
 //"C:\Users\HP M\Desktop\Текстовый документ.txt"
