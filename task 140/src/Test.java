@@ -16,25 +16,27 @@ public class Test {
         File file = new File(path);
         String names;
 
-        List<String> fio = new ArrayList<>();
-        file = (File) Files.readAllLines(path);
-
-        System.out.println(fio.toString());
-
-
-//        Scanner scanner = new Scanner(file);
-//        while (scanner.hasNextLine()){
-//            names = scanner.nextLine();
-//            fio.add(names);
+//        List<Integer> fio = new ArrayList<>();
+//        file = (File) Files.readAllLines(path);
 //
-//        }
 //        System.out.println(fio.toString());
-//
-//        for (String allFio : fio){
-//            System.out.println(allFio);
+
+
+        Scanner scanner = new Scanner(file);
+        String line  = scanner.nextLine();
+
+        }
+
+        int[] numbers = new int[5];
+        int counter = 0;
+
+
+        for (Integer allFio : fio){
+            numbers[counter++] = Integer.parseInt(String.valueOf(allFio));
+
+            System.out.println(Arrays.toString(numbers));
 //        }
 //
 //        scanner.close();
     }
 }
-//"C:\Users\HP M\Desktop\Текстовый документ.txt"
