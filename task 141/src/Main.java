@@ -3,10 +3,14 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args){
 
         File file = new File("asdlasd");
-        Scanner scanner = new Scanner(file);
+        try {
+            Scanner scanner = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не найден, укажите правильный путь");
+        }
 
 
     }
