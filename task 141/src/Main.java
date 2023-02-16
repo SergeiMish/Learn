@@ -1,23 +1,14 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        try {
-            read();
-        } catch (FileNotFoundException e) {
-            System.out.println("Обработка исключения метода read");;
+        Scanner scanner = new Scanner(System.in);
+        while (true){
+           int x = Integer.parseInt(scanner.nextLine());
+           if (x != 0){
+               System.out.println("Введите 0");
+           }
         }
-
-
-    }
-    public static void read () throws FileNotFoundException {
-
-        File file = new File("21у312");
-            Scanner scanner = new Scanner(file);
-
-
 
     }
 }
