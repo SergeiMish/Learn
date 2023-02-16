@@ -4,14 +4,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-
-        File file = new File("asdlasd");
         try {
-            Scanner scanner = new Scanner(file);
-            System.out.println("Файл считан");
+            read();
         } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден, укажите правильный путь");
+            System.out.println("Обработка исключения метода read");;
         }
+
+
+    }
+    public static void read () throws FileNotFoundException {
+
+        File file = new File("21у312");
+            Scanner scanner = new Scanner(file);
+
 
 
     }
