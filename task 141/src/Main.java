@@ -14,8 +14,6 @@ public class Main {
                    System.out.println("Вы ввели не 0");
                }
            }else System.out.println("Молодец, возьми с полки пирожок");
-
         }
-
     }
 }
