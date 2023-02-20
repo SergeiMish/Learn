@@ -20,5 +20,11 @@ public class Electrocar {
                 MotorCar motorCar = new MotorCar();
                 motorCar.startMotor();
                 System.out.println("Electrocar " + id + " едет");
+
+                class audio{
+                public void audioOn(){
+                                System.out.println("Музыку громче...");
+                        }
+                }
         }
 }
