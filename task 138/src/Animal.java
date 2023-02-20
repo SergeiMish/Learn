@@ -1,4 +1,9 @@
-public abstract class Animal {
+public class Animal {
+    private int id  ;
+    public Animal(int id){
+        this.id = id;
+    }
 
-    public abstract void run();
+    public void run() {
+            }
 }

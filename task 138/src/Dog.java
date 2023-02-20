@@ -1,5 +1,9 @@
 public class Dog extends Animal{
-        @Override
+    public Dog(int id) {
+        super(id);
+    }
+
+    @Override
     public void run() {
             System.out.println("Собака бегает");
 
