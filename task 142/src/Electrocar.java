@@ -8,6 +8,10 @@ public class Electrocar {
                 }
         }
 
+        public static void Battery(){
+                System.out.println("Батарея заряжается...");
+        }
+
         public Electrocar(int id){
                 this.id = id;
         }
