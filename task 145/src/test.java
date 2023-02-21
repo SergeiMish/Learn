@@ -7,7 +7,9 @@ public class test {
         File file = new File("testFile");
         PrintWriter pw = new PrintWriter(file);
 
-        pw.println("aaddddwwa00");
+        pw.println(344);
         pw.println("aawef333330");
+
+        pw.close();
     }
 }
