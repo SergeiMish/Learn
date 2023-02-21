@@ -1,12 +1,11 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-
-public class test {
-    public static void main(String[] args) throws FileNotFoundException {
-        class Person{
+public class Person {
             private int id;
             private String name;
+
+            public Person(String name, int id){
+                this.name = name;
+                this.id = id;
+            }
 
             public int getId() {
                 return id;
@@ -20,5 +19,3 @@ public class test {
                 return id + ":" + name;
             }
         }
-    }
-}
