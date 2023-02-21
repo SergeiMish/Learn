@@ -8,17 +8,15 @@ public class WriteObject {
         Person person1 = new Person("Петр",25);
         Person person2 = new Person("Мария", 22);
         Person[] people = {
-        new Person("Петр",25),new Person("Мария", 22), new Person("Эдуард", 40) };
+        new Person("Петр",25),new Person("Мария", 22), new Person("Эдуард", 40)
+                , new Person("Морис - кот", 5 )};
 
         try {
             FileOutputStream fos = new FileOutputStream("people.bin");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            oos.writeInt(people.length);
+            oos.writeObject(people);
 
-            for (Person person : people){
-                oos.writeObject(person);
-            }
 
         } catch (IOException e) {
             throw new RuntimeException(e);
