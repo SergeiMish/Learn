@@ -11,12 +11,8 @@ public class ReadObject {
         try {
             FileInputStream fis = new FileInputStream("people.bin");
             ObjectInputStream ois = new ObjectInputStream(fis);
-
-            Person[] people = (Person[]) ois.readObject();
-
-            System.out.println(Arrays.toString(people));
-
-            ois.close();
+            Person person1 = (Person) ois.readObject();
+            System.out.println(person1);
 
 
 

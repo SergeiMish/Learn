@@ -1,7 +1,7 @@
 import java.io.Serializable;
 
 public class Person implements Serializable {
-            private int id;
+            private transient int  id;
             private String name;
             public Person(String name, int id){
                 this.name = name;
