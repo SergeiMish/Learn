@@ -9,11 +9,8 @@ public class WriteObject {
         Person person2 = new Person("Мария", 22);
 
 
-        try {
-            FileOutputStream fos = new FileOutputStream("people.bin");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-            oos.writeObject(person1);
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("people.bin"))) {
+         oos.writeObject(person1);
 
 
         } catch (IOException e) {
