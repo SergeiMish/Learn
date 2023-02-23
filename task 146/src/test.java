@@ -9,6 +9,7 @@ public class test {
             case DOG:
                   System.out.println("Its a dog");
                   break;
+
         }
     }
 }
