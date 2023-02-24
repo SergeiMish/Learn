@@ -7,4 +7,7 @@ public enum Animal {
         this.translation = translation;
     }
 
+    public String getTranslation() {
+        return translation;
+    }
 }
