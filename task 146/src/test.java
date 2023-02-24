@@ -7,6 +7,8 @@ public class test {
 
         System.out.println(animal.name());
 
+        System.out.println(animal.getDeclaringClass());
+
 //        switch (animal){
 //            case CAT:
 //                System.out.println("Its a cat");
