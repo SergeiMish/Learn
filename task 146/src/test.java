@@ -5,6 +5,8 @@ public class test {
 
         System.out.println(animal.toString());
 
+        System.out.println(animal.name());
+
 //        switch (animal){
 //            case CAT:
 //                System.out.println("Its a cat");
