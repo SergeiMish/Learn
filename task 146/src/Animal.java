@@ -1,10 +1,10 @@
 public enum Animal {
-    CAT,DOG,BIRD;
+    CAT("кошка"),DOG("собака"),BIRD("птица");
 
     private String translation;
 
-    Animal(String traslation){
-        this.translation = traslation;
+    Animal(String translation){
+        this.translation = translation;
     }
 
 }
