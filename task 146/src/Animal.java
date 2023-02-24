@@ -10,4 +10,7 @@ public enum Animal {
     public String getTranslation() {
         return translation;
     }
+    public String toString(){
+        return "Перевод на русский язык " + translation;
+    }
 }
