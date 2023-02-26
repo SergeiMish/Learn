@@ -15,10 +15,7 @@ public class Main {
         while(scan.hasNextLine()){
             data.add(scan.nextLine());
         }
-        System.out.println(data);
+        System.out.println(data + "\n");
 
-        String[] simpleArray = data.toArray(new String[]{});
-
-        System.out.println(Arrays.toString(simpleArray));
     }
 }
