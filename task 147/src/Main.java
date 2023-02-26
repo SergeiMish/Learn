@@ -9,12 +9,10 @@ public class Main {
 
         FileReader fileReader = new FileReader("test");
         Scanner scanner = new Scanner(fileReader);
+        String str;
 
         ArrayList<String> arrayList = new ArrayList<>();
 
-        arrayList.add(String.valueOf(scanner.hasNextLine()));
-
-
-            System.out.println(arrayList);
+        }
         }
     }
