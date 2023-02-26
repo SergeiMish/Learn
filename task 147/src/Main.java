@@ -8,8 +8,8 @@ public class Main {
 
         for (int i = 0; i < 26; i++) {
             arrayList.add(i);
+        }
 
-            System.out.println(arrayList.toString());
+            System.out.println(arrayList);
         }
     }
-}
