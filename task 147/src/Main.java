@@ -1,28 +1,20 @@
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.StringTokenizer;
-
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-            ArrayList<Integer> time = new ArrayList<>();
-            int result;
-            String str;
-            FileReader file = new FileReader("input.txt");
-            Scanner sc = new Scanner(file);
-            str = sc.nextLine();
-            StringTokenizer st = new StringTokenizer(str, " ");
-            while (st.hasMoreTokens()) {
-                time.add(Integer.valueOf(st.nextToken()));
+        public boolean canBeIncreasing ( int[] nums){
+            int count = 0;
+            int p = 0;
+            for (int i = 0; i < nums.length - 1; i++) {
+                if (nums[i] > nums[i + 1] || nums[i] == nums[i + 1]) {
+                    count++;
+                    p = i;
+                }
             }
-            result = (time.get(1) > time.get(0)) ? time.get(1) - time.get(0) : 12 + time.get(1) - time.get(0);
-            FileWriter fileOut = new FileWriter("output.txt");
-            fileOut.write(String.valueOf(result));
-            fileOut.close();
+            if (count > 1) return false;
+            else if (count == 1) {
+                if (p == 0 || p == nums.length - 2) return true;
+                if (nums[p + 1] > nums[p - 1] || nums[p + 2] > nums[p]) return true;
+                else return false;
+            }
+            return true;
         }
     }
-
