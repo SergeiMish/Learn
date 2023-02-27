@@ -1,14 +1,24 @@
 
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
 
-        System.out.println("Im gonna sleep");
+    }
 
-        Thread.sleep(3000);
+    class myThread extends Thread{
 
-        System.out.println("Im sleep");
+        public boolean stop = true;
 
+        public void run(){
+            while (stop){
+                System.out.println("Hello");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
 
+            }
+        }
     }
 }
