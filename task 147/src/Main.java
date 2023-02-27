@@ -16,7 +16,7 @@ public class Main {
 
     class MyThread extends Thread{
 
-        public boolean stop = true;
+        private volatile boolean stop = true;
 
         public void run(){
             while (stop){
