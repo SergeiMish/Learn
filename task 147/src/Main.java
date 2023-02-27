@@ -1,11 +1,20 @@
-
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        MyThread myThread = new MyThread();
+        myThread.start();
+
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+
+        myThread.stopRun();
+
 
     }
+}
 
-    class myThread extends Thread{
+    class MyThread extends Thread{
 
         public boolean stop = true;
 
@@ -20,5 +29,7 @@ public class Main {
 
             }
         }
+        public void stopRun(){
+            this.stop = false;
+        }
     }
-}
