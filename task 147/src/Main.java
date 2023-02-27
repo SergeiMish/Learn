@@ -10,4 +10,8 @@ public class Main {
     interface USSoket{
     void getPower();
     }
-    Class Radio(){
+    class Radio{
+    public void listenMusic(EuroSocket euroSocket){
+    euroSocket.getPower();
+        }
+    }
