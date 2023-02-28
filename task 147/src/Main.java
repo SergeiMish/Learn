@@ -5,28 +5,33 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         int x = 44;
-        int low;
-        int high;
-        int index = -1;
         List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             numbers.add(i);
-        }
-        high = numbers.lastIndexOf(numbers);
-        low = numbers.indexOf(numbers);
-        System.out.println(numbers);
-
-        while (high <= low) {
-            int mid = low + (high - low) / 2;
-            if (mid != x) {
-                low = mid + 1;
-            } else if (mid > x) {
-                high = mid - 1;
-            } else if (mid == x) {
-                index = mid;
-                break;
-            }
+            System.out.println(numbers);
         }
     }
-}
 
+        BinarySearch bc = new BinarySearch();
+
+
+
+    }
+        class BinarySearch {
+            int binarySearch(ArrayList<Integer> numbers, int x) {
+                int left = 0;
+                int right = numbers.size() - 1;
+                while (left <= right) {
+                    int mid = left + (right - left) / 2;
+                    if (numbers.get(mid) == x) {
+                        return mid;
+                    }
+                    if (numbers.get(mid) < x) {
+                        left = mid + 1;
+                    } else if (numbers.get(mid) > x) {
+                        right = mid - 1;
+                    }
+                    return -1;
+                }
+            }
+        }
