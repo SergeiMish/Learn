@@ -1,22 +1,22 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
         int x = 44;
-        List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             numbers.add(i);
-            System.out.println(numbers);
         }
-    }
-
         BinarySearch bc = new BinarySearch();
-
-
+        int result = bc.binarySearch(numbers, 44);
+        System.out.println("Наш массив " + numbers);
+        if (result == -1){
+            System.out.println("Элемент не найден");
+        }
+        else System.out.println("Искомое число " + x + ", найдено найдено число " + result);
 
     }
+}
         class BinarySearch {
             int binarySearch(ArrayList<Integer> numbers, int x) {
                 int left = 0;
@@ -31,7 +31,6 @@ public class Main {
                     } else if (numbers.get(mid) > x) {
                         right = mid - 1;
                     }
-                    return -1;
-                }
+                }return -1;
             }
         }
