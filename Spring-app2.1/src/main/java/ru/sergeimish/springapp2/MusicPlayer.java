@@ -8,6 +8,6 @@ public class MusicPlayer {
     }
 
     public void playMusic(){
-        System.out.println("Сейчас играет " + music.getSong());
+        System.out.println("Now playing " + music.getSong());
     }
 }
