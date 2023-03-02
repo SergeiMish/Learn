@@ -8,12 +8,12 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="ru.sergeimish.springapp2.RapMusic">
+          class="ru.sergeimish.springapp2.RockMusic">
     </bean>
 
     <bean id="musicPlayer"
     class="ru.sergeimish.springapp2.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <property name="music" ref="musicBean"/>
     </bean>
 
 </beans>
