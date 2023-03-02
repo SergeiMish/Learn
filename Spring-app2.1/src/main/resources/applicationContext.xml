@@ -13,6 +13,7 @@
 
     <bean id="musicPlayer"
     class="ru.sergeimish.springapp2.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
     </bean>
 
 </beans>
