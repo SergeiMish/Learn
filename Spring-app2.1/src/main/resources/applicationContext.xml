@@ -11,4 +11,8 @@
           class="ru.sergeimish.springapp2.RapMusic">
     </bean>
 
+    <bean id="musicPlayer"
+    class="ru.sergeimish.springapp2.MusicPlayer">
+    </bean>
+
 </beans>
