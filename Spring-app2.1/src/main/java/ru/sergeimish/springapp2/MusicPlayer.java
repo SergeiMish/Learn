@@ -44,11 +44,8 @@ public class MusicPlayer {
             System.out.println("Now playing " + music.getSong());
         }
 
-        public List<Music> getMusicList () {
-            return musicList;
-        }
 
-        public void setMusicList (List < Music > musicList) {
+        public void setMusicList(List<Music>musicList) {
             this.musicList = musicList;
         }
     }
