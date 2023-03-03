@@ -39,14 +39,12 @@ public class MusicPlayer {
         this.music = music;
     }
 
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
+    }
     public void playMusicList() {
         for (Music music : musicList) {
             System.out.println("Now playing " + music.getSong());
-        }
-
-
-        public void setMusicList(List<Music>musicList) {
-            this.musicList = musicList;
         }
     }
 }
