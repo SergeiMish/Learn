@@ -12,10 +12,23 @@
     <bean id="musicBean"
           class="ru.sergeimish.springapp2.RockMusic">
     </bean>
+    <bean id="musicBean2"
+          class="=ru.sergeimish.springapp2.ClassicalMusic">
+
+    </bean>
+    <bean id="ru.sergeimish.springapp2.RapMusic">
+
+    </bean>
 
     <bean id="musicPlayer"
     class="ru.sergeimish.springapp2.MusicPlayer">
-        <property name="music" ref="musicBean"/>
+        <property name="musicList">
+            <list>
+                <ref bean="musicBean"/>
+                <ref bean="musicBean2"/>
+                <ref bean="musicBean3"/>
+            </list>
+        </property>
         
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
