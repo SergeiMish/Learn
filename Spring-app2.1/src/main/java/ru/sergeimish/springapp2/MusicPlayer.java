@@ -1,6 +1,11 @@
 package ru.sergeimish.springapp2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
+
+    List<Music>musicList = new ArrayList<>();
 
     private String name;
     public int volume;
