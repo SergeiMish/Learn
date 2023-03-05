@@ -16,6 +16,8 @@ public class TestSpring {
 
         boolean comparison = musicPlayer == secondMusicPlayer;
         System.out.println(comparison);
+        System.out.println(musicPlayer);
+        System.out.println(secondMusicPlayer);
 
         musicPlayer.playMusicList();
         secondMusicPlayer.playMusicList();
