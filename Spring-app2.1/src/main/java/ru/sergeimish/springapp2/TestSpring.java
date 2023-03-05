@@ -13,7 +13,11 @@ public class TestSpring {
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
+
         musicPlayer.playMusicList();
+        secondMusicPlayer.playMusicList();
 
         context.close();
     }
