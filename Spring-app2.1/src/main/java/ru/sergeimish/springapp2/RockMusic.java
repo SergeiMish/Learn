@@ -1,6 +1,8 @@
 package ru.sergeimish.springapp2;
 
 public class RockMusic implements Music{
+
+    private RockMusic(){}
     public void doMyInit(){
         System.out.println("Im initialization");
     }
