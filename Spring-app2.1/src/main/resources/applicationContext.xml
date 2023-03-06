@@ -12,7 +12,8 @@
     <bean id="musicBean1"
           class="ru.sergeimish.springapp2.RockMusic"
     init-method="doMyInit"
-    destroy-method="doMyDestroy">
+    destroy-method="doMyDestroy"
+    factory-method="getRockMusic">
     </bean>
     <bean id="musicBean2"
           class="ru.sergeimish.springapp2.ClassicalMusic">
