@@ -10,6 +10,7 @@ public class TestSpring {
 
         RockMusic rockMusic = context.getBean("musicBean1",RockMusic.class);
 
+
         System.out.println(rockMusic.getSong());
 //        Music music = context.getBean("musicBean", Music.class);
 //
