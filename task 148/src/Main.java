@@ -9,6 +9,6 @@ public class Main {
         for (int i=0; i <10; i++){
             table.add(i);
         }
-        System.out.println(table.toString());
+        System.out.println(table);
     }
 }
