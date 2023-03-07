@@ -2,7 +2,7 @@ package ru.sergeimish.springapp2;
 
 import org.springframework.stereotype.Component;
 
-@Component("musicBean1")
+@Component()
 public class RockMusic implements Music{
 //    private RockMusic(){}
 //
