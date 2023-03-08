@@ -8,7 +8,7 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        RockMusic rockMusic = context.getBean("RockMusic",RockMusic.class);
+        RockMusic rockMusic = context.getBean("musicBean1", RockMusic.class);
 
 
         System.out.println(rockMusic.getSong());
