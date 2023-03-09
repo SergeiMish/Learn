@@ -14,5 +14,7 @@ public class TestSpring {
 
         System.out.println(rockMusic);
 
+        context.close();
+
     }
 }
