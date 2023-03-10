@@ -1,5 +1,6 @@
 package ru.sergeimish.springapp2;
 
+
 import org.springframework.stereotype.Component;
 
 @Component("music")
