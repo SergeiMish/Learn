@@ -1,4 +1,4 @@
-package ru.sergeimish.springapp2;
+package ru.sergeimish.springapp;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,11 +7,6 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-
-
-        ClassicalMusic classicalMusic = context.getBean("music", ClassicalMusic.class);
-
-        classicalMusic.getSong();
 
 
 //        Music music = context.getBean("musicBean", Music.class);
@@ -30,6 +25,10 @@ public class TestSpring {
 //
 //        System.out.println(musicPlayer.getVolume());
 //        System.out.println(secondMusicPlayer.getVolume());
+
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        musicPlayer.playMusic();
+
         context.close();
     }
 }

@@ -1,9 +1,9 @@
-package ru.sergeimish.springapp2;
+package ru.sergeimish.springapp;
 
 
 import org.springframework.stereotype.Component;
 
-@Component("music")
+@Component
 public class ClassicalMusic implements Music{
     @Override
     public String getSong() {

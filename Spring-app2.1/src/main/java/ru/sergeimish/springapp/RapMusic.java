@@ -1,4 +1,4 @@
-package ru.sergeimish.springapp2;
+package ru.sergeimish.springapp;
 
 public class RapMusic implements Music {
     @Override
