@@ -12,7 +12,7 @@ public class TestSpring {
 
         rockMusic.getSong();
 
-        System.out.println(rockMusic);
+
 
         context.close();
 
