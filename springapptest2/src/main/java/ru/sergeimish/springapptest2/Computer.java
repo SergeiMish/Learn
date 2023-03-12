@@ -1,11 +1,13 @@
 package ru.sergeimish.springapptest2;
 
-public class Computer {
-    private int id = 1;
-    private MusicPlayer musicPlayer;
+import org.springframework.beans.factory.annotation.Autowired;
 
+public class Computer {
+    private int id;
+    private MusicPlayer musicPlayer;
+@Autowired
     public Computer(MusicPlayer musicPlayer){
-        this.id = id;
+        this.id = 1;
         this.musicPlayer = musicPlayer;
 
     }
