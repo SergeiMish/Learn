@@ -18,6 +18,6 @@ public class RockMusic implements Music {
         return musicStile.get(random.nextInt(musicStile.size()));
     }
     public String getSong() {
-        return musicRock;
+        return "Kollizium";
     }
 }
