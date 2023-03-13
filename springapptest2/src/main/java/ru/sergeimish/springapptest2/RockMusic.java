@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @Component
 public class RockMusic implements Music {
@@ -16,7 +15,7 @@ public class RockMusic implements Music {
     }
 
 
-    public String getSong() {
-        return "Kollizium";
+    public List<String> getSong() {
+        return rockSongs;
     }
 }
