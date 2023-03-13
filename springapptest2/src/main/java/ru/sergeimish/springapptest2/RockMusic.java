@@ -7,15 +7,10 @@ import java.util.Random;
 
 @Component
 public class RockMusic implements Music {
-        private List<String> musicStile;
-        private MusicStyle (List<String> musicStile) {
-            this.musicStile = musicStile;
-        }
-
-
-        musicStile.add("Song of Silents");
-        musicStile.add("Invaders must die");
-        musicStile.add("Mutter");
+        private List<String> rockStyle
+            rockStyle.add("Song of Silents");
+            rockStyle.add("Invaders must die");
+            rockStyle.add("Mutter");
 
         Random random = new Random();
         return musicStile.get(random.nextInt(musicStile.size()));
