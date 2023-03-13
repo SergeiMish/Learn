@@ -22,7 +22,8 @@ public class MusicPlayer {
 
         if(style == MusicStyle.CLASSICAL){
             System.out.println(classicalMusic.getSong().get(randomNumber));
+        } else if (style == MusicStyle.ROCK){
+            System.out.println(rockMusic.getSong().get(randomNumber));
         }
-
         }
     }
