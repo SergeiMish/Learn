@@ -1,7 +1,4 @@
 package ru.sergeimish.springapptest2;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -11,17 +8,14 @@ import java.util.Random;
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
     private String name;
-    @Value("20")
+    @Value("45")
     private int volume;
-
     public String getName() {
         return name;
     }
-
     public int getVolume() {
         return volume;
     }
-
     private ClassicalMusic classicalMusic;
     private RockMusic rockMusic;
     public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
