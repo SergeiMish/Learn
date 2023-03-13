@@ -11,7 +11,7 @@ import java.util.Random;
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
     private String name;
-    @Value("${musicPlayer.volume")
+    @Value("20")
     private int volume;
 
     public String getName() {
