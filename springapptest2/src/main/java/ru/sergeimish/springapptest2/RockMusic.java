@@ -2,15 +2,17 @@ package ru.sergeimish.springapptest2;
 
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 @Component
 public class RockMusic implements Music {
-    public String Rock() {
-        MusicStyle musicRock = MusicStyle.ROCK;
-        List<String> musicStile = new ArrayList<>();
+        private List<String> musicStile;
+        private MusicStyle (List<String> musicStile) {
+            this.musicStile = musicStile;
+        }
+
+
         musicStile.add("Song of Silents");
         musicStile.add("Invaders must die");
         musicStile.add("Mutter");
