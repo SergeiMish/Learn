@@ -14,6 +14,7 @@ public class RockMusic implements Music {
         musicStile.add("Song of Silents");
         musicStile.add("Invaders must die");
         musicStile.add("Mutter");
+
         Random random = new Random();
         return musicStile.get(random.nextInt(musicStile.size()));
     }
