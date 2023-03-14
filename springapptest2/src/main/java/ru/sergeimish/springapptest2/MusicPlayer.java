@@ -1,6 +1,5 @@
 package ru.sergeimish.springapptest2;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
@@ -17,11 +16,16 @@ public class MusicPlayer {
     }
     private ClassicalMusic classicalMusic;
     private RockMusic rockMusic;
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+
+    private RapMusic rapMusic;
+
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, RapMusic rapMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
-
+        this.rapMusic = rapMusic;
     }
+
+
 
     public void playMusic(MusicStyle style){
         Random random = new Random();

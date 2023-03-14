@@ -16,7 +16,11 @@ public class SpringConfig {
     public ClassicalMusic classicalMusic(){
         return new ClassicalMusic();
     }
+    @Bean
+    public  RapMusic rapMusic(){
+        return new RapMusic();
+    }
     @Bean MusicPlayer musicPlayer(){
-    return new MusicPlayer(classicalMusic(), rockMusic());
+    return new MusicPlayer(classicalMusic(), rockMusic(), rapMusic());
     }
 }
