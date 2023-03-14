@@ -4,11 +4,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-@Component
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
     private String name;
-    @Value("45")
+    @Value("${musicPlayer.volume}")
     private int volume;
     public String getName() {
         return name;
