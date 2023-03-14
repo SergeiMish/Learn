@@ -3,12 +3,17 @@ package ru.sergeimish.springapptest2;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 @Scope("prototype")
 public class ClassicalMusic implements Music {
+@PostConstruct
+    public void doMyInit(){
+        System.out.println("Do my init");
+    }
     private List<String> classicalSongs = new ArrayList<>();
 
     {
