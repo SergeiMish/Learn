@@ -14,8 +14,12 @@ public class Main {
             int mid = low + ((high - low)/2);
             if (table[mid] < key) {
                 low = mid + 1;
-            }else if
+            }else if (table[mid] > key){
+                high = mid - 1;
+            }else  if (table[mid] == key){
+
             }
+
         }
         }
 }
