@@ -10,9 +10,8 @@ public class Main {
         for (int i=0; i <10; i++){
             table.add(i);
         }
-        System.out.println(table);
-        table.toArray(new Inte)
-    }
-    int index = Arrays.binarySearch()
 
+        int index = Arrays.binarySearch(new List[]{table}, 5);
+        System.out.println(table);
+    }
 }
