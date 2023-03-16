@@ -19,9 +19,8 @@ public class Main {
                 high = mid - 1;
             }else  if (table[mid] == key){
             }index = mid;
-            break;
-
-        }w
+        }
+        System.out.println(index);
         }
 
 }
