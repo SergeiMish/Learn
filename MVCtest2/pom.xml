@@ -8,7 +8,7 @@
   <name>MVCtest2 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-
+    <spring-vesion>5.2.1.RELEASE</spring-vesion>
     <maven.compiler.source>18</maven.compiler.source>
     <maven.compiler.target>18</maven.compiler.target>
   </properties>
