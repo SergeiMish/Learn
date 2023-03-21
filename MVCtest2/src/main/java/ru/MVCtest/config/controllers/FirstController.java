@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class FirstController {
     @GetMapping("/hello")
     public String helloPage(){
-
+    return "first/hello";
     }
     @GetMapping("/goodbye")
     public String goodByePage(){
-
+    return "first/goodBye";
     }
 
 }
