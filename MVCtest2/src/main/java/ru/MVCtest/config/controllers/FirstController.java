@@ -9,5 +9,9 @@ public class FirstController {
     public String helloPage(){
 
     }
+    @GetMapping
+    public String gooodByePage(){
+
+    }
 
 }
