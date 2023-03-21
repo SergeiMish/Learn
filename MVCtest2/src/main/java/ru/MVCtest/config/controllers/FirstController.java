@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class FirstController {
-    @GetMapping
+    @GetMapping("/hello")
     public String helloPage(){
 
     }
-    @GetMapping
-    public String gooodByePage(){
+    @GetMapping("/goodbye")
+    public String goodByePage(){
 
     }
 
