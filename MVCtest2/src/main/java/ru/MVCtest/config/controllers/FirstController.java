@@ -12,6 +12,9 @@ public class FirstController {
     @GetMapping("/hello")
     public String helloPage(HttpServletRequest request) {
         String name = request.getParameter("name");
+        String surname = request.getParameter("surname");
+
+        System.out.println("Hello" + name + " " + surname);
 
         return "first/hello";
     }
