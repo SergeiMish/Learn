@@ -19,7 +19,7 @@ public class FirstController {
         return "first/hello";
     }
 
-    @GetMapping("/goodbye")
+    @GetMapping("/goodbye")resolver.setCharacterEncoding("UTF-8");
     public String goodByePage() {
         return "first/goodbye";
     }
