@@ -11,5 +11,8 @@ public class Main {
 
         System.out.println("Original array " + Arrays.toString(array));
 
+        for (int i = array.length; i > IndexPoison; i--){
+
+        }
     }
 }
