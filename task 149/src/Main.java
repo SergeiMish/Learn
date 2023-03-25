@@ -12,7 +12,9 @@ public class Main {
         System.out.println("Original array " + Arrays.toString(array));
 
         for (int i = array.length; i > IndexPoison; i--){
-
+            array[i] = array[i-1];}
+        array[IndexPoison] = newValue;
+        System.out.println("New Array " + Arrays.toString(array));
         }
     }
 }
