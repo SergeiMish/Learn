@@ -16,5 +16,7 @@ public class Main {
 
         array[IndexPoison] = newValue;
         System.out.println("New Array " + Arrays.toString(array));
-        }
+        array.r
+
+    }
     }
