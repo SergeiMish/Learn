@@ -26,6 +26,8 @@ public class Main {
         int item = 5;
         array = removeElement(array, item);
 
+        System.out.println("Array remove " + Arrays.toString(array));
+
 
     }
     }
