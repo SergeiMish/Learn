@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Main {
 
         array[IndexPoison] = newValue;
         System.out.println("New Array " + Arrays.toString(array));
-        array.r
-
     }
+    public static int[] removeElement(int[] )
+
     }
