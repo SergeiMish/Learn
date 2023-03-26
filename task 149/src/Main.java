@@ -21,6 +21,7 @@ public class Main {
     public static int[] removeElement(int[] array, int item){
         return Arrays.stream(array)
                 .filter(i -> i != item)
+                .toArray();
     }
 
     }
