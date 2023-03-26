@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+    public static int[] removeElement(int[] array, int item) {
+        return Arrays.stream(array)
+                .filter(i -> i != item)
+                .toArray();
+    }
     public static void main(String[] args) {
 
        int [] array = {1, 2, 3, 4, 15, 17, 18, 22, 33};
@@ -17,11 +22,10 @@ public class Main {
 
         array[IndexPoison] = newValue;
         System.out.println("New Array " + Arrays.toString(array));
-    }
-    public static int[] removeElement(int[] array, int item){
-        return Arrays.stream(array)
-                .filter(i -> i != item)
-                .toArray();
-    }
 
+        int item = 5;
+        array = removeElement(array, item);
+
+
+    }
     }
