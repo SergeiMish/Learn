@@ -18,6 +18,9 @@ public class Main {
         array[IndexPoison] = newValue;
         System.out.println("New Array " + Arrays.toString(array));
     }
-    public static int[] removeElement(int[] )
+    public static int[] removeElement(int[] array, int item){
+        return Arrays.stream(array)
+                .filter(i -> i != item)
+    }
 
     }
