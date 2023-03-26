@@ -13,6 +13,7 @@ public class Main {
 
         for (int i = array.length - 1; i > IndexPoison; i--){
             array[i] = array[i-1];}
+
         array[IndexPoison] = newValue;
         System.out.println("New Array " + Arrays.toString(array));
         }
