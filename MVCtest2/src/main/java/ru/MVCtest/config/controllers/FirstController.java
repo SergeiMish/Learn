@@ -16,7 +16,7 @@ public class FirstController {
 
 
 
-        System.out.println("Hello" + name + " " + surname);
+        System.out.println("Hello " + name + " " + surname);
 
         return "first/hello";
     }
