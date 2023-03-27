@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FirstController {
 
     @GetMapping("/hello")
-    public String helloPage(HttpServletRequest request) {
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
+    public String helloPage() {
+
 
 
         System.out.println("Hello" + name + " " + surname);
