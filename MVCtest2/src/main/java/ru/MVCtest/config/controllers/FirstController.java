@@ -26,6 +26,7 @@ public class FirstController {
     public String calculator(@RequestParam(value = "A", required = false)String a,
                              @RequestParam(value = "B", required = false) String b,
                              Model model2) {
+        model2.addAttribute("number", "action ");
         return "first/calculator";
     }
 
