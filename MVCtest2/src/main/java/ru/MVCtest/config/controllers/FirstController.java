@@ -23,10 +23,8 @@ public class FirstController {
         return "first/hello";
     }
     @GetMapping("/calculator")
-    public String calculator(@RequestParam(value = "A", required = false)String a,
-                             @RequestParam(value = "B", required = false) String b,
-                             Model model2) {
-        model2.addAttribute("number", "action ");
+    public String calculator(@RequestParam("a") int a, @RequestParam("b") int b,
+                             @RequestParam ("action") String action) {
         return "first/calculator";
     }
 
