@@ -39,7 +39,7 @@ public class FirstController {
                 result = a * b;
                 break;
             case "Division":
-                result = a / b;
+                result = a / (double)b;
                 break;
             }
         }
