@@ -22,6 +22,12 @@ public class FirstController {
         model.addAttribute("message","Hello " + name + " " + surname);
         return "first/hello";
     }
+    @GetMapping("/calculator")
+    public String calculator(@RequestParam(value = "A", required = false)String a,
+                             @RequestParam(value = "B", required = false) String b,
+                             Model model2) {
+        return "first/calculator";
+    }
 
     @GetMapping("/goodbye")
     public String goodByePage() {
