@@ -29,8 +29,18 @@ public class FirstController {
         double result;
 
         switch (action){
-            case("Addition"){
+            case"Addition":
                 result = a + b;
+                break;
+            case "Subtraction":
+                result = a - b;
+                break;
+            case "Multiplication":
+                result = a * b;
+                break;
+            case "Division":
+                result = a / b;
+                break;
             }
         }
 
