@@ -41,12 +41,14 @@ public class FirstController {
             case "Division":
                 result = a / (double)b;
                 break;
+            default:
+                result = 0;
+                break;
             }
+            model.addAttribute("result", result);
+
+            return "";
         }
-
-        return "first/calculator";
-    }
-
     @GetMapping("/goodbye")
     public String goodByePage() {
         return "first/goodbye";
