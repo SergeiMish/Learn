@@ -1,6 +1,6 @@
 package ru.MVCtest.config.controllers;
 
-import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +21,10 @@ public class FirstController {
 //        System.out.println("Hello " + name + " " + surname);
         model.addAttribute("message","Hello " + name + " " + surname);
         return "first/hello";
+    }
+    @GetMapping("/goodbye")
+    public String goodByePage() {
+        return "first/goodbye";
     }
     @GetMapping("/calculator")
     public String calculator(@RequestParam("a") int a, @RequestParam("b") int b,
@@ -44,13 +48,9 @@ public class FirstController {
             default:
                 result = 0;
                 break;
-            }
-            model.addAttribute("result", result);
-
-            return "first/calculator";
         }
-    @GetMapping("/goodbye")
-    public String goodByePage() {
-        return "first/goodbye";
+        model.addAttribute("result", result);
+
+        return "first/calculator";
     }
 }
