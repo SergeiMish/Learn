@@ -47,7 +47,7 @@ public class FirstController {
             }
             model.addAttribute("result", result);
 
-            return "";
+            return "first/calculator";
         }
     @GetMapping("/goodbye")
     public String goodByePage() {
