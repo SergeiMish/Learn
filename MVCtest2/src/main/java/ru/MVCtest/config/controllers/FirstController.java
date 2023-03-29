@@ -47,7 +47,6 @@ public class FirstController {
                 break;
             default:
                 result = 0;
-                break;
         }
         model.addAttribute("result", result);
 
