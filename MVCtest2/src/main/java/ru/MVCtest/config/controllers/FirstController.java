@@ -54,7 +54,9 @@ public class FirstController {
         return "first/calculator";
     }
     @GetMapping("/some")
-    public String some(){
+    public String some() {
+
+
         return "/first/some";
     }
 }
