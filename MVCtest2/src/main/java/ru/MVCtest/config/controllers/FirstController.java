@@ -27,8 +27,8 @@ public class FirstController {
         return "first/goodbye";
     }
     @GetMapping("/calculator")
-    public String calculator(@RequestParam("a") int a, @RequestParam("b") int b,
-                             @RequestParam ("action") String action, Model model) {
+    public String calculator (@RequestParam (" a") int a, @RequestParam(" b") int b,
+                             @RequestParam (" action") String action, Model model) {
 
         double result;
 
