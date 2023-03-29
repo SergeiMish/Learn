@@ -29,7 +29,7 @@ public class FirstController {
     @GetMapping("/calculator")
     public String calculator (@RequestParam(required = false) int a,
                               @RequestParam(required = false) int b,
-                             @RequestParam ("action") String action, Model model) {
+                             @RequestParam("action") String action, Model model) {
 
         double result;
 
