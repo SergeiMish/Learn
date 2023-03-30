@@ -15,5 +15,7 @@ public class PeopleController {
         return null;
     }
     @GetMapping("/{id}")
-    public String show(@PathVariable ("id") int id)
+    public String show(@PathVariable ("id") int id, Model model){
+        return null;
+    }
 }
