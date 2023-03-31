@@ -12,6 +12,7 @@ public class PersonDao {
         people = new ArrayList<>();
         people.add(new Person(1, "Jack"));
         people.add(new Person(2, "Nikolas"));
+        people.add(new Person(3, "Mike"));
     }
 
 }
