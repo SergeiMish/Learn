@@ -1,10 +1,11 @@
 package ru.MVCtest4.dao;
 
+import org.springframework.stereotype.Component;
 import ru.MVCtest4.models.Person;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class PersonDao {
     private List<Person> people;
     private static int PEOPLE_COUNT;
