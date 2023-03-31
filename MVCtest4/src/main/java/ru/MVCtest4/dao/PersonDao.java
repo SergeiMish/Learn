@@ -19,4 +19,8 @@ public class PersonDao {
         public List<Person> index(){
         return people;
     }
+    public Person show (int id){
+
+    }
+
 }
