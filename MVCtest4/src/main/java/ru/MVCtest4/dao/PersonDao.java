@@ -10,6 +10,7 @@ public class PersonDao {
 
     {
         people = new ArrayList<>();
+        people.add(new Person(1, "Jack"));
 
     }
 
