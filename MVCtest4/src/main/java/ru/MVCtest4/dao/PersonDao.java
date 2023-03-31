@@ -7,12 +7,16 @@ import java.util.List;
 
 public class PersonDao {
     private List<Person> people;
+    private static int PEOPLE_COUNT;
 
     {
         people = new ArrayList<>();
-        people.add(new Person(1, "Jack"));
-        people.add(new Person(2, "Nikolas"));
-        people.add(new Person(3, "Mike"));
+        people.add(new Person(PEOPLE_COUNT++, "Jack"));
+        people.add(new Person(PEOPLE_COUNT++, "Nikolas"));
+        people.add(new Person(PEOPLE_COUNT++, "Mike"));
+        people.add(new Person(PEOPLE_COUNT++, "Marry"));
     }
-
+        public List<Person> index(){
+        return people;
+    }
 }
