@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/people")
 public class PeopleController {
 
+
+
     @GetMapping
     public String index(Model model){
         return null;
