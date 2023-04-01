@@ -1,5 +1,6 @@
 package ru.MVCtest4.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +11,11 @@ import ru.MVCtest4.dao.PersonDao;
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
+    private final PersonDao personDao;
 
-    private PersonDao personDao;
+    public PeopleController(PersonDao personDao) {
+        this.personDao = personDao;
+    }
 
     @GetMapping
     public String index(Model model){
