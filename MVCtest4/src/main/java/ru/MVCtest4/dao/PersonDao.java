@@ -11,7 +11,7 @@ public class PersonDao {
     private static int PEOPLE_COUNT;
 
     {
-        people = new ArrayList<>();
+
         people.add(new Person(PEOPLE_COUNT++, "Jack"));
         people.add(new Person(PEOPLE_COUNT++, "Nikolas"));
         people.add(new Person(PEOPLE_COUNT++, "Mike"));
