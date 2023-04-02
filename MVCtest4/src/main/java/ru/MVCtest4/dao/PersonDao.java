@@ -7,10 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 @Component
 public class PersonDao {
-    private List<Person> people;
+    private final List<Person> people;
     private static int PEOPLE_COUNT;
     public PersonDao(List<Person> people)
     { this.people = people;
+        people = new ArrayList<>();
         people.add(new Person(PEOPLE_COUNT++, "Jack"));
         people.add(new Person(PEOPLE_COUNT++, "Nikolas"));
         people.add(new Person(PEOPLE_COUNT++, "Mike"));
