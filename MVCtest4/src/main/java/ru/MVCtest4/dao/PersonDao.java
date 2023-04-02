@@ -9,9 +9,8 @@ import java.util.List;
 public class PersonDao {
     private List<Person> people;
     private static int PEOPLE_COUNT;
-
-    {
-
+    public PersonDao(List<Person> people)
+    { this.people = people;
         people.add(new Person(PEOPLE_COUNT++, "Jack"));
         people.add(new Person(PEOPLE_COUNT++, "Nikolas"));
         people.add(new Person(PEOPLE_COUNT++, "Mike"));
