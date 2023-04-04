@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.MVCtest4.dao.PersonDao;
+import ru.MVCtest4.models.Person;
 
 @Controller
 @RequestMapping("/people")
@@ -28,7 +29,8 @@ public class PeopleController {
         return "people/show";
     }
     @GetMapping("/new")
-    public String newPerson(){
+    public String newPerson(Model model){
+        model.addAttribute("person", new Person());
     return "people/new";
     }
 }
