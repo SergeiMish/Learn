@@ -24,6 +24,6 @@ public class PersonDao {
         return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
         public void save (Person person){
-        people.add(person)
+        people.add(person);
         }
 }
