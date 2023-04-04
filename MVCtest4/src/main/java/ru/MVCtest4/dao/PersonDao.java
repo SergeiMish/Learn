@@ -12,10 +12,10 @@ public class PersonDao {
     public PersonDao(List<Person> people)
     { this.people = people;
         people = new ArrayList<>();
-        people.add(new Person(PEOPLE_COUNT++, "Jack"));
-        people.add(new Person(PEOPLE_COUNT++, "Nikolas"));
-        people.add(new Person(PEOPLE_COUNT++, "Mike"));
-        people.add(new Person(PEOPLE_COUNT++, "Marry"));
+        people.add(new Person(++PEOPLE_COUNT, "Jack"));
+        people.add(new Person(++PEOPLE_COUNT, "Nikolas"));
+        people.add(new Person(++PEOPLE_COUNT, "Mike"));
+        people.add(new Person(++PEOPLE_COUNT, "Marry"));
     }
         public List<Person> index(){
         return people;
@@ -24,6 +24,7 @@ public class PersonDao {
         return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
         public void save (Person person){
+        person.setId(++PEOPLE_COUNT);
         people.add(person);
         }
 }
