@@ -27,4 +27,7 @@ public class PeopleController {
         model.addAttribute("person", personDao.show(id));
         return "people/show";
     }
+    public String newPerson(){
+
+    }
 }
