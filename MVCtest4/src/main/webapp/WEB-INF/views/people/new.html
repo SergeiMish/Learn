@@ -7,7 +7,7 @@
 <body>
 
 <form th:metod="POST" th:action="@{/people}" th:object="${person}">
-    <input type="text">
+    <input type="text" th:field="*{name}">
 </form>
 
 </body>
