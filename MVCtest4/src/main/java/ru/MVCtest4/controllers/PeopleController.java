@@ -36,4 +36,6 @@ public class PeopleController {
         personDao.save(person);
         return "redirect:/people";
     }
+    @GetMapping("/{id}/edit")
+
 }
