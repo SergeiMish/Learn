@@ -39,5 +39,6 @@ public class PeopleController {
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id){
         model.addAttribute("person", personDao.show(id));
+        return "people/edit";
     }
 }
