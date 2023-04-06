@@ -37,5 +37,7 @@ public class PeopleController {
         return "redirect:/people";
     }
     @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id){
 
+    }
 }
