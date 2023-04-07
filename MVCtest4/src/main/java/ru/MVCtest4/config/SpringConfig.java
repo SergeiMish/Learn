@@ -17,8 +17,7 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 @ComponentScan("ru.MVCtest4")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
-
-
+    
     private final ApplicationContext applicationContext;
 
     @Autowired
