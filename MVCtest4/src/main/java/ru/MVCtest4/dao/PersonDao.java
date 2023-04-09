@@ -18,6 +18,7 @@ public class PersonDao {
         people.add(new Person(++PEOPLE_COUNT, "Marry"));
     }
 
+
         public List<Person> index(){
         return people;
     }
