@@ -42,4 +42,7 @@ public class PeopleController {
         return "people/edit";
     }
     @PatchMapping("/{id}")
+    public String update(@ModelAttribute){
+
+    }
 }
