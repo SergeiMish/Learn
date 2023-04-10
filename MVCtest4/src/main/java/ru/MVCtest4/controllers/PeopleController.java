@@ -41,4 +41,5 @@ public class PeopleController {
         model.addAttribute("person", personDao.show(id));
         return "people/edit";
     }
+    @PatchMapping("/{id}")
 }
