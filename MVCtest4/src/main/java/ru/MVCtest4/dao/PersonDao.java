@@ -30,6 +30,6 @@ public class PersonDao {
 
         public void update(int id, Person updatePerson){
         Person personToBeUpdated = show(id);
-
+        personToBeUpdated.setName(updatePerson.getName());
         }
 }
