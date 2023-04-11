@@ -11,5 +11,7 @@ public class Main {
                 }
                 else if (arr[middleIndex] < elementToSearch)
                     firstIndex = middleIndex + 1;
+                else if (arr[middleIndex] > elementToSearch)
+                    lastIndex = middleIndex - 1;
     }
 }
