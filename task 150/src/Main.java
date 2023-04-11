@@ -6,5 +6,8 @@ public class Main {
             int lastIndex = arr.length - 1;
             while(firstIndex <= lastIndex) {
                 int middleIndex = (firstIndex + lastIndex) / 2;
+                if (arr[middleIndex] == elementToSearch) {
+                    return middleIndex;
+                }
     }
 }
