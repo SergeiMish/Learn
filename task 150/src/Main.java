@@ -6,7 +6,6 @@ public class Main {
                 return mid;
             if (arr[mid] > elementToSearch)
                 return recursiveBinarySearch(arr, firstElement, mid - 1, elementToSearch);
-
             return recursiveBinarySearch(arr, mid + 1, lastElement, elementToSearch);
         }
         return -1;
