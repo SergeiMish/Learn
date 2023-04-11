@@ -9,5 +9,7 @@ public class Main {
                 if (arr[middleIndex] == elementToSearch) {
                     return middleIndex;
                 }
+                else if (arr[middleIndex] < elementToSearch)
+                    firstIndex = middleIndex + 1;
     }
 }
