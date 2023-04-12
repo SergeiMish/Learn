@@ -1,5 +1,6 @@
 package ru.MVCtest4.config;
 
+import jakarta.servlet.FilterRegistration;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -28,6 +29,9 @@ public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationC
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
+        FilterRegistration.Dynamic filterRegistration = aServletContext
+                .addFilter("characterEncodingFilter", characterEncodingFilter);
+        filterRegistration.addMappingForUrlPatterns(null, false, "/*");
     }
     private void registerHiddenFieldFilter(ServletContext aContext) {
         aContext.addFilter("hiddenHttpMethodFilter",
