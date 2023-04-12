@@ -22,4 +22,6 @@ public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationC
         super.onStartup(aServletContext);
         registerHiddenFieldFilter(aServletContext);
     }
+    private void registerHiddenFieldFilter(ServletContext aContext) {
+        aContext.addFilter("hiddenHttpMethodFilter",
 }
