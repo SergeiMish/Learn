@@ -36,7 +36,6 @@ public class PeopleController {
         personDao.save(person);
         return "redirect:/people";
     }
-
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id){
         model.addAttribute("person", personDao.show(id));
