@@ -41,6 +41,7 @@ public class PeopleController {
         model.addAttribute("person", personDao.show(id));
         return "people/edit";
     }
+
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("person") Person person, @PathVariable("id") int id){
     personDao.update (id, person);
