@@ -47,7 +47,7 @@ public class PeopleController {
     return "redirect:/people";
     }
     @DeleteMapping("/{id}")
-    public String delete(){
+    public String delete(@PathVariable("id")int id){
 
     }
 }
