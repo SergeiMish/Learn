@@ -10,6 +10,6 @@
 <p th:text="${person.getName}">VALUE</p>
 <p th:text="${person.getId}">VALUE</p>
 
-<a th:href="@{/people/{id}/edit(id=${person.getId}"></a>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})"></a>
 </body>
 </html>
