@@ -46,7 +46,7 @@ public class PeopleController {
     personDao.update (id, person);
     return "redirect:/people";
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public String delete(){
 
     }
