@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymleaf.org">
+<html lang="en" xmlns:th="http://thymleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://thymleaf.org ">
 <head>
     <meta charset="UTF-8">
     <title>Человек</title>
@@ -9,6 +10,6 @@
 <p th:text="${person.getName}">VALUE</p>
 <p th:text="${person.getId}">VALUE</p>
 
-<a th:href="@{/p}"></a>
+<a th:href="@{/people/{id}/edit(id=${person.getId}"></a>
 </body>
 </html>
