@@ -1,7 +1,10 @@
 package ru.MVCtest4.models;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class Person {
     private int id;
+    @NotEmpty
     private String name;
     private int age;
     private String email;
