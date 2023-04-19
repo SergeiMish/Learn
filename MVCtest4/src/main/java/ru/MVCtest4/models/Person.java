@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 public class Person {
     private int id;
-    @NotEmpty
+    @NotEmpty(message = "Name shout not be empty")
     private String name;
     private int age;
     private String email;
