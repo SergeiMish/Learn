@@ -12,6 +12,7 @@ public class PersonDAO {
 
     {
         people = new ArrayList<>();
+
         people.add(new Person(++PEOPLE_COUNT, "Tom", 24, "tom@mail.ru"));
         people.add(new Person(++PEOPLE_COUNT, "Bob", 52, "bob@mail.ru"));
         people.add(new Person(++PEOPLE_COUNT, "Mike", 18, "mike@yahoo.com"));
