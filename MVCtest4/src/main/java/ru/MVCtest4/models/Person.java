@@ -11,7 +11,6 @@ public class Person {
     private String name;
     @Min(value = 0, message = "Age should be greater than 0")
     private int age;
-
     private String email;
 
     public Person() {
