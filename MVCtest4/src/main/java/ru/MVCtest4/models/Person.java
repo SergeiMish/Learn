@@ -1,5 +1,6 @@
 package ru.MVCtest4.models;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -12,6 +13,7 @@ public class Person {
     @Min(value = 0, message = "Age should be greater than 0")
     private int age;
     @NotEmpty(message = "Em@il should not be empty")
+    @Email(message = "Em@il should be valid")
     private String email;
     public Person() {
     }
