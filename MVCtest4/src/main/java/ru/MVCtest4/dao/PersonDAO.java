@@ -38,6 +38,7 @@ public class PersonDAO {
         personToBeUpdated.setAge(updatedPerson.getAge());
         personToBeUpdated.setEmail(updatedPerson.getEmail());
     }
+
     public void delete(int id) {
         people.removeIf(p -> p.getId() == id);
     }
