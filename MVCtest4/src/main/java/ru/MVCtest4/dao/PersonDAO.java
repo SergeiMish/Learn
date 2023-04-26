@@ -28,6 +28,7 @@ public class PersonDAO {
     public void save(Person person) {
         person.setId(++PEOPLE_COUNT);
         people.add(person);
+
     }
     public void update(int id, Person updatedPerson) {
         Person personToBeUpdated = show(id);
