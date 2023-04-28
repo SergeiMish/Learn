@@ -24,6 +24,7 @@ public class PeopleController {
         model.addAttribute("people", personDAO.index());
         return "people/index";
     }
+
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDAO.show(id));
