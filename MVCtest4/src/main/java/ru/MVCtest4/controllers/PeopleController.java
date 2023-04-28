@@ -35,7 +35,7 @@ public class PeopleController {
     public String newPerson(@ModelAttribute("person") Person person) {
         return "people/new";
     }
-    
+
     @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person,
                          BindingResult bindingResult) {
@@ -45,6 +45,7 @@ public class PeopleController {
         personDAO.save(person);
         return "redirect:/people";
     }
+
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("person", personDAO.show(id));
