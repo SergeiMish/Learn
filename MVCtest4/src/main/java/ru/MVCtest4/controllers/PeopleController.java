@@ -35,7 +35,6 @@ public class PeopleController {
     public String newPerson(@ModelAttribute("person") Person person) {
         return "people/new";
     }
-
     @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person,
                          BindingResult bindingResult) {
