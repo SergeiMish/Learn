@@ -24,13 +24,14 @@ public class PeopleController {
         return "people/index";
     }
 
+    
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDAO.show(id));
         return "people/show";
     }
 
-    
+
     @GetMapping("/new")
     public String newPerson(@ModelAttribute("person") Person person) {
         return "people/new";
