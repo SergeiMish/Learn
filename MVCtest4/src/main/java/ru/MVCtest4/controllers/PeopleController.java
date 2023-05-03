@@ -46,7 +46,6 @@ public class PeopleController {
         model.addAttribute("person", personDAO.show(id));
         return "people/edit";
     }
-
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("person")@Valid Person person, BindingResult bindingResult,
                          @PathVariable("id") int id) {
