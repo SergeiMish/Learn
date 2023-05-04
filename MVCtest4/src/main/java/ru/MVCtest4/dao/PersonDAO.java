@@ -30,11 +30,11 @@ public class PersonDAO {
 
     }
     public void update(int id, Person updatedPerson) {
-        Person personToBeUpdated = show(id);
-
-        personToBeUpdated.setName(updatedPerson.getName());
-        personToBeUpdated.setAge(updatedPerson.getAge());
-        personToBeUpdated.setEmail(updatedPerson.getEmail());
+//        Person personToBeUpdated = show(id);
+//
+//        personToBeUpdated.setName(updatedPerson.getName());
+//        personToBeUpdated.setAge(updatedPerson.getAge());
+//        personToBeUpdated.setEmail(updatedPerson.getEmail());
     }
     public void delete(int id) {
         people.removeIf(p -> p.getId() == id);
