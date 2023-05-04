@@ -4,6 +4,8 @@ import com.sun.jdi.connect.spi.Connection;
 import org.springframework.stereotype.Component;
 import ru.MVCtest4.models.Person;
 
+import java.sql.Driver;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 @Component
@@ -21,6 +23,7 @@ public class PersonDAO {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        connection  = DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
     private List<Person> people;
     {
