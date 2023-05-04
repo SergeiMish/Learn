@@ -1,5 +1,6 @@
 package ru.MVCtest4.dao;
 
+import com.sun.jdi.connect.spi.Connection;
 import org.springframework.stereotype.Component;
 import ru.MVCtest4.models.Person;
 
@@ -13,7 +14,7 @@ public class PersonDAO {
     private static final String USERNAME = "postgres";
     private static final String PASSWORD = "postgres";
 
-
+    private static Connection connection;
     private List<Person> people;
     {
         people = new ArrayList<>();
@@ -27,7 +28,6 @@ public class PersonDAO {
         return people;
     }
     public Person show(int id) {
-
 //        return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
     public void save(Person person) {
