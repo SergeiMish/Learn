@@ -15,6 +15,13 @@ public class PersonDAO {
     private static final String PASSWORD = "postgres";
 
     private static Connection connection;
+    static {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
     private List<Person> people;
     {
         people = new ArrayList<>();
