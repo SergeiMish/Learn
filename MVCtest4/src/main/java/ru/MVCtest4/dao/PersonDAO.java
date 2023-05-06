@@ -29,7 +29,6 @@ public class PersonDAO {
 
 
 
-    
     {
         people = new ArrayList<>();
 
