@@ -26,7 +26,6 @@ public class PersonDAO {
         connection  = DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 
-    
     private List<Person> people;
     {
         people = new ArrayList<>();
