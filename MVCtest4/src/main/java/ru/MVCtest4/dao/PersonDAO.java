@@ -12,7 +12,6 @@ import java.util.List;
 public class PersonDAO {
     private static int PEOPLE_COUNT;
 
-
     private static final String URL = "jdbc:postgresql://localhost:5432/first_db";
     private static final String USERNAME = "postgres";
     private static final String PASSWORD = "postgres";
