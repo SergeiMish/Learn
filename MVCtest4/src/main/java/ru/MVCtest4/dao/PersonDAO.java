@@ -58,6 +58,7 @@ public class PersonDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return people;
     }
     public Person show(int id) {
 //        return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
