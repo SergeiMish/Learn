@@ -49,7 +49,8 @@ public class PersonDAO {
 
                 person.setId(resultSet.getInt("id"));
                 person.setName(resultSet.getString("name"));
-
+                person.setEmail(resultSet.getString("email"));
+                person.setAge(resultSet.getInt("age"));
             }
 
         } catch (SQLException e) {
