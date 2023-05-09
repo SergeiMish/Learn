@@ -1,11 +1,11 @@
 package ru.MVCtest4.dao;
 
-import com.sun.jdi.connect.spi.Connection;
 import org.springframework.stereotype.Component;
 import ru.MVCtest4.models.Person;
 
-import java.sql.Driver;
+import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 @Component
@@ -23,7 +23,11 @@ public class PersonDAO {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        connection  = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        try {
+            connection  = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     private List<Person> people;
     {
