@@ -44,6 +44,11 @@ public class PersonDAO {
             String SQL = "SELECT * FROM person";
             ResultSet resultSet = statement.executeQuery(SQL);
 
+            while (resultSet.next()){
+                Person person = new Person();
+
+            }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
