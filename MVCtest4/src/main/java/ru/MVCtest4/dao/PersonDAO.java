@@ -47,6 +47,7 @@ public class PersonDAO {
             while (resultSet.next()){
                 Person person = new Person();
 
+                person.setId(resultSet.getInt("id"));
             }
 
         } catch (SQLException e) {
