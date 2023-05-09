@@ -3,10 +3,7 @@ package ru.MVCtest4.dao;
 import org.springframework.stereotype.Component;
 import ru.MVCtest4.models.Person;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 @Component
@@ -45,7 +42,7 @@ public class PersonDAO {
         try {
             Statement statement = connection.createStatement();
             String SQL = "SELECT * FROM person";
-            statement.executeQuery(SQL);
+            ResultSet resultSet = statement.executeQuery(SQL);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
