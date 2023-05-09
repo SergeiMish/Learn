@@ -6,6 +6,7 @@ import ru.MVCtest4.models.Person;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 @Component
@@ -39,7 +40,9 @@ public class PersonDAO {
         people.add(new Person(++PEOPLE_COUNT, "Katy", 34, "katy@gmail.com"));
     }
     public List<Person> index() {
-        return people;
+
+        List <Person> people = new ArrayList<>();
+        Statement statement = connection.createStatement();
     }
     public Person show(int id) {
 //        return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
