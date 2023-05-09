@@ -41,7 +41,7 @@ public class PersonDAO {
         List <Person> people = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            String SQL = "SELECT * FROM person";
+            String SQL = "select * from first_db.person";
             ResultSet resultSet = statement.executeQuery(SQL);
 
             while (resultSet.next()){
