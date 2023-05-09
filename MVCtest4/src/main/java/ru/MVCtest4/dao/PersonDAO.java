@@ -42,7 +42,12 @@ public class PersonDAO {
     public List<Person> index() {
 
         List <Person> people = new ArrayList<>();
-        Statement statement = connection.createStatement();
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "SELECT * FROM person";
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     public Person show(int id) {
 //        return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
