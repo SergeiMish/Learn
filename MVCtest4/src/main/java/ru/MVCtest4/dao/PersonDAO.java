@@ -48,6 +48,8 @@ public class PersonDAO {
                 Person person = new Person();
 
                 person.setId(resultSet.getInt("id"));
+                person.setName(resultSet.getString("name"));
+
             }
 
         } catch (SQLException e) {
