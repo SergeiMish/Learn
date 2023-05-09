@@ -45,6 +45,8 @@ public class PersonDAO {
         try {
             Statement statement = connection.createStatement();
             String SQL = "SELECT * FROM person";
+            statement.executeQuery(SQL);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
