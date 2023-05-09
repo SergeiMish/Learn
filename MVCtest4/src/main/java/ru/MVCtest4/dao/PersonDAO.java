@@ -51,6 +51,8 @@ public class PersonDAO {
                 person.setName(resultSet.getString("name"));
                 person.setEmail(resultSet.getString("email"));
                 person.setAge(resultSet.getInt("age"));
+
+                people.add(person);
             }
 
         } catch (SQLException e) {
