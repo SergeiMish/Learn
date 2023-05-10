@@ -27,6 +27,7 @@ public class PersonDAO {
             throw new RuntimeException(e);
         }
     }
+
     private List<Person> people;
     {
         people = new ArrayList<>();
