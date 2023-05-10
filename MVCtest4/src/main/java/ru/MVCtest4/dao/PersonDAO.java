@@ -55,7 +55,6 @@ public class PersonDAO {
                 people.add(person);
             }
 
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
