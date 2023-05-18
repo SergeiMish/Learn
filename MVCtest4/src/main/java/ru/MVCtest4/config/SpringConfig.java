@@ -37,6 +37,8 @@ public class SpringConfig implements WebMvcConfigurer {
 
 
 
+    
+
     @Bean
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
