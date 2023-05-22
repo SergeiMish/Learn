@@ -34,7 +34,6 @@ public class SpringConfig implements WebMvcConfigurer {
         templateResolver.setSuffix(".html");
         return templateResolver;
     }
-    
 
 
     @Bean
