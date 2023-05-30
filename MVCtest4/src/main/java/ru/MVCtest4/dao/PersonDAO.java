@@ -68,7 +68,7 @@ public class PersonDAO {
 
             preparedStatement.setInt(1, id);
 
-            preparedStatement.executeQuery();
+          ResultSet resultSet = preparedStatement.executeQuery();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
