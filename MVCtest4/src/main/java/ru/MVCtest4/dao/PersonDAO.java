@@ -65,6 +65,11 @@ public class PersonDAO {
         try {
             PreparedStatement preparedStatement =
                     connection.prepareStatement("SELECT * FROM Person WHERE id = ?");
+
+            preparedStatement.setInt(1, id);
+
+            preparedStatement.executeQuery();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
