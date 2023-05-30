@@ -106,17 +106,11 @@ public class PersonDAO {
             preparedStatement.setString(1, updatedPerson.getName());
             preparedStatement.setInt(2, updatedPerson.getAge());
             preparedStatement.setString(3, updatedPerson.getEmail());
-
+            preparedStatement.setInt(4, id);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-//        Person personToBeUpdated = show(id);
-//
-//        personToBeUpdated.setName(updatedPerson.getName());
-//        personToBeUpdated.setAge(updatedPerson.getAge());
-//        personToBeUpdated.setEmail(updatedPerson.getEmail());
     }
     public void delete(int id) {
         people.removeIf(p -> p.getId() == id);
