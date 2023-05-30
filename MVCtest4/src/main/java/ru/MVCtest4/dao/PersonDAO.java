@@ -62,8 +62,12 @@ public class PersonDAO {
         return people;
     }
     public Person show(int id) {
-//        return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
-        return null;
+        try {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT * FROM Person WHERE id = ?");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void save(Person person) {
         try {
