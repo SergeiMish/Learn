@@ -76,9 +76,9 @@ public class PersonDAO {
           person = new Person();
 
           person.setId(resultSet.getInt("id"));
-          person.setName(resultSet.getString("id"));
-          person.setEmail(resultSet.getString("id"));
-          person.setAge(resultSet.getInt("id"));
+          person.setName(resultSet.getString("name"));
+          person.setEmail(resultSet.getString("email"));
+          person.setAge(resultSet.getInt("age"));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
