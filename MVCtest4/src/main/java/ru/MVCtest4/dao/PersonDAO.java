@@ -70,6 +70,8 @@ public class PersonDAO {
 
           ResultSet resultSet = preparedStatement.executeQuery();
 
+          resultSet.next();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
