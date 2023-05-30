@@ -69,6 +69,11 @@ public class PersonDAO {
         try {
             PreparedStatement preparedStatement =
                     connection.prepareStatement("INSERT INTO Person VALUES(1, ?, ?, ?)");
+
+            preparedStatement.setString(1, person.getName());
+            preparedStatement.setInt(2, person.getAge());
+
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
