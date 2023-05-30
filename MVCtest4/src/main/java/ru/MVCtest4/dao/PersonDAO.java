@@ -82,7 +82,7 @@ public class PersonDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return person;
     }
     public void save(Person person) {
         try {
