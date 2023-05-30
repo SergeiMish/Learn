@@ -72,7 +72,7 @@ public class PersonDAO {
 
             preparedStatement.setString(1, person.getName());
             preparedStatement.setInt(2, person.getAge());
-
+            preparedStatement.setString(3, person.getEmail());
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
