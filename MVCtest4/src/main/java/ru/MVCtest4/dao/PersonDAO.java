@@ -100,6 +100,8 @@ public class PersonDAO {
         }
     }
     public void update(int id, Person updatedPerson) {
+        PreparedStatement preparedStatement =
+                connection.prepareStatement();
 //        Person personToBeUpdated = show(id);
 //
 //        personToBeUpdated.setName(updatedPerson.getName());
