@@ -62,6 +62,7 @@ public class PersonDAO {
         return people;
     }
     public Person show(int id) {
+        Person person = null;
         try {
             PreparedStatement preparedStatement =
                     connection.prepareStatement("SELECT * FROM Person WHERE id = ?");
@@ -72,6 +73,12 @@ public class PersonDAO {
 
           resultSet.next();
 
+          person = new Person();
+
+          person.setId(resultSet.getInt("id"));
+          person.setName(resultSet.getString("id"));
+          person.setEmail(resultSet.getString("id"));
+          person.setAge(resultSet.getInt("id"));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
