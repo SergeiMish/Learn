@@ -28,7 +28,6 @@ public class PersonDAO {
         }
     }
 
-ъ
     private List<Person> people;
     {
         people = new ArrayList<>();
@@ -67,8 +66,8 @@ public class PersonDAO {
         return null;
     }
     public void save(Person person) {
-//        person.setId(++PEOPLE_COUNT);
-//        people.add(person);
+        PreparedStatement preparedStatement =
+                connection.prepareStatement()
     }
     public void update(int id, Person updatedPerson) {
 //        Person personToBeUpdated = show(id);
