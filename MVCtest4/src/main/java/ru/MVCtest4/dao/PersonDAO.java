@@ -66,8 +66,12 @@ public class PersonDAO {
         return null;
     }
     public void save(Person person) {
-        PreparedStatement preparedStatement =
-                connection.prepareStatement()
+        try {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("INSERT INTO Person VALUES(1, ?, ?, ?)");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void update(int id, Person updatedPerson) {
 //        Person personToBeUpdated = show(id);
