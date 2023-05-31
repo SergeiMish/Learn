@@ -113,7 +113,11 @@ public class PersonDAO {
         }
     }
     public void delete(int id) {
-        PreparedStatement preparedStatement =
-                connection.prepareStatement("DELETE FROM Person WHERE id=?");
+        try {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("DELETE FROM Person WHERE id=?");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
