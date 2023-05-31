@@ -108,6 +108,8 @@ public class PersonDAO {
             preparedStatement.setString(3, updatedPerson.getEmail());
             preparedStatement.setInt(4, id);
 
+            preparedStatement.executeUpdate();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -117,6 +119,8 @@ public class PersonDAO {
             PreparedStatement preparedStatement =
                     connection.prepareStatement("DELETE FROM Person WHERE id=?");
                 preparedStatement.setInt(1, id);
+
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
