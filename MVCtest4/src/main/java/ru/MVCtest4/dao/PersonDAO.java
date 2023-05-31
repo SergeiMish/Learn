@@ -116,6 +116,8 @@ public class PersonDAO {
         try {
             PreparedStatement preparedStatement =
                     connection.prepareStatement("DELETE FROM Person WHERE id=?");
+                preparedStatement.setInt(1, id);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
