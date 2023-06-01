@@ -13,7 +13,7 @@ public class PersonDAO {
     private final JdbcTemplate jdbcTemplate;
 
     public PersonDAO(JdbcTemplate jdbcTemplate){
-        this.jdbcTemplate
+        this.jdbcTemplate = jdbcTemplate;
     }
     private static int PEOPLE_COUNT;
 
