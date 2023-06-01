@@ -12,6 +12,8 @@ import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
+import javax.sql.DataSource;
+
 
 @Configuration
 @ComponentScan("ru.MVCtest4")
@@ -48,5 +50,9 @@ public class SpringConfig implements WebMvcConfigurer {
         resolver.setContentType("text/html; charset=UTF-8");
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
+    }
+    @Bean
+    public DataSource dataSource(){
+
     }
 }
