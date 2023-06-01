@@ -1,5 +1,6 @@
 package ru.MVCtest4.dao;
 
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.MVCtest4.models.Person;
 
@@ -8,6 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 @Component
 public class PersonDAO {
+
+    private final JdbcTemplate jdbcTemplate;
+
+    public PersonDAO(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate
+    }
     private static int PEOPLE_COUNT;
 
     private static final String URL = "jdbc:postgresql://localhost:5432/first_db";
