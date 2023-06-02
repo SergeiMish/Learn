@@ -1,6 +1,7 @@
 package ru.MVCtest4.dao;
 
-import javax.swing.tree.RowMapper;
+
+import org.springframework.jdbc.core.RowMapper;
 
 public class PersonMapper implements RowMapper {
 
