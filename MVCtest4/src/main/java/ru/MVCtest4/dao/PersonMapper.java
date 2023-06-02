@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class PersonMapper implements RowMapper<Person> {
 
     @Override
-    public Object mapRow(ResultSet resultSet, int i) throws SQLException {
+    public Person mapRow(ResultSet resultSet, int i) throws SQLException {
         Person person = new Person();
 
         person.setId(resultSet.getInt("id"));
