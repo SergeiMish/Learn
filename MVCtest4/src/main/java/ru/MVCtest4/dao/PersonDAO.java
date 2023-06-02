@@ -1,5 +1,6 @@
 package ru.MVCtest4.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.MVCtest4.models.Person;
@@ -11,39 +12,11 @@ import java.util.List;
 public class PersonDAO {
 
     private final JdbcTemplate jdbcTemplate;
-
+@Autowired
     public PersonDAO(JdbcTemplate jdbcTemplate){
         this.jdbcTemplate = jdbcTemplate;
     }
-    private static int PEOPLE_COUNT;
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/first_db";
-    private static final String USERNAME = "postgres";
-    private static final String PASSWORD = "postgres";
-
-    private static Connection connection;
-    static {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            connection  = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private List<Person> people;
-    {
-        people = new ArrayList<>();
-
-        people.add(new Person(++PEOPLE_COUNT, "Tom", 24, "tom@mail.ru"));
-        people.add(new Person(++PEOPLE_COUNT, "Bob", 52, "bob@mail.ru"));
-        people.add(new Person(++PEOPLE_COUNT, "Mike", 18, "mike@yahoo.com"));
-        people.add(new Person(++PEOPLE_COUNT, "Katy", 34, "katy@gmail.com"));
-    }
     public List<Person> index() {
 
         List <Person> people = new ArrayList<>();
