@@ -18,7 +18,7 @@ public class PersonDAO {
     }
 
     public List<Person> index() {
-
+    return jdbcTemplate.query("")
     }
     public Person show(int id) {
         Person person = null;
