@@ -19,27 +19,6 @@ public class PersonDAO {
 
     public List<Person> index() {
 
-        List <Person> people = new ArrayList<>();
-        try {
-            Statement statement = connection.createStatement();
-            String SQL = "select * from first_db.person";
-            ResultSet resultSet = statement.executeQuery(SQL);
-
-            while (resultSet.next()){
-                Person person = new Person();
-
-                person.setId(resultSet.getInt("id"));
-                person.setName(resultSet.getString("name"));
-                person.setEmail(resultSet.getString("email"));
-                person.setAge(resultSet.getInt("age"));
-
-                people.add(person);
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return people;
     }
     public Person show(int id) {
         Person person = null;
