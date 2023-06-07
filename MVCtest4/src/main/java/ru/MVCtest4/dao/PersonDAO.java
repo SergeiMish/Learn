@@ -26,19 +26,7 @@ public class PersonDAO {
             .stream().findAny().orElse(null);
     }
     public void save(Person person) {
-        try {
-            PreparedStatement preparedStatement =
-                    connection.prepareStatement("INSERT INTO Person VALUES(1, ?, ?, ?)");
-
-            preparedStatement.setString(1, person.getName());
-            preparedStatement.setInt(2, person.getAge());
-            preparedStatement.setString(3, person.getEmail());
-
-            preparedStatement.executeUpdate();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+       jdbcTemplate.update("INSERT INTO Person")
     }
     public void update(int id, Person updatedPerson) {
         try { PreparedStatement preparedStatement =
