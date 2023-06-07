@@ -30,7 +30,7 @@ public class PersonDAO {
                person.getEmail());
     }
     public void update(int id, Person updatedPerson) {
-
+        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=? WHERE id=?");
     }
     public void delete(int id) {
         try {
