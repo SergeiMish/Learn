@@ -30,18 +30,10 @@ public class PersonDAO {
                person.getEmail());
     }
     public void update(int id, Person updatedPerson) {
-        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=? WHERE id=?");
+        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=? WHERE id=?", updatedPerson.getName(), updatedPerson.getAge(),
+                updatedPerson.getEmail(), id);
     }
     public void delete(int id) {
-        try {
-            PreparedStatement preparedStatement =
-                    connection.prepareStatement("DELETE FROM Person WHERE id=?");
-                preparedStatement.setInt(1, id);
-
-            preparedStatement.executeUpdate();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        jdbcTemplate.update("DELETE FROM Person WHERE id=?", id);
     }
 }
