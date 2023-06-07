@@ -1,6 +1,7 @@
 package ru.MVCtest4.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.MVCtest4.models.Person;
@@ -18,7 +19,7 @@ public class PersonDAO {
     }
 
     public List<Person> index() {
-    return jdbcTemplate.query("SELECT * FROM Person",new PersonMapper());
+    return jdbcTemplate.query("SELECT * FROM Person",new BeanPropertyRowMapper<>());
     }
     public Person show(int id) {
     return jdbcTemplate.query("SELECT * FROM Person WHERE id=?", new Object[]{id}, new PersonMapper())
