@@ -21,7 +21,7 @@ public class PersonDAO {
     return jdbcTemplate.query("SELECT * FROM Person",new PersonMapper());
     }
     public Person show(int id) {
-
+    return jdbcTemplate.query("")
     }
     public void save(Person person) {
         try {
