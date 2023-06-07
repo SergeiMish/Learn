@@ -22,6 +22,7 @@ public class PersonDAO {
     }
     public Person show(int id) {
     return jdbcTemplate.query("SELECT * FROM Person WHERE id=?", new Object[]{id}, new PersonMapper())
+            .stream().findAny().orElse(null);
     }
     public void save(Person person) {
         try {
