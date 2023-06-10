@@ -34,6 +34,7 @@ public class PersonDAO {
                 updatedPerson.getEmail(), id);
     }
 
+    
     public void delete(int id) {
         jdbcTemplate.update("DELETE FROM Person WHERE id=?", id);
     }
