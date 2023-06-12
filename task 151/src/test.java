@@ -1,8 +1,9 @@
+import java.util.ArrayList;
+
 public class test {
     public static void main(String[] args) {
-        int[] x = new int[3];
+        ArrayList<Integer> x = new ArrayList<>();
         for (int i = 0; i < 4; i++){
-            x[i] = 1;
         }
     }
 }
