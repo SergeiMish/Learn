@@ -7,6 +7,6 @@ public class test {
         for (int i = 0; i < 4; i++){
             x.add(i);
         }
-        System.out.println(Arrays.toString(x));
+        System.out.println(x);
     }
 }
