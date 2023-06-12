@@ -7,6 +7,7 @@ public class test {
         for (int i = 0; i < 10; i++){
             x.add(i);
         }
+
         x.remove(5);
         System.out.println(x);
     }
