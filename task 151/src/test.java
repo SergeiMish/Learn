@@ -8,6 +8,7 @@ public class test {
             x.add(i);
         }
 
+
         x.remove(5);
         System.out.println(x);
     }
