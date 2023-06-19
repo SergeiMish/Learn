@@ -39,7 +39,6 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Hello, " + userName + "! I'm a Telegram bot.");
-
         try {
             execute(message);
             log.info("Reply sent");
