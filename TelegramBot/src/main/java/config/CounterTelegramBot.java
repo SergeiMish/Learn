@@ -1,6 +1,7 @@
 package config;
 
-import config.BotConfig;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -8,36 +9,28 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import javax.validation.constraints.NotNull;
 
+@Slf4j
+@Component
 public class CounterTelegramBot extends TelegramLongPollingBot {
     final BotConfig config;
 
-    public CounterTelegramBot(BotConfig config) {
-        this.config = config;
-    }
-
+    public CounterTelegramBot(BotConfig config) { this.config = config; }
     @Override
-    public String getBotUsername() {
-        return config.getBotName();
-    }
-
+    public String getBotUsername() { return config.getBotName(); }
     @Override
-    public String getBotToken() {
-        return config.getToken();
-    }
-
+    public String getBotToken() { return config.getToken(); }
     @Override
     public void onUpdateReceived(@NotNull Update update) {
-        if (update.hasMessage() && update.getMessage().hasText()) {
+        if(update.hasMessage() && update.getMessage().hasText()){
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
             String memberName = update.getMessage().getFrom().getFirstName();
 
-            switch (messageText) {
+            switch (messageText){
                 case "/start":
                     startBot(chatId, memberName);
                     break;
-                default:
-                    log.info("Unexpected message");
+                default: log.info("Unexpected message");
             }
         }
     }
@@ -50,7 +43,7 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
         try {
             execute(message);
             log.info("Reply sent");
-        } catch (TelegramApiException e) {
+        } catch (TelegramApiException e){
             log.error(e.getMessage());
         }
     }
