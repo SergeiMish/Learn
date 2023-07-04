@@ -35,7 +35,6 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
         }
     }
 
-
     private void startBot(long chatId, String userName) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
