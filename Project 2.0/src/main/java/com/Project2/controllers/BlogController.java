@@ -10,3 +10,4 @@ public class BlogController {
         return "blog-main";
     }
 }
+
