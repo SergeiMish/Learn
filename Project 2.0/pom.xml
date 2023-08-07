@@ -34,7 +34,8 @@
 
     <dependency>
       <groupId>mysql</groupId>
-      <artifactId>postgresql</artifactId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.33</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
