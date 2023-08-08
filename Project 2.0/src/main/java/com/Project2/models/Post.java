@@ -15,6 +15,14 @@ public class Post {
         return id;
     }
 
+    public String getAnons() {
+        return anons;
+    }
+
+    public void setAnons(String anons) {
+        this.anons = anons;
+    }
+
     public String getTitle() {
         return title;
     }
