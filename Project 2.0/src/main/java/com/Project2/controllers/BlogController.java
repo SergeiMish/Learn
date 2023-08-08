@@ -11,6 +11,7 @@ public class BlogController {
 
     @Autowired
     private PostRepository postRepository;
+
     @GetMapping("/blog")
     public String Blog (Model model){
         Iterable<Post> posts = postRepository.findAll();
