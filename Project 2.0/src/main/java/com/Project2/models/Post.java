@@ -35,6 +35,14 @@ public class Post {
         this.id = id;
     }
 
+    public String getFull_text() {
+        return full_text;
+    }
+
+    public void setFull_text(String full_text) {
+        this.full_text = full_text;
+    }
+
     private String title, anons, full_text;
     private int views;
 }
