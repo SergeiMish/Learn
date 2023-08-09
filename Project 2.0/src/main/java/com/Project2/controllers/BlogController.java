@@ -13,10 +13,16 @@ public class BlogController {
     private PostRepository postRepository;
 
     @GetMapping("/blog")
-    public String Blog (Model model){
+    public String Blog(Model model) {
+        Iterable<Post> posts = postRepository.findAll();
+        model.addAttribute("posts", posts);
+        return "blog-main";
+    }
+
+    @GetMapping("/blog/add")
+    public String BlogAdd(Model model) {
         Iterable<Post> posts = postRepository.findAll();
         model.addAttribute("posts", posts);
         return "blog-main";
     }
 }
-
