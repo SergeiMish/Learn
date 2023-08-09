@@ -21,8 +21,6 @@ public class BlogController {
 
     @GetMapping("/blog/add")
     public String BlogAdd(Model model) {
-        Iterable<Post> posts = postRepository.findAll();
-        model.addAttribute("posts", posts);
-        return "blog-main";
+        return "blog-add";
     }
 }
