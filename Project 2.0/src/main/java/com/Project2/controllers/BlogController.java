@@ -20,7 +20,7 @@ public class BlogController {
     }
 
     @GetMapping("/blog/add")
-    public String BlogAdd(Model model) {
+    public String blogAdd(Model model) {
         return "blog-add";
     }
 }
