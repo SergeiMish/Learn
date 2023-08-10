@@ -24,6 +24,9 @@ public class BlogController {
     public String blogAdd(Model model) {
         return "blog-add";
     }
-    @PostMapping
+    @PostMapping("/blog/add")
+    public String blogPost(Model model){
+        return "";
+    }
 
 }
