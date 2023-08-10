@@ -26,7 +26,7 @@ public class BlogController {
         return "blog-add";
     }
     @PostMapping("/blog/add")
-    public String blogPost(@RequestParam String title, Model model){
+    public String blogPost(@RequestParam String title, @RequestParam String anons, Model model){
         return "";
     }
 
