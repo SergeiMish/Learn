@@ -51,12 +51,13 @@ public class Post {
         this.views = views;
     }
 
+
+
+    private String title, anons, full_text;
+    private int views;
     public Post(String title, String anons, String full_text) {
         this.title = title;
         this.anons = anons;
         this.full_text = full_text;
     }
-
-    private String title, anons, full_text;
-    private int views;
 }
