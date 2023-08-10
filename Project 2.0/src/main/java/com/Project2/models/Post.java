@@ -11,6 +11,10 @@ public class Post {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
 
+    public Post() {
+
+    }
+
     public Long getId() {
         return id;
     }
