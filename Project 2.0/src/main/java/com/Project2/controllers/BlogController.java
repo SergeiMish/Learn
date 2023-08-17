@@ -31,4 +31,8 @@ public class BlogController {
         postRepository.save(post);
         return "redirect:/blog";
     }
+    @GetMapping("/blog/add")
+    public String blogAdd(Model model) {
+        return "blog-add";
+    }
 }
