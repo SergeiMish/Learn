@@ -33,7 +33,7 @@ public class BlogController {
         return "redirect:/blog";
     }
     @GetMapping("/blog/{id}")
-    public String blogDetails(@PathVariable Model model) {
+    public String blogDetails(@PathVariable (value = "id") Model model) {
         return "blog-add";
     }
 }
