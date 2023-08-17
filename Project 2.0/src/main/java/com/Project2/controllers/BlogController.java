@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 public class BlogController {
 
@@ -34,7 +36,7 @@ public class BlogController {
     }
     @GetMapping("/blog/{id}")
     public String blogDetails(@PathVariable (value = "id") long id, Model model) {
-        postRepository.findById(id);
+       Optional<Post> post = postRepository.findById(id);
         return "blog-add";
     }
 }
