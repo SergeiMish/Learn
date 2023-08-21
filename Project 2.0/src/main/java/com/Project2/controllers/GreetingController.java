@@ -17,5 +17,4 @@ public class GreetingController {
         model.addAttribute("title","Страница про нас");
         return "about";
     }
-
 }
