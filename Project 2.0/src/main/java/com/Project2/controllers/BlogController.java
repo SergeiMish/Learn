@@ -58,6 +58,6 @@ public class BlogController {
         ArrayList<Post> res = new ArrayList<>();
         post.ifPresent(res::add);
         model.addAttribute("post", res);
-        return "blog-details";
+        return "blog-edit";
     }
 }
