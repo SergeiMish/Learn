@@ -42,4 +42,11 @@ public class BlogController {
         model.addAttribute("post", res);
         return "blog-details";
     }
+    @GetMapping("/blog/{id}")
+    public String blogDetails(@PathVariable (value = "id") long id, Model model) {
+        Optional<Post> post = postRepository.findById(id);
+        ArrayList<Post> res = new ArrayList<>();
+        post.ifPresent(res::add);
+        model.addAttribute("post", res);
+        return "blog-details";
 }
