@@ -67,6 +67,7 @@ public class BlogController {
         post.setTitle(title);
         post.setAnons(anons);
         post.setFull_text(full_text);
+        postRepository.save(post);
         return "redirect:/blog";
     }
 }
