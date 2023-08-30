@@ -66,6 +66,7 @@ public class BlogController {
         Post post = postRepository.findById(id).orElseThrow();
         post.setTitle(title);
         post.setAnons(anons);
+        post.setFull_text(full_text);
         return "redirect:/blog";
     }
 }
