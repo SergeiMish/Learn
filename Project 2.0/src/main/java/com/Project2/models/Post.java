@@ -56,7 +56,6 @@ public class Post {
     }
 
 
-
     private String title, anons, full_text;
     private int views;
     public Post(String title, String anons, String full_text) {
