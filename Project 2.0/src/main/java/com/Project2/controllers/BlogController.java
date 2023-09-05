@@ -49,10 +49,7 @@ public class BlogController {
         return "blog-details";
     }
 
-    @GetMapping("/blog/{id}/edit")
-    public String blogEdit(@PathVariable(value = "id") long id, Model model) {
-        if (!postRepository.existsById(id)) {
-            return "redirect:/blog";
+
         }
         Optional<Post> post = postRepository.findById(id);
         ArrayList<Post> res = new ArrayList<>();
