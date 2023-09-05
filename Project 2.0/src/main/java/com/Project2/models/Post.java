@@ -50,9 +50,6 @@ public class Post {
     public int getViews() {
         return views;
     }
-    public void setViews(int views) {
-        this.views = views;
-    }
 
     private String title, anons, full_text;
     private int views;
