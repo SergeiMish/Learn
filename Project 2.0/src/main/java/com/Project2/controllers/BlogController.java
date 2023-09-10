@@ -49,7 +49,6 @@ public class BlogController {
         return "blog-details";
     }
 
-
     @GetMapping("/blog/{id}/edit")
     public String blogEdit(@PathVariable(value = "id") long id, Model model) {
         if (!postRepository.existsById(id)) {
