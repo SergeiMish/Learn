@@ -40,6 +40,8 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
         try {
             execute(message);
             log.info("Попробуй заново");
-        }catch (TelegramApiException)
+        }catch (TelegramApiException e){
+            log.error(e.getMessage());
+        }
     }
 }
