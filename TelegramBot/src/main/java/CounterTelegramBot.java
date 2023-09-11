@@ -3,6 +3,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
+
+import javax.validation.constraints.NotNull;
+
 @Slf4j
 @Component
 public class CounterTelegramBot extends TelegramLongPollingBot {
