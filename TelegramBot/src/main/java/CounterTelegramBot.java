@@ -36,5 +36,9 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Привет человек," + userName + "! Я бот телега, добро пожаловать!");
+        try {
+            execute(message);
+
+        }
     }
 }
