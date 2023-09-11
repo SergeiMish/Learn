@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import javax.validation.constraints.NotNull;
 
@@ -39,7 +40,6 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
         try {
             execute(message);
             log.info("Попробуй заново");
-
-        }
+        }catch (TelegramApiException)
     }
 }
