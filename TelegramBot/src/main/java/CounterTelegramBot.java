@@ -13,6 +13,7 @@ public class CounterTelegramBot implements TelegramLongPollingBot {
     }
 
     @Override
-
+    public String getBotUsername() {
+        return null;
     }
 }
