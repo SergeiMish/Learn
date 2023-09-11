@@ -21,6 +21,11 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
         if (update.hasMessage()&& update.getMessage().hasText()){
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
+            String memberName = update.getMessage().getFrom().getFirstName();
+
+            switch (messageText){
+
+            }
         }
     }
 }
