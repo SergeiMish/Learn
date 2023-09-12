@@ -11,18 +11,14 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.generics.LongPollingBot;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-@Slf4j
-@Component
-public class Initializer {
-    @Autowired CounterTelegramBot bot;
-
-    @EventListener({ContextRefreshedEvent.class})
-    public void init() {
+public class Main {
+    public static void main(String args[])
+    {
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-            telegramBotsApi.registerBot((LongPollingBot) bot);
+            telegramBotsApi.registerBot(new Bot());
         } catch (TelegramApiException e) {
-            log.error(e.getMessage());
+            e.printStackTrace();
         }
     }
 }
