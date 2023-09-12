@@ -14,8 +14,12 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 @Slf4j
 @Component
 public class Initializer {
-    @Autowired
+    final
     CounterTelegramBot bot;
+
+    public Initializer(CounterTelegramBot bot) {
+        this.bot = bot;
+    }
 
     @EventListener({ContextRefreshedEvent.class})
     public void init() {
