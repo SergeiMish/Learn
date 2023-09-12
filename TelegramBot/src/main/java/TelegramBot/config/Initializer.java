@@ -21,7 +21,7 @@ public class Initializer {
     public void init() {
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-            telegramBotsApi.registerBot((CounterTelegramBot) bot);
+            telegramBotsApi.registerBot((LongPollingBot) bot);
         } catch (TelegramApiException e) {
             log.error(e.getMessage());
         }
