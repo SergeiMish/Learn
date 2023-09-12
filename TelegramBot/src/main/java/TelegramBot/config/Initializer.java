@@ -11,6 +11,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.generics.LongPollingBot;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+
 @Slf4j
 @Component
 public class Initializer {
@@ -25,5 +26,9 @@ public class Initializer {
         } catch (TelegramApiException e) {
             log.error(e.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 }
