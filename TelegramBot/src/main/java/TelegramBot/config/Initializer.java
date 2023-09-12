@@ -27,8 +27,4 @@ public class Initializer {
             log.error(e.getMessage());
         }
     }
-
-    public static void main(String[] args) {
-
-    }
 }
