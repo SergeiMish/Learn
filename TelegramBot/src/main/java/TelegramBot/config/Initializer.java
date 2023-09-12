@@ -17,7 +17,6 @@ public class Initializer {
     @Autowired
     CounterTelegramBot bot;
 
-    @EventListener({ContextRefreshedEvent.class})
     public void init() {
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
