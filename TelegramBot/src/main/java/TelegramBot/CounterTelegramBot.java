@@ -21,11 +21,7 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
     @Override
     public String getBotToken() { return config.getToken(); }
     @Override
-    public void onUpdateReceived(@NotNull Update update) {
-        if (update.hasMessage()&& update.getMessage().hasText()){
-            String messageText = update.getMessage().getText();
-            long chatId = update.getMessage().getChatId();
-            String memberName = update.getMessage().getFrom().getFirstName();
+
 
             switch (messageText){
                 case "/start":
