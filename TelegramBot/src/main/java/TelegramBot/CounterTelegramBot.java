@@ -27,11 +27,7 @@ public class CounterTelegramBot extends TelegramLongPollingBot {
             long chatId = update.getMessage().getChatId();
             String memberName = update.getMessage().getFrom().getFirstName();
 
-            switch (messageText){
-                case "/start":
-                    startBot(chatId, memberName);
-                    break;
-                default: log.info("Неправильно значение");
+
             }
         }
     }
