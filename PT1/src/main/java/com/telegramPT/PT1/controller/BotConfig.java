@@ -11,7 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 public class BotConfig {
     @Value() String botName;
     @Value String token;
-    @
+    @Value() String chatId;
 
 
 }
