@@ -9,8 +9,8 @@ import org.springframework.context.annotation.PropertySource;
 @Data
 @PropertySource("application.properties")
 public class BotConfig {
-    @Value() String botName;
-    @Value String token;
+    @Value("${bot.name}") String botName;
+    @Value() String token;
     @Value() String chatId;
 
 
