@@ -9,7 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
     @Override
-    public Object onUpdateReceived(Update update) {
+    public void onUpdateReceived(Update update) {
         return null;
     }
 
