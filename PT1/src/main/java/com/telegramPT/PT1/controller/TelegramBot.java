@@ -21,7 +21,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         return null;
     }
     @Override
-    public void onUpdateReceived(@NotNull Update update)
+    public void onUpdateReceived(@NotNull Update update){
 
         if (update.hasMessage()&& update.getMessage().hasText()){
         String messageText = update.getMessage().getText();
@@ -48,4 +48,5 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 }
+
 
