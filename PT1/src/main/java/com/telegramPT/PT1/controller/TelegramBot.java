@@ -8,6 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 @Slf4j
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
+    final BotConfig config;
     @Override
     public void onUpdateReceived(Update update) {
 
