@@ -1,6 +1,5 @@
 package com.telegramPT.PT1.controller;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -9,14 +8,19 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
     final BotConfig config;
-    @Override
-    public void onUpdateReceived(Update update) {
 
+    public TelegramBot(BotConfig config) {
+        this.config = config;
     }
 
     @Override
     public String getBotUsername() {
         return null;
     }
+    @Override
+    public void onUpdateReceived(Update update) {
+
+    }
+
 }
 
