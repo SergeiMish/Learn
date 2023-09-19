@@ -18,6 +18,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         return config.getBotName();
     }
 
+    public String getBotToken() {
+        return config.getToken();
+    }
     @Override
     public void onUpdateReceived(Update update) {
 
