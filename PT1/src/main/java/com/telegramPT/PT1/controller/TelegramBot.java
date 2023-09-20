@@ -2,7 +2,6 @@ package com.telegramPT.PT1.controller;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -12,20 +11,19 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 @Slf4j
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
-    @Value("${bot.name}")
-    private String botName;
+    final BotConfig config;
 
-    @Value("${bot.token}")
-    private String botToken;
-
+    public TelegramBot(BotConfig config) {
+        this.config = config;
+    }
 
     @Override
     public String getBotUsername() {
-        return botName;
+        return config.getBotName();
     }
 
     public String getBotToken() {
-        return botToken;
+        return config.getToken();
     }
 
     @Override
