@@ -27,34 +27,34 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     @Override
-    public void onUpdateReceived(@NotNull Update update) {
-        var originalMessage = update.getMessage();
-        System.out.println(originalMessage.getText());
+//    public void onUpdateReceived(@NotNull Update update) {
+//        var originalMessage = update.getMessage();
+//        System.out.println(originalMessage.getText());
+//    }
+//}
+        if (update.hasMessage()&& update.getMessage().hasText()){
+            String messageText = update.getMessage().getText();
+            long chatId = update.getMessage().getChatId();
+            String memberName = update.getMessage().getFrom().getFirstName();
+
+            switch (messageText){
+                case "/start":
+                    startBot(chatId, memberName);
+                    break;
+                default: log.info("Неправильно значение");
+            }
+        }
     }
-}
-//        if (update.hasMessage()&& update.getMessage().hasText()){
-//            String messageText = update.getMessage().getText();
-//            long chatId = update.getMessage().getChatId();
-//            String memberName = update.getMessage().getFrom().getFirstName();
-//
-//            switch (messageText){
-//                case "/start":
-//                    startBot(chatId, memberName);
-//                    break;
-//                default: log.info("Неправильно значение");
-//            }
-//        }
-//    }
-//    private void startBot(long chatId, String userName){
-//        SendMessage message = new SendMessage();
-//        message.setChatId(chatId);
-//        message.setText("Привет человек," + userName + "! Я бот телега, добро пожаловать!");
-//        try {
-//            execute(message);
-//            log.info("Попробуй заново");
-//        }catch (TelegramApiException e){
-//            log.error(e.getMessage());
-//        }
-//    }
+    private void startBot(long chatId, String userName){
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText("Привет человек," + userName + "! Я бот телега, добро пожаловать!");
+        try {
+            execute(message);
+            log.info("Попробуй заново");
+        }catch (TelegramApiException e){
+            log.error(e.getMessage());
+        }
+    }
 
 
