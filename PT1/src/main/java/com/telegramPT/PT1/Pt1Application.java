@@ -1,4 +1,5 @@
 package com.telegramPT.PT1;
+import com.telegramPT.PT1.controller.BotConfig;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,8 +14,9 @@ public class Pt1Application {
 		ApiContextInitializer.init();
 		TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 		try {
-			telegramBotsApi.registerBot(Bot.getBot());
+			telegramBotsApi.registerBot(BotConfig.getBot());
 		} catch (TelegramApiRequestException e) {
 			e.printStackTrace();
 		}
 	}
+}
