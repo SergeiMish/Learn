@@ -10,7 +10,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Slf4j
 @Component
-public class TelegramBot extends TelegramLongPollingBot {
+public class TelegramB extends TelegramLongPollingBot {
     final BotConfig config;
 
     public TelegramBot(BotConfig config) {
