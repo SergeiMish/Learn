@@ -27,9 +27,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     @Override
-    public void onUpdateReceived(@NotNull Update update) {
-        var originalMessage = update.getMessage();
-        System.out.println(originalMessage.getText());
+
     }
 }
 //        if (update.hasMessage()&& update.getMessage().hasText()){
