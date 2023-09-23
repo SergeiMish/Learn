@@ -48,11 +48,11 @@ public class TelegramBot extends TelegramLongPollingBot {
     private void startBot(long chatId, String userName){
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
-//        message.setText("Привет человек," + userName + "! Я бот телега, добро пожаловать!");
-//        try {
-//            execute(message);
-//            log.info("Попробуй заново");
-//        }catch (TelegramApiException e){
+        message.setText("Привет человек," + userName + "! Я бот телега, добро пожаловать!");
+        try {
+            execute(message);
+            log.info("Попробуй заново");
+        }catch (TelegramApiException e){
 //            log.error(e.getMessage());
 //        }
 //    }
