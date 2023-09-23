@@ -32,12 +32,12 @@ public class TelegramBot extends TelegramLongPollingBot {
         System.out.println(originalMessage.getText());
     }
 }
-//        if (update.hasMessage()&& update.getMessage().hasText()){
-//            String messageText = update.getMessage().getText();
-//            long chatId = update.getMessage().getChatId();
-//            String memberName = update.getMessage().getFrom().getFirstName();
-//
-//            switch (messageText){
+        if (update.hasMessage()&& update.getMessage().hasText()){
+            String messageText = update.getMessage().getText();
+            long chatId = update.getMessage().getChatId();
+            String memberName = update.getMessage().getFrom().getFirstName();
+
+            switch (messageText){
 //                case "/start":
 //                    startBot(chatId, memberName);
 //                    break;
