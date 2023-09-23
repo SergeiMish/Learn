@@ -43,11 +43,11 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 default: log.info("Неправильно значение");
             }
-//        }
-//    }
-//    private void startBot(long chatId, String userName){
-//        SendMessage message = new SendMessage();
-//        message.setChatId(chatId);
+        }
+    }
+    private void startBot(long chatId, String userName){
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
 //        message.setText("Привет человек," + userName + "! Я бот телега, добро пожаловать!");
 //        try {
 //            execute(message);
