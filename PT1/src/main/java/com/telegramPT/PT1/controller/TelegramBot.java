@@ -38,11 +38,11 @@ public class TelegramBot extends TelegramLongPollingBot {
             String memberName = update.getMessage().getFrom().getFirstName();
 
             switch (messageText){
-//                case "/start":
-//                    startBot(chatId, memberName);
-//                    break;
-//                default: log.info("Неправильно значение");
-//            }
+                case "/start":
+                    startBot(chatId, memberName);
+                    break;
+                default: log.info("Неправильно значение");
+            }
 //        }
 //    }
 //    private void startBot(long chatId, String userName){
