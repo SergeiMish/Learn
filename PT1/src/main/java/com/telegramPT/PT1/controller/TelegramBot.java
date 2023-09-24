@@ -13,8 +13,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class TelegramBot extends TelegramLongPollingBot {
     final BotConfig config;
 
-    public TelegramBot(BotConfig config) {
-        this.config = config;
+//    public TelegramBot(BotConfig config) {
+//        this.config = config;
     }
 
     @Override
