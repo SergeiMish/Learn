@@ -37,14 +37,14 @@ public class TelegramBot extends TelegramLongPollingBot {
             long chatId = update.getMessage().getChatId();
             String memberName = update.getMessage().getFrom().getFirstName();
 
-//            switch (messageText){
-//                case "/start":
-//                    startBot(chatId, memberName);
-//                    break;
-//                default: log.info("Неправильно значение");
-//            }
-//        }
-//    }
+            switch (messageText){
+                case "/start":
+                    startBot(chatId, memberName);
+                    break;
+                default: log.info("Неправильно значение");
+            }
+        }
+    }
 //    private void startBot(long chatId, String userName){
 //        SendMessage message = new SendMessage();
 //        message.setChatId(chatId);
