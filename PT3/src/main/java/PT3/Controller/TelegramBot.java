@@ -1,10 +1,13 @@
-package PT3;
+package PT3.Controller;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 import java.util.List;
-
+@Component
+@Slf4j
 public class TelegramBot extends TelegramLongPollingBot {
 
 
