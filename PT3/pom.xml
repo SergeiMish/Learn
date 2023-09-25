@@ -39,8 +39,8 @@
 
         <dependency>
             <groupId>org.telegram</groupId>
-            <artifactId>telegrambots-spring-boot-starter</artifactId>
-            <version>${telegrambot.starter.version}</version>
+            <artifactId>telegrambots</artifactId>
+            <version>3.5</version>
         </dependency>
     </dependencies>
 
