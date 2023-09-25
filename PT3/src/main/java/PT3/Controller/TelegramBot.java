@@ -17,7 +17,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     @Override
-    public void onUpdatesReceived(List<Update> updates) {
+    public void onUpdatesReceived (List<Update> updates) {
         super.onUpdatesReceived(updates);
     }
 
