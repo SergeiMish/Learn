@@ -13,9 +13,9 @@ public class Main {
                 Word.of("large", -3,
                 Word.of("phone", -6),
                 Word.of("newspaper", 2),
-                Word.of("chocolate", 2),
-                Word.of("newspaper", 2),
-                Word.of("newspaper", 2),
+                Word.of("chocolate", -10),
+                Word.of("connection", 13),
+                Word.of("engineering", 10)
         );
         System.out.println(
                 words.stream()
