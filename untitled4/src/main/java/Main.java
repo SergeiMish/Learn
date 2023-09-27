@@ -18,7 +18,7 @@ public class Main {
                         .orElse("Nothing found")
         );
     }
-    @AllAgrConstructor
+    @AllAgrsConstructor
     @Getter
     public static class Word {
         private final String value;
