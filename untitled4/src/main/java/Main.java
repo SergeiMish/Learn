@@ -1,3 +1,4 @@
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.awt.*;
@@ -9,7 +10,10 @@ public class Main {
     public static void main(String[] args) {
 
         List<Word> words = List.of(
-                Word.of("large", -3)
+                Word.of("large", -3,
+                Word.of("phone", -6),
+                Word
+
 
         );
         System.out.println(
@@ -20,7 +24,7 @@ public class Main {
                         .orElse("Nothing found")
         );
     }
-    @AllAgrsConstructor
+    @AllArgsConstructor
     @Getter
     public static class Word {
         private final String value;
