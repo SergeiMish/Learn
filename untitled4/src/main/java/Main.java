@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         List<Word> words = List.of(
-                Word.of("large", -3,
+                Word.of("large", -3),
                 Word.of("phone", -6),
                 Word.of("newspaper", 2),
                 Word.of("chocolate", -10),
