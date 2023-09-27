@@ -1,3 +1,5 @@
+import lombok.Getter;
+
 import java.awt.*;
 import java.util.Comparator;
 import java.util.List;
@@ -12,9 +14,9 @@ public class Main {
         );
         System.out.println(
                 words.stream()
-                        .filter(Predicate.not(Word::))
-                        .max(Comparator.comparing(Word::get))
-                        .map(Word::get)
+                        .filter(Predicate.not(Word::isBad))
+                        .max(Comparator.comparing(Word::getPriority))
+                        .map(Word::getValue)
                         .orElse("Nothing found")
         );
     }
@@ -22,7 +24,12 @@ public class Main {
     @Getter
     public static class Word {
         private final String value;
+        private final int priority;
 
+        static Word of(String value, int priority){
+            return new Word(value, priority);
+        }
+        public boolean isBad(){ return this.value.contains("La");}
 
     }
 }
