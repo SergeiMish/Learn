@@ -12,9 +12,10 @@ public class Main {
         List<Word> words = List.of(
                 Word.of("large", -3,
                 Word.of("phone", -6),
-                Word
-
-
+                Word.of("newspaper", 2),
+                Word.of("chocolate", 2),
+                Word.of("newspaper", 2),
+                Word.of("newspaper", 2),
         );
         System.out.println(
                 words.stream()
