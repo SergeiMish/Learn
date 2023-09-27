@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -12,7 +13,9 @@ public class Main {
         System.out.println(
                 words.stream()
                         .filter(Predicate.not(Word::))
-                        .max((C))
+                        .max(Comparator.comparing(Word::get))
+                        .map(Word::get)
+                        .orElse("Nothing found")
         );
     }
 }
