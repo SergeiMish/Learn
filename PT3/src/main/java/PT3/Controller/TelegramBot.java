@@ -12,10 +12,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 
     @Override
-    public void onUpdateReceived(Update update) {
-        var originalMessage = update.getMessage();
-        System.out.println(originalMessage.getText());
-    }
+
     @Override
     public String getBotUsername() {
         return null;
