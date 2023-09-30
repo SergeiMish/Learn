@@ -17,6 +17,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         System.out.println(originalMessage.getText());
     }
     @Override
+    public String getBotUsername() {
+        return null;
+    }
 
     @Override
     public String getBotToken() {
