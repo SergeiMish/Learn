@@ -7,7 +7,7 @@ public class Main {
             {if(10>score1) yield "unknown";}
             case score1 -> "great";
             case 2, 4, 6 -> "good";
-            case score2, 0 -> "bad";
+            case score2, 0 -> {"bad";}
             };
         System.out.println(goal);
     }
