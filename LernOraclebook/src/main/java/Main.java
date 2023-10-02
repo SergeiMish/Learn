@@ -5,8 +5,8 @@ public class Main {
         43: var goal = switch (myScore) {
         44: default ->{if(10>score1) yield "unknown";}
         45: case score1 -> "great";
-        46: case 2, 4, 6 ->"good";
-        47: case score2, 0 -> {"bad";}
-        48: };
-        49: System.out.println(goal);
+         case 2, 4, 6 ->"good";
+         case score2, 0 -> {"bad";}
+         };
+         System.out.println(goal);
 }
