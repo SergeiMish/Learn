@@ -16,7 +16,7 @@ public class Main {
           .stream()
           .map(Entry::getValue)
           .flatMap(Collection::stream)
-          30: .collect(Collectors.partitioningBy(notEmpty));
+          .collect(Collectors.partitioningBy(notEmpty));
           31: System.out.println(result);
      }
 }
