@@ -9,11 +9,11 @@ public class Main {
 
           var result = Stream.generate(() ->
                   "")
-          24: .filter(notEmpty)
-          25: .collect(Collectors.groupingBy(k ->
+          .filter(notEmpty)
+          .collect(Collectors.groupingBy(k ->
                   k))
-          26: .entrySet()
-          27: .stream()
+          .entrySet()
+          .stream()
           28: .map(Entry::getValue)
           29: .flatMap(Collection::stream)
           30: .collect(Collectors.partitioningBy(notEmpty));
