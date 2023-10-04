@@ -16,9 +16,6 @@ public class Main {
                   "")
           .filter(notEmpty)
           .collect(Collectors.groupingBy(k -> k))
-          .entrySet()
-          .stream()
-          .map(Map.Entry::getValue)
 
      }
 }
