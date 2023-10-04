@@ -19,8 +19,6 @@ public class Main {
           .entrySet()
           .stream()
           .map(Map.Entry::getValue)
-          .flatMap(Collection::stream)
-          .collect(Collectors.partitioningBy(notEmpty));
-          System.out.println(result);
+
      }
 }
