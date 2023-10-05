@@ -14,10 +14,6 @@ public class Main {
 
           var result = Stream.generate(() ->
                   "")
-          .filter(notEmpty)
-          .collect(Collectors.groupingBy(k -> k))
-          .entrySet()
-          .stream()
 
      }
 }
