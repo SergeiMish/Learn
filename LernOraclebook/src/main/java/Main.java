@@ -14,6 +14,5 @@ public class Main {
 
           var result = Stream.generate(() ->
                   "")
-          .filter(notEmpty)
 
 }
