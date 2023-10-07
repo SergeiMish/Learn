@@ -16,7 +16,5 @@ public class Main {
                   "")
           .filter(notEmpty)
           .collect(Collectors.groupingBy(k -> k))
-          .entrySet()
-          .stream()
 
 }
