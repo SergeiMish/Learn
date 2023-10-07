@@ -18,9 +18,5 @@ public class Main {
           .collect(Collectors.groupingBy(k -> k))
           .entrySet()
           .stream()
-          .map(Map.Entry::getValue)
-          .flatMap(Collection::stream)
-          .collect(Collectors.partitioningBy(notEmpty));
-          System.out.println(result);
-     }
+
 }
