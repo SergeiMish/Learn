@@ -12,7 +12,5 @@ public class Main {
           Predicate<String> empty = String::isEmpty;
           Predicate<String> notEmpty = empty.negate();
 
-          var result = Stream.generate(() ->
-                  "")
 
 }
