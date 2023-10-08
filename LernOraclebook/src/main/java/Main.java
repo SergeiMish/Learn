@@ -11,5 +11,5 @@ public static void main(String[] args) {
                Assessment Test xlix
                System.out.println(puma.getTailLength());
                }
-10: public int getTailLength(int length) { return 2; }
-11: }
+public int getTailLength(int length) { return 2; }
+}
