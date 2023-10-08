@@ -1,12 +1,8 @@
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
+import java.util.Date;
+import java.sql.Date;
 public class Main {
-     public static void main(String[] args) {
-          public class InputImports {
-               public void read(Files files) {
-                    Paths.get("name");
-               }
-          }
+     public class Conflicts {
+          Date date;
+// some more code
      }
 }
