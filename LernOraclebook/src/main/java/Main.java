@@ -5,6 +5,7 @@ public class Main {
           private int getTailLength();
      }
 
+
      abstract class Puma implements HasTail {
           String getTailLength() {
                return "4";
