@@ -1,13 +1,10 @@
-
+import java.util.Arrays;
 
 public class Main {
-     public class MathFunctions {
- public static void addToInt(int x, int amountToAdd) {
-                x = x + amountToAdd;
-                }
-} public static void main(String[] args) {
-          var a = 15;
-          var b = 10;
-          MathFunctions.addToInt(a, b);
-          System.out.println(a); } }
+     int[] array = {6,9,8};
+System.out.println("B" + Arrays.binarySearch(array,9));
+System.out.println("C" + Arrays.compare(array,
+             new int[] {6, 9, 8}));
+System.out.println("M" + Arrays.mismatch(array,
+             new int[] {6, 9, 8}));
 
