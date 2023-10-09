@@ -1,7 +1,10 @@
-import java.util.Date;
-public class Main {
-     public class Conflicts {
-          Date date;
-// some more code
+package packagea;
+public class ClassA {}
+package packageb;
+        import packagea.ClassA;
+public class ClassB {
+     public static void main(String[] args) {
+          ClassA a;
+          System.out.println("Got it");
      }
 }
