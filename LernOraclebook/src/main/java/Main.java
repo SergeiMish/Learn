@@ -7,6 +7,7 @@
                  var size = 7;
              }
          }
+         System.out.println(name + size);
      }
  }
 
