@@ -1,6 +1,11 @@
 
  public class Main{
      public static void main(String[] args) {
-         System.out.println(math());
+         class Zoo {
+             public void whatTypeAmI() {
+                 var name = "Hello";
+                 var size = 7;
+             }
+         }
      }
 
