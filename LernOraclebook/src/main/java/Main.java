@@ -3,6 +3,9 @@
      public static void main(String[] args) {
          class SMT{
              public void doesThisCompile ( boolean check){
+                 var question;
+                 question = 1;
+                 var answer;
 
                  System.out.println(answer);
              }
