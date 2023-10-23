@@ -5,5 +5,5 @@
              if (hungry) {
                  int bitesOfCheese = 1;
                  {
-                     20: var teenyBit = true;
+                     var teenyBit = true;
                      21: System.out.println(bitesOfCheese);
