@@ -6,4 +6,4 @@
                  int bitesOfCheese = 1;
                  {
                      var teenyBit = true;
-                     21: System.out.println(bitesOfCheese);
+                     System.out.println(bitesOfCheese);
