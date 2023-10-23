@@ -6,6 +6,7 @@
                  if (hungry) {
                      int bitesOfCheese = 1;
                      {
+
                          var teenyBit = true;
                          System.out.println(bitesOfCheese);
                      }
