@@ -11,4 +11,4 @@
                  19: }
              20: }
          21: System.out.println(amountOfFood);
-         22: }
+         }
