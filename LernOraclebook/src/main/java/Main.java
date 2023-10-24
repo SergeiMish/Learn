@@ -7,7 +7,7 @@
              15: while (amountOfFood > 0) {
                  16: int amountEaten = 2;
                  17: roomInBelly = roomInBelly -amountEaten;
-                 18: amountOfFood = amountOfFood -amountEaten;
+                  amountOfFood = amountOfFood -amountEaten;
                  }
              }
           System.out.println(amountOfFood);
