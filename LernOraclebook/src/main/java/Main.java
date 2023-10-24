@@ -6,7 +6,7 @@
              14: var timeToEat = true;
              15: while (amountOfFood > 0) {
                  16: int amountEaten = 2;
-                 17: roomInBelly = roomInBelly -amountEaten;
+                  roomInBelly = roomInBelly -amountEaten;
                   amountOfFood = amountOfFood -amountEaten;
                  }
              }
