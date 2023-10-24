@@ -5,7 +5,7 @@
          13: if (hungry) {
              14: var timeToEat = true;
              15: while (amountOfFood > 0) {
-                 16: int amountEaten = 2;
+                 int amountEaten = 2;
                   roomInBelly = roomInBelly -amountEaten;
                   amountOfFood = amountOfFood -amountEaten;
                  }
