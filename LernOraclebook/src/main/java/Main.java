@@ -10,5 +10,5 @@
                  18: amountOfFood = amountOfFood -amountEaten;
                  19: }
              20: }
-         21: System.out.println(amountOfFood);
+          System.out.println(amountOfFood);
          }
