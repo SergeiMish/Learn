@@ -9,6 +9,6 @@
                  17: roomInBelly = roomInBelly -amountEaten;
                  18: amountOfFood = amountOfFood -amountEaten;
                  19: }
-             20: }
+             }
           System.out.println(amountOfFood);
          }
