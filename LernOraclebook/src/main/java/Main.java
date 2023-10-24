@@ -1,7 +1,7 @@
 
  public class Main {
      public static void eatMore(boolean hungry, int amountOfFood) {
-         12: int roomInBelly = 5;
+          int roomInBelly = 5;
           if (hungry) {
               var timeToEat = true;
               while (amountOfFood > 0) {
