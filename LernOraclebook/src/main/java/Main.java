@@ -2,7 +2,7 @@
  public class Main {
      public static void eatMore(boolean hungry, int amountOfFood) {
          12: int roomInBelly = 5;
-         13: if (hungry) {
+          if (hungry) {
               var timeToEat = true;
               while (amountOfFood > 0) {
                  int amountEaten = 2;
