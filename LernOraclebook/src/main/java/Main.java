@@ -8,7 +8,7 @@
                  16: int amountEaten = 2;
                  17: roomInBelly = roomInBelly -amountEaten;
                  18: amountOfFood = amountOfFood -amountEaten;
-                 19: }
+                 }
              }
           System.out.println(amountOfFood);
          }
