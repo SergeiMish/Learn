@@ -1,17 +1,14 @@
 
  public class Main {
-     public static void main(String[] args) {
-         class eatIfHung {
-             public void eatIfHungry(boolean hungry) {
-                 if (hungry) {
-                     int bitesOfCheese = 1;
-                     {
-
-                         var teenyBit = true;
-                         System.out.println(bitesOfCheese);
-                     }
-                 }
-             }
-         }
-     }
- }
+     public static void eatMore(boolean hungry, int amountOfFood) {
+         12: int roomInBelly = 5;
+         13: if (hungry) {
+             14: var timeToEat = true;
+             15: while (amountOfFood > 0) {
+                 16: int amountEaten = 2;
+                 17: roomInBelly = roomInBelly -amountEaten;
+                 18: amountOfFood = amountOfFood -amountEaten;
+                 19: }
+             20: }
+         21: System.out.println(amountOfFood);
+         22: }
