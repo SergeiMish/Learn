@@ -1,16 +1,10 @@
 package packagea;
 
 public class Swan {
-    public static void eatMore(boolean hungry, int amountOfFood) {
-        int roomInBelly = 5;
-        if (hungry) {
-            var timeToEat = true;
-            while (amountOfFood > 0) {
-                int amountEaten = 2;
-                roomInBelly = roomInBelly - amountEaten;
-                amountOfFood = amountOfFood - amountEaten;
-            }
-        }
-        System.out.println(amountOfFood);
+    int numberEggs; // instance variable
+    public static void main(String[] args) {
+        Swan mother = new Swan();
+        mother.numberEggs = 1; // set variable
+        System.out.println(mother.numberEggs); // read variable
     }
 }
