@@ -3,7 +3,7 @@
      public static void main(String[] args) {
 
      }
-     public static void eatMore(boolean hungry, int amountOfFood) {
+     public void eatMore(boolean hungry, int amountOfFood) {
          int roomInBelly = 5;
          if (hungry) {
              var timeToEat = true;
