@@ -4,6 +4,8 @@
 
      }
      public void eatMore(boolean hungry, int amountOfFood) {
+         int roomInBelly = 5;
+         if (hungry) {
 
      }
  }
