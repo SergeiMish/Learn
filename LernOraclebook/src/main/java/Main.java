@@ -11,8 +11,3 @@
                  int amountEaten = 2;
                  roomInBelly = roomInBelly - amountEaten;
                  amountOfFood = amountOfFood - amountEaten;
-             }
-         }
-         System.out.println(amountOfFood);
-     }
- }
