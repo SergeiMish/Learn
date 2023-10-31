@@ -7,7 +7,3 @@
          int roomInBelly = 5;
          if (hungry) {
              var timeToEat = true;
-             while (amountOfFood > 0) {
-                 int amountEaten = 2;
-                 roomInBelly = roomInBelly - amountEaten;
-                 amountOfFood = amountOfFood - amountEaten;
