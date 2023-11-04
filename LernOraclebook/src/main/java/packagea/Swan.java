@@ -5,7 +5,7 @@ private Bear pandaBear;
 private void roar(Bear b) {
          System.out.println("Roar!");
          pandaBear = b;
-        7: }
+         }
 8: public static void main(String[] args) {
         9: Bear brownBear = new Bear();
         10: Bear polarBear = new Bear();
