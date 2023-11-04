@@ -2,7 +2,7 @@ package packagea;
 
 public class Bear {
 private Bear pandaBear;
-4: private void roar(Bear b) {
+private void roar(Bear b) {
         5: System.out.println("Roar!");
         6: pandaBear = b;
         7: }
