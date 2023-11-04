@@ -3,7 +3,7 @@ package packagea;
 public class Bear {
 private Bear pandaBear;
 private void roar(Bear b) {
-        5: System.out.println("Roar!");
+         System.out.println("Roar!");
         6: pandaBear = b;
         7: }
 8: public static void main(String[] args) {
