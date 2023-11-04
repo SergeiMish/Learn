@@ -9,7 +9,7 @@ private void roar(Bear b) {
  public static void main(String[] args) {
         Bear brownBear = new Bear();
          Bear polarBear = new Bear();
-        11: brownBear.roar(polarBear);
+        brownBear.roar(polarBear);
         12: polarBear = null;
         13: brownBear = null;
         14: System.gc(); } }
