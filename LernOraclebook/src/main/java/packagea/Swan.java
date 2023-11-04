@@ -11,5 +11,5 @@ private void roar(Bear b) {
          Bear polarBear = new Bear();
         brownBear.roar(polarBear);
          polarBear = null;
-        13: brownBear = null;
+        brownBear = null;
         14: System.gc(); } }
