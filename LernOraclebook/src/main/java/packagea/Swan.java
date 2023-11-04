@@ -12,4 +12,4 @@ private void roar(Bear b) {
         brownBear.roar(polarBear);
          polarBear = null;
         brownBear = null;
-        14: System.gc(); } }
+        System.gc(); } }
