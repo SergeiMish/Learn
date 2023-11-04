@@ -7,7 +7,7 @@ private void roar(Bear b) {
          pandaBear = b;
          }
  public static void main(String[] args) {
-        9: Bear brownBear = new Bear();
+        Bear brownBear = new Bear();
         10: Bear polarBear = new Bear();
         11: brownBear.roar(polarBear);
         12: polarBear = null;
