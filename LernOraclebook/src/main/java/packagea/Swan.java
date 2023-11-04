@@ -1,10 +1,15 @@
 package packagea;
 
-public class Swan {
-    int numberEggs; // instance variable
-    public static void main(String[] args) {
-        Swan mother = new Swan();
-        mother.numberEggs = 1; // set variable
-        System.out.println(mother.numberEggs); // read variable
-    }
-}
+public class Bear {
+3: private Bear pandaBear;
+4: private void roar(Bear b) {
+        5: System.out.println("Roar!");
+        6: pandaBear = b;
+        7: }
+8: public static void main(String[] args) {
+        9: Bear brownBear = new Bear();
+        10: Bear polarBear = new Bear();
+        11: brownBear.roar(polarBear);
+        12: polarBear = null;
+        13: brownBear = null;
+        14: System.gc(); } }
