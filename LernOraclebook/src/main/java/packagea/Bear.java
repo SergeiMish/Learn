@@ -7,6 +7,3 @@ private void roar(Bear b) {
          pandaBear = b;
          }
  public static void main(String[] args) {
-        Bear brownBear = new Bear();
-         Bear polarBear = new Bear();
-        brownBear.roar(polarBear);
