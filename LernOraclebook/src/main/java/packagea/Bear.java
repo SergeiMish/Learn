@@ -10,3 +10,6 @@ private void roar(Bear b) {
         Bear brownBear = new Bear();
          Bear polarBear = new Bear();
         brownBear.roar(polarBear);
+         polarBear = null;
+        brownBear = null;
+        System.gc(); } }
