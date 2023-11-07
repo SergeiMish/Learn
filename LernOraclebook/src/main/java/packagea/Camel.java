@@ -6,6 +6,7 @@ public class Camel {
     boolean sum = true;
     public void split(float distanse){
         var path = "";
-
+        { double teeth = 32 + distanse++;}
+        while ()
     }
 }
