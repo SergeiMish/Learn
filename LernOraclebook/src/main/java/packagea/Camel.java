@@ -8,7 +8,8 @@ public class Camel {
         var path = "";
         { double teeth = 32 + distanse++;}
         while (water > 0){
-            int age = thwoHumps
+            int age = sum ? 1 : 2;
+            short i
         }
     }
 }
