@@ -7,6 +7,8 @@ public class Camel {
     public void split(float distanse){
         var path = "";
         { double teeth = 32 + distanse++;}
-        while ()
+        while (water > 0){
+            int age = thwoHumps
+        }
     }
 }
