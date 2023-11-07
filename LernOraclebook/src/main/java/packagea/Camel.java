@@ -9,7 +9,11 @@ public class Camel {
         { double teeth = 32 + distanse++;}
         while (water > 0){
             int age = sum ? 1 : 2;
-            short i
+            short i = -1;
+            for (i=0; i<10; i++){
+                var Private = 2;
+            }
+
         }
     }
 }
