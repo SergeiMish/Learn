@@ -10,6 +10,7 @@ public class Camel {
         while (water > 0){
             int age = sum ? 1 : 2;
             short i = -1;
+
             for (i=0; i<10; i++){
                 var Private = 2;
             }
