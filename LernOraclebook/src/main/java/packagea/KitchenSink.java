@@ -5,7 +5,7 @@ int count;
 { System.out.print(count+"-");
     }
 { count++; }
-5: public Salmon() {
+ public Salmon() {
         6: count = 4;
         7: System.out.print(2+"-");
         8: }
