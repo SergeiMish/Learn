@@ -10,7 +10,7 @@ int count;
          System.out.print(2+"-");
          }
 public static void main(String[] args) {
-        10: System.out.print(7+"-");
+         System.out.print(7+"-");
         11: var s = new Salmon();
         12: System.out.print(s.count+"-");
     } }
