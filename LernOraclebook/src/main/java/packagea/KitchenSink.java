@@ -2,7 +2,7 @@ package packagea;
 
 public class Salmon {
 int count;
-3: { System.out.print(count+"-");
+{ System.out.print(count+"-");
     }
 4: { count++; }
 5: public Salmon() {
