@@ -8,7 +8,7 @@ int count;
  public Salmon() {
          count = 4;
          System.out.print(2+"-");
-        8: }
+         }
 9: public static void main(String[] args) {
         10: System.out.print(7+"-");
         11: var s = new Salmon();
