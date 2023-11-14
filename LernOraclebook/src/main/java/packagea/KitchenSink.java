@@ -6,7 +6,7 @@ int count;
     }
 { count++; }
  public Salmon() {
-        6: count = 4;
+         count = 4;
         7: System.out.print(2+"-");
         8: }
 9: public static void main(String[] args) {
