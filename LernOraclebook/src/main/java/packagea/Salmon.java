@@ -14,5 +14,4 @@ public static void main(String[] args) {
         var s = new Salmon();
          System.out.print(s.count+"-");
     }
-
 }
