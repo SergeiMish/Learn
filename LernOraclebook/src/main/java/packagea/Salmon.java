@@ -11,7 +11,5 @@ int count;
          }
 public static void main(String[] args) {
          System.out.print(7+"-");
-        var s = new Salmon();
-         System.out.print(s.count+"-");
-    }
+
 }
