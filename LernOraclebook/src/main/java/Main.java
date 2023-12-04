@@ -8,6 +8,7 @@
          public static void main(String[] args) {
              int numKnives;
              System.out.print("""
+"# forks = " + numForks +
 
      }
  }
