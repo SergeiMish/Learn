@@ -10,7 +10,6 @@
              System.out.print("""
 "# forks = " + numForks +
 " # knives = " + numKnives +
-# cups = 0""");
-         }
+
      }
  }
