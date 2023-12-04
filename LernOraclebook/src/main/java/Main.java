@@ -9,7 +9,6 @@
              int numKnives;
              System.out.print("""
 "# forks = " + numForks +
-" # knives = " + numKnives +
 
      }
  }
