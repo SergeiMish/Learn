@@ -1,17 +1,12 @@
 package packagea;
 
-public class Salmon {
-int count;
-{ System.out.print(count+"-");
-    }
-{ count++; }
- public Salmon() {
-         count = 4;
-         System.out.print(2+"-");
-         }
-public static void main(String[] args) {
-         System.out.print(7+"-");
-        var s = new Salmon();
-         System.out.print(s.count+"-");
-    }
-}
+public class River {
+2: int Depth = 1;
+3: float temp = 50.0;
+4: public void flow() {
+        5: for (int i = 0; i < 1; i++) {
+            6: int depth = 2;
+            7: depth++;
+            8: temp--
+            ;
+            9: }
