@@ -7,6 +7,6 @@ public class River {
         5: for (int i = 0; i < 1; i++) {
             6: int depth = 2;
             7: depth++;
-            8: temp--
+             temp--
             ;
              }
