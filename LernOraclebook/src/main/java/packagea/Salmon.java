@@ -5,7 +5,7 @@ public class River {
 3: float temp = 50.0;
 4: public void flow() {
         5: for (int i = 0; i < 1; i++) {
-            6: int depth = 2;
+             int depth = 2;
              depth++;
              temp--
             ;
