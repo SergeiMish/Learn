@@ -11,6 +11,8 @@ public class River {
              temp--
             ;
              }
-  g... s) {
+     System.out.println(depth);
+      System.out.println(temp); }
+ public static void main(String... s) {
          new River().flow();
          } }
