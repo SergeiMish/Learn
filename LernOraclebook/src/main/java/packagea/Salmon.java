@@ -13,3 +13,6 @@ public class River {
              }
      System.out.println(depth);
       System.out.println(temp); }
+ public static void main(String... s) {
+         new River().flow();
+         } }
