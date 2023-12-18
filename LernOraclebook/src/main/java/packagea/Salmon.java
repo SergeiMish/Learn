@@ -11,3 +11,5 @@ public class River {
              temp--
             ;
              }
+     System.out.println(depth);
+      System.out.println(temp); }
