@@ -1,16 +1,10 @@
 
  public class Main {
      public static void main(String[] args) {
+    int cookies = 3;
+    double reward = 3 + 2 * --
+            cookies;
+         System.out.println();
 
-     }
-     public class KitchenSink {
-         private int numForks;
-         public static void main(String[] args) {
-             int numKnives;
-             System.out.print("""
-"# forks = " + numForks +
-" # knives = " + numKnives +
-# cups = 0""");
-         }
      }
  }
