@@ -1,9 +1,7 @@
 
  public class Main {
      public static void main(String[] args) {
-         class Practicum {
 
-             public static void main(String[] args) {
                  double rubles = 30002.7;
                  double rateUSD = 78.5;
                  double dollars = rubles/rateUSD;
@@ -12,5 +10,4 @@
 
              }
          }
-     }
- }
+
