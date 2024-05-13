@@ -1,11 +1,18 @@
 
  public class Main {
      public static void main(String[] args) {
-         int megabytes = 64000;
-         int gigabytes = 64;
-         int megabytesPerGigabyte = megabytes / 1024;
-         int gigabytesToMegabytes = megabytesPerGigabyte;
-         boolean isMbMore = gigabytesToMegabytes >= gigabytes;
-         System.out.println(isMbMore);
+         int answer1 = 3;
+         int answer2 = 4; // Ответ на 2 вопрос
+         int answer3 = 1; // Ответ на 3 вопрос
+         boolean questions1 = answer1 == 2;
+         boolean questions2 = answer2 != 4;
+         boolean questions3 = answer3 == 1;
+         System.out.println("Результат проверки вопроса 1:");
+         System.out.println(questions1);
+         System.out.println("Результат проверки вопроса 2:");
+         System.out.println(questions2);
+         System.out.println("Результат проверки вопроса 3:");
+         System.out.println(questions3);
+         // Повторите для вопросов 2 и 3
      }
  }
