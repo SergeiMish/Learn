@@ -2,11 +2,39 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int secondsBeforeStart = 70; // Секунды до старта, цикл должен начинаться с этого значения
-        for (int i = 7; i == secondsBeforeStart; i--){
-            System.out.println("До старта SpaceY осталось" + i);
+        for (int i = 0; i <= 5; i++){
+            System.out.println("Круг " + i);
+            if (i == 1){
+                System.out.println("Отжимаемся");
+            }
+            else if (i == 2){
+                System.out.println("Качаем пресс");
+            }
+            else if (i == 3){
+                System.out.println("Отжимаемся");
+            }
+            else if (i == 4){
+                System.out.println("Качаем пресс");
+            }
+            else if (i == 5){
+                System.out.println("Отжимаемся");
+            }
+            System.out.println("Бегаем в колесе");
         }
 
-        System.out.println("Поехали! Узнаем, есть ли жизнь на Марсе!");
+        // в тренировке должно выполниться 5 кругов — напишите здесь цикл
+
+
+        // выполнение каждого круга зависит от условия — проверьте, является ли круг чётным
+        // если да, то нужно качать пресс
+
+
+        // иначе нужно отжаться
+
+
+        // независимо от номера круга бегаем в колесе
+
+
+        System.out.println("Отлично позанимались сегодня! Вы молодец!");
     }
 }
