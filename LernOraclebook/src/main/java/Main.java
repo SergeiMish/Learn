@@ -1,24 +1,41 @@
+import java.util.Scanner;
 
- public class Main {
+public class Main {
      public static void main(String[] args) {
-         int age = 23;
-         String dayOfWeek = "SATURDAY";
+         double rateUSD = 95.0;
+         double rateEUR = 99.58;
+         double rateCNY = 13.05;
 
-         int ticketPrice = 10;
-         if (age <=6 ){
-             ticketPrice = 0;
-             System.out.println ("Проезд бесплатный");
+
+         System.out.println("Введите сумму рублей для конвертации:");
+         double roubles = NumberReader.getDouble();
+
+         System.out.println("Введите номер валюты, в какую перевести рубли:");
+
+         System.out.println("1 – доллары;");
+         System.out.println("2 – евро;");
+         System.out.println("3 – юани;");
+         int command = NumberReader.getInteger();
+
+         if (command == 1){
+
+             double USD = roubles / rateUSD;
+             System.out.println("Было введено " + roubles + ", в долларах это " + USD);
+
          }
-         else if (age >= 65){
-             dayOfWeek.equals("SUNDAY");
-             ticketPrice = 3;
+         else if (roubles<=0){
+             System.out.println("Ошибка: некорректные значения.");
          }
-         else if (age >= 65){
-             ticketPrice = 5;
+         else if (command == 2){
+             double EUR = roubles / rateEUR;
+             System.out.println("Было введено " + roubles + ", в долларах это " + EUR);
          }
-         else if (dayOfWeek.equals("MONDAY")){
-             ticketPrice = 8;
+         else if (command == 3){
+             double CNY = roubles / rateCNY;
+             System.out.println("Было введено " + roubles + ", в долларах это " + CNY);
          }
-         System.out.println("Цена билета составляет: " + ticketPrice);
+         else System.out.println ("Такой команды нет");
+
+         System.out.println ("Работа с программой завершена.");
      }
- }
+}
