@@ -1,34 +1,24 @@
 
  public class Main {
      public static void main(String[] args) {
-         int dirtyLevel = 3;
-         boolean isDelicate = true;
-         int clothesWeight = 6;
+         int age = 23;
+         String dayOfWeek = "SATURDAY";
 
-         String washingMode;
-
-         if (dirtyLevel<=2) { // Проверьте уровень загрязнения
-             if (isDelicate){
-                 washingMode = "Деликатный";
-             }
-             else {
-                 washingMode = "Стандартный";
-             }// В случае, если нужна деликатная стирка
-             // Режим "Деликатный"
-             // Иначе "Стандартный"
-         } else {
-             if (clothesWeight>=6){
-                 washingMode ="Большая загрузка";
-             }
-             else {
-                 washingMode ="Сильные загрязнения";
-             }
-             // Если вещей больше 5 килограмм
-             // Режим "Большая загрузка"
-             // Иначе "Сильные загрязнения"
+         int ticketPrice = 10;
+         if (age <=6 ){
+             ticketPrice = 0;
+             System.out.println ("Проезд бесплатный");
          }
-         System.out.println("Выбран режим стирки: " + washingMode);
-         // Выведите информацию о выбранном режиме
+         else if (age >= 65){
+             dayOfWeek.equals("SUNDAY");
+             ticketPrice = 3;
+         }
+         else if (age >= 65){
+             ticketPrice = 5;
+         }
+         else if (dayOfWeek.equals("MONDAY")){
+             ticketPrice = 8;
+         }
+         System.out.println("Цена билета составляет: " + ticketPrice);
      }
  }
-
