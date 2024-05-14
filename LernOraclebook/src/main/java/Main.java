@@ -2,24 +2,60 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        double interestRate = 10;
+        // Курсы валют
+        double exchangeRateUSD = 94.8;
+        double exchangeRateEUR = 103.8;
+        double exchangeRateCNY = 13.1;
+
+        // Процентные ставки
+        double interestRateRUB = 7;
+        double interestRateUSD = 1;
+        double interestRateEUR = 0.8;
+        double interestRateCNY = 1.5;
+
+        // Вывод меню
+        System.out.println("Введите номер валюты:");
+        System.out.println("1 – рубли;");
+        System.out.println("2 – доллары;");
+        System.out.println("3 – евро;");
+        System.out.println("4 – юани.");
+        int currency = NumberReader.getInteger();
+
+        double exchangeRate = 1;
+        double interestRate;
+        String currencySymbol;
+
+        if (currency == 1) {
+            interestRate = interestRateRUB;
+            currencySymbol = "RUB";
+        } else if (currency == 2) {
+            interestRate = interestRateUSD;
+            currencySymbol = "USD";
+            exchangeRate = exchangeRateUSD;
+        } else if (currency == 3) {
+            interestRate = interestRateEUR;
+            currencySymbol = "EUR";
+            exchangeRate = exchangeRateEUR;
+        } else if (currency == 4) {
+            interestRate = interestRateCNY;
+            currencySymbol = "CNY";
+            exchangeRate = exchangeRateCNY;
+        } else {
+            System.out.println("Ошибка: выбрана некорректная валюта. Валюта по умолчанию — рубли.");
+        }
+        interestRate = interestRateRUB;
+        currencySymbol = "RUB";
 
         System.out.println("Введите начальную сумму в выбранной валюте:");
         double amount = NumberReader.getDouble();
 
-        // посчитайте начальную сумму и сохраните в переменную amount
-
         System.out.println("Введите количество лет для расчёта:");
-        int yers = NumberReader.getInteger();
-        // посчитайте количество лет и сохраните в переменную years
+        int years = NumberReader.getInteger();
 
-        // напишите условие выполнения цикла
-        for (int i = 1; i <= yers; i++) {
+        for (int i = 1; i <= years; i++) {
             amount = amount + amount * (interestRate / 100);
-            // формула для суммы за один год на процентную ставку
         }
 
-        // выведите на экран сообщение с итоговой суммой
-        System.out.println("К окончанию срока сумма составит: " + amount + " " + "RUB");
+        System.out.println("К окончанию срока сумма составит: " + amount + " " + currencySymbol);
     }
 }
