@@ -1,15 +1,18 @@
 
  public class Main {
      public static void main(String[] args) {
-         String weather = "Дождь";
+         String position = "seller";
 
-         System.out.println("Собираюсь на прогулку");
-         if (weather.equals("Дождь")) {weather.equals("Дождь");
-             System.out.println("Беру с собой зонт");}
-        else{
-            System.out.println("Иду на легке");
+         if (position.equals("admin")); {
+             System.out.println("Доступ разрешен на все ресурсы.");
          }
-         System.out.println("Люблю гулять!");
+             else if (position.equals("seller")){
+             System.out.println("Доступ разрешен только на просмотр объявлений.");
+         }
+         else {
+             System.out.println("Проверка окончена.");
+
+         }
      }
  }
 
