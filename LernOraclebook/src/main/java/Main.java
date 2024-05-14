@@ -1,21 +1,34 @@
 
  public class Main {
      public static void main(String[] args) {
-         String season = "spring";
-         int totalPeople = 5;
-         int dancers = 2;
-         int gamePlayers = 3;
-         int temperature = 20;
+         int dirtyLevel = 3;
+         boolean isDelicate = true;
+         int clothesWeight = 6;
 
-         if (season.equals("summer")) {
-             System.out.println("Пойдём гулять"); // Если это так – выведите сообщение с предложением погулять
-         } else if (temperature>=15) { // Проверьте, что на улице тепло
-             System.out.println("Пойдём в кафе на веранду!");   // Выведите соответствующее сообщение
-         } else if (dancers>0) { // Проверьте, есть ли желающие потанцевать
-             System.out.println("Пойдём в бар!"); // Выведите соответствующее сообщение
-         } else if (gamePlayers>=totalPeople) { // Проверьте, все ли хотят играть в настольные игры
-             System.out.println("Пойдём к кому-то в гости и поиграем в настольные игры!");  // Выведите соответствующее сообщение
+         String washingMode;
+
+         if (dirtyLevel<=2) { // Проверьте уровень загрязнения
+             if (isDelicate){
+                 washingMode = "Деликатный";
+             }
+             else {
+                 washingMode = "Стандартный";
+             }// В случае, если нужна деликатная стирка
+             // Режим "Деликатный"
+             // Иначе "Стандартный"
+         } else {
+             if (clothesWeight>=6){
+                 washingMode ="Большая загрузка";
+             }
+             else {
+                 washingMode ="Сильные загрязнения";
+             }
+             // Если вещей больше 5 килограмм
+             // Режим "Большая загрузка"
+             // Иначе "Сильные загрязнения"
          }
+         System.out.println("Выбран режим стирки: " + washingMode);
+         // Выведите информацию о выбранном режиме
      }
  }
 
