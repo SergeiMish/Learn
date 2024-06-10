@@ -6,7 +6,8 @@ public class Main {
         int totalMonths = 12;
 
         double totalCost = 0;
-
+        Scanner scanner = new Scanner(System.in);
+        double mea = scanner.nextDouble();
         // опишите условие цикла.
         // в качестве переменной итерирования можно использовать переменную month
         for (int month = 1; month <= totalMonths; month++) {
