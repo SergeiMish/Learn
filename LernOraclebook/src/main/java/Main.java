@@ -2,16 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        boolean isVisible = true;
-        if (isVisible) {
-            String condition = "истину";
-            System.out.println("Я наконец увидел " + condition);
-            boolean isComplex = false;
-            if (isComplex) {
-                String simple = "сложная";
-                System.out.println("Но она слишком " + simple);
-                isVisible = false;
+            for (int i = 1; i <=5; i++) { // опишите условие цикла
+                int square = i * i; // вычислите значение квадрата числа
+                System.out.println("Квадрат числа " + i + ": " + square); // выведите результат в нужном формате
             }
         }
     }
-}
