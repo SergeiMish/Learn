@@ -2,21 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int number = 8;
-        String result = "A";
-
-        if (number > 5) {
-            result = "B";
-        }
-
-        if (number % 3 == 0) {
-            result = "C";
-        }
-
-        boolean condition = number >= 10;
-        if (condition) {
-            result = "C";
-        }
-        System.out.println(result);
+        boolean isVisible = true;
+        if (isVisible) {
+            String condition = "истину";
+            System.out.println("Я наконец увидел " + condition);
+            boolean isComplex = true;
+            if (isComplex) {
+                String simple = "сложная";
+                System.out.println("Но она слишком " + simple);
+                isVisible = false;
+            }
     }
-}
+Ъ
