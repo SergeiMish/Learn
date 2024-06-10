@@ -2,9 +2,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-            for (int i = 1; i <=5; i++) { // опишите условие цикла
-                int square = i * i; // вычислите значение квадрата числа
-                System.out.println("Квадрат числа " + i + ": " + square); // выведите результат в нужном формате
+        double price = 256;
+        int totalMonths = 12;
+
+        double totalCost = 0;
+
+        // опишите условие цикла.
+        // в качестве переменной итерирования можно использовать переменную month
+        for (int month = 1; month <= totalMonths; month++) {
+            if (month % 3 == 0){
+                price = price / 2;
             }
+            totalCost = totalCost +price;
+            // Подсчитайте сумму с учётом изменения цены каждый третий месяц
         }
+
+        System.out.println("Общая стоимость за " + totalMonths + " месяцев: " + totalCost + " руб.");
+    }
     }
