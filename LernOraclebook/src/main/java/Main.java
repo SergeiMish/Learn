@@ -3,15 +3,32 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        double[] expenses = {100.50, 500.00, 10.00, 0.0, 640.60, 370.20, 200.00};
+        String[] currencies = {"USD","EUR","JPY","RUB"};
 
-        // Добавьте 115 рублей к расходам за среду
-        expenses[2]  = 125.0;
-        System.out.println("Новое значение расходов за среду: " + expenses[2] + "рублей.");
+        System.out.println("В вашем тревел-кошельке доступны следующие валюты:");
+        System.out.println(currencies[0]);
+        System.out.println(currencies[1]);
+        System.out.println(currencies[2]);
+        System.out.println(currencies[3]);
 
-        // Суммируйте три самые крупные траты
-        double sum = expenses[1] + expenses[5] + expenses[6];
-        System.out.println("Самые большие расходы были во вторник, пятницу и субботу.");
-        System.out.println("Всего вы потратили в эти дни: " + sum + " рублей.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Если вы планируете поездку в Данию, введите 1, а если в Китай, введите 2");
+
+        int country = scanner.nextInt();  // Считайте из консоли ввод пользователя
+
+        // Если выбрана Дания, измените значение элемента евро на кроны DKK
+        if (country == 1){
+            currencies [1] = "DKK";
+        }
+        // Если Китай, измените значение элемента иена на юани CNY
+        else if (country == 2){
+            currencies[2] = "CNY";
+        }
+
+        System.out.println("В вашем тревел-кошельке доступны следующие валюты:");
+        System.out.println(currencies[0]);
+        System.out.println(currencies[1]);
+        System.out.println(currencies[2]);
+        System.out.println(currencies[3]);
     }
 }
