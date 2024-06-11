@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Траты за неделю:");
         // выведите с помощью цикла все траты за неделю в виде: "День ... . Потрачено рублей: ..."
         for (int i = 0; i < expenses.length; i++){
-            System.out.println("День " + (i+1) + " Потрачено рублей: " + expenses[i]);
+            System.out.println("День " + (i+1) + ". Потрачено рублей: " + expenses[i]);
         }
 
         int sum = 0;
