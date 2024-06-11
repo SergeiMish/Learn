@@ -3,40 +3,24 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String[] dishes = {"Ризотто", "Тартар", "Шурпа", "Панна-котта", "Сашими"}; // Массив
-        System.out.println("Вы продегустировали пять блюд.");
+        // объявите пустой массив трат за неделю (7 дней)
+        int[] expenses = new int[7];
 
-        Scanner scanner = new Scanner(System.in);
+        Random random = new Random(); // Генерирует случайное число
 
-        System.out.println("Введите индекс блюда, которое хотите переместить:");
-        System.out.println("0-Ризотто");
-        System.out.println("1-Тартар");
-        System.out.println("2-Шурпа");
-        System.out.println("3-Панна-котта");
-        System.out.println("4-Сашими");
+        // допишите условие цикла for, чтобы заполнить массив случайными тратами
+        for (int i = 0; i < expenses.length; i++) {
+            expenses[i] = random.nextInt(1000);
+        }
 
-        // Считайте из консоли индекс блюда, которое нужно переместить
-        int firstIndex = scanner.nextInt();
+        System.out.println("Траты за неделю:");
+        // выведите с помощью цикла все траты за неделю в виде: "День ... . Потрачено рублей: ..."
 
-        System.out.println("Введите позицию, на которую хотите его переместить, от 0 до 4:");
-        // Объявите переменную secondIndex для нового положения (индекса) блюда, считайте его из консоли
-        int secondIndex = scanner.nextInt();
 
-        // Сохраните значение блюда под индексом firstIndex в переменную swap
-        String swap = dishes[firstIndex];
+        int sum = 0;
+        // посчитайте и выведите сумму трат за неделю — используйте цикл и здесь
+        ...
 
-        // Присвойте блюду с индексом firstIndex значение блюда под индексом secondIndex
-        dishes[firstIndex] = dishes[secondIndex];
-
-        // Присвойте блюду с индексом secondIndex значение переменной swap
-        dishes[secondIndex] = swap;
-
-        System.out.println("Ваш рейтинг блюд:");
-        System.out.println(dishes[0]);
-        System.out.println(dishes[1]);
-        System.out.println(dishes[2]);
-        System.out.println(dishes[3]);
-        System.out.println(dishes[4]);
-
+        System.out.println("Траты в рублях за неделю: " + ...);
     }
 }
