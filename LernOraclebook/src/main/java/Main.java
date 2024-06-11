@@ -3,15 +3,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Расходы за неделю
-        double mondayExpense = 100.50;
-        double tuesdayExpense = 500.00;
-        double wednesdayExpense = 10.00;
-        double thursdayExpense = 0.0;
-        double fridayExpense = 40.60;
-        double saturdayExpense = 500.10;
-        double sundayExpense = 200.00;
-        double [] expenses = {mondayExpense, tuesdayExpense, wednesdayExpense, thursdayExpense, fridayExpense, saturdayExpense, sundayExpense};
-        // Объявите массив expenses и соберите в него значения из переменных
+        double[] expenses = {100.50, 500.00, 10.00, 0.0, 640.60, 370.20, 200.00};
+
+        // Добавьте 115 рублей к расходам за среду
+        expenses[2]  = 125.0;
+        System.out.println("Новое значение расходов за среду: " + expenses[2] + "рублей.");
+
+        // Суммируйте три самые крупные траты
+        double sum = expenses[1] + expenses[5] + expenses[6];
+        System.out.println("Самые большие расходы были во вторник, пятницу и субботу.");
+        System.out.println("Всего вы потратили в эти дни: " + sum + " рублей.");
     }
 }
