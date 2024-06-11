@@ -3,26 +3,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[] expenses = new int[7];
+        double[] expenses = new double[7]; // объявили массив трат за неделю (7 дней)
 
-        Random random = new Random(); // Генерирует случайное число
+       int expense = 50; // в первый день потрачено 50 рублей
 
-        // допишите условие цикла for, чтобы заполнить массив случайными тратами
-        for (int i = 0; i < expenses.length; i++) {
-            expenses[i] = random.nextInt(1000);
+        // заполнили массив, используя цикл for
+        for (int i = 1; i < expenses.length; i++) {
+            expenses[i] = expense;
+            expense = expense + 100;
         }
-
-        System.out.println("Траты за неделю:");
-        // выведите с помощью цикла все траты за неделю в виде: "День ... . Потрачено рублей: ..."
-        for (int i = 0; i < expenses.length; i++){
-            System.out.println("День " + (i+1) + ". Потрачено рублей: " + expenses[i]);
-        }
-
-        int sum = 0;
-        // посчитайте и выведите сумму трат за неделю — используйте цикл и здесь
-        for (int i = 0; i < expenses.length; i++){
-            sum = sum + expenses[i];
-        }
-        System.out.println("Траты в рублях за неделю: " + sum);
+        System.out.println("Ошибок нет. Все расходы успешно занесены в приложение!");
     }
 }
