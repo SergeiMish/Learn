@@ -14,12 +14,12 @@ public class Main {
         System.out.println("Ваш ход:");
 
         // запускаем цикл игры
-        while (userInput == randomInt) {
+        while (userInput != randomInt) {
         userInput = scanner.nextInt(); // в этой переменной должен сохраняться ввод пользователя
 
-            if (userInput < randomInt) { // условие проверяется в цикле
+            if (userInput > randomInt) { // условие проверяется в цикле
                 System.out.println("Меньше");
-            } else if (userInput > randomInt) {
+            } else if (userInput < randomInt) {
                 // Второе условие
                 System.out.println("Больше");
             } else {
