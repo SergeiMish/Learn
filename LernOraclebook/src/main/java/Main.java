@@ -3,32 +3,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String[] currencies = {"USD","EUR","JPY","RUB"};
-
-        System.out.println("В вашем тревел-кошельке доступны следующие валюты:");
-        System.out.println(currencies[0]);
-        System.out.println(currencies[1]);
-        System.out.println(currencies[2]);
-        System.out.println(currencies[3]);
+        double[] expenses = {100.50, 500.00, 10.00, 0.0, 40.60, 500.10, 200.00};
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Если вы планируете поездку в Данию, введите 1, а если в Китай, введите 2");
 
-        int country = scanner.nextInt();  // Считайте из консоли ввод пользователя
+        System.out.println("Расходы за неделю хранятся под индексами от 0 (пн) до 6 (вс).");
+        System.out.println("Введите индекс дня, траты за который вы хотите отредактировать:");
 
-        // Если выбрана Дания, измените значение элемента евро на кроны DKK
-        if (country == 1){
-            currencies [1] = "DKK";
-        }
-        // Если Китай, измените значение элемента иена на юани CNY
-        else if (country == 2){
-            currencies[2] = "CNY";
-        }
+        // Объявите переменную, которая будет хранить индекс выбранного элемента
+        int index = scanner.nextInt();
 
-        System.out.println("В вашем тревел-кошельке доступны следующие валюты:");
-        System.out.println(currencies[0]);
-        System.out.println(currencies[1]);
-        System.out.println(currencies[2]);
-        System.out.println(currencies[3]);
+        System.out.println("Введите новую сумму трат за этот день:");
+        // Объявите переменную, в которой будет сохранено новое значение трат за выбранный день
+        double newExpense = scanner.nextDouble();
+
+        // Замените значение элемента с нужным индексом на новое
+        expenses[index] = newExpense;
+        System.out.println("За день с индексом " + index + " размер трат теперь " + newExpense );
     }
 }
