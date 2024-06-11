@@ -1,17 +1,31 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Сколько денег у вас сейчас: ");
-        double balance = scanner.nextDouble(); // ваши сбережения
-        int years = 0;
+        // не создавайте объект класса Random
+        int randomInt = new Random().nextInt(1000); // генерирует новое число от 0 до 1000
 
-        while (balance <= 1000000) {
-            balance = balance + balance * 0.05;
-            years = years + 1;
+        int userInput = -1; // это нужно, чтобы цикл запустился, если Random выдаст 0
+        System.out.println("Я загадал число от 0 до 1000.");
+        System.out.println("Ваш ход:");
+
+        // запускаем цикл игры
+
+        userInput = scanner.nextInt(); // в этой переменной должен сохраняться ввод пользователя
+
+        if (userInput < randomInt) { // условие проверяется в цикле
+            System.out.println("Меньше");
         }
-
-        System.out.println("Через " + years + " лет у вас будет миллион!");
+        else if (userInput > randomInt){
+            // Второе условие
+            System.out.println("Больше");
+        }
+        else {
+            // печатаем, когда число угадано
+            System.out.println("Вы великолепны! Именно это я загадал.");
+        }
     }
 }
