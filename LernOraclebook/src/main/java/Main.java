@@ -3,29 +3,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Random random = new Random(); // генерирует случайное число
+        int secretCode;
+        int pilotInput;
 
+        // добавьте цикл - ракета летает бесконечно
+        while (true){
+            secretCode = random.nextInt(100); // здесь задаётся код - случайное число от 0 до 100
+            System.out.println("Ракета SpaceY на орбите!");
+            pilotInput = random.nextInt(100); // пилот пытается угадать код
 
-        Scanner scanner = new Scanner(System.in);
-        // не создавайте объект класса Random
-        int randomInt = new Random().nextInt(1000); // генерирует новое число от 0 до 1000
-
-        int userInput = -1; // это нужно, чтобы цикл запустился, если Random выдаст 0
-        System.out.println("Я загадал число от 0 до 1000.");
-        System.out.println("Ваш ход:");
-
-        // запускаем цикл игры
-        while (userInput != randomInt) {
-        userInput = scanner.nextInt(); // в этой переменной должен сохраняться ввод пользователя
-
-            if (userInput > randomInt) { // условие проверяется в цикле
-                System.out.println("Меньше");
-            } else if (userInput < randomInt) {
-                // Второе условие
-                System.out.println("Больше");
-            } else {
-                // печатаем, когда число угадано
-                System.out.println("Вы великолепны! Именно это я загадал.");
+            if (secretCode == pilotInput) { // если пилот угадал код, то цикл должен завершиться
+                System.out.println("Пилот угадал число! Домой!");
+                break;
             }
         }
+
     }
 }
