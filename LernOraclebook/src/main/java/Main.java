@@ -11,7 +11,7 @@ public class Main {
         int numOfPizzas = 2;
         int totalSlices = numOfPizzas * slicesInPizza;
         int maximumPeopleToMeeting = totalSlices / slicesToPerson;
-        int leftSlices = maximumPeopleToMeeting % totalSlices;
+        int leftSlices = totalSlices % maximumPeopleToMeeting;
         System.out.println("Максимальное число участников идеальной встречи: " + maximumPeopleToMeeting);
         System.out.println("Останется кусков пиццы: " + leftSlices);
     }
