@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
             double[] expenses = new double[7];
-
             double rateUSD = 94.8;
             double rateEUR = 103.8;
             double rateCNY = 13.1;
@@ -19,11 +18,13 @@ public class Main {
 
             while (true) {
                 System.out.println("Что вы хотите сделать?");
-                System.out.println("1 — Конвертировать валюту");
-                System.out.println("2 — Получить совет");
-                System.out.println("3 — Ввести трату");
+                System.out.println("1 - Конвертировать валюту");
+                System.out.println("2 - Получить совет");
+                System.out.println("3 - Ввести трату");
                 System.out.println("4 - Показать траты за неделю");
-                System.out.println("0 — Выход");
+                System.out.println("5 — Показать самую большую сумму расходов за неделю");
+                // Допишите вывод нового пункта меню
+                System.out.println("0 - Выход");
 
                 int command = scanner.nextInt();
 
@@ -73,18 +74,29 @@ public class Main {
                     if (moneyBeforeSalary < 1000) {
                         System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
                     }
-                }  else if (command ==4){
-                    for (int i = 1; i < expenses.length; i++) {// добавьте ветвление для обработки новой команды
-              System.out.println("День" + (i+1) +". Потрачено" + expenses[i] + "рублей.");
-                        // используйте цикл for, чтобы получить все траты — элементы массива expenses
-                        // напечатайте в цикле строку: "День _. Потрачено _ рублей.".
+                } else if (command == 4) {
+                    for (int i = 0; i < expenses.length; i++) {
+                        System.out.println("День " + (i + 1) + ". Потрачено " + expenses[i] + " рублей");
                     }
-            } else if (command == 0) {
-                System.out.println("Выход");
-                break;
-            } else {
-                System.out.println("Извините, такой команды пока нет.");
+                } else if (command == 5) { // Добавьте условие в ветвление для обработки новой команды
+                /* Объявляем переменную maxExpense для хранения самой большой суммы расходов.
+                   Сначала её значение неизвестно, поэтому равно нулю */
+                    double maxExpense = 0;
+                    for (int i = 0; i < expenses.length; i++) { // проходим циклом по всему массиву трат
+                        if (i > maxExpense) { // сравниваем, больше ли текущий элемент массива значения maxExpense
+                            // если условие верно, то записываем в maxExpense значение текущего элемента массива
+                            maxExpense = maxExpense + i;
+                        }
+                    }
+                    // печатаем максимум расходов:
+                    System.out.println("Самая большая сумма расходов на этой неделе составила " + maxExpense + " руб.");
+
+                } else if (command == 0) {
+                    System.out.println("Выход");
+                    break;
+                } else {
+                    System.out.println("Извините, такой команды пока нет.");
+                }
             }
         }
     }
-}
