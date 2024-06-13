@@ -29,12 +29,12 @@ public class Main {
         } else {
             season = "Зима";
         }
-        for (int i = 1; i < 12; i++){
+        if (season.equals("Лето")) {
+            System.out.println("Летом лучше остаться в Москве.");
             /* Допишите ветвление, которое будет печатать строку:
             System.out.println("Летом лучше остаться в Москве.");
               и завершать выполнение программы */
         }
-
         else {
             System.out.println("Укажите стоимость прямых билетов из Москвы в Париж:");
             int ticketMoscowParis = scanner.nextInt();
@@ -47,9 +47,9 @@ public class Main {
 
 
             // В этом ветвлении что-то напутано с условиями - исправьте это
-            if (!season.equals("Лето")) { // Перенесите проверку на "Лето" выше
-                if (!(ticketMoscowLondonParis < ticketMoscowParis)) {
-                    if (!(britainVisa == 0)) { // Упростите это условие
+             // Перенесите проверку на "Лето" выше
+                if (ticketMoscowLondonParis < ticketMoscowParis) {
+                    if (britainVisa != 0) { // Упростите это условие
                         System.out.println("Летим через Лондон!");
                     } else {
                         System.out.println("Летим напрямую в Париж!");
@@ -60,4 +60,3 @@ public class Main {
             }
         }
     }
-}
