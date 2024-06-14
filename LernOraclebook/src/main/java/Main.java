@@ -18,7 +18,7 @@ public class Main {
             double koef = -1;
 
             switch (year) {
-					...
+
             }
 
             // курс рубля задан не для каждого года
