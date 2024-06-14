@@ -3,17 +3,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        public static void main(String[] args) {
             //мы подготовили эти прайс-лист
             String[] items1913 = {"Корова", "Курица", "Рубашка", "Шапка гусарская", "Гармонь", "Рояль"};
             String[] items1984 = {"Банка сгущёнки", "Мороженое", "Карта мира", "Кассетный магнитофон", "Пальто осеннее"};
 
-            Scanner scanner = ...
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Введите сумму в современных рублях:");
-            int amount = ...
+            int amount = scanner.nextInt();
 
             System.out.println("Введите год (1913 или 1984)");
-            int year = ...
+            int year = scanner.nextInt();
 
             // это коэффициент для перевода рубля по курсу заданного года
             double koef = -1;
