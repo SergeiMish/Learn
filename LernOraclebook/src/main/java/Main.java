@@ -19,10 +19,10 @@ public class Main {
 
         switch (year) {
             case 1913:
-                amount = amount / 884;
+                koef = 1.0 / 884;
             break;
             case  1984:
-                amount = amount / 337;
+                koef = 1.0 / 337;
                 break;
 
         }
@@ -81,12 +81,16 @@ public class Main {
                     switch (item){
                         case "Банка сгущёнки":
                             price = 0.55;
+                            break;
                         case  "Мороженое":
                             price = 0.20;
+                            break;
                         case "Карта мира":
                             price = 0.54;
+                            break;
                         case "Кассетный магнитофон":
                             price = 95.0;
+                            break;
                         case "Пальто осеннее":
                             price = 100.0;
                             break;
