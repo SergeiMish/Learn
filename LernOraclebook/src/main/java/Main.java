@@ -19,15 +19,15 @@ public class Main {
 
         String season = "Зима";
         // Допишите условия ветвления в виде утверждений
-        if (monthNumber < 6) {
+        if (monthNumber < 6 && monthNumber > 3) {
             season = "Весна";
-        } else if (...) {
+        } else if (monthNumber < 9 && monthNumber > 6) {
             season = "Лето";
-        } else if (...) {
+        } else if (monthNumber < 12 && monthNumber > 9) {
             season = "Осень";
         }
 
-        if (...) { // Не рекомендуем лететь в Париж в летние и зимние месяцы
+        if (season.equals("Лето") || season.equals("Зима")) { // Не рекомендуем лететь в Париж в летние и зимние месяцы
             System.out.println("В этом сезоне лучше остаться в Москве.");
             return;
         }
@@ -42,10 +42,10 @@ public class Main {
         System.out.println("0 - визы нет");
         int britainVisa = scanner.nextInt();
 
-        boolean directTicketsCheaper = ... // Сравнение стоимости билетов
-        boolean hasBritainVisa = ... // Проверка наличия визы
+        boolean directTicketsCheaper = ticketMoscowLondonParis < ticketMoscowParis; // Сравнение стоимости билетов
+        boolean hasBritainVisa = britainVisa == 1; // Проверка наличия визы
 
-        if (...) { // Проверить в одном условии наличие дешёвых билетов и визы
+        if (directTicketsCheaper && hasBritainVisa) { // Проверить в одном условии наличие дешёвых билетов и визы
             System.out.println("Летим через Лондон!");
         } else {
             System.out.println("Летим через Париж!");
