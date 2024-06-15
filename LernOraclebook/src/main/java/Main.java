@@ -62,7 +62,7 @@ public class Main {
                 System.out.println("Посмотрите в обе стороны и переходите.");
             } else {
                 int halfWay = linesCount % 2;
-                for(int line = 1; line < halfWay; line++){
+                for(int line = 1; line < linesCount; line++){
                     if(line == halfWay){
                         System.out.println("Посмотрите налево и переходите.");
                     } else {
