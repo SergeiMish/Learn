@@ -53,7 +53,7 @@ public class Main {
             }
         }
 
-        if(isTrafficLightGreen) {
+        if((isTrafficLightGreen) || (!isSafePlace && !isVehicleApproaching)) {
             System.out.println("Вы можете перейти дорогу!");
             System.out.println("Сколько полос движения на дороге?");
             int linesCount = scanner.nextInt();
