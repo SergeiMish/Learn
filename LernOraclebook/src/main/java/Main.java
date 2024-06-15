@@ -58,7 +58,7 @@ public class Main {
             System.out.println("Вы можете перейти дорогу!");
             System.out.println("Сколько полос движения на дороге?");
             int linesCount = scanner.nextInt();
-            if(linesCount < 1 && linesCount > 0){
+            if(linesCount < 2){
                 System.out.println("Посмотрите в обе стороны и переходите.");
             } else {
                 int halfWay = linesCount % 2;
