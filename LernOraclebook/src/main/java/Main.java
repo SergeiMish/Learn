@@ -13,12 +13,12 @@ public class Main {
         String onCrosswalk = scanner.nextLine();
         boolean isOnCrosswalk = onCrosswalk.equals("да"); // проверьте, ответил ли пользователь утвердительно
 
-        if (...) {
+        if (isOnCrosswalk) {
             // Если пешеход находится на пешеходном переходе:
             System.out.println("Горит ли зелёный сигнал светофора (да/нет)?");
             String trafficLightGreen = scanner.nextLine();
-            isTrafficLightGreen = ...
-            if (...) {
+            isTrafficLightGreen = trafficLightGreen.equals("да");
+            if (trafficLightGreen.equals("нет")) {
                 // Если светофор красный:
                 System.out.println("Не переходите дорогу на красный свет светофора!");
             }
@@ -26,8 +26,8 @@ public class Main {
             // Если к пешеходу приближается транспортное средство:
             System.out.println("Видите ли вы приближающиеся автомобили (да/нет)?");
             String vehicleApproaching = scanner.nextLine();
-            isVehicleApproaching = ...
-            if (...) {
+            isVehicleApproaching = vehicleApproaching.equals("да");
+            if (vehicleApproaching.equals("нет")) {
                 System.out.println("Дождитесь, пока проедет транспортное средство!");
             }
         }
