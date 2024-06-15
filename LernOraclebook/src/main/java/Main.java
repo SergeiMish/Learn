@@ -41,16 +41,16 @@ public class Main {
             switch (unsafePlaceType) {
                 case "П":
                 System.out.println("Не перебегайте дорогу вблизи поворотов!");
-
+                break;
                 case "А":
                 System.out.println("Не перебегайте дорогу вблизи перекрестков!");
-
+                break;
                 case "Х":
                 System.out.println("Не перебегайте дорогу вблизи остановок общественного транспорта!");
-
+                break;
                 default:
                     isSafePlace = true;
-
+                break;
             }
         }
 
