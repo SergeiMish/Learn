@@ -11,7 +11,7 @@ public class Main {
 
         System.out.println("Вы находитесь около пешеходного перехода (да/нет)?");
         String onCrosswalk = scanner.nextLine();
-        boolean isOnCrosswalk = ... // проверьте, ответил ли пользователь утвердительно
+        boolean isOnCrosswalk = onCrosswalk.equals("да"); // проверьте, ответил ли пользователь утвердительно
 
         if (...) {
             // Если пешеход находится на пешеходном переходе:
