@@ -26,8 +26,8 @@ public class Main {
             // Если к пешеходу приближается транспортное средство:
             System.out.println("Видите ли вы приближающиеся автомобили (да/нет)?");
             String vehicleApproaching = scanner.nextLine();
-            isVehicleApproaching = vehicleApproaching.equals("да");
-            if (vehicleApproaching.equals("нет")) {
+            isVehicleApproaching = vehicleApproaching.equals("нет");
+            if (vehicleApproaching.equals("да")) {
                 System.out.println("Дождитесь, пока проедет транспортное средство!");
             }
         }
