@@ -18,7 +18,7 @@ public class Main {
             System.out.println("Горит ли зелёный сигнал светофора (да/нет)?");
             String trafficLightGreen = scanner.nextLine();
             isTrafficLightGreen = trafficLightGreen.equals("да");
-            if (trafficLightGreen.equals("нет")) {
+            if (!isTrafficLightGreen) {
                 // Если светофор красный:
                 System.out.println("Не переходите дорогу на красный свет светофора!");
             }
@@ -50,7 +50,6 @@ public class Main {
                 break;
                 default:
                     isSafePlace = true;
-                break;
             }
         }
 
@@ -61,9 +60,9 @@ public class Main {
             if(linesCount < 2){
                 System.out.println("Посмотрите в обе стороны и переходите.");
             } else {
-                int halfWay = linesCount % 2;
-                for(int line = 1; line < linesCount; line++){
-                    if(line <= halfWay){
+                int halfWay = linesCount / 2;
+                for(int line = 1; line <= linesCount; line++){
+                    if(halfWay >= line){
                         System.out.println("Посмотрите налево и переходите.");
                     } else {
                         System.out.println("Посмотрите направо и переходите.");
