@@ -34,18 +34,18 @@ public class Main {
 
         boolean isSafePlace = false;
 
-        if(...) {
+        if(isSafePlace) {
             // Проверка на перебежку дороги в небезопасном месте:
             System.out.println("Находится ли вблизи вас поворот (П), остановка (А), перекрёсток (Х) или нет?");
             String unsafePlaceType = scanner.nextLine();
             switch (unsafePlaceType) {
-                ...:
+                case "П":
                 System.out.println("Не перебегайте дорогу вблизи поворотов!");
 
-                ...:
+                case "А":
                 System.out.println("Не перебегайте дорогу вблизи перекрестков!");
 
-                ...:
+                .:
                 System.out.println("Не перебегайте дорогу вблизи остановок общественного транспорта!");
 
                 default:
