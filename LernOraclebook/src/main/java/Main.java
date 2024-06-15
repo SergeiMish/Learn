@@ -49,21 +49,21 @@ public class Main {
                 System.out.println("Не перебегайте дорогу вблизи остановок общественного транспорта!");
 
                 default:
-                    isSafePlace = ...
+                    isSafePlace = true;
 
             }
         }
 
-        if(???) {
+        if(isTrafficLightGreen && isVehicleApproaching) {
             System.out.println("Вы можете перейти дорогу!");
             System.out.println("Сколько полос движения на дороге?");
-            int linesCount =
-            if(???){
+            int linesCount = scanner.nextInt();
+            if(linesCount < 1 && linesCount > 0){
                 System.out.println("Посмотрите в обе стороны и переходите.");
             } else {
-                int halfWay = ...
-                for(int line = 1; ...){
-                    if(???){
+                int halfWay = linesCount % 2;
+                for(int line = 1; line < halfWay; line++){
+                    if(line == halfWay){
                         System.out.println("Посмотрите налево и переходите.");
                     } else {
                         System.out.println("Посмотрите направо и переходите.");
