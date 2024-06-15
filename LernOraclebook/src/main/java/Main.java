@@ -54,7 +54,7 @@ public class Main {
             }
         }
 
-        if(isTrafficLightGreen && isVehicleApproaching) {
+        if(isTrafficLightGreen) {
             System.out.println("Вы можете перейти дорогу!");
             System.out.println("Сколько полос движения на дороге?");
             int linesCount = scanner.nextInt();
