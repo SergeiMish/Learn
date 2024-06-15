@@ -45,7 +45,7 @@ public class Main {
                 case "А":
                 System.out.println("Не перебегайте дорогу вблизи перекрестков!");
 
-                .:
+                case "Х":
                 System.out.println("Не перебегайте дорогу вблизи остановок общественного транспорта!");
 
                 default:
