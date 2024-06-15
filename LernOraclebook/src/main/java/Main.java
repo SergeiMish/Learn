@@ -3,106 +3,75 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //мы подготовили эти прайс-лист
-        String[] items1913 = {"Корова", "Курица", "Рубашка", "Шапка гусарская", "Гармонь", "Рояль"};
-        String[] items1984 = {"Банка сгущёнки", "Мороженое", "Карта мира", "Кассетный магнитофон", "Пальто осеннее"};
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите сумму в современных рублях:");
-        int amount = scanner.nextInt();
 
-        System.out.println("Введите год (1913 или 1984)");
-        int year = scanner.nextInt();
+        boolean isTrafficLightGreen = false;
 
-        // это коэффициент для перевода рубля по курсу заданного года
-        double koef = -1;
+        boolean isVehicleApproaching = false;
 
-        switch (year) {
-            case 1913:
-                koef = 1.0 / 884;
-            break;
-            case  1984:
-                koef = 1.0 / 337;
-                break;
+        System.out.println("Вы находитесь около пешеходного перехода (да/нет)?");
+        String onCrosswalk = scanner.nextLine();
+        boolean isOnCrosswalk = ... // проверьте, ответил ли пользователь утвердительно
 
+        if (...) {
+            // Если пешеход находится на пешеходном переходе:
+            System.out.println("Горит ли зелёный сигнал светофора (да/нет)?");
+            String trafficLightGreen = scanner.nextLine();
+            isTrafficLightGreen = ...
+            if (...) {
+                // Если светофор красный:
+                System.out.println("Не переходите дорогу на красный свет светофора!");
+            }
+        } else {
+            // Если к пешеходу приближается транспортное средство:
+            System.out.println("Видите ли вы приближающиеся автомобили (да/нет)?");
+            String vehicleApproaching = scanner.nextLine();
+            isVehicleApproaching = ...
+            if (...) {
+                System.out.println("Дождитесь, пока проедет транспортное средство!");
+            }
         }
 
-        // курс рубля задан не для каждого года
-        if(koef < 0){
-            System.out.println("Для этого года у нас нет данных.");
-            koef = 0;
+        boolean isSafePlace = false;
+
+        if(...) {
+            // Проверка на перебежку дороги в небезопасном месте:
+            System.out.println("Находится ли вблизи вас поворот (П), остановка (А), перекрёсток (Х) или нет?");
+            String unsafePlaceType = scanner.nextLine();
+            switch (unsafePlaceType) {
+                ...:
+                System.out.println("Не перебегайте дорогу вблизи поворотов!");
+
+                ...:
+                System.out.println("Не перебегайте дорогу вблизи перекрестков!");
+
+                ...:
+                System.out.println("Не перебегайте дорогу вблизи остановок общественного транспорта!");
+
+                default:
+                    isSafePlace = ...
+
+            }
         }
 
-        // переведите заданную сумму в рубли по старому курсу
-        double amountByYear = amount * koef;
-
-        System.out.println("В " + year + " году эта сумма приблизительно равнялась бы "
-                + amountByYear + " р. "
-                + "На эти деньги вы могли бы купить следующие товары:");
-
-        // выведите товары, которые вам доступны
-        switch (year) {
-            case 1913:
-                for (int i = 0; i < items1913.length; i++) {
-                    String item = items1913[i];
-                    Double price = 0.0;
-                    switch (item){
-                        case "Корова":
-                            price = 60.0;
-                            break;
-                        case  "Курица":
-                            price = 0.60;
-                            break;
-                        case "Рубашка":
-                            price = 1.0;
-                            break;
-                        case "Шапка гусарская":
-                            price = 12.0;
-                            break;
-                        case "Гармонь":
-                            price = 7.50;
-                            break;
-                        case "Рояль":
-                            price = 200.0;
-                            break;
-                    }
-                    // расчитываем количество и приводим результат к целому числу
-                    int quantity = (int) (amountByYear / price);
-                    if(quantity > 0) {
-                        System.out.println(item + " — " + quantity + " шт.");
+        if(???) {
+            System.out.println("Вы можете перейти дорогу!");
+            System.out.println("Сколько полос движения на дороге?");
+            int linesCount =
+            if(???){
+                System.out.println("Посмотрите в обе стороны и переходите.");
+            } else {
+                int halfWay = ...
+                for(int line = 1; ...){
+                    if(???){
+                        System.out.println("Посмотрите налево и переходите.");
+                    } else {
+                        System.out.println("Посмотрите направо и переходите.");
                     }
                 }
-
-                break;
-            case 1984:
-                for (int i = 0; i < items1984.length; i++) {
-                    String item = items1984[i];
-                    Double price = 0.0;
-                    switch (item){
-                        case "Банка сгущёнки":
-                            price = 0.55;
-                            break;
-                        case  "Мороженое":
-                            price = 0.20;
-                            break;
-                        case "Карта мира":
-                            price = 0.54;
-                            break;
-                        case "Кассетный магнитофон":
-                            price = 95.0;
-                            break;
-                        case "Пальто осеннее":
-                            price = 100.0;
-                            break;
-                    }
-                    // расчитываем количество и приводим результат к целому числу
-                    int quantity = (int) (amountByYear / price);
-                    if(quantity > 0) {
-                        System.out.println(item + " — " + quantity + " шт.");
-                    }
-                }
-                break;
+            }
+        } else {
+            System.out.println("Вы не можете перейти дорогу в этом месте!");
         }
     }
-
 }
