@@ -34,7 +34,7 @@ public class Main {
 
         boolean isSafePlace = false;
 
-        if(!isVehicleApproaching && !isOnCrosswalk) {
+        if(!isSafePlace && !isOnCrosswalk) {
             // Проверка на перебежку дороги в небезопасном месте:
             System.out.println("Находится ли вблизи вас поворот (П), остановка (А), перекрёсток (Х) или нет?");
             String unsafePlaceType = scanner.nextLine();
