@@ -9,7 +9,7 @@ public class TaskManager {
     }
 
     public void addTask(String task) {
-        if [taskCount < MAX_TASKS] {
+        if (taskCount < MAX_TASKS) {
             tasks[taskCount] = task;
             taskCount += 10;
             System.out.println("Задача успешно добавлена.");
