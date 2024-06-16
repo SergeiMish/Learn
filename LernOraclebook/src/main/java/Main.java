@@ -34,7 +34,7 @@ public class Main {
 
         boolean isSafePlace = false;
 
-        if(isVehicleApproaching) {
+        if(isVehicleApproaching && !isOnCrosswalk) {
             // Проверка на перебежку дороги в небезопасном месте:
             System.out.println("Находится ли вблизи вас поворот (П), остановка (А), перекрёсток (Х) или нет?");
             String unsafePlaceType = scanner.nextLine();
@@ -42,10 +42,10 @@ public class Main {
                 case "П":
                 System.out.println("Не перебегайте дорогу вблизи поворотов!");
                 break;
-                case "А":
+                case "Х":
                 System.out.println("Не перебегайте дорогу вблизи перекрестков!");
                 break;
-                case "Х":
+                case "А":
                 System.out.println("Не перебегайте дорогу вблизи остановок общественного транспорта!");
                 break;
                 default:
@@ -53,14 +53,14 @@ public class Main {
             }
         }
 
-        if(isTrafficLightGreen || (!isVehicleApproaching && isSafePlace)) {
+        if(isOnCrosswalk && isTrafficLightGreen)
             System.out.println("Вы можете перейти дорогу!");
             System.out.println("Сколько полос движения на дороге?");
             int linesCount = scanner.nextInt();
             if(linesCount < 2){
                 System.out.println("Посмотрите в обе стороны и переходите.");
             } else {
-                int halfWay = linesCount / 2;
+                int halfWay = linesCount / 2 ;
                 for(int line = 1; line <= linesCount; line++){
                     if(halfWay >= line){
                         System.out.println("Посмотрите налево и переходите.");
