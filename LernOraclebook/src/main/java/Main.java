@@ -27,7 +27,7 @@ public class Main {
             System.out.println("Видите ли вы приближающиеся автомобили (да/нет)?");
             String vehicleApproaching = scanner.nextLine();
             isVehicleApproaching = vehicleApproaching.equals("нет");
-            if (vehicleApproaching.equals("да")) {
+            if (!isVehicleApproaching) {
                 System.out.println("Дождитесь, пока проедет транспортное средство!");
             }
         }
@@ -40,20 +40,21 @@ public class Main {
             String unsafePlaceType = scanner.nextLine();
             switch (unsafePlaceType) {
                 case "П":
-                System.out.println("Не перебегайте дорогу вблизи поворотов!");
-                break;
+                    System.out.println("Не перебегайте дорогу вблизи поворотов!");
+                    break;
                 case "Х":
-                System.out.println("Не перебегайте дорогу вблизи перекрестков!");
-                break;
+                    System.out.println("Не перебегайте дорогу вблизи перекрестков!");
+                    break;
                 case "А":
-                System.out.println("Не перебегайте дорогу вблизи остановок общественного транспорта!");
-                break;
+                    System.out.println("Не перебегайте дорогу вблизи остановок общественного транспорта!");
+                    break;
                 default:
                     isSafePlace = true;
+
             }
         }
 
-        if(isOnCrosswalk && isTrafficLightGreen)
+        if(isOnCrosswalk && isTrafficLightGreen || (!isOnCrosswalk && isVehicleApproaching && isSafePlace)) {
             System.out.println("Вы можете перейти дорогу!");
             System.out.println("Сколько полос движения на дороге?");
             int linesCount = scanner.nextInt();
