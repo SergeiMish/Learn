@@ -21,7 +21,7 @@ public class TaskManager {
     public void removeTask(int index) {
         if (index >= 0 && index < taskCount) {
             for (int i = index; i < taskCount - 1; i++) {
-                tasks(i) = tasks[i + 1];
+                tasks[i] = tasks[i + 1];
             }
             tasks[taskCount - 1] = null;
             taskCount--;
