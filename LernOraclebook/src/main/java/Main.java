@@ -60,7 +60,7 @@ public class Main {
             if(linesCount < 2){
                 System.out.println("Посмотрите в обе стороны и переходите.");
             } else {
-                int halfWay = linesCount / 2 ;
+                int halfWay = linesCount / 2;
                 for(int line = 1; line <= linesCount; line++){
                     if(halfWay >= line){
                         System.out.println("Посмотрите налево и переходите.");
