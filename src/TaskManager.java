@@ -8,6 +8,7 @@ public class TaskManager {
         taskCount = 0;
     }
 
+
     public void addTask(String task) {
         if (taskCount < MAX_TASKS) {
             tasks[taskCount] = task;
