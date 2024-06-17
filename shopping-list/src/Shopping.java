@@ -6,6 +6,7 @@ public class Shopping {
         System.out.println("Вас приветствует список покупок!");
 
         String[] shoppingList = new String[8];
+        int productCount = 0;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -17,6 +18,17 @@ public class Shopping {
             System.out.println("4. Завершить работу");
 
             int actionNumber = scanner.nextInt();
+
+            if (actionNumber == 1) {
+               ... //добавить товар
+            }
+            ... // обработка остальных действий
+            else if (actionNumber == 4) {
+                break;
+            } else {
+                System.out.println("Неизвестная команда!");
+            }
         }
+
     }
 }
