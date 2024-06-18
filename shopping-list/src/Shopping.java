@@ -7,6 +7,7 @@ public class Shopping {
 
         String[] shoppingList = new String[8];
         int productCount = 0;
+        TaskManager taskManager = new TaskManager();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -20,15 +21,24 @@ public class Shopping {
             int actionNumber = scanner.nextInt();
 
             if (actionNumber == 1) {
-               ... //добавить товар
+                System.out.println("Введите товар");
+                String productName = scanner.next();
+                shoppingList[productCount] = productName;
+                for (int i = 0; i < shoppingList.length; i++) {
+                    System.out.println("По индексу " + i + " товар " + shoppingList[i]);
+                }
             }
-            ... // обработка остальных действий
-            else if (actionNumber == 4) {
-                break;
-            } else {
-                System.out.println("Неизвестная команда!");
+            if (actionNumber == 2) {
+                for (int i = 0; i < productCount; i++) {
+                    System.out.println((i) + ". " + shoppingList[i]);
+                }
+                if (actionNumber == 3) {
+
+                } else if (actionNumber == 4) {
+                    break;
+                } else {
+                    System.out.println("Неизвестная команда!");
+                }
             }
         }
-
-    }
-}
+    }}
