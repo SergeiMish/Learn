@@ -26,25 +26,30 @@ public class Shopping {
                 shoppingList[productCount] = productName;
                 productCount += 1;
                 System.out.println("Вид товара добавлен в список");
-
                 if (productCount >= 8) {
                     System.out.println("Список заполнен, рекомендуем отложить покупки на следующий раз");
                 }
+
             }
             if (actionNumber == 2) {
-                System.out.println("В вашем списке:");
+
+                if (productCount > 0) {
+                    System.out.println("В вашем списке:");
+                }
                 for (int i = 0; i < productCount; i++) {
                     System.out.println((i + 1) + " " + shoppingList[i]);
                 }
                 if (productCount == 0) {
                     System.out.println("Список пуст");
                 }
+
+
             }
                 if (actionNumber == 3) {
-                    for (int i = 2; i < productCount - 1; i++) {
-                        shoppingList[i - 1] = shoppingList[i];
+                    for (int i = 0; i < shoppingList.length - 1; i++) {
                         shoppingList[i] = null;
                     }
+                    return;
                 } else if (actionNumber == 4) {
                     break;
                 } else {
