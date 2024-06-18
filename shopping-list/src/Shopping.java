@@ -26,6 +26,7 @@ public class Shopping {
                 shoppingList[productCount] = productName;
                 for (int i = 0; i < shoppingList.length; i++) {
                     System.out.println("По индексу " + i + " товар " + shoppingList[i]);
+                    productCount +=1;
                 }
             }
             if (actionNumber == 2) {
