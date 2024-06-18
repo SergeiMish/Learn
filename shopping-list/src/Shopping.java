@@ -26,10 +26,6 @@ public class Shopping {
                 shoppingList[productCount] = productName;
                 productCount += 1;
                 System.out.println("Вид товара добавлен в список");
-                if (productCount >= 8) {
-                    System.out.println("Список заполнен, рекомендуем отложить покупки на следующий раз");
-                }
-
             }
             if (actionNumber == 2) {
 
@@ -42,20 +38,15 @@ public class Shopping {
                 if (productCount == 0) {
                     System.out.println("Список пуст");
                 }
-
-
             }
-                if (actionNumber == 3) {
-                    for (int i = 0; i < shoppingList.length - 1; i++) {
-                        shoppingList[i] = null;
-                    }
-                    return;
-                } else if (actionNumber == 4) {
-                    break;
-                } else {
-                    System.out.println("Неизвестная команда!");
+            if (actionNumber == 3) {
+                for (int i = 0; i < shoppingList.length - 1; i++) {
+                    shoppingList[i] = null;
+                    productCount --;
                 }
-            }
+            } else if (actionNumber == 4) {
+                break;
+            } else ;
         }
-
     }
+}
