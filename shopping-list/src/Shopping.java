@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Shopping {
@@ -27,13 +29,11 @@ public class Shopping {
                 for (int i = 0; i < shoppingList.length; i++) {
                     System.out.println("По индексу " + (i + 1) + " товар " + shoppingList[i]);
                 }
-            }else { if(productCount <=8)
-                System.out.println("Список покупок заполнен. Необходимо отдложить покупку на следующий раз.");
+            }else { System.out.println("Список покупок заполнен. Необходимо отдложить покупку на следующий раз.");
 
             }
             if (actionNumber == 2) {
-                for (int i = 0; i < productCount; i++) {
-                    System.out.println((i) + ". " + shoppingList[i]);
+                System.out.println("Список продуктов: " + Arrays.toString(shoppingList));
                 }
                 if (actionNumber == 3) {
 
@@ -44,4 +44,5 @@ public class Shopping {
                 }
             }
         }
-    }}
+    }
+
