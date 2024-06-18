@@ -25,15 +25,18 @@ public class Shopping {
                 System.out.println("Введите товар");
                 String productName = scanner.next();
                 shoppingList[productCount] = productName;
-                productCount +=1;
+                productCount += 1;
                 for (int i = 0; i < shoppingList.length; i++) {
                     System.out.println("По индексу " + (i + 1) + " товар " + shoppingList[i]);
                 }
-            }else { System.out.println("Список покупок заполнен. Необходимо отдложить покупку на следующий раз.");
+            } else {
+                System.out.println("Список покупок заполнен. Необходимо отдложить покупку на следующий раз.");
 
             }
             if (actionNumber == 2) {
-                System.out.println("Список продуктов: " + Arrays.toString(shoppingList));
+                System.out.println("В вашем списке:");
+                for (int i = 0; i < productCount; i++) {
+                    System.out.println((i+1)+ " " + shoppingList[i]);
                 }
                 if (actionNumber == 3) {
 
@@ -45,4 +48,4 @@ public class Shopping {
             }
         }
     }
-
+}
