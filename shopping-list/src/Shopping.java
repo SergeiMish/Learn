@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Shopping {
@@ -29,22 +28,26 @@ public class Shopping {
                 for (int i = 0; i < shoppingList.length; i++) {
                     System.out.println("По индексу " + (i + 1) + " товар " + shoppingList[i]);
                 }
-            } else {
-                System.out.println("Список покупок заполнен. Необходимо отдложить покупку на следующий раз.");
 
             }
             if (actionNumber == 2) {
                 System.out.println("В вашем списке:");
                 for (int i = 0; i < productCount; i++) {
-                    System.out.println((i+1)+ " " + shoppingList[i]);
+                    System.out.println((i + 1) + " " + shoppingList[i]);
                 }
-                if (actionNumber == 3) {
+                if (productCount == 0)
+                    System.out.println("Список пуст");
+            }
 
-                } else if (actionNumber == 4) {
-                    break;
-                } else {
-                    System.out.println("Неизвестная команда!");
+            if (actionNumber == 3) {
+                for (int i = 2; i < productCount-1; i++) {
+                    shoppingList[i - 1] = shoppingList[i];
+                    shoppingList[i] = null;
                 }
+            } else if (actionNumber == 4) {
+                break;
+            } else {
+                System.out.println("Неизвестная команда!");
             }
         }
     }
