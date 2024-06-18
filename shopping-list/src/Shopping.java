@@ -7,7 +7,6 @@ public class Shopping {
 
         String[] shoppingList = new String[8];
         int productCount = 0;
-        TaskManager taskManager = new TaskManager();
 
         Scanner scanner = new Scanner(System.in);
 
