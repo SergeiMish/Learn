@@ -26,14 +26,14 @@ public class Shopping {
                 productCount += 1;
                 System.out.println("Товар " + productName + " добавлен в список");
             } else if (actionNumber == 2) {
+                if (productCount == 0) {
+                    System.out.println("Список пуст");
+                }
                 if (productCount > 0) {
                     System.out.println("В вашем списке:");
                 }
                 for (int i = 0; i < productCount; i++) {
                     System.out.println((i + 1) + " " + shoppingList[i]);
-                }
-                if (productCount == 0) {
-                    System.out.println("Список пуст");
                 }
             } else if (actionNumber == 3) {
                 for (int i = 0; i < shoppingList.length - 1; i++) {
