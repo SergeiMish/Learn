@@ -25,10 +25,7 @@ public class Shopping {
                 shoppingList[productCount] = productName;
                 productCount += 1;
                 System.out.println("Товар " + productName + " добавлен в список");
-            }
-
-            else if (actionNumber == 2) {
-
+            } else if (actionNumber == 2) {
                 if (productCount > 0) {
                     System.out.println("В вашем списке:");
                 }
@@ -38,15 +35,14 @@ public class Shopping {
                 if (productCount == 0) {
                     System.out.println("Список пуст");
                 }
-            }
-
-           else if (actionNumber == 3) {
+            } else if (actionNumber == 3) {
                 for (int i = 0; i < shoppingList.length - 1; i++) {
                     shoppingList[i] = null;
                     productCount = 0;
                 }
                 System.out.println("Список покупок очищен");
             } else if (actionNumber == 4) {
+                System.out.println("Очень жаль что вы покидаете нас так рано! \nДля нас было большим удовольствием и привилегией познакомиться с вами.");
                 break;
             } else {
                 System.out.println("Неизвестная команда!");
