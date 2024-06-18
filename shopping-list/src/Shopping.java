@@ -25,9 +25,10 @@ public class Shopping {
                 shoppingList[productCount] = productName;
                 productCount +=1;
                 for (int i = 0; i < shoppingList.length; i++) {
-                    System.out.println("По индексу " + i + " товар " + shoppingList[i]);
+                    System.out.println("По индексу " + (i + 1) + " товар " + shoppingList[i]);
                 }
-            }else { System.out.println("Список покупок заполнен. Необходимо отдложить покупку на следующий раз.");
+            }else { if(productCount <=8)
+                System.out.println("Список покупок заполнен. Необходимо отдложить покупку на следующий раз.");
 
             }
             if (actionNumber == 2) {
