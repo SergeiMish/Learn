@@ -1,4 +1,6 @@
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Shopping {
@@ -25,8 +27,10 @@ public class Shopping {
                 String productName = scanner.next();
                 shoppingList[productCount] = productName;
                 productCount += 1;
-                System.out.println("Вид товара добавлен в список");
+                System.out.println("Товар " + productName + " добавлен в список");
             }
+
+
             if (actionNumber == 2) {
 
                 if (productCount > 0) {
@@ -39,14 +43,18 @@ public class Shopping {
                     System.out.println("Список пуст");
                 }
             }
+
             if (actionNumber == 3) {
                 for (int i = 0; i < shoppingList.length - 1; i++) {
                     shoppingList[i] = null;
-                    productCount --;
+                    productCount = 0;
                 }
+                System.out.println("Список покупок очищен");
             } else if (actionNumber == 4) {
                 break;
-            } else ;
+            } else {
+                System.out.println("Неизвестная команда!");
+            }
         }
     }
 }
