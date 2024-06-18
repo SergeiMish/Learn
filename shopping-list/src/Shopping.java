@@ -25,10 +25,11 @@ public class Shopping {
                 String productName = scanner.next();
                 shoppingList[productCount] = productName;
                 productCount += 1;
-                for (int i = 0; i < shoppingList.length; i++) {
-                    System.out.println("По индексу " + (i + 1) + " товар " + shoppingList[i]);
-                }
+                System.out.println("Вид товара добавлен в список");
 
+                if (productCount > shoppingList.length) {
+                    System.out.println("Список заполнен, рекомендуем отложить покупки на следующий раз");
+                }
             }
             if (actionNumber == 2) {
                 System.out.println("В вашем списке:");
