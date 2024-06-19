@@ -25,6 +25,9 @@ public class Shopping {
                 shoppingList[productCount] = productName;
                 productCount += 1;
                 System.out.println("Товар " + productName + " добавлен в список");
+                if (productCount == 8){
+                    System.out.println("Список товаров переполнен");
+                }
             } else if (actionNumber == 2) {
                 if (productCount == 0) {
                     System.out.println("Список пуст");
