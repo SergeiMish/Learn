@@ -29,7 +29,6 @@ public class Shopping {
                 }else {
                     System.out.println("Список товаров переполнен, отложите покупку до следующего раза");
                 }
-
             } else if (actionNumber == 2) {
                 if (productCount == 0) {
                     System.out.println("Список пуст");
