@@ -38,7 +38,7 @@ public class Shopping {
                     System.out.println((i + 1) + " " + shoppingList[i]);
                 }
             } else if (actionNumber == 3) {
-                for (int i = 0; i < shoppingList.length - 1; i++) {
+                for (int i = 0; i < shoppingList.length; i++) {
                     shoppingList[i] = null;
                 }
                 productCount = 0;
