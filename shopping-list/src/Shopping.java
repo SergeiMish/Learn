@@ -20,15 +20,15 @@ public class Shopping {
             int actionNumber = scanner.nextInt();
 
             if (actionNumber == 1) {
-                if (productCount == 8){
+                if (productCount < 8) {
+                    System.out.println("Введите товар");
+                    String productName = scanner.next();
+                    shoppingList[productCount] = productName;
+                    productCount += 1;
+                    System.out.println("Товар " + productName + " добавлен в список");
+                }else {
                     System.out.println("Список товаров переполнен, отложите покупку до следующего раза");
-                    productCount = 7;
                 }
-                System.out.println("Введите товар");
-                String productName = scanner.next();
-                shoppingList[productCount] = productName;
-                productCount += 1;
-                System.out.println("Товар " + productName + " добавлен в список");
 
             } else if (actionNumber == 2) {
                 if (productCount == 0) {
