@@ -32,6 +32,7 @@ public class Practicum {
          else if (currentHour >= 22){
              System.out.println("Добрый вечер!");
          }
+         else System.out.println();
     }// объявите метод sayHelloByTime
             // спросите у пользователя "Который час?" и сохраните ответ в переменную currentHour
             // в зависимости от времени предусмотрите печать приветствий
