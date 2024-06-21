@@ -19,10 +19,10 @@ public class Practicum {
         int income3 = 1084;
 
         // допишите реализацию метода ниже
-        if(income1>income2){
+        if(income1>income2 && income1>income3){
             return film1;
         }
-        else if (income2>income3){
+        else if (income2>income3 && income2>income3){
             return film2;
         }
         else return film3;
