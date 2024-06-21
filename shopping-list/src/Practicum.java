@@ -5,6 +5,9 @@ public class Practicum {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        welcomeUserByName();
+        sayHelloByTime();
+        printSuccess();
     }
 
     public static void welcomeUserByName() { // объявите метод welcomeUserByName
