@@ -26,7 +26,7 @@ public class Shopping {
                     shoppingList[productCount] = productName;
                     productCount += 1;
                     System.out.println("Товар " + productName + " добавлен в список");
-                }else {
+                } else {
                     System.out.println("Список товаров переполнен, отложите покупку до следующего раза");
                 }
             } else if (actionNumber == 2) {
