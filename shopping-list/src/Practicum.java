@@ -7,14 +7,14 @@ public class Practicum {
     public static void main(String[] args) {
     }
 
-    public void welcomeUserByName() { // объявите метод welcomeUserByName
+    public static void welcomeUserByName() { // объявите метод welcomeUserByName
         System.out.println("Как вас зовут?");
         String name = scanner.next();
          // сохраните введённое пользователем имя в переменную name
         System.out.println("Рад познакомиться, " + name + "!");
     }
 
-     public void sayHelloByTime(){
+     public static void sayHelloByTime(){
          System.out.println("Который час");
          int currentHour = scanner.nextInt();
          if (currentHour > 22 & currentHour < 6){
@@ -32,7 +32,7 @@ public class Practicum {
     }// объявите метод sayHelloByTime
             // спросите у пользователя "Который час?" и сохраните ответ в переменную currentHour
             // в зависимости от времени предусмотрите печать приветствий
-    public void printSuccess(){
+    public static void printSuccess(){
         System.out.println("У вас уже неплохо получается программировать!");
     }
             // объявите метод printSuccess
