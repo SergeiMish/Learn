@@ -7,14 +7,16 @@ public class Practicum {
     public static void main(String[] args) {
         System.out.println("Робот-помощник v2.0.");
         // вызовите ниже методы в правильном порядке
-    ...
-    ...
-    ...
+    sayHello();
+    sayHelloByTime();
+    welcomeUserByName();
+    printSuccess();
     }
 
     public static void welcomeUserByName() {
         System.out.println("Как вас зовут?");
         String name = scanner.next();
+        printCity();
         String city = scanner.next();// допишите чтение города
         System.out.println("Рад познакомиться, " + name + " из " + city + "!");
     }
@@ -25,9 +27,11 @@ public class Practicum {
     public static void sayHello(){
         System.out.println("Привет");
     }
-    ... // допишите метод sayHello(), который печатает: Привет!
-
-            ... // допишите метод printCity(), который печатает: Из какого вы города?
+    // допишите метод sayHello(), который печатает: Привет!
+    public static void printCity(){
+        System.out.println("Из какого вы города?");
+    }
+    // допишите метод printCity(), который печатает: Из какого вы города?
 
     public static void sayHelloByTime() {
         System.out.println("Который час?");
