@@ -1,21 +1,23 @@
 public class Practicum {
 
     public static void main(String[] args) {
-        double[] expenses = {1772.5, 367.0, 120.6, 2150.2, 874.0, 1.0, 1459.4};
-        double maxExpense = findMaxExpense(expenses); // вызовите метод и присвойте maxExpense значение его результата
-        System.out.println("Самая большая трата недели " + maxExpense);
-    }
-	public static double findMaxExpense(double[] expenses){
-        double maxExpense = 0;
-        for (int i = 0; i < expenses.length; i++){
-            if (expenses[i] > maxExpense) {
-                maxExpense = expenses[i];
-            }
-        }
-        return maxExpense;
-    }
-	// объявите метод findMaxExpense
-            // реализуйте метод. Чтобы найти самую большую трату, воспользуйтесь циклом
-            // самую большую трату запишите в переменную maxExpense
 
+        int balls; // сохраните общее число мячиков Пикселя в переменной balls
+        System.out.println("У Пикселя " + balls + " мячиков");
+
+		playPixel(); // поиграйте с Пикселем, вызвав метод playPixel
+
+        // после игры Пиксель должен вернуть все мячики на место!
+        System.out.println("Пиксель вернул все мячики");
+        System.out.println("Их снова " + ...);
+    }
+
+    public static void playPixel(int balls) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Сколько мячиков спрятал Пиксель?");
+        ... // сохраните количество мячиков, которые спрятал Пиксель, в переменную hiddenBalls
+
+        balls = ... // посчитайте, сколько у Пикселя осталось мячиков
+        System.out.println("Осталось " + ... );
+    }
 }
