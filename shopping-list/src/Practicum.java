@@ -1,8 +1,10 @@
+import java.util.Scanner;
+
 public class Practicum {
 
     public static void main(String[] args) {
 
-        int balls; // сохраните общее число мячиков Пикселя в переменной balls
+        int balls = 15; // сохраните общее число мячиков Пикселя в переменной balls
         System.out.println("У Пикселя " + balls + " мячиков");
 
 		playPixel(); // поиграйте с Пикселем, вызвав метод playPixel
@@ -15,7 +17,7 @@ public class Practicum {
     public static void playPixel(int balls) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Сколько мячиков спрятал Пиксель?");
-        ... // сохраните количество мячиков, которые спрятал Пиксель, в переменную hiddenBalls
+        int hiddenBalls = scanner.nextInt(); // сохраните количество мячиков, которые спрятал Пиксель, в переменную hiddenBalls
 
         balls = ... // посчитайте, сколько у Пикселя осталось мячиков
         System.out.println("Осталось " + ... );
