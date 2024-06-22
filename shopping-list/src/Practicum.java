@@ -1,21 +1,21 @@
-import java.util.Scanner;
-
 public class Practicum {
 
     public static void main(String[] args) {
-        System.out.println("Наибольшее из чисел 3 и 5 = " + findMax());
-        // напишите аналогичный вызов метода findMax для таких пар чисел: 16 и 5, -1 и -7
-        System.out.println("Наибольшее из чисел 16 и 5 = " + findMax());
-        System.out.println("Наибольшее из чисел -1 и -7 = " + findMax());
+        double[] expenses = {1772.5, 367.0, 120.6, 2150.2, 874.0, 1.0, 1459.4};
+        double maxExpense = findMaxExpense(); // вызовите метод и присвойте maxExpense значение его результата
+        System.out.println("Самая большая трата недели " + maxExpense);
     }
-
-    public static int findMax() {
-        int a = 5;
-        int b = 3;
-        if (a > b) {
-            return a;
+	public static double findMaxExpense(double[] expenses){
+        double maxExpense = 0;
+        for (int i = 0; i < expenses.length; i++){
+            if (expenses[i] > maxExpense) {
+                maxExpense = expenses[i];
+            }
         }
-        return b;
+        return maxExpense;
     }
+	// объявите метод findMaxExpense
+            // реализуйте метод. Чтобы найти самую большую трату, воспользуйтесь циклом
+            // самую большую трату запишите в переменную maxExpense
 
 }
