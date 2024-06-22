@@ -5,12 +5,11 @@ public class Practicum {
     public static void main(String[] args) {
         System.out.println("Привет!");
 
-        return doCommand();
+        doCommand();
     }
 
     public static void doCommand() {
         Scanner scanner = new Scanner(System.in);
-        break;
         while (true) {
             System.out.println("Что вы хотите сделать?");
             System.out.println("1 - Получить совет о покупке евро");
@@ -19,9 +18,8 @@ public class Practicum {
             int command = scanner.nextInt();
             if (command == 1) {
                 System.out.println("Если евро стоит меньше 105 рублей - покупайте!");
-                return;
             } else if (command == 2) {
-                return "Если доллар стоит меньше 95 рублей - покупайте!";
+                System.out.println("Если доллар стоит меньше 95 рублей - покупайте!");
             } else if (command == 0) {
                 System.out.println("Выход");
                 break;
