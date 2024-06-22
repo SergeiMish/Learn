@@ -3,29 +3,30 @@ import java.util.Scanner;
 public class Practicum {
 
     public static void main(String[] args) {
-        // ниже вызовите новый метод
-        String highestGrossingFilm = findHighestGrossingFilm();
-        System.out.println("Самый кассовый фильм: " + highestGrossingFilm);
+        System.out.println("Привет!");
+
+        return doCommand();
     }
 
-    public static String findHighestGrossingFilm() {
-        String film1 = "Титаник";
-        int income1 = 2194;
-
-        String film2 = "Аватар";
-        int income2 = 2810;
-
-        String film3 = "Тёмный рыцарь";
-        int income3 = 1084;
-
-        // допишите реализацию метода ниже
-        if(income1>income2 && income1>income3){
-            return film1;
+    public static void doCommand() {
+        Scanner scanner = new Scanner(System.in);
+        break;
+        while (true) {
+            System.out.println("Что вы хотите сделать?");
+            System.out.println("1 - Получить совет о покупке евро");
+            System.out.println("2 - Получить совет о покупке долларов");
+            System.out.println("0 - Выход");
+            int command = scanner.nextInt();
+            if (command == 1) {
+                System.out.println("Если евро стоит меньше 105 рублей - покупайте!");
+                return;
+            } else if (command == 2) {
+                return "Если доллар стоит меньше 95 рублей - покупайте!";
+            } else if (command == 0) {
+                System.out.println("Выход");
+                break;
+            }
         }
-        else if (income2>income3 && income2>income3){
-            return film2;
-        }
-        else return film3;
     }
 
 }
