@@ -4,6 +4,7 @@ public class Practicum {
 
     public static void main(String[] args) {
 
+
         int balls = 15; // сохраните общее число мячиков Пикселя в переменной balls
         System.out.println("У Пикселя " + balls + " мячиков");
 
