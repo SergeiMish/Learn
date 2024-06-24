@@ -13,6 +13,7 @@ public class Practicum {
         System.out.println("Какую сумму хотите отложить?");
         int savings = scanner.nextInt();
 
+
         correctExpenses(salary, transportMoney, foodMoney, savings); // вызовите метод correctExpenses с правильными аргументами
 
         // Напечатайте запланированные траты
