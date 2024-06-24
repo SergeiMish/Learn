@@ -13,12 +13,12 @@ public class Practicum {
         System.out.println("Какую сумму хотите отложить?");
         int savings = scanner.nextInt();
 
-        correctExpenses(); // вызовите метод correctExpenses с правильными аргументами
+        correctExpenses(salary, transportMoney, foodMoney, savings); // вызовите метод correctExpenses с правильными аргументами
 
         // Напечатайте запланированные траты
-        System.out.println("Вы планировали потратить: транспорт — " + ... + ", "
-                + "еда — " + ... + ", "
-                + "сбережения — " + ... + ".");
+        System.out.println("Вы планировали потратить: транспорт — " + transportMoney + ", "
+                + "еда — " + foodMoney + ", "
+                + "сбережения — " + savings + ".");
     }
 
     public static void correctExpenses(int salary, int transportMoney, int foodMoney, int savings) {// объявите метод correctExpenses
@@ -41,9 +41,10 @@ public class Practicum {
             // печатаем рекомендации
             System.out.println("Придётся пересмотреть планы, вам не хватает " + lackMoney);
             System.out.println("Рекомендуемые траты: "
-                    + "еда — " + ...+", "
-                    + "сбережения — " + ...+".");
+                    + "еда — " + foodMoney+", "
+                    + "сбережения — " + savings + ".");
         } else {
+            int leftMoney = salary - expensesSum;
             System.out.println("В этом месяце дебет с кредитом сошлись!");
             System.out.println("Свободных средств " + leftMoney);
         }
