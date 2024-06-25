@@ -30,13 +30,9 @@ public class Practicum {
                 // перенесите обработку команды в метод printAllExpenses, здесь вызовите его
                 printAllExpenses(expenses);
             } else if (command == 5) {
-                // перенесите поиск максимальной траты в метод findMaxExpense
                 double maxExpense = 0;
-                for (int i = 0; i < expenses.length; i++) {
-                    if (expenses[i] > maxExpense) {
-                        maxExpense = expenses[i];
-                    }
-                }
+                // перенесите поиск максимальной траты в метод findMaxExpense
+                findMaxExpense(expenses);
                 // печать должна остаться здесь — для получения максимальной траты нужно вызвать метод
                 System.out.println("Самая большая сумма расходов на этой неделе составила " + maxExpense + " руб.");
             } else if (command == 0) {
@@ -48,7 +44,7 @@ public class Practicum {
         }
     }
 
-    public static double saveExpense(Scanner scanner, double moneyBeforeSalary, double[] expenses){
+    public static double saveExpense(Scanner scanner, double moneyBeforeSalary, double[] expenses) {
         System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");
         int day = scanner.nextInt();
         System.out.println("Введите размер траты:");
@@ -64,15 +60,21 @@ public class Practicum {
     /* Добавьте здесь метод saveExpense, который будет сохранять значение расходов пользователя.
            saveExpense также должен возвращать новое значение остатка средств. */
 
-            public static void printAllExpenses(double[] expenses){
-                for (int i = 0; i < expenses.length; i++) {
-                    System.out.println("День " + (i + 1) + ". Потрачено " + expenses[i] + " рублей");
-                }
-            } // объявите и реализуйте здесь метод printAllExpenses
+    public static void printAllExpenses(double[] expenses) {
+        for (int i = 0; i < expenses.length; i++) {
+            System.out.println("День " + (i + 1) + ". Потрачено " + expenses[i] + " рублей");
+        }
+    } // объявите и реализуйте здесь метод printAllExpenses
 
-            public static double findMaxExpense(){
-
-            } // напишите метод findMaxExpense — он должен возвращать значение максимальной траты
+    public static double findMaxExpense(double[] expenses) {
+        double maxExpense = 0;
+        for (int i = 0; i < expenses.length; i++) {
+            if (expenses[i] > maxExpense) {
+                maxExpense = expenses[i];
+            }
+        }
+        return maxExpense;
+    } // напишите метод findMaxExpense — он должен возвращать значение максимальной траты
 
 
     public static void printMenu() {
@@ -88,7 +90,7 @@ public class Practicum {
     public static void getAdvice(double moneyBeforeSalary, int daysBeforeSalary) {
         if (moneyBeforeSalary < 3000) {
             System.out.println("Сегодня лучше поесть дома. Экономьте, и вы дотянете до зарплаты!");
-        } else if (moneyBeforeSalary < 10000){
+        } else if (moneyBeforeSalary < 10000) {
             if (daysBeforeSalary < 10) {
                 System.out.println("Можно заказать пиццу!");
             } else {
