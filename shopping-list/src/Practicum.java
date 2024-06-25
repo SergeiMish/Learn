@@ -21,7 +21,7 @@ public class Practicum {
             int command = scanner.nextInt();
 
             if (command == 1) {
-                convert(scanner, daysBeforeSalary); // вынесите обработку команды в метод convert, здесь вызовите его
+                convert(scanner, moneyBeforeSalary); // вынесите обработку команды в метод convert, здесь вызовите его
 
             } else if (command == 2) {
                 getAdvice(moneyBeforeSalary, daysBeforeSalary); // вынесите обработку команды в метод getAdvice, здесь вызовите его
