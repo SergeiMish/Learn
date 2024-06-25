@@ -19,13 +19,7 @@ public class Practicum {
 
         while (true) {
             ... // вынесите печать меню в метод printMenu, здесь останется только его вызов
-            System.out.println("Что вы хотите сделать? ");
-            System.out.println("1 - Конвертировать валюту");
-            System.out.println("2 - Получить совет");
-            System.out.println("3 - Ввести трату");
-            System.out.println("4 - Показать траты за неделю");
-            System.out.println("5 - Показать самую большую сумму расходов за неделю");
-            System.out.println("0 - Выход");
+
 
             int command = scanner.nextInt();
 
@@ -99,7 +93,15 @@ public class Practicum {
     }
 
     // объявите и реализуйте метод printMenu, который печатает меню
-    ...
+    public static void printMenu(){
+        System.out.println("Что вы хотите сделать? ");
+        System.out.println("1 - Конвертировать валюту");
+        System.out.println("2 - Получить совет");
+        System.out.println("3 - Ввести трату");
+        System.out.println("4 - Показать траты за неделю");
+        System.out.println("5 - Показать самую большую сумму расходов за неделю");
+        System.out.println("0 - Выход");
+    }
 
             // объявите и реализуйте метод convert, который конвертирует валюты
             ... convert(Scanner scanner, double moneyBeforeSalary) ...
