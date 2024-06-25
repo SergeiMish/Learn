@@ -24,6 +24,7 @@ public class Practicum {
             } else if (command == 3) {
                 // перенесите код ниже в метод saveExpense
                 // вызовите метод с помощью такой строки:
+
                 moneyBeforeSalary = saveExpense(scanner, moneyBeforeSalary, expenses);
 
             } else if (command == 4) {
@@ -61,10 +62,13 @@ public class Practicum {
         if (moneyBeforeSalary < 1000) {
             System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
         }
-    } /* Добавьте здесь метод saveExpense, который будет сохранять значение расходов пользователя.
+    }
+    /* Добавьте здесь метод saveExpense, который будет сохранять значение расходов пользователя.
            saveExpense также должен возвращать новое значение остатка средств. */
 
-            ... // объявите и реализуйте здесь метод printAllExpenses
+            public static void printAllExpenses(){
+
+            } // объявите и реализуйте здесь метод printAllExpenses
 
             ... // напишите метод findMaxExpense — он должен возвращать значение максимальной траты
 
