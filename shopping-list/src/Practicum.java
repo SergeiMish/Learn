@@ -18,7 +18,7 @@ public class Practicum {
         int daysBeforeSalary = scanner.nextInt();
 
         while (true) {
-            ... // вынесите печать меню в метод printMenu, здесь останется только его вызов
+            printMenu(); // вынесите печать меню в метод printMenu, здесь останется только его вызов
 
 
             int command = scanner.nextInt();
