@@ -24,14 +24,11 @@ public class Practicum {
             } else if (command == 3) {
                 // перенесите код ниже в метод saveExpense
                 // вызовите метод с помощью такой строки:
-
                 moneyBeforeSalary = saveExpense(scanner, moneyBeforeSalary, expenses);
 
             } else if (command == 4) {
                 // перенесите обработку команды в метод printAllExpenses, здесь вызовите его
-                for (int i = 0; i < expenses.length; i++) {
-                    System.out.println("День " + (i + 1) + ". Потрачено " + expenses[i] + " рублей");
-                }
+                printAllExpenses(expenses);
             } else if (command == 5) {
                 // перенесите поиск максимальной траты в метод findMaxExpense
                 double maxExpense = 0;
@@ -51,7 +48,7 @@ public class Practicum {
         }
     }
 
-    public static void saveExpense(Scanner scanner, double moneyBeforeSalary, double[] expenses){
+    public static double saveExpense(Scanner scanner, double moneyBeforeSalary, double[] expenses){
         System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");
         int day = scanner.nextInt();
         System.out.println("Введите размер траты:");
@@ -62,15 +59,20 @@ public class Practicum {
         if (moneyBeforeSalary < 1000) {
             System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
         }
+        return moneyBeforeSalary;
     }
     /* Добавьте здесь метод saveExpense, который будет сохранять значение расходов пользователя.
            saveExpense также должен возвращать новое значение остатка средств. */
 
-            public static void printAllExpenses(){
-
+            public static void printAllExpenses(double[] expenses){
+                for (int i = 0; i < expenses.length; i++) {
+                    System.out.println("День " + (i + 1) + ". Потрачено " + expenses[i] + " рублей");
+                }
             } // объявите и реализуйте здесь метод printAllExpenses
 
-            ... // напишите метод findMaxExpense — он должен возвращать значение максимальной траты
+            public static double findMaxExpense(){
+
+            } // напишите метод findMaxExpense — он должен возвращать значение максимальной траты
 
 
     public static void printMenu() {
