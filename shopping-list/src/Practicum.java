@@ -6,7 +6,6 @@ public class Practicum {
         double[] expenses = new double[7];
 
 
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Сколько денег у вас осталось до зарплаты?");
@@ -60,7 +59,7 @@ public class Practicum {
     }
 
     // объявите и реализуйте метод printMenu, который печатает меню
-    public static void printMenu(){
+    public static void printMenu() {
         System.out.println("Что вы хотите сделать? ");
         System.out.println("1 - Конвертировать валюту");
         System.out.println("2 - Получить совет");
@@ -70,50 +69,49 @@ public class Practicum {
         System.out.println("0 - Выход");
     }
 
-            // объявите и реализуйте метод convert, который конвертирует валюты
-            public static void convert(Scanner scanner, double moneyBeforeSalary) {
-                double rateUSD = 94.8;
-                double rateEUR = 103.8;
-                double rateCNY = 13.1;
-                System.out.println("Ваши сбережения: " + moneyBeforeSalary + " RUB");
-                System.out.println("В какую валюту хотите конвертировать? Доступные варианты: 1 - USD, 2 - EUR, 3 - CNY.");
-                int currency = scanner.nextInt();
-                if (currency == 1) {
-                    System.out.println("Ваши сбережения в долларах: " + moneyBeforeSalary / rateUSD);
-                } else if (currency == 2) {
-                    System.out.println("Ваши сбережения в евро: " + moneyBeforeSalary / rateEUR);
-                } else if (currency == 3) {
-                    System.out.println("Ваши сбережения в юанях: " + moneyBeforeSalary / rateCNY);
-                } else {
-                    System.out.println("Введена неизвестная валюта.");
-                }
-            }
+    // объявите и реализуйте метод convert, который конвертирует валюты
+    public static void convert(Scanner scanner, double moneyBeforeSalary) {
+        double rateUSD = 94.8;
+        double rateEUR = 103.8;
+        double rateCNY = 13.1;
+        System.out.println("Ваши сбережения: " + moneyBeforeSalary + " RUB");
+        System.out.println("В какую валюту хотите конвертировать? Доступные варианты: 1 - USD, 2 - EUR, 3 - CNY.");
+        int currency = scanner.nextInt();
+        if (currency == 1) {
+            System.out.println("Ваши сбережения в долларах: " + moneyBeforeSalary / rateUSD);
+        } else if (currency == 2) {
+            System.out.println("Ваши сбережения в евро: " + moneyBeforeSalary / rateEUR);
+        } else if (currency == 3) {
+            System.out.println("Ваши сбережения в юанях: " + moneyBeforeSalary / rateCNY);
+        } else {
+            System.out.println("Введена неизвестная валюта.");
+        }
+    }
 
-            // объявите и реализуйте метод getAdvice, который даёт совет
-            public static void getAdvice(double moneyBeforeSalary, int daysBeforeSalary){
-                if (moneyBeforeSalary < 3000) {
-                    System.out.println("Сегодня лучше поесть дома. Экономьте, и вы дотянете до зарплаты!");
-                } else if (moneyBeforeSalary < 10000){
-                    if (daysBeforeSalary < 10) {
-                        System.out.println("Можно заказать пиццу!");
-                    } else {
-                        System.out.println("Сегодня лучше поесть дома. Экономьте, и вы дотянете до зарплаты!");
-                    }
-                } else if (moneyBeforeSalary < 30000) {
-                    if (daysBeforeSalary < 10) {
-                        System.out.println("Неплохо! Сегодня можно поужинать в кафе.");
-                    } else {
-                        System.out.println("Можно заказать пиццу!");
-                    }
-                } else {
-                    if (daysBeforeSalary < 10) {
-                        System.out.println("Отлично! Можно сходить в ресторан.");
-                    } else {
-                        System.out.println("Неплохо! Сегодня можно поужинать в кафе.");
-                    }
-                }
+    // объявите и реализуйте метод getAdvice, который даёт совет
+    public static void getAdvice(double moneyBeforeSalary, int daysBeforeSalary) {
+        if (moneyBeforeSalary < 3000) {
+            System.out.println("Сегодня лучше поесть дома. Экономьте, и вы дотянете до зарплаты!");
+        } else if (moneyBeforeSalary < 10000) {
+            if (daysBeforeSalary < 10) {
+                System.out.println("Можно заказать пиццу!");
+            } else {
+                System.out.println("Сегодня лучше поесть дома. Экономьте, и вы дотянете до зарплаты!");
             }
-
+        } else if (moneyBeforeSalary < 30000) {
+            if (daysBeforeSalary < 10) {
+                System.out.println("Неплохо! Сегодня можно поужинать в кафе.");
+            } else {
+                System.out.println("Можно заказать пиццу!");
+            }
+        } else {
+            if (daysBeforeSalary < 10) {
+                System.out.println("Отлично! Можно сходить в ресторан.");
+            } else {
+                System.out.println("Неплохо! Сегодня можно поужинать в кафе.");
+            }
+        }
+    }
 
 
 }
