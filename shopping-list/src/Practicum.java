@@ -30,9 +30,8 @@ public class Practicum {
                 // перенесите обработку команды в метод printAllExpenses, здесь вызовите его
                 printAllExpenses(expenses);
             } else if (command == 5) {
-                double maxExpense = 0;
                 // перенесите поиск максимальной траты в метод findMaxExpense
-                findMaxExpense(expenses);
+                 double maxExpense = findMaxExpense(expenses);
                 // печать должна остаться здесь — для получения максимальной траты нужно вызвать метод
                 System.out.println("Самая большая сумма расходов на этой неделе составила " + maxExpense + " руб.");
             } else if (command == 0) {
