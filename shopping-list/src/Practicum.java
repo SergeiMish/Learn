@@ -1,19 +1,20 @@
 import java.util.Scanner;
 
-public class Practicum {
+import java.util.Scanner;
 
+public class Practicum {
     public static void main(String[] args) {
-        double[] expenses = new double[7];
+        double[] expenses = new double[7]; // должно стать полем нового класса
 
         Scanner scanner = new Scanner(System.in);
-        Converter converter = new Converter(94.8, 103.8, 13.1); // вызовите конструктор с параметрами
-        DinnerAdvisor dinnerAdvisor = new DinnerAdvisor();
-
         System.out.println("Сколько денег у вас осталось до зарплаты?");
         double moneyBeforeSalary = scanner.nextDouble();
-
         System.out.println("Сколько дней до зарплаты?");
         int daysBeforeSalary = scanner.nextInt();
+
+        Converter converter = new Converter(94.8,103.8,13.1);
+        DinnerAdvisor dinnerAdvisor = new DinnerAdvisor();
+        ... // здесь создайте объект класса ExpensesManager
 
         while (true) {
             printMenu();
@@ -41,11 +42,16 @@ public class Practicum {
         }
     }
 
+    // перенесите в ExpensesManager код методов saveExpense, findMaxExpense и printAllExpenses
+
     public static double saveExpense(Scanner scanner, double moneyBeforeSalary, double[] expenses) {
+
+        // печать вопросов и считывание ответов оставьте в классе Practicum
         System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");
         int day = scanner.nextInt();
         System.out.println("Введите размер траты:");
         double expense = scanner.nextDouble();
+
         moneyBeforeSalary = moneyBeforeSalary - expense;
         expenses[day - 1] = expenses[day - 1] + expense;
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
@@ -80,6 +86,4 @@ public class Practicum {
         System.out.println("5 - Показать самую большую сумму расходов за неделю");
         System.out.println("0 - Выход");
     }
-
-
 }
