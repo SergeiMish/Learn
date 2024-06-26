@@ -3,11 +3,16 @@ import java.util.Scanner;
 public class Practicum {
 
     public static void main(String[] args) {
-        class Converter {
+    }
+    }
+      class Converter {
             double rateUSD = 94.8;
             double rateEUR = 103.8;
             double rateCNY = 13.1;
 
+            public static void convert(double rubles, int currency){
+
+            }
             // Тело метода
     /*  if (currency == 1) {
             System.out.println("Ваши сбережения в долларах: " + rubles / rateUSD);
