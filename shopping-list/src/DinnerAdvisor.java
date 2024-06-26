@@ -1,5 +1,5 @@
 public class DinnerAdvisor {
-    public static void getAdvice(double moneyBeforeSalary, int daysBeforeSalary) {
+    public void getAdvice(double moneyBeforeSalary, int daysBeforeSalary) {
         if (moneyBeforeSalary < 3000) {
             System.out.println("Сегодня лучше поесть дома. Экономьте, и вы дотянете до зарплаты!");
         } else if (moneyBeforeSalary < 10000) {

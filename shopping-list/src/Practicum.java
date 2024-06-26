@@ -7,6 +7,7 @@ public class Practicum {
 
         Scanner scanner = new Scanner(System.in);
         Converter converter = new Converter(94.8, 103.8, 13.1); // вызовите конструктор с параметрами
+        DinnerAdvisor dinnerAdvisor = new DinnerAdvisor();
 
         System.out.println("Сколько денег у вас осталось до зарплаты?");
         double moneyBeforeSalary = scanner.nextDouble();
@@ -24,7 +25,7 @@ public class Practicum {
                 int currency = scanner.nextInt();
                 converter.convert(moneyBeforeSalary, currency);
             } else if (command == 2) {
-                DinnerAdvisor.getAdvice(moneyBeforeSalary, daysBeforeSalary);
+                dinnerAdvisor.getAdvice(moneyBeforeSalary, daysBeforeSalary);
             } else if (command == 3) {
                 moneyBeforeSalary = saveExpense(scanner, moneyBeforeSalary, expenses);
             } else if (command == 4) {
