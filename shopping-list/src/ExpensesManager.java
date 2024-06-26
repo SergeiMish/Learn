@@ -6,8 +6,7 @@ public class ExpensesManager {
     public ExpensesManager(){
         double[] expenses = new double[7];
     }
-     void saveExpense(double moneyBeforeSalary, double expense, int day) {
-
+          void saveExpense(double moneyBeforeSalary, double expense, int day) {
         // печать вопросов и считывание ответов оставьте в классе Practicum
         System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");
         int day = scanner.nextInt();
