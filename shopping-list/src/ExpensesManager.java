@@ -5,7 +5,7 @@ public class ExpensesManager {
     public ExpensesManager(){
         double[] expenses = new double[7];
     }
-    saveExpense(double moneyBeforeSalary, double expense, int day) {
+     public saveExpense(double moneyBeforeSalary, double expense, int day) {
 
         // печать вопросов и считывание ответов оставьте в классе Practicum
         System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");
@@ -28,7 +28,7 @@ public class ExpensesManager {
         }
     }
 
-    double findMaxExpense() {
+    public double findMaxExpense() {
         double maxExpense = 0;
         for (int i = 0; i < expenses.length; i++) {
             if (expenses[i] > maxExpense) {
@@ -36,4 +36,5 @@ public class ExpensesManager {
             }
         }
         return maxExpense;
+    }
     }

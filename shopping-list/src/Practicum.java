@@ -30,9 +30,9 @@ public class Practicum {
             } else if (command == 3) {
                 expensesManager.saveExpense()
             } else if (command == 4) {
-                printAllExpenses(expenses);
+                expensesManager.printAllExpenses();
             } else if (command == 5) {
-                System.out.println("Самая большая сумма расходов на этой неделе составила " + findMaxExpense(expenses) + " руб.");
+                System.out.println("Самая большая сумма расходов на этой неделе составила " + expensesManager.findMaxExpense() + " руб.");
             } else if (command == 0) {
                 System.out.println("Выход");
                 break;
