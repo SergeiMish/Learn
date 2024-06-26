@@ -32,7 +32,8 @@ public class Practicum {
                 int day = scanner.nextInt();
                 System.out.println("Введите размер траты:");
                 double expense = scanner.nextDouble();
-                expensesManager.saveExpense(moneyBeforeSalary, expense, day);
+                moneyBeforeSalary = expensesManager.saveExpense(moneyBeforeSalary, expense, day);
+
             } else if (command == 4) {
                 expensesManager.printAllExpenses();
             } else if (command == 5) {

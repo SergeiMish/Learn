@@ -5,21 +5,19 @@ public class ExpensesManager {
         double[] expenses = new double[7];
 
           double saveExpense(double moneyBeforeSalary, double expense, int day) {
-        // печать вопросов и считывание ответов оставьте в классе Practicum
-
-
+        // РїРµС‡Р°С‚СЊ РІРѕРїСЂРѕСЃРѕРІ Рё СЃС‡РёС‚С‹РІР°РЅРёРµ РѕС‚РІРµС‚РѕРІ РѕСЃС‚Р°РІСЊС‚Рµ РІ РєР»Р°СЃСЃРµ Practicum
         moneyBeforeSalary = moneyBeforeSalary - expense;
         expenses[day - 1] = expenses[day - 1] + expense;
-        System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
+        System.out.println("Р—РЅР°С‡РµРЅРёРµ СЃРѕС…СЂР°РЅРµРЅРѕ! Р’Р°С€ С‚РµРєСѓС‰РёР№ Р±Р°Р»Р°РЅСЃ РІ СЂСѓР±Р»СЏС…: " + moneyBeforeSalary);
         if (moneyBeforeSalary < 1000) {
-            System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
+            System.out.println("РќР° РІР°С€РµРј СЃС‡РµС‚Сѓ РѕСЃС‚Р°Р»РѕСЃСЊ СЃРѕРІСЃРµРј РЅРµРјРЅРѕРіРѕ. РЎС‚РѕРёС‚ РЅР°С‡Р°С‚СЊ СЌРєРѕРЅРѕРјРёС‚СЊ!");
         }
         return moneyBeforeSalary;
     }
 
     void printAllExpenses() {
         for (int i = 0; i < expenses.length; i++) {
-            System.out.println("День " + (i + 1) + ". Потрачено " + expenses[i] + " рублей");
+            System.out.println("Р”РµРЅСЊ " + (i + 1) + ". РџРѕС‚СЂР°С‡РµРЅРѕ " + expenses[i] + " СЂСѓР±Р»РµР№");
         }
     }
 
