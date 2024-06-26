@@ -10,10 +10,7 @@ public class Practicum {
         double moneyBeforeSalary = scanner.nextDouble();
         System.out.println("Сколько дней до зарплаты?");
         int daysBeforeSalary = scanner.nextInt();
-        System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");
-        int day = scanner.nextInt();
-        System.out.println("Введите размер траты:");
-        double expense = scanner.nextDouble();
+
 
         Converter converter = new Converter(94.8,103.8,13.1);
         DinnerAdvisor dinnerAdvisor = new DinnerAdvisor();
@@ -31,6 +28,10 @@ public class Practicum {
             } else if (command == 2) {
                 dinnerAdvisor.getAdvice(moneyBeforeSalary, daysBeforeSalary);
             } else if (command == 3) {
+                System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");
+                int day = scanner.nextInt();
+                System.out.println("Введите размер траты:");
+                double expense = scanner.nextDouble();
                 expensesManager.saveExpense(moneyBeforeSalary, expense, day);
             } else if (command == 4) {
                 expensesManager.printAllExpenses();

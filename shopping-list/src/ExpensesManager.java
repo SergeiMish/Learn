@@ -1,11 +1,9 @@
 import java.util.Scanner;
 
 public class ExpensesManager {
-    double[] expenses;
-    Scanner scanner = new Scanner(System.in);
-    public ExpensesManager() {
+
         double[] expenses = new double[7];
-    }
+
           double saveExpense(double moneyBeforeSalary, double expense, int day) {
         // печать вопросов и считывание ответов оставьте в классе Practicum
 
@@ -25,7 +23,7 @@ public class ExpensesManager {
         }
     }
 
-    public double findMaxExpense() {
+     double findMaxExpense() {
         double maxExpense = 0;
         for (int i = 0; i < expenses.length; i++) {
             if (expenses[i] > maxExpense) {
