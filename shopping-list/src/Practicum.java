@@ -14,7 +14,7 @@ public class Practicum {
 
         Converter converter = new Converter(94.8,103.8,13.1);
         DinnerAdvisor dinnerAdvisor = new DinnerAdvisor();
-        ... // здесь создайте объект класса ExpensesManager
+        ExpensesManager expensesManager = new ExpensesManager(); // здесь создайте объект класса ExpensesManager
 
         while (true) {
             printMenu();
@@ -28,7 +28,7 @@ public class Practicum {
             } else if (command == 2) {
                 dinnerAdvisor.getAdvice(moneyBeforeSalary, daysBeforeSalary);
             } else if (command == 3) {
-                moneyBeforeSalary = saveExpense(scanner, moneyBeforeSalary, expenses);
+                expensesManager.saveExpense()
             } else if (command == 4) {
                 printAllExpenses(expenses);
             } else if (command == 5) {
@@ -44,38 +44,7 @@ public class Practicum {
 
     // перенесите в ExpensesManager код методов saveExpense, findMaxExpense и printAllExpenses
 
-    public static double saveExpense(Scanner scanner, double moneyBeforeSalary, double[] expenses) {
 
-        // печать вопросов и считывание ответов оставьте в классе Practicum
-        System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");
-        int day = scanner.nextInt();
-        System.out.println("Введите размер траты:");
-        double expense = scanner.nextDouble();
-
-        moneyBeforeSalary = moneyBeforeSalary - expense;
-        expenses[day - 1] = expenses[day - 1] + expense;
-        System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
-        if (moneyBeforeSalary < 1000) {
-            System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
-        }
-        return moneyBeforeSalary;
-    }
-
-    public static void printAllExpenses(double[] expenses) {
-        for (int i = 0; i < expenses.length; i++) {
-            System.out.println("День " + (i + 1) + ". Потрачено " + expenses[i] + " рублей");
-        }
-    }
-
-    public static double findMaxExpense(double[] expenses) {
-        double maxExpense = 0;
-        for (int i = 0; i < expenses.length; i++) {
-            if (expenses[i] > maxExpense) {
-                maxExpense = expenses[i];
-            }
-        }
-        return maxExpense;
-    }
 
     public static void printMenu() {
         System.out.println("Что вы хотите сделать? ");
