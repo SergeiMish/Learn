@@ -6,7 +6,7 @@ public class Practicum {
         double[] expenses = new double[7];
 
         Scanner scanner = new Scanner(System.in);
-        Converter converter = new Converter(); // создайте объект класса Converter
+        Converter converter = new Converter(94.8, 103.8, 13.1); // вызовите конструктор с параметрами
 
         System.out.println("Сколько денег у вас осталось до зарплаты?");
         double moneyBeforeSalary = scanner.nextDouble();
@@ -22,7 +22,7 @@ public class Practicum {
                 System.out.println("Ваши сбережения: " + moneyBeforeSalary + " RUB");
                 System.out.println("В какую валюту хотите конвертировать? Доступные варианты: 1 - USD, 2 - EUR, 3 - CNY.");
                 int currency = scanner.nextInt();
-                converter.convert(moneyBeforeSalary, currency); // вызовите метод класса Converter
+                converter.convert(moneyBeforeSalary, currency);
             } else if (command == 2) {
                 getAdvice(moneyBeforeSalary, daysBeforeSalary);
             } else if (command == 3) {

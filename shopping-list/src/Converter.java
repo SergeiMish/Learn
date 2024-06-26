@@ -1,9 +1,16 @@
 public class Converter {
-    double rateUSD = 94.8;
-    double rateEUR = 103.8;
-    double rateCNY = 13.1;
-    Converter converter = new Converter(double uds)
-    public void convert(double rubles, int currency) {
+    double rateUSD;
+    double rateEUR;
+    double rateCNY;
+
+    Converter(double usd, double eur, double cny) {
+        rateUSD = usd;
+        rateEUR = eur;
+        rateCNY = cny;
+    }
+
+
+    void convert(double rubles, int currency) {
         if (currency == 1) {
             System.out.println("Ваши сбережения в долларах: " + rubles / rateUSD);
         } else if (currency == 2) {
