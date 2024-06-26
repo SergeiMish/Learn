@@ -6,7 +6,7 @@ public class Practicum {
         double[] expenses = new double[7];
 
         Scanner scanner = new Scanner(System.in);
-        Converter converter = new Converter(); // создайте объект класса Converter
+        Converter converter = new Converter(double usd, double eur,double cny); // создайте объект класса Converter
 
         System.out.println("Сколько денег у вас осталось до зарплаты?");
         double moneyBeforeSalary = scanner.nextDouble();
