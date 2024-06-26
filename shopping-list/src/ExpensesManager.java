@@ -2,10 +2,11 @@ import java.util.Scanner;
 
 public class ExpensesManager {
     double[] expenses;
+    Scanner scanner = new Scanner(System.in);
     public ExpensesManager(){
         double[] expenses = new double[7];
     }
-     public saveExpense(double moneyBeforeSalary, double expense, int day) {
+     void saveExpense(double moneyBeforeSalary, double expense, int day) {
 
         // печать вопросов и считывание ответов оставьте в классе Practicum
         System.out.println("За какой день вы хотите ввести трату: 1-ПН, 2-ВТ, 3-СР, 4-ЧТ, 5-ПТ, 6-СБ, 7-ВС?");

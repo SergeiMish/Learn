@@ -28,7 +28,7 @@ public class Practicum {
             } else if (command == 2) {
                 dinnerAdvisor.getAdvice(moneyBeforeSalary, daysBeforeSalary);
             } else if (command == 3) {
-                expensesManager.saveExpense()
+                expensesManager.saveExpense(moneyBeforeSalary, expenses, daysBeforeSalary);
             } else if (command == 4) {
                 expensesManager.printAllExpenses();
             } else if (command == 5) {
