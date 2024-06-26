@@ -22,7 +22,7 @@ public class Practicum {
                 System.out.println("Ваши сбережения: " + moneyBeforeSalary + " RUB");
                 System.out.println("В какую валюту хотите конвертировать? Доступные варианты: 1 - USD, 2 - EUR, 3 - CNY.");
                 int currency = scanner.nextInt();
-                converter.convert(moneyBeforeSalary, daysBeforeSalary); // вызовите метод класса Converter
+                converter.convert(moneyBeforeSalary, currency); // вызовите метод класса Converter
             } else if (command == 2) {
                 getAdvice(moneyBeforeSalary, daysBeforeSalary);
             } else if (command == 3) {
