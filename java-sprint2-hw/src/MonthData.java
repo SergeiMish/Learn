@@ -3,7 +3,7 @@ public class MonthData {
 
     void printDaysAndStepsFromMonth() {
         for (int i = 0; i < days.length; i++) {
-            System.out.println((days[i] + 1) +  " день: " + sumStepsFromMonth());
+            System.out.println((days[i++]) +  " день: " + sumStepsFromMonth());
         }
     }
     int sumStepsFromMonth(){
