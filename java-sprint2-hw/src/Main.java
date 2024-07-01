@@ -5,8 +5,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         StepTracker stepTracker = new StepTracker(scanner);
+        stepTracker.addNewNumberStepsPerDay();
+        stepTracker.changeStepGoal();
 
-//        while (true) {
+    //        while (true) {
 //            printMenu();
 //
 //            int i = scanner.nextInt();
