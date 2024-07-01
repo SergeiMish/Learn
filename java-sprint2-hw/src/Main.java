@@ -4,10 +4,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        StepTracker stepTracker = new StepTracker(scanner);
+//        StepTracker stepTracker = new StepTracker(scanner);
+//
+//        stepTracker.addNewNumberStepsPerDay();
+//        stepTracker.changeStepGoal();
         MonthData monthData = new MonthData();
-        stepTracker.addNewNumberStepsPerDay();
-        stepTracker.changeStepGoal();
         monthData.printDaysAndStepsFromMonth();
 
     //        while (true) {
