@@ -5,8 +5,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         StepTracker stepTracker = new StepTracker(scanner);
+        MonthData monthData = new MonthData();
         stepTracker.addNewNumberStepsPerDay();
         stepTracker.changeStepGoal();
+        monthData.printDaysAndStepsFromMonth();
 
     //        while (true) {
 //            printMenu();

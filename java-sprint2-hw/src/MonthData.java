@@ -3,7 +3,7 @@ public class MonthData {
 
     void printDaysAndStepsFromMonth() {
         for (int i = 0; i < days.length; i++) {
-            System.out.println(days + " день: " );
+            System.out.println((days[i] - 1) + " день: " + days[i]);
         }
     }
     int sumStepsFromMonth(){
@@ -16,8 +16,10 @@ public class MonthData {
     int maxSteps() {
         int maxSteps = 0;
         for (int i = 0; i < days.length; i++) {
-            System.out.println();
+            if (days[i] > maxSteps){
+                maxSteps = days[i];
             }
+        }
         return maxSteps;
     }
 }
