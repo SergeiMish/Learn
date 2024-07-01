@@ -46,5 +46,5 @@ public class StepTracker {
             System.out.println("Цель по количеству шагов не может быть отрицательной. Вы ввели " + goalByStepsPerDay);
             this.goalByStepsPerDay = goalByStepsPerDay;
         }
-        }
+    }
 }
