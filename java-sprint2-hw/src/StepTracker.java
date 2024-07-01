@@ -40,11 +40,11 @@ public class StepTracker {
             monthData.days[day - 1] = steps;
         }
         void changeStepGoal(){
-
+            System.out.println("Введите цель шагов на сегодня");
         int goalByStepsPerDay = scanner.nextInt();
-        this.goalByStepsPerDay = goalByStepsPerDay;
         if (goalByStepsPerDay <= 0){
             System.out.println("Цель по количеству шагов не может быть отрицательной. Вы ввели " + goalByStepsPerDay);
+            this.goalByStepsPerDay = goalByStepsPerDay;
         }
         }
-    }
+}
