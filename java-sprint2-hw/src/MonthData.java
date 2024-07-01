@@ -27,9 +27,12 @@ public class MonthData {
         int finalSeries = 0;
         for (int i = 0; i < days.length; i++) {
             if (days[i] >= goalByStepsPerDay){
-                if (++currentSeries > finalSeries){
+                currentSeries++;
+            }
+            else if (currentSeries >= finalSeries){
                     currentSeries = finalSeries;
                 }
+                else currentSeries = 0;
             // поиск максимальной серии
         }
         return finalSeries;
