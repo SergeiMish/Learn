@@ -26,13 +26,13 @@ public class MonthData {
         int currentSeries = 0;
         int finalSeries = 0;
         for (int i = 0; i < days.length; i++) {
-            if (days[i] >= days[i - 1]){
+            if (days[i + 1] >= days[i]){
                 currentSeries++;
             }
-            else currentSeries = 0;
             if (currentSeries >= goalByStepsPerDay){
                 finalSeries = goalByStepsPerDay;
             }
+            else currentSeries = 0;
             // поиск максимальной серии
         }
         return finalSeries;
