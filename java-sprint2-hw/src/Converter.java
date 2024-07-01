@@ -2,7 +2,7 @@ public class Converter {
     final double STEP_LENGHT = 0.75;
 
     int convertToKm(int steps){
-        double step = 1000.0/STEP_LENGHT;
+        double step = 1000.0/(STEP_LENGHT * steps);
         steps = (int) step;
         return steps;
     }
