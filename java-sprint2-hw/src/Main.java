@@ -6,20 +6,22 @@ public class Main {
 
         StepTracker stepTracker = new StepTracker(scanner);
 
-            while (true) {
-                printMenu();
+        while (true) {
+            printMenu();
 
-                int cmd = scanner.nextInt();
-                if (cmd == 1) {
-                    stepTracker.addNewNumberStepsPerDay();
-                }
-                if (cmd == 2) {
-                    stepTracker.changeStepGoal();
-                }
-                if (cmd == 3) {
-                    stepTracker.printStatistic();
-                }
-
+            int cmd = scanner.nextInt();
+            if (cmd == 1) {
+                stepTracker.addNewNumberStepsPerDay();
+            }
+            if (cmd == 2) {
+                stepTracker.changeStepGoal();
+            }
+            if (cmd == 3) {
+                stepTracker.printStatistic();
+            } else {
+                System.out.println("Вы завершили программу! Хорошего дня!");
+                break;
+            }
         }
     }
 
