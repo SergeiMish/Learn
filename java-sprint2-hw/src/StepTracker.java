@@ -57,7 +57,9 @@ public class StepTracker {
 
         MonthData monthData = monthToData [mount - 1]; // получение соответствующего мес€ца
         int sumSteps = monthData.sumStepsFromMonth(); // получение суммы шагов за мес€ц
+        System.out.println("—татистика за мес€ц:");
         monthData.printDaysAndStepsFromMonth();// вывод общей статистики по дн€м
+        System.out.println("--".repeat(20));
         System.out.println("—умма шагов за мес€ц: " + sumSteps);    // вывод суммы шагов за мес€ц
         System.out.println(" оличество максимально пройденых шагов за мес€ц в течении одного дн€: " + monthData.maxSteps());    // вывод максимального пройденного количества шагов за мес€ц
         System.out.println("—реднее количество шагов за мес€ц: " + sumSteps/30);    // вывод среднего пройденного количества шагов за мес€ц
