@@ -18,9 +18,14 @@ public class Main {
             }
             if (cmd == 3) {
                 stepTracker.printStatistic();
-            } else {
+            }
+            if (cmd == 4){
                 System.out.println("Вы завершили программу! Хорошего дня!");
                 break;
+            }
+            else {
+                System.out.println("Вы ввели неверную команду. Необходимо выбрать цифру от 1 до 4. Вы ввели " + cmd);
+                System.out.println();
             }
         }
     }
