@@ -3,7 +3,7 @@ public class MonthData {
 
     void printDaysAndStepsFromMonth() {
         for (int i = 0; i < days.length; i++) {
-            System.out.println((i + 1) +  " Π΄ΠµΠ½Ρ: " + days[i]);
+            System.out.println((i + 1) +  " δενό: " + days[i]);
         }
     }
     int sumStepsFromMonth(){
@@ -29,7 +29,7 @@ public class MonthData {
             if (days[i] >= goalByStepsPerDay){
                 currentSeries++;
             }
-            else if (currentSeries >= finalSeries){
+            if (currentSeries >= finalSeries){
                     currentSeries = finalSeries;
                 }
                 else currentSeries = 0;
