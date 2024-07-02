@@ -12,18 +12,14 @@ public class Main {
             int cmd = scanner.nextInt();
             if (cmd == 1) {
                 stepTracker.addNewNumberStepsPerDay();
-            }
-            if (cmd == 2) {
+            } else if (cmd == 2) {
                 stepTracker.changeStepGoal();
-            }
-            if (cmd == 3) {
+            } else if (cmd == 3) {
                 stepTracker.printStatistic();
-            }
-            if (cmd == 4){
+            } else if (cmd == 4) {
                 System.out.println("Вы завершили программу! Хорошего дня!");
                 break;
-            }
-            else {
+            } else {
                 System.out.println("Вы ввели неверную команду. Необходимо выбрать цифру от 1 до 4. Вы ввели " + cmd);
                 System.out.println();
             }
