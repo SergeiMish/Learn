@@ -33,7 +33,6 @@ public class MonthData {
                     currentSeries = finalSeries;
                 }
                 else currentSeries = 0;
-            // поиск максимальной серии
         }
         return finalSeries;
     }
