@@ -13,6 +13,9 @@ public class StepTracker {
             monthToData[i] = new MonthData();
         }
     }
+// ” мен€ отображение кирилицой верное.¬озможно у вас кривое отображение из за кодировки UTF 8.
+// ” мен€ сейчас стоит win 1251 и JDK 17.
+// ≈сли мен€ю encoding на что-либо другое, посто€нно слетают символы, уже разные компил€ции пробовал.
 
     void addNewNumberStepsPerDay() {
         System.out.println("¬ведите номер мес€ца");
@@ -58,17 +61,17 @@ public class StepTracker {
             return;
         }
 
-        MonthData monthData = monthToData[mount - 1]; // получение соответствующего мес€ца
-        int sumSteps = monthData.sumStepsFromMonth(); // получение суммы шагов за мес€ц
+        MonthData monthData = monthToData[mount - 1];
+        int sumSteps = monthData.sumStepsFromMonth();
         System.out.println("—татистика за мес€ц:");
-        monthData.printDaysAndStepsFromMonth();// вывод общей статистики по дн€м
+        monthData.printDaysAndStepsFromMonth();
         System.out.println("--".repeat(20));
-        System.out.println("—умма шагов за мес€ц: " + sumSteps);    // вывод суммы шагов за мес€ц
-        System.out.println(" оличество максимально пройденых шагов за мес€ц в течении одного дн€: " + monthData.maxSteps());    // вывод максимального пройденного количества шагов за мес€ц
-        System.out.println("—реднее количество шагов за мес€ц: " + sumSteps / 30);    // вывод среднего пройденного количества шагов за мес€ц
-        System.out.println("–ассто€ние пройденное за мес€ц: " + converter.convertToKm(sumSteps) + " км");     // вывод пройденной за мес€ц дистанции в километрах
-        System.out.println(" оличество сожженых килокалорий за мес€ц: " + converter.convertStepsToKilocalories(sumSteps));    // вывод количества сожжЄнных килокалорий за мес€ц
-        System.out.println("Ћучша€ сери€: " + monthData.bestSeries(goalByStepsPerDay));     // вывод лучшей серии
-        System.out.println(); // дополнительный перенос строки
+        System.out.println("—умма шагов за мес€ц: " + sumSteps);
+        System.out.println(" оличество максимально пройденых шагов за мес€ц в течении одного дн€: " + monthData.maxSteps());
+        System.out.println("—реднее количество шагов за мес€ц: " + sumSteps / 30);
+        System.out.println("–ассто€ние пройденное за мес€ц: " + converter.convertToKm(sumSteps) + " км");
+        System.out.println(" оличество сожженых килокалорий за мес€ц: " + converter.convertStepsToKilocalories(sumSteps));
+        System.out.println("Ћучша€ сери€: " + monthData.bestSeries(goalByStepsPerDay));
+        System.out.println();
     }
 }
