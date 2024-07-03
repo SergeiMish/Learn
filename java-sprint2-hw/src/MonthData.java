@@ -34,7 +34,7 @@ public class MonthData {
             } else {
                 if (currentSeries >= finalSeries) {
                     finalSeries = currentSeries;
-
+                    currentSeries = 0;
                 } else {
                     currentSeries = 0;
                 }
