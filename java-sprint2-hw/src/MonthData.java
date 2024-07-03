@@ -33,6 +33,7 @@ public class MonthData {
                 currentSeries++;
             } else if (currentSeries >= finalSeries) {
                 finalSeries = currentSeries;
+                currentSeries = 0; // оно сдесь надо - обнуляет если серия прерывается
             } else {
                 currentSeries = 0;
             }
