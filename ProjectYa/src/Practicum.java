@@ -3,8 +3,7 @@ public class Practicum {
         WeatherCalendar calendar;
         calendar.month = "ќкт€брь";
         calendar.numberOfDays = 31;
-        calendar.rainyDays = 0;
-        calendar.isRainyMonth = false;
+
 
         String[] octoberWeather = new String[]{
                 "—олнечно",
@@ -65,11 +64,11 @@ public class Practicum {
     }
 }
 
-class WeatherCalendar {
+class WeatherCalendar (String monthName, int monthNumberOfDays) {
     String month;
     int numberOfDays;
-    int rainyDays;
-    int year;
+    int rainyDays = 0;
+    int year = 2024;
     boolean isRainyMonth;
 
     // увеличить переменную rainyDays на единицу
