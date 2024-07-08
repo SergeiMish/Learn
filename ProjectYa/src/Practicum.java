@@ -68,7 +68,8 @@ class WeatherCalendar {
     int year = 2020;
     boolean isRainyMonth;
     public WeatherCalendar(String monthName, int monthNumberOfDays) {
-
+        month = monthName;
+        numberOfDays = monthNumberOfDays;
     }
 
     // увеличить переменную rainyDays на единицу
