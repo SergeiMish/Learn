@@ -45,8 +45,8 @@ public class Practicum {
         }
 
         // проверить, был ли месяц дождливым. Если да — установить значение isRainyMonth
-        if () {
-            boolean isRainyMonth = true;
+        if (calendar.rainyDays > 15) {
+            calendar.isRainyMonth = true;
         }
 
         System.out.println(calendar.month + " " + calendar.year + " года. "
@@ -61,11 +61,11 @@ public class Practicum {
     }
 }
 
-class WeatherCalendar() {
+class WeatherCalendar {
     String month;
     int numberOfDays;
     int rainyDays = 0;
-    int year = 2024;
+    int year = 2020;
     boolean isRainyMonth;
     public WeatherCalendar(String monthName, int monthNumberOfDays) {
 
@@ -73,7 +73,6 @@ class WeatherCalendar() {
 
     // увеличить переменную rainyDays на единицу
     public void addRainyDay() {
-        ...
+        rainyDays = rainyDays + 1;
     }
-}
 }
