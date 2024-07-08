@@ -1,9 +1,6 @@
 public class Practicum {
     public static void main(String[] args) {
-        WeatherCalendar calendar = new WeatherCalendar("ќкт€");
-        calendar.month = "ќкт€брь";
-        calendar.numberOfDays = 31;
-
+        WeatherCalendar calendar = new WeatherCalendar("ќкт€брь", 31);
 
         String[] octoberWeather = new String[]{
                 "—олнечно",
@@ -48,7 +45,7 @@ public class Practicum {
         }
 
         // проверить, был ли мес€ц дождливым. ≈сли да Ч установить значение isRainyMonth
-        if (octoberWeather.equals("ƒождь")) {
+        if () {
             boolean isRainyMonth = true;
         }
 
@@ -64,12 +61,15 @@ public class Practicum {
     }
 }
 
-class WeatherCalendar(String monthName, int monthNumberOfDays) {
+class WeatherCalendar() {
     String month;
     int numberOfDays;
     int rainyDays = 0;
     int year = 2024;
     boolean isRainyMonth;
+    public WeatherCalendar(String monthName, int monthNumberOfDays) {
+
+    }
 
     // увеличить переменную rainyDays на единицу
     public void addRainyDay() {
