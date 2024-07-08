@@ -1,6 +1,6 @@
 public class Practicum {
     public static void main(String[] args) {
-        WeatherCalendar calendar;
+        WeatherCalendar calendar = new WeatherCalendar("ќкт€");
         calendar.month = "ќкт€брь";
         calendar.numberOfDays = 31;
 
@@ -64,7 +64,7 @@ public class Practicum {
     }
 }
 
-class WeatherCalendar (String monthName, int monthNumberOfDays) {
+class WeatherCalendar(String monthName, int monthNumberOfDays) {
     String month;
     int numberOfDays;
     int rainyDays = 0;
