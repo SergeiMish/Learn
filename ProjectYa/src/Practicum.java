@@ -49,15 +49,15 @@ public class Practicum {
         }
 
         // проверить, был ли мес€ц дождливым. ≈сли да Ч установить значение isRainyMonth
-        if (...) {
-            ...
+        if (octoberWeather.equals("ƒождь")) {
+            boolean isRainyMonth = true;
         }
 
         System.out.println(calendar.month + " " + calendar.year + " года. "
                 + calendar.rainyDays + " дней шЄл дождь.");
 
         // проверить значение isRainyMonth
-        if (...) {
+        if (calendar.isRainyMonth) {
             System.out.println("Ёто был дождливый мес€ц.");
         } else {
             System.out.println("Ётот мес€ц был довольно сухим.");
