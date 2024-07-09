@@ -1,59 +1,33 @@
-import java.util.Scanner;
 
 public class Practicum {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите имя пользователя:");
-        String name = scanner.nextLine();
-        PersonAccount user = new PersonAccount(name);
+        String pixelKcalDay = "43"; // столько калорий съел Пиксель до похода к бабушке
+        String beefKcal = "30.2"; // калорийность говядины
+        String chickenKcal = "23.8"; // калорийность курицы
+        String creamKcal = "32.1"; // калорийность сливок
+        String milkKcal = "13.5"; // калорийность молока
 
-        System.out.println("Хотите открыть счёт в RUB?");
-        System.out.println("1 - Да");
-        System.out.println("2 - Нет");
-        int command = scanner.nextInt();
-        if (command == 1) {
-            user.moneyRUB = 0.0;
-        }
-
-        System.out.println("Хотите открыть счёт в USD?");
-        System.out.println("1 - Да");
-        System.out.println("2 - Нет");
-        command = scanner.nextInt();
-        if (command == 1) {
-            user.moneyUSD = 0.0;
-        }
-
-        System.out.println("Хотите открыть счёт в EUR?");
-        System.out.println("1 - Да");
-        System.out.println("2 - Нет");
-        command = scanner.nextInt();
-        if (command == 1) {
-            user.moneyEUR = 0.0;
-        }
-
-        System.out.println("Поздравляем, аккаунт для пользователя " + user.name + " создан.");
-        System.out.println("Открытые счета:");
-        if (user.moneyRUB != null) {
-            System.out.println("- RUB");
-        }
-        if (user.moneyUSD != null) {
-            System.out.println("- USD");
-        }
-        if (user.moneyEUR != null) {
-            System.out.println("- EUR");
-        }
-
+        float pixelChoice = getMinKcalsSum(beefKcal, chickenKcal, creamKcal, milkKcal);
+        float totalKcal = Integer.parseInt(pixelKcalDay) + pixelChoice;
+        checkKcal(totalKcal);
     }
-}
 
-class PersonAccount {
-    String name;      // имя и фамилия
-    Double moneyRUB;  // счёт в рублях
-    Double moneyUSD;  // счёт в долларах
-    Double moneyEUR;  // счёт в евро
+    private static Float getMinKcalsSum(String firstDishKcal, String secondDishKcal, String firstDesert, String secondDesert) {
+        float minDishKcal = ... // вычислите минимальную калорийность основного блюда
+        float minDesertKcal = ... // вычислите минимальную калорийность десерта
+        return minDishKcal + minDesertKcal;
+    }
 
-
-    PersonAccount(String userName) {
-        name = userName;
+    private static void checkKcal(float catKcal) {
+        if (catKcal == null) {
+            System.out.println("Что-то пошло не так");
+        } else {
+            System.out.println("Калорийность рациона Пикселя за день: " + catKcal);
+            if (catKcal > 100) {
+                System.out.println("Пиксель сегодня не уложился в норму.");
+            } else {
+                System.out.println("Лимит не превышен!");
+            }
+        }
     }
 }
