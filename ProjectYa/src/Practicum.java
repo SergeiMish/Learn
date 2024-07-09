@@ -11,6 +11,7 @@ public class Practicum {
         animals.add("Медведь");
         animals.add("Слон");
 
+
         while (true) {
             printMenu();
             int command = scanner.nextInt();
