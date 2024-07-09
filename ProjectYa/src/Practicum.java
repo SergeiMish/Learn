@@ -1,17 +1,43 @@
+import java.util.ArrayList;
 
 public class Practicum {
     public static void main(String[] args) {
-        Cat cat1 = new Cat("Барсик");
-        Cat cat2 = cat1;
-        cat1 = new Cat("Роджер");
-        System.out.println("Кот 1: " + cat1.name + ", кот 2: " + cat2.name);
-    }
-}
+        ArrayList<String> animals = new ArrayList<>();
+        animals.add("Шиншилла");
+        animals.add("Крокодил");
+        animals.add("Лев");
+        animals.add("Медведь");
+        animals.add("Слон");
+        System.out.println("Сегодня в зоопарке можно увидеть кормления " + animals.size() + " животных.");
+        System.out.println("Это будут:");
 
-class Cat {
-    String name;
+        for (int i = 0; i < animals.size(); i++) {
+            System.out.println(animals.get(i));
+        }
+            System.out.println("Расписание кормлений:");
 
-    public Cat(String catName) {
-        name = catName;
-    }
-}
+        System.out.println("В 9:00 - " + animals.get(1));
+        System.out.println("В 10:00 - " + animals.get(4));     //
+        System.out.println("В 11:00 - " + animals.get(0));  //
+        System.out.println("В 12:00 - " + animals.get(2));    //
+        System.out.println("В 13:00 - " + animals.get(3));     // );
+
+            }
+        }
+
+
+
+        // "Это будут:"
+        // "Шиншилла"
+        // "Крокодил"
+        // "Лев"
+        // "Медведь"
+        // "Слон"
+        // "Расписание кормлений:"
+        // "В 9:00 - "
+        // "В 10:00 - "
+        // "В 11:00 - "
+        // "В 12:00 - "
+        // "В 13:00 - "
+//        }
+//    }
