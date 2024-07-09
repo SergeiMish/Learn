@@ -1,43 +1,60 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Practicum {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         ArrayList<String> animals = new ArrayList<>();
         animals.add("Шиншилла");
         animals.add("Крокодил");
         animals.add("Лев");
         animals.add("Медведь");
         animals.add("Слон");
-        System.out.println("Сегодня в зоопарке можно увидеть кормления " + animals.size() + " животных.");
-        System.out.println("Это будут:");
 
-        for (int i = 0; i < animals.size(); i++) {
-            System.out.println(animals.get(i));
-        }
-            System.out.println("Расписание кормлений:");
+        while (true) {
+            printMenu();
+            int command = scanner.nextInt();
+            if (command == 1) {
+                System.out.println("Сейчас в зоопарке можно увидеть " + animals.size() + " животных:");
+                for (String i : animals){
+                    System.out.println(i);; // напечатайте животных
+                }
+            } else if (command == 2) {
+                System.out.println("Какое животное хотите добавить?");
+                String animal = scanner.next();
+                animals.add(animal);// добавьте животное
+            } else if (command == 3) {
+                System.out.println("Какое животное нужно удалить?");
+                String animal = scanner.next();
+                if (!animals.isEmpty()){
+                    animals.remove(animal);
+                }// удалите животное, если список не пуст
+            } else if (command == 4) {
+                animals.clear(); // очистите список
+                System.out.println("Все животные перевезены в другой зоопарк. Список пуст.");
+            } else if (command == 5) {
+                System.out.println("Какое животное вы хотите увидеть в зоопарке?");
+                String animal = scanner.next();
 
-        System.out.println("В 9:00 - " + animals.get(1));
-        System.out.println("В 10:00 - " + animals.get(4));     //
-        System.out.println("В 11:00 - " + animals.get(0));  //
-        System.out.println("В 12:00 - " + animals.get(2));    //
-        System.out.println("В 13:00 - " + animals.get(3));     // );
-
+                if (animals.contains(animal)) {
+                    // допишите условия
+                    System.out.println(animal + " на месте! Приходите посмотреть.");
+                }
+                else {
+                     System.out.println("Такого животного сейчас нет в нашем зоопарке.");
+                }
+            } else {
+                break;
             }
         }
+    }
 
-
-
-        // "Это будут:"
-        // "Шиншилла"
-        // "Крокодил"
-        // "Лев"
-        // "Медведь"
-        // "Слон"
-        // "Расписание кормлений:"
-        // "В 9:00 - "
-        // "В 10:00 - "
-        // "В 11:00 - "
-        // "В 12:00 - "
-        // "В 13:00 - "
-//        }
-//    }
+    public static void printMenu() {
+        System.out.println("1 - Показать список животных в зоопарке.");
+        System.out.println("2 - Добавить животное в список.");
+        System.out.println("3 - Удалить животное из списка.");
+        System.out.println("4 - Очистить список.");
+        System.out.println("5 - Проверить, есть ли в зоопарке животное.");
+        System.out.println("Любая другая цифра - Выйти из приложения.");
+    }
+}
