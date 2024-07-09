@@ -14,14 +14,17 @@ public class Practicum {
                 inputHasHelper
         );
 
-        int characterGold =
-        int characterSilver = ...
-        double characterWood = ...
-        byte characterHealth = ...
+        int characterGold = (int) characterResources.gold;
+        int characterSilver = (int) characterResources.silver * 10;
+        double characterWood = characterResources.silver;
+        byte characterHealth = (byte) characterResources.health;
         byte characterHelpersNumber;
 
         // установка значения characterHelpersNumber в зависимости от значения hasHelper
-        ...
+        if (characterResources.hasHelper){
+            characterHelpersNumber = 1;
+        }
+        else characterHelpersNumber = 0;
 
         Character character = new Character(
                 characterGold,
