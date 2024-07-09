@@ -1,45 +1,59 @@
+import java.util.Scanner;
+
 public class Practicum {
     public static void main(String[] args) {
-        long inputGold = 200L;
-        byte inputSilver = 39;
-        short inputWood = 2005;
-        long inputHealth = 97L;
-        boolean inputHasHelper = true;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите имя пользователя:");
+        String name = scanner.nextLine();
+        PersonAccount user = new PersonAccount(name);
 
-        Resources characterResources = new Resources(
-                inputGold,
-                inputSilver,
-                inputWood,
-                inputHealth,
-                inputHasHelper
-        );
-
-        int characterGold = (int) characterResources.gold;
-        int characterSilver = (int) characterResources.silver * 10;
-        double characterWood = characterResources.silver;
-        byte characterHealth = (byte) characterResources.health;
-        byte characterHelpersNumber;
-
-        // установка значения characterHelpersNumber в зависимости от значения hasHelper
-        if (characterResources.hasHelper){
-            characterHelpersNumber = 1;
+        System.out.println("Хотите открыть счёт в RUB?");
+        System.out.println("1 - Да");
+        System.out.println("2 - Нет");
+        int command = scanner.nextInt();
+        if (command == 1) {
+            user.moneyRUB = 0.0;
         }
-        else characterHelpersNumber = 0;
 
-        Character character = new Character(
-                characterGold,
-                characterSilver,
-                characterWood,
-                characterHealth,
-                characterHelpersNumber
-        );
+        System.out.println("Хотите открыть счёт в USD?");
+        System.out.println("1 - Да");
+        System.out.println("2 - Нет");
+        command = scanner.nextInt();
+        if (command == 1) {
+            user.moneyUSD = 0.0;
+        }
 
-        System.out.println("Персонаж создан успешно!");
-        System.out.println("Количество золота: " + character.gold);
-        System.out.println("Количество серебра: " + character.silver);
-        System.out.println("Количество дерева: " + character.wood);
-        System.out.println("Здоровье: " + character.health);
-        System.out.println("Количество помощников: " + character.helpersNumber);
-        System.out.println("Навстречу приключениям!");
+        System.out.println("Хотите открыть счёт в EUR?");
+        System.out.println("1 - Да");
+        System.out.println("2 - Нет");
+        command = scanner.nextInt();
+        if (command == 1) {
+            user.moneyEUR = 0.0;
+        }
+
+        System.out.println("Поздравляем, аккаунт для пользователя " + user.name + " создан.");
+        System.out.println("Открытые счета:");
+        if (user.moneyRUB == 0.0) {
+            System.out.println("- RUB");
+        }
+        if (user.moneyUSD == 0.0) {
+            System.out.println("- USD");
+        }
+        if (user.moneyEUR == 0.0) {
+            System.out.println("- EUR");
+        }
+
+    }
+}
+
+class PersonAccount {
+    String name;      // имя и фамилия
+    Double moneyRUB;  // счёт в рублях
+    Double moneyUSD;  // счёт в долларах
+    Double moneyEUR;  // счёт в евро
+
+
+    PersonAccount(String userName) {
+        name = userName;
     }
 }
