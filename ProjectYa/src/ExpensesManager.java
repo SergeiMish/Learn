@@ -1,7 +1,7 @@
 import java.util.ArrayList; // импортируйте ArrayList
 
 public class ExpensesManager {
-    ArrayList<Double> expenses = new ArrayList(); // замените массив списком
+    ArrayList<Double> expenses; // замените массив списком
 
     ExpensesManager() {
         expenses = new ArrayList<>(); // создайте список в конструкторе
