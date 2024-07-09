@@ -19,4 +19,4 @@ public class Character {
         helpersNumber = characterHelpersNumber;
     }
 }
-}
+
