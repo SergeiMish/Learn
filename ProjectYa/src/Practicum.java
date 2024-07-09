@@ -29,7 +29,7 @@ public class Practicum {
 
                 System.out.println("Введите размер траты:");
                 double expense = scanner.nextDouble();
-                expenses.add(expense);
+
                 // сигнатура метода изменится, учитывайте это
                 moneyBeforeSalary = expensesManager.saveExpense(moneyBeforeSalary, expense);
             } else if (command == 4) {

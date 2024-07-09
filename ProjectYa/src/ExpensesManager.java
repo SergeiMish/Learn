@@ -10,6 +10,7 @@ public class ExpensesManager {
     // номер дня больше не нужен
     double saveExpense(double moneyBeforeSalary, double expense) {
         moneyBeforeSalary = moneyBeforeSalary - expense;
+        expenses.add(expense);
         // эту строку нужно убрать
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
         if (moneyBeforeSalary < 1000) {
