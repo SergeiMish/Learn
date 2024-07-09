@@ -12,7 +12,7 @@ public class Practicum {
         System.out.println("2 - Нет");
         int command = scanner.nextInt();
         if (command == 1) {
-            user.moneyRUB = 0.0;
+            user.moneyRUB = null;
         }
 
         System.out.println("Хотите открыть счёт в USD?");
@@ -20,7 +20,7 @@ public class Practicum {
         System.out.println("2 - Нет");
         command = scanner.nextInt();
         if (command == 1) {
-            user.moneyUSD = 0.0;
+            user.moneyUSD = null;
         }
 
         System.out.println("Хотите открыть счёт в EUR?");
@@ -28,18 +28,18 @@ public class Practicum {
         System.out.println("2 - Нет");
         command = scanner.nextInt();
         if (command == 1) {
-            user.moneyEUR = 0.0;
+            user.moneyEUR = null;
         }
 
         System.out.println("Поздравляем, аккаунт для пользователя " + user.name + " создан.");
         System.out.println("Открытые счета:");
-        if (user.moneyRUB == 0.0) {
+        if (user.moneyRUB == null) {
             System.out.println("- RUB");
         }
-        if (user.moneyUSD == 0.0) {
+        if (user.moneyUSD == null) {
             System.out.println("- USD");
         }
-        if (user.moneyEUR == 0.0) {
+        if (user.moneyEUR == null) {
             System.out.println("- EUR");
         }
 
