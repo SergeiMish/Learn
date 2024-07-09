@@ -49,7 +49,6 @@ public class Practicum {
             }
         }
     }
-
     public static void printMenu() {
         System.out.println("Что вы хотите сделать? ");
         System.out.println("1 - Конвертировать валюту");
