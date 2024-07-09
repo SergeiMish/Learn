@@ -5,44 +5,44 @@ public class Practicum {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> animals = new ArrayList<>();
-        animals.add("Шиншилла");
-        animals.add("Крокодил");
-        animals.add("Лев");
-        animals.add("Медведь");
-        animals.add("Слон");
+        animals.add("1212");
+        animals.add("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+        animals.add("пїЅпїЅпїЅ");
+        animals.add("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+        animals.add("пїЅпїЅпїЅпїЅ");
 
 
         while (true) {
             printMenu();
             int command = scanner.nextInt();
             if (command == 1) {
-                System.out.println("Сейчас в зоопарке можно увидеть " + animals.size() + " животных:");
+                System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ " + animals.size() + " пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ:");
                 for (String i : animals){
-                    System.out.println(i);; // напечатайте животных
+                    System.out.println(i);; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 }
             } else if (command == 2) {
-                System.out.println("Какое животное хотите добавить?");
+                System.out.println("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ?");
                 String animal = scanner.next();
-                animals.add(animal);// добавьте животное
+                animals.add(animal);// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             } else if (command == 3) {
-                System.out.println("Какое животное нужно удалить?");
+                System.out.println("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ?");
                 String animal = scanner.next();
                 if (!animals.isEmpty()){
                     animals.remove(animal);
-                }// удалите животное, если список не пуст
+                }// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
             } else if (command == 4) {
-                animals.clear(); // очистите список
-                System.out.println("Все животные перевезены в другой зоопарк. Список пуст.");
+                animals.clear(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+                System.out.println("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.");
             } else if (command == 5) {
-                System.out.println("Какое животное вы хотите увидеть в зоопарке?");
+                System.out.println("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ?");
                 String animal = scanner.next();
 
                 if (animals.contains(animal)) {
-                    // допишите условия
-                    System.out.println(animal + " на месте! Приходите посмотреть.");
+                    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+                    System.out.println(animal + " пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
                 }
                 else {
-                     System.out.println("Такого животного сейчас нет в нашем зоопарке.");
+                     System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
                 }
             } else {
                 break;
@@ -51,11 +51,12 @@ public class Practicum {
     }
 
     public static void printMenu() {
-        System.out.println("1 - Показать список животных в зоопарке.");
-        System.out.println("2 - Добавить животное в список.");
-        System.out.println("3 - Удалить животное из списка.");
-        System.out.println("4 - Очистить список.");
-        System.out.println("5 - Проверить, есть ли в зоопарке животное.");
-        System.out.println("Любая другая цифра - Выйти из приложения.");
+        System.out.println("Р§С‚Рѕ РІС‹ С…РѕС‚РёС‚Рµ СЃРґРµР»Р°С‚СЊ? ");
+        System.out.println("1 - РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ РІР°Р»СЋС‚Сѓ");
+        System.out.println("2 - РџРѕР»СѓС‡РёС‚СЊ СЃРѕРІРµС‚");
+        System.out.println("3 - Р’РІРµСЃС‚Рё С‚СЂР°С‚Сѓ");
+        System.out.println("4 - РџРѕРєР°Р·Р°С‚СЊ С‚СЂР°С‚С‹");
+        System.out.println("5 - РџРѕРєР°Р·Р°С‚СЊ СЃР°РјСѓСЋ Р±РѕР»СЊС€СѓСЋ СЃСѓРјРјСѓ СЂР°СЃС…РѕРґРѕРІ");
+        System.out.println("0 - Р’С‹С…РѕРґ");
     }
 }
