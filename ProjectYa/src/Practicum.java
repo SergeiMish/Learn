@@ -32,12 +32,12 @@ public class Practicum {
                 expensesManager.printAllExpenses();
             } else if (command == 5) {
                 System.out.println("Самая большая сумма расходов составила " + expensesManager.findMaxExpense() + " руб.");
-            } else ... { // добавьте реализацию команды 6
-						    ... // вызовите соответствующий метод
-            } else ... { // добавьте реализацию команды 7
+            } else if (command == 6) { // добавьте реализацию команды 6
+						    expensesManager.removeAllExpenses();// вызовите соответствующий метод
+            } else if (command == 7) { // добавьте реализацию команды 7
                 System.out.println("Введите транзакцию:");
-                int transaction = ...; // считайте значение транзакции
-                ... // вызовите соответствующий метод
+                int transaction = scanner.nextInt(); // считайте значение транзакции
+                expensesManager.removeExpense(transaction); // вызовите соответствующий метод
             } else if (command == 0) {
                 System.out.println("Выход");
                 break;

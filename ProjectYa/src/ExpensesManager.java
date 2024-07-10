@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class ExpensesManager {
     ArrayList<Expense> expenses;
+    int index = 1;
 
     ExpensesManager() {
         expenses = new ArrayList<>();
@@ -26,7 +27,7 @@ public class ExpensesManager {
 
     double findMaxExpense() {
         double maxExpense = 0;
-        for (Double exp : expenses) {
+        for (Expense exp : expenses) {
             if (exp.getValue() > maxExpense) {
                 maxExpense = exp.getValue();
             }
@@ -34,12 +35,29 @@ public class ExpensesManager {
         return maxExpense;
     }
 
-    // добавьте метод removeAllExpenses()
-    ... // текст для печати: "Список трат пуст."
+    void removeAllExpenses(){
+    expenses.clear();
+        System.out.println("Список трат пуст.");
+    }
 
-            // добавьте метод removeExpense(int transaction)
-            ... /* Текст для печати: "Список трат пуст."
+    // добавьте метод removeAllExpenses()
+    // текст для печати: "Список трат пуст."
+    void removeExpense(int transaction) {
+        if (expenses.isEmpty()) {
+            System.out.println("Список трат пуст.");
+        }
+        for (int i = 0; i < expenses.size(); i++) {
+            if (expenses.get(i).getTransaction() == transaction) {
+                index = i;
+                expenses.remove(index);
+                System.out.println("Трата удалена!");
+            } else {
+                System.out.println("Такой траты нет.");
+            }
+        }
+        // добавьте метод removeExpense(int transaction)
+            /* Текст для печати: "Список трат пуст."
         "Трата удалена!"
         "Такой траты нет." */
-
+    }
 }
