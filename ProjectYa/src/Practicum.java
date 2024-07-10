@@ -25,17 +25,19 @@ public class Practicum {
             } else if (command == 2) {
                 dinnerAdvisor.getAdvice(moneyBeforeSalary, daysBeforeSalary);
             } else if (command == 3) {
-                // номер дня больше не нужен. Уберите вопрос и считывание номера дня
-
                 System.out.println("Введите размер траты:");
                 double expense = scanner.nextDouble();
-
-                // сигнатура метода изменится, учитывайте это
                 moneyBeforeSalary = expensesManager.saveExpense(moneyBeforeSalary, expense);
             } else if (command == 4) {
                 expensesManager.printAllExpenses();
             } else if (command == 5) {
                 System.out.println("Самая большая сумма расходов составила " + expensesManager.findMaxExpense() + " руб.");
+            } else ... { // добавьте реализацию команды 6
+						    ... // вызовите соответствующий метод
+            } else ... { // добавьте реализацию команды 7
+                System.out.println("Введите транзакцию:");
+                int transaction = ...; // считайте значение транзакции
+                ... // вызовите соответствующий метод
             } else if (command == 0) {
                 System.out.println("Выход");
                 break;
@@ -52,6 +54,9 @@ public class Practicum {
         System.out.println("3 - Ввести трату");
         System.out.println("4 - Показать траты");
         System.out.println("5 - Показать самую большую сумму расходов");
+        // добавьте новые пункты в меню:
+        ... // "6 - Очистить список трат"
+        ... // "7 - “Найти и удалить трату"
         System.out.println("0 - Выход");
     }
 }
