@@ -1,64 +1,39 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 
 public class Practicum {
     public static void main(String[] args) {
+        HashMap<String, ArrayList<Integer>> stateHolidays;
+        stateHolidays = new HashMap<>();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Сколько денег у вас осталось до зарплаты?");
-        double moneyBeforeSalary = scanner.nextDouble();
-        System.out.println("Сколько дней до зарплаты?");
-        int daysBeforeSalary = scanner.nextInt();
+        ArrayList<Integer>january = new ArrayList<>();
+        january.add(1);
+        january.add(7);
 
-        Converter converter = new Converter(94.8,103.8,13.1);
-        DinnerAdvisor dinnerAdvisor = new DinnerAdvisor();
-        ExpensesManager expensesManager = new ExpensesManager();
+        ArrayList<Integer>february = new ArrayList<>();
+        february.add(23);
 
-        while (true) {
-            printMenu();
-            int command = scanner.nextInt();
+        ArrayList<Integer>march = new ArrayList<>();
+        march.add(8);
 
-            if (command == 1) {
-                System.out.println("Ваши сбережения: " + moneyBeforeSalary + " RUB");
-                System.out.println("В какую валюту хотите конвертировать? Доступные варианты: 1 - USD, 2 - EUR, 3 - CNY.");
-                int currency = scanner.nextInt();
-                converter.convert(moneyBeforeSalary, currency);
-            } else if (command == 2) {
-                dinnerAdvisor.getAdvice(moneyBeforeSalary, daysBeforeSalary);
-            } else if (command == 3) {
-                System.out.println("Введите размер траты:");
-                double expense = scanner.nextDouble();
-                moneyBeforeSalary = expensesManager.saveExpense(moneyBeforeSalary, expense);
-            } else if (command == 4) {
-                expensesManager.printAllExpenses();
-            } else if (command == 5) {
-                System.out.println("Самая большая сумма расходов составила " + expensesManager.findMaxExpense() + " руб.");
-            } else if (command == 6) { // добавьте реализацию команды 6
-						    expensesManager.removeAllExpenses();// вызовите соответствующий метод
-            } else if (command == 7) { // добавьте реализацию команды 7
-                System.out.println("Введите транзакцию:");
-                int transaction = scanner.nextInt(); // считайте значение транзакции
-                expensesManager.removeExpense(transaction); // вызовите соответствующий метод
-            } else if (command == 0) {
-                System.out.println("Выход");
-                break;
-            } else {
-                System.out.println("Извините, такой команды пока нет.");
-            }
-        }
-    }
+        ArrayList<Integer>may = new ArrayList<>();
+        may.add(1);
+        may.add(9);
 
-    public static void printMenu() {
-        System.out.println("Что вы хотите сделать? ");
-        System.out.println("1 - Конвертировать валюту");
-        System.out.println("2 - Получить совет");
-        System.out.println("3 - Ввести трату");
-        System.out.println("4 - Показать траты");
-        System.out.println("5 - Показать самую большую сумму расходов");
-        System.out.println("6 - Очистить список трат");
-        System.out.println("7 - “Найти и удалить трату");
-        // добавьте новые пункты в меню:
-         // "6 - Очистить список трат"
-         // "7 - “Найти и удалить трату"
-        System.out.println("0 - Выход");
+        ArrayList<Integer>june = new ArrayList<>();
+        june.add(12);
+
+        ArrayList<Integer>november = new ArrayList<>();
+        november.add(4);
+
+        stateHolidays.put("Январь", january);
+        stateHolidays.put("Февраль", february);
+        stateHolidays.put("Март", march);
+        stateHolidays.put("Май", may);
+        stateHolidays.put("Июнь", june);
+        stateHolidays.put("Ноябрь", november);
+
+        System.out.println(stateHolidays);
     }
 }
