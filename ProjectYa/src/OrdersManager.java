@@ -63,7 +63,7 @@ public class OrdersManager {
         double maxOrder = 0;
         String customerName = "";
         for (int i = 0; i < customersOrders.size(); i++) {
-            if (customersOrders.values(i) > maxOrder){
+            if (){
 
         }
 
