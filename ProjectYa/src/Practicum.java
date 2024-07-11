@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 
 public class Practicum {
     public static void main(String[] args) {
-       ... // объявите и проиницализируйте хеш-таблицу musicGroups
+        HashMap<String,Integer> musicGroups = new HashMap<>(); // объявите и проиницализируйте хеш-таблицу musicGroups
         musicGroups.put("The Beatles", 1960);
         musicGroups.put("Rammstein", 1994);
         musicGroups.put("Queen", 1970);
@@ -21,8 +22,8 @@ public class Practicum {
         musicGroups.put("The Doors", 1965);
 
         System.out.println("Легендарные группы, год основания которых вы можете узнать:");
-        ... // распечайте список групп
-        ... // System.out.println(group)
+        System.out.println(musicGroups); // распечайте список групп
+//        System.out.println(group);
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
