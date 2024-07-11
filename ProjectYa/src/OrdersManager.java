@@ -63,9 +63,10 @@ public class OrdersManager {
         double maxOrder = 0;
         String customerName = "";
         for (ArrayList<Double> orders : customersOrders.values()){
-            for (Double )
-
-
+            for (int i = 0; i < orders.size(); i++) {
+                if (maxOrder >= orders.get(i)){
+                    maxOrder++;
+            }
         }
 
          // допишите логику работы метода
