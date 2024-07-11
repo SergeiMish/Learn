@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Practicum {
@@ -21,9 +19,16 @@ public class Practicum {
         musicGroups.put("Kiss", 1973);
         musicGroups.put("The Doors", 1965);
 
+
         System.out.println("Легендарные группы, год основания которых вы можете узнать:");
-        System.out.println(musicGroups); // распечайте список групп
-//        System.out.println(group);
+        for (int i = 0; i < musicGroups.size(); i++) {
+            String group = musicGroups.keySet(i);
+            System.out.println(group);
+        }
+
+        // распечайте список групп
+         // System.out.println(group)
+
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -44,12 +49,12 @@ public class Practicum {
                 System.out.println("Введите её название"); //
                 String nameGroup = scanner.next();
                 System.out.println("Введите год основания"); //
-                ... // bornYear
-                ...
+                Integer bornYear = scanner.nextInt();
+                musicGroups.put(nameGroup, bornYear);
                 System.out.println("Информация о группе " + nameGroup + " добавлена.");
 
             } else if (command == 3) {
-              ... // остановите цикл
+              break; // остановите цикл
             } else {
                 System.out.println("Извините, такой команды пока нет.");
             }
