@@ -33,10 +33,10 @@ public class Practicum {
             System.out.println("3 - Выйти из приложения");
             int command = scanner.nextInt();
             if (command == 1) {
-                ... // "Введите название группы"
-                ... // keyGroup
-                ... // year
-               ... // "Год основания " + keyGroup
+                System.out.println("Введите название группы");
+                String keyGroup = scanner.next();
+                Integer year = musicGroups.get(keyGroup);
+                System.out.println("Год основания " + keyGroup);
                 System.out.println(year);
 
             } else if (command == 2) {
