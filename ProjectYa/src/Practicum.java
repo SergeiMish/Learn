@@ -11,6 +11,6 @@ public class Practicum {
         System.out.println("Самая большая сумма заказов у " + maxOrderCustomerName);
         ordersManager.printCustomerOrders(maxOrderCustomerName);
 
-        ordersManager.removeUnprofitableOrders();
+//        ordersManager.removeUnprofitableOrders();
     }
 }
