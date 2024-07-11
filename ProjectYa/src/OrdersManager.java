@@ -62,9 +62,8 @@ public class OrdersManager {
     String getMaxOrderCustomerName() {
         double maxOrder = 0;
         String customerName = "";
-        for (int i = 0; i < customersOrders.size(); i++) {
-
-            if (){
+        for (ArrayList<Double> orders : customersOrders.values()){
+            for (Double )
 
 
         }
