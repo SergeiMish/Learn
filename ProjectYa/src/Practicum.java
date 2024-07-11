@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Practicum {
     public static void main(String[] args) {
-        HashMap<String,Integer> musicGroups = new HashMap<>(); // объявите и проиницализируйте хеш-таблицу musicGroups
+        HashMap<String, Integer> musicGroups = new HashMap<>(); // объявите и проиницализируйте хеш-таблицу musicGroups
         musicGroups.put("The Beatles", 1960);
         musicGroups.put("Rammstein", 1994);
         musicGroups.put("Queen", 1970);
@@ -20,16 +20,10 @@ public class Practicum {
 
 
         System.out.println("Легендарные группы, год основания которых вы можете узнать:");
-//        for (int i = 0; i < musicGroups.size(); i++) {
-//            String group = musicGroups.keySet(i);
-//            System.out.println(group);
-//        }
+
         for (String group : musicGroups.keySet()) {
             System.out.println(group);
         }
-        // распечайте список групп
-         // System.out.println(group)
-
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -55,7 +49,7 @@ public class Practicum {
                 System.out.println("Информация о группе " + nameGroup + " добавлена.");
 
             } else if (command == 3) {
-              break; // остановите цикл
+                break; // остановите цикл
             } else {
                 System.out.println("Извините, такой команды пока нет.");
             }
