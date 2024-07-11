@@ -62,8 +62,12 @@ public class OrdersManager {
     String getMaxOrderCustomerName() {
         double maxOrder = 0;
         String customerName = "";
+        for (int i = 0; i < customersOrders.size(); i++) {
+            if (customersOrders.values(i) > maxOrder){
 
-        ... // допишите логику работы метода
+        }
+
+         // допишите логику работы метода
 
         return customerName;
     }
