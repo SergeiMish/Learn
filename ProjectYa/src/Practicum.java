@@ -40,10 +40,10 @@ public class Practicum {
                 System.out.println(year);
 
             } else if (command == 2) {
-                ... // "Добавьте свою любимую группу"
-                ... // "Введите её название"
-                ... // nameGroup
-                ... // "Введите год основания"
+                System.out.println("Добавьте свою любимую группу"); //
+                System.out.println("Введите её название"); //
+                String nameGroup = scanner.next();
+                System.out.println("Введите год основания"); //
                 ... // bornYear
                 ...
                 System.out.println("Информация о группе " + nameGroup + " добавлена.");
