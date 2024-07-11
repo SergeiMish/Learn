@@ -1,8 +1,5 @@
 import java.util.*;
 
-import static sun.tools.jstat.Alignment.keySet;
-
-
 public class Practicum {
     public static void main(String[] args) {
         HashMap<String,Integer> musicGroups = new HashMap<>(); // объявите и проиницализируйте хеш-таблицу musicGroups
@@ -23,11 +20,13 @@ public class Practicum {
 
 
         System.out.println("Легендарные группы, год основания которых вы можете узнать:");
-        for (int i = 0; i < musicGroups.size(); i++) {
-            String group = musicGroups.keySet(i);
+//        for (int i = 0; i < musicGroups.size(); i++) {
+//            String group = musicGroups.keySet(i);
+//            System.out.println(group);
+//        }
+        for (String group : musicGroups.keySet()) {
             System.out.println(group);
         }
-
         // распечайте список групп
          // System.out.println(group)
 
