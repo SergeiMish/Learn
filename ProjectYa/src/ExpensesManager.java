@@ -19,7 +19,7 @@ public class ExpensesManager {
             expenses1.add(expense);
     } else {
             ArrayList<Double>expenses2 = new ArrayList<>();// создайте новый список трат и добавьте в него сумму
-            expenses2.add() // сохраните категорию и новый список трат в хеш-таблицу
+            expensesByCategories.put(category,expenses2); // сохраните категорию и новый список трат в хеш-таблицу
     }
         if (moneyBeforeSalary < 1000) {
         System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
