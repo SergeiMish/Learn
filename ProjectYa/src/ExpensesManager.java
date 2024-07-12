@@ -6,19 +6,20 @@ public class ExpensesManager {
 
     ExpensesManager() {
         expensesByCategories = new HashMap<>(); // создайте таблицу
+
     }
 
     // добавьте в метод ещё один параметр — category
     double saveExpense(double moneyBeforeSalary, double expense, String category) {
+        ArrayList<Double>expenses1 = new ArrayList<>();
         moneyBeforeSalary = moneyBeforeSalary - expense;
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
-        expensesByCategories.get(category); // замените на работу с таблицей
+         expensesByCategories.get(category);// замените на работу с таблицей
         if (expensesByCategories.containsKey(category)){ // проверьте наличие категории
-            expensesByCategories.get(category); // получите список трат в этой категории
-            expensesByCategories.put(category, expense);// добавьте трату
+            expenses1.add(expense);
     } else {
-            ... // создайте новый список трат и добавьте в него сумму
-            ... // сохраните категорию и новый список трат в хеш-таблицу
+            ArrayList<Double>expenses2 = new ArrayList<>();// создайте новый список трат и добавьте в него сумму
+            expenses2.add() // сохраните категорию и новый список трат в хеш-таблицу
     }
         if (moneyBeforeSalary < 1000) {
         System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
