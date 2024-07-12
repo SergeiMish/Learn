@@ -59,21 +59,22 @@ public class OrdersManager {
         }
     }
 
-    String getMaxOrderCustomerName() {
+    String getMaxOrderCustomerName () {
         double maxOrder = 0;
         String customerName = "";
-        double summ = 0.0;
-        for (String name : customersOrders.keySet()){
-            ArrayList<Double>value = customersOrders.get(name);
-            for (Double orders : value){
-                summ = orders + summ;
-                if (summ > maxOrder){
-                    maxOrder = summ;
-                    customerName = name;
-                }
+        for (String key : customersOrders.keySet ()) {
+
+            ArrayList <Double> ordersBuf = customersOrders.get (key);
+            Double summ = 0.0;
+            for (Double order : ordersBuf) {
+                summ += order;
+            }
+
+            if (summ > maxOrder) {
+                maxOrder = summ;
+                customerName = key;
             }
         }
-         // допишите логику работы метода
         return customerName;
     }
 
