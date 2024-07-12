@@ -92,8 +92,8 @@ public class OrdersManager {
         }
     }
 
-        for (String nameu : names){
-            names.remove(nameu);
+        for (String name : names){
+            names.remove(name);
             // удалите из хеш-таблицы тех, чьи расходы строго меньше 5000
         }
 
