@@ -62,8 +62,8 @@ public class OrdersManager {
     String getMaxOrderCustomerName() {
         double maxOrder = 0;
         String customerName = "";
+        double summ = 0.0;
         for (String name : customersOrders.keySet()){
-            double summ = 0.0;
             ArrayList<Double>value = customersOrders.get(name);
             for (Double orders : value){
                 summ = orders + summ;
@@ -78,26 +78,24 @@ public class OrdersManager {
     }
 
     void removeUnprofitableOrders() {
-        ArrayList<String> names = new ArrayList<>(); // создайте список клиентов с заказами меньше 5000
+        ArrayList<String> names = new ArrayList<>();// Создайте список клиентов с заказами меньше 5000​
+        // Наполните список names
+        for (String name : customersOrders.keySet()) {
+            double ordersSum = 0;
 
-        // наполните список names
-        for (String name : customersOrders.keySet()){
-        ArrayList<Double> value = customersOrders.get(name);
-        double ordersSum = 0;
-        for (Double order : value){
-            ordersSum = order + ordersSum;
-
-        if (ordersSum < 5000) {
-            names.add(name);
-        }
-    }
-
-        for (String name : names){
-            names.remove(name);
-            // удалите из хеш-таблицы тех, чьи расходы строго меньше 5000
+            for (Double orders : customersOrders.get(name)) {
+                ordersSum += orders;
+            }
+            if (ordersSum < 5000) {
+                names.add(name);
+            }
         }
 
+        for (String name : names) {
+            if (customersOrders.containsKey(name)) {
+                customersOrders.remove(name);
                 System.out.println("Клиента " + name + " больше нет в таблице.");
-}
+            }
+        }
     }
 }
