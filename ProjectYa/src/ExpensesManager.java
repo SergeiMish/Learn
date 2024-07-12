@@ -12,10 +12,10 @@ public class ExpensesManager {
     double saveExpense(double moneyBeforeSalary, double expense, String category) {
         moneyBeforeSalary = moneyBeforeSalary - expense;
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
-        expenses.add(expense); // замените на работу с таблицей
-        if ... // проверьте наличие категории
-            ... // получите список трат в этой категории
-            ... // добавьте трату
+        expensesByCategories.get(moneyBeforeSalary); // замените на работу с таблицей
+        if (expensesByCategories.containsKey(category)){ // проверьте наличие категории
+            expensesByCategories.get(expense); // получите список трат в этой категории
+            expensesByCategories.put(category, expense);// добавьте трату
     } else {
             ... // создайте новый список трат и добавьте в него сумму
             ... // сохраните категорию и новый список трат в хеш-таблицу
