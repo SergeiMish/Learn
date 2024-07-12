@@ -62,36 +62,40 @@ public class OrdersManager {
     String getMaxOrderCustomerName() {
         double maxOrder = 0;
         String customerName = "";
-        for (ArrayList<Double> orders : customersOrders.values()){
-            for (int i = 0; i < orders.size(); i++) {
-
+        for (String name : customersOrders.keySet()){
+            double summ = 0.0;
+            ArrayList<Double>value = customersOrders.get(name);
+            for (Double orders : value){
+                summ = orders + summ;
+                if (summ > maxOrder){
+                    maxOrder = summ;
+                    customerName = name;
+                }
             }
-
-
         }
-
          // допишите логику работы метода
-
         return customerName;
     }
 
-    void removeUnprofitableOrders() {
-        ArrayList<String> names ... // создайте список клиентов с заказами меньше 5000
-
-        // наполните список names
-        for ...
-
-        double ordersSum = 0;
-        for ...
-
-        if (ordersSum < 5000) {
-                ...
-        }
-    }
-
-        for ... // удалите из хеш-таблицы тех, чьи расходы строго меньше 5000
-
-                System.out.println("Клиента " + name + " больше нет в таблице.");
-}
-    }
+//    void removeUnprofitableOrders() {
+//        ArrayList<String> names = new ArrayList<>(); // создайте список клиентов с заказами меньше 5000
+//
+//        // наполните список names
+//        for (for (String name : customersOrders.keySet()) {
+//            if ()
+//        }
+//
+//        double ordersSum = 0;
+//        for ...
+//
+//        if (ordersSum < 5000) {
+//                ...
+//        }
+//    }
+//
+//        for ... // удалите из хеш-таблицы тех, чьи расходы строго меньше 5000
+//
+//                System.out.println("Клиента " + name + " больше нет в таблице.");
+//}
+//    }
             }
