@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ExpensesManager {
-    HashMap<String, ArrayList<Double>> expensesByCategories = new HashMap<>(); // замените на таблицу с именем expensesByCategories
+    HashMap<String, ArrayList<Double>> expensesByCategories; // замените на таблицу с именем expensesByCategories
 
     ExpensesManager() {
-        expenses = new ArrayList<>(); // создайте таблицу
+        expensesByCategories = new HashMap<>(); // создайте таблицу
     }
 
     // добавьте в метод ещё один параметр — category
-    double saveExpense(double moneyBeforeSalary, double expense) {
+    double saveExpense(double moneyBeforeSalary, double expense, String category) {
         moneyBeforeSalary = moneyBeforeSalary - expense;
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
         expenses.add(expense); // замените на работу с таблицей
