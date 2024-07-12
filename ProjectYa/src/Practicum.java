@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class Practicum {
     public static void main(String[] args) {
@@ -11,6 +10,6 @@ public class Practicum {
         System.out.println("Самая большая сумма заказов у " + maxOrderCustomerName);
         ordersManager.printCustomerOrders(maxOrderCustomerName);
 
-//        ordersManager.removeUnprofitableOrders();
+        ordersManager.removeUnprofitableOrders();
     }
 }

@@ -77,25 +77,27 @@ public class OrdersManager {
         return customerName;
     }
 
-//    void removeUnprofitableOrders() {
-//        ArrayList<String> names = new ArrayList<>(); // создайте список клиентов с заказами меньше 5000
-//
-//        // наполните список names
-//        for (for (String name : customersOrders.keySet()) {
-//            if ()
-//        }
-//
-//        double ordersSum = 0;
-//        for ...
-//
-//        if (ordersSum < 5000) {
-//                ...
-//        }
-//    }
-//
-//        for ... // удалите из хеш-таблицы тех, чьи расходы строго меньше 5000
-//
-//                System.out.println("Клиента " + name + " больше нет в таблице.");
-//}
-//    }
-            }
+    void removeUnprofitableOrders() {
+        ArrayList<String> names = new ArrayList<>(); // создайте список клиентов с заказами меньше 5000
+
+        // наполните список names
+        for (String name : customersOrders.keySet()){
+        ArrayList<Double> value = customersOrders.get(name);
+        double ordersSum = 0;
+        for (Double order : value){
+            ordersSum = order + ordersSum;
+
+        if (ordersSum < 5000) {
+            names.add(name);
+        }
+    }
+
+        for (String nameu : names){
+            names.remove(nameu);
+            // удалите из хеш-таблицы тех, чьи расходы строго меньше 5000
+        }
+
+                System.out.println("Клиента " + name + " больше нет в таблице.");
+}
+    }
+}
