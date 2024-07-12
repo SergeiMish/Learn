@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ExpensesManager {
-    ArrayList<Double> expenses; // замените на таблицу с именем expensesByCategories
+    HashMap<String, ArrayList<Double>> expensesByCategories = new HashMap<>(); // замените на таблицу с именем expensesByCategories
 
     ExpensesManager() {
         expenses = new ArrayList<>(); // создайте таблицу
