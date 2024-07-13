@@ -48,7 +48,8 @@ public class ExpensesManager {
         Если категория есть, то ищем максмальную трату.
         Иначе печатаем "Такой категории пока нет." */
         if(expensesByCategories.containsKey(category)){
-            for (Double exp : expenses) {
+            ArrayList<Double>maxExp = expensesByCategories.get(category);
+            for (Double exp : maxExp) {
                 if (exp > maxExpense) {
                     maxExpense = exp;
                 }
