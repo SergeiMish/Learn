@@ -6,27 +6,30 @@ public class ExpensesManager {
     ArrayList<Double>expenses = new ArrayList<>();
     ExpensesManager() {
         expensesByCategories = new HashMap<>(); // создайте таблицу
+
     }
 
     // добавьте в метод ещё один параметр — category
     double saveExpense(double moneyBeforeSalary, double expense, String category) {
         moneyBeforeSalary = moneyBeforeSalary - expense;
+
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
-        expensesByCategories.put(category, expenses);
-        expenses.add(expense);
-         // замените на работу с таблицей
+
+        // замените на работу с таблицей
         if (expensesByCategories.containsKey(category)){ // проверьте наличие категории
-            expensesByCategories.get(category);
-            System.out.println(expensesByCategories);
-    } else {
+            ArrayList<Double> expenses1 = expensesByCategories.get(category);
+            expensesByCategories.put(category, expenses1);
+            expenses1.add(expense);
+        } else {
             ArrayList<Double>expenses2 = new ArrayList<>();// создайте новый список трат и добавьте в него сумму
             expensesByCategories.put(category,expenses2); // сохраните категорию и новый список трат в хеш-таблицу
-    }
+            expenses2.add(expense);
+        }
         if (moneyBeforeSalary < 1000) {
-        System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
-    }
+            System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
+        }
         return moneyBeforeSalary;
-}
+    }
 
 
     void printAllExpensesByCategories() {
@@ -45,7 +48,6 @@ public class ExpensesManager {
         Если категория есть, то ищем максмальную трату.
         Иначе печатаем "Такой категории пока нет." */
         if(expensesByCategories.containsKey(category)){
-            expenses.add(maxExpense);
             for (Double exp : expenses) {
                 if (exp > maxExpense) {
                     maxExpense = exp;
