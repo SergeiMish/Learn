@@ -3,23 +3,21 @@ import java.util.HashMap;
 
 public class ExpensesManager {
     HashMap<String, ArrayList<Double>> expensesByCategories; // замените на таблицу с именем expensesByCategories
-    ArrayList<Double> expenses;
+
     ExpensesManager() {
         expensesByCategories = new HashMap<>(); // создайте таблицу
-        expenses = new ArrayList<>();
     }
 
     // добавьте в метод ещё один параметр — category
     double saveExpense(double moneyBeforeSalary, double expense, String category) {
         moneyBeforeSalary = moneyBeforeSalary - expense;
-        ArrayList<Double>expenses1 = new ArrayList<>();
+        ArrayList<Double>expenses = new ArrayList<>();
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
-
+        expensesByCategories.put(category, expenses);
+        expenses.add(expense);
          // замените на работу с таблицей
         if (expensesByCategories.containsKey(category)){ // проверьте наличие категории
             expensesByCategories.get(category);
-            expenses1.add(expense);
-            expensesByCategories.put(category, expenses1);
             System.out.println(expensesByCategories);
     } else {
             ArrayList<Double>expenses2 = new ArrayList<>();// создайте новый список трат и добавьте в него сумму
@@ -35,9 +33,9 @@ public class ExpensesManager {
     void printAllExpensesByCategories() {
         // Замените логику для работы с таблицами
 
-        for(String categoryes : expensesByCategories.keySet()){
-            for (Double list : expensesByCategories.get(categoryes)){
-                System.out.println(categoryes + " " + list);
+        for(String category : expensesByCategories.keySet()){
+            for (Double list : expensesByCategories.get(category)){
+                System.out.println(category + " " + list);
             }
         }
     }
