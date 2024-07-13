@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class ExpensesManager {
     HashMap<String, ArrayList<Double>> expensesByCategories; // замените на таблицу с именем expensesByCategories
-
+    ArrayList<Double>expenses = new ArrayList<>();
     ExpensesManager() {
         expensesByCategories = new HashMap<>(); // создайте таблицу
     }
@@ -11,7 +11,6 @@ public class ExpensesManager {
     // добавьте в метод ещё один параметр — category
     double saveExpense(double moneyBeforeSalary, double expense, String category) {
         moneyBeforeSalary = moneyBeforeSalary - expense;
-        ArrayList<Double>expenses = new ArrayList<>();
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
         expensesByCategories.put(category, expenses);
         expenses.add(expense);
@@ -46,9 +45,8 @@ public class ExpensesManager {
         Если категория есть, то ищем максмальную трату.
         Иначе печатаем "Такой категории пока нет." */
         if(expensesByCategories.containsKey(category)){
-            ArrayList<Double>maxExp = new ArrayList<>();
-            maxExp.add(maxExpense);
-            for (Double exp : maxExp) {
+            expenses.add(maxExpense);
+            for (Double exp : expenses) {
                 if (exp > maxExpense) {
                     maxExpense = exp;
                 }
