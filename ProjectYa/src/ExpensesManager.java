@@ -47,7 +47,7 @@ public class ExpensesManager {
         Иначе печатаем "Такой категории пока нет." */
         if(expensesByCategories.containsKey(category)){
             ArrayList<Double>maxExp = new ArrayList<>();
-            expensesByCategories.get(maxExp);
+            maxExp.add(maxExpense);
             for (Double exp : maxExp) {
                 if (exp > maxExpense) {
                     maxExpense = exp;
