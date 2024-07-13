@@ -12,13 +12,14 @@ public class ExpensesManager {
     // добавьте в метод ещё один параметр — category
     double saveExpense(double moneyBeforeSalary, double expense, String category) {
         moneyBeforeSalary = moneyBeforeSalary - expense;
-        ArrayList<Double>exp = new ArrayList<>();
-        expensesByCategories.put(category, exp);
+        ArrayList<Double>expenses1 = new ArrayList<>();
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
-         expensesByCategories.get(category);// замените на работу с таблицей
+
+         // замените на работу с таблицей
         if (expensesByCategories.containsKey(category)){ // проверьте наличие категории
             expensesByCategories.get(category);
-            exp.add(expense);
+            expenses1.add(expense);
+            expensesByCategories.put(category, expenses1);
             System.out.println(expensesByCategories);
     } else {
             ArrayList<Double>expenses2 = new ArrayList<>();// создайте новый список трат и добавьте в него сумму
