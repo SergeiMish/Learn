@@ -63,12 +63,25 @@ public class ExpensesManager {
             }
         }   return  result;   // напишите метод для удаления категории
     }
+    void removeCategory(String name){
+        expensesByCategories.remove(name);
+    }
 
 
-
-            ... // напишите метод для получения категории, где размер трат больше всего
-    // используйте эти переменные для сохранения промежуточных значений
-    double maxCategorySum = 0;
-    String maxCategoryName = "";
-
+    String getMaxCategoryName() { // напишите метод для получения категории, где размер трат больше всего
+        // используйте эти переменные для сохранения промежуточных значений
+        double maxCategorySum = 0;
+        String maxCategoryName = "";
+        double sum = 0;
+        for (String category : expensesByCategories.keySet()){
+            ArrayList<Double> expenses = expensesByCategories.get(category);
+            for (Double expense : expenses){
+                sum += expense;
+                if (sum > maxCategorySum){
+                    maxCategorySum = sum;
+                    maxCategoryName = category;
+                }
+            }
+        } return maxCategoryName;
+    }
 }
