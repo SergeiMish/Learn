@@ -81,6 +81,7 @@ public class ExpensesManager {
                     maxCategorySum = sum;
                     maxCategoryName = category;
                 }
+                sum = 0;
             }
         } return maxCategoryName;
     }
