@@ -57,11 +57,11 @@ public class ExpensesManager {
 
     double getExpensesSum(){// напишите метод для получения суммы всех трат
         double result = 0;
-        for (ArrayList<Double> expense : expensesByCategories.values()) {
-            
-           result = result + expense;
-        }// напишите метод для удаления категории
-        return  result;
+        for (ArrayList<Double> expenses : expensesByCategories.values()) {
+            for (Double expense : expenses){
+               result += expense;
+            }
+        }   return  result;   // напишите метод для удаления категории
     }
 
 
