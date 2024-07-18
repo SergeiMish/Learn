@@ -3,6 +3,7 @@ package ru.practicum.dinner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class DinnerConstructor {
 
@@ -33,16 +34,19 @@ public class DinnerConstructor {
     }
 
     private static void generateDishCombo(int numberOfCombos, String nextItem) {
-        Map<Integer, HashMap<String, ArrayList<String>>> generateMap = new HashMap<>();
-        generateMap(numberOfCombos, dishes);
+        ArrayList<String> list = new ArrayList<>();
         //реализуйте ввод типов блюд
-        while (!nextItem.isEmpty()) {
+        while (nextItem.isEmpty()) {
+            list.add(nextItem);
 
+            if (!nextItem.isEmpty()) {
+                break;
+            }
         }
+    }
 
         // сгенерируйте комбинации блюд и выведите на экран
 
-    }
     public void generateDishCombos(int numberOfCombos, String nextItem){
         generateDishCombo(numberOfCombos, nextItem);
     }
