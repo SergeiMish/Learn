@@ -2,21 +2,22 @@ package ru.practicum.dinner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import static ru.practicum.dinner.Main.scanner;
 
 public class DinnerConstructor {
+    Map<String, ArrayList<String>> newDish = new HashMap<>();
+    ArrayList<String> nameOfDish = new ArrayList<>();
+
     private static void addNewDish() {
         System.out.println("Введите тип блюда:");
         String dishType = scanner.nextLine();
         System.out.println("Введите название блюда:");
         String dishName = scanner.nextLine();
 
-        HashMap<String, ArrayList<String>> newDish = new HashMap<>();
-        ArrayList<String> nameOfDish = new ArrayList<>();
         nameOfDish.add(dishName);
         newDish.put(dishType, nameOfDish);
-
 
         // добавьте новое блюдо
     }

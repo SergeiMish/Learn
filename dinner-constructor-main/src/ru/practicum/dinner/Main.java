@@ -17,10 +17,10 @@ public class Main {
 
             switch (command) {
                 case "1":
-                    addNewDish();
+                    dc.addNewDish();
                     break;
                 case "2":
-                    generateDishCombo();
+//                    generateDishCombo();
                     break;
                 case "3":
                     return;
@@ -37,4 +37,3 @@ public class Main {
 
 
     }
-}
