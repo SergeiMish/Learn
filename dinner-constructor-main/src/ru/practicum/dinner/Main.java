@@ -24,7 +24,14 @@ public class Main {
                     dinnerConstructor.addNewDishes(dishType, dishName);
                     break;
                 case "2":
-                    dinnerConstructor.generateDishCombos();
+                    System.out.println("Начинаем конструировать обед...");
+                    System.out.println("Введите количество наборов, которые нужно сгенерировать:");
+                    int numberOfCombos = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Вводите типы блюда, разделяя символом переноса строки (enter). Для завершения ввода введите пустую строку");
+                    String nextItem = scanner.nextLine();
+
+                    dinnerConstructor.generateDishCombos(numberOfCombos ,nextItem);
                     break;
                 case "3":
                     return;

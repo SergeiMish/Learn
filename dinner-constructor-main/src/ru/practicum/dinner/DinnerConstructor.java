@@ -17,13 +17,13 @@ public class DinnerConstructor {
             ArrayList<String> list = dishes.get(dishType);
             list.add(dishName);
             for (String name : list) {
-                    if (name.equals(dishName)){
-                        System.out.println("-".repeat(10));
-                        System.out.println("Такое блюдо уже есть в списке");
-                        System.out.println("-".repeat(10));
-                    }
+                if (name.equals(dishName)) {
+                    System.out.println("-".repeat(10));
+                    System.out.println("Такое блюдо уже есть в списке");
+                    System.out.println("-".repeat(10));
+                }
             }
-        } else  {
+        } else {
             ArrayList<String> list = new ArrayList<>();
             list.add(dishName);
             dishes.put(dishType, list);
@@ -35,14 +35,7 @@ public class DinnerConstructor {
         System.out.println(dishes);
     }
 
-    private static void generateDishCombo() {
-        System.out.println("Начинаем конструировать обед...");
-        System.out.println("Введите количество наборов, которые нужно сгенерировать:");
-        int numberOfCombos = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.println("Вводите типы блюда, разделяя символом переноса строки (enter). Для завершения ввода введите пустую строку");
-        String nextItem = scanner.nextLine();
+    private static void generateDishCombo(int numberOfCombos, String nextItem) {
 
         //реализуйте ввод типов блюд
         while (!nextItem.isEmpty()) {
@@ -52,7 +45,7 @@ public class DinnerConstructor {
         // сгенерируйте комбинации блюд и выведите на экран
 
     }
-    public void generateDishCombos(){
-        generateDishCombo();
+    public void generateDishCombos(int numberOfCombos, String nextItem){
+        generateDishCombo(numberOfCombos, nextItem);
     }
 }
