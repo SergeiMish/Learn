@@ -16,7 +16,14 @@ public class DinnerConstructor {
         if (dishes.containsKey(dishType)) {
             ArrayList<String> list = dishes.get(dishType);
             list.add(dishName);
-        } else {
+            for (String name : list) {
+                    if (name.equals(dishName)){
+                        System.out.println("-".repeat(10));
+                        System.out.println("Такое блюдо уже есть в списке");
+                        System.out.println("-".repeat(10));
+                    }
+            }
+        } else  {
             ArrayList<String> list = new ArrayList<>();
             list.add(dishName);
             dishes.put(dishType, list);
