@@ -13,20 +13,16 @@ public class DinnerConstructor {
 
 
     private static void addNewDish(String dishType, String dishName) {
-    ArrayList<String>name = new ArrayList<>();
-    name.add(dishName);
-    dishes.put(dishType, name);
-        for (String names : name) {
-            if (names.equals(dishName)) {
-                System.out.println("Название этого блюда уже присутствует в списке");
-            } else {
-                for (int i = 0; i < name.size(); i++) {
-                    name.add(String.valueOf(i));
-                }
-            }
+        if (dishes.containsKey(dishType)) {
+            ArrayList<String> list = dishes.get(dishType);
+            list.add(dishName);
+        } else {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(dishName);
+            dishes.put(dishType, list);
         }
-        // добавьте новое блюдо
     }
+        // добавьте новое блюдо
     public void addNewDishes(String dishType, String dishName){
         addNewDish(dishType, dishName);
         System.out.println(dishes);
