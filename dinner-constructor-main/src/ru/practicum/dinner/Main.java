@@ -1,5 +1,6 @@
 package ru.practicum.dinner;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -42,8 +43,10 @@ public class Main {
         System.out.println("Введите название блюда:");
         String dishName = scanner.nextLine();
 
-        HashMap<String, String> newDish = new HashMap<>();
-        newDish.put(dishType, dishName);
+        HashMap<String, ArrayList<String>> newDish = new HashMap<>();
+        ArrayList<String> nameOfDish = new ArrayList<>();
+        nameOfDish.add(dishName);
+        newDish.put(dishType, nameOfDish);
 
 
         // добавьте новое блюдо
