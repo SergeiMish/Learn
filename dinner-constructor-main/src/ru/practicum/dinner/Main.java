@@ -2,13 +2,14 @@ package ru.practicum.dinner;
 
 import java.util.Scanner;
 
+
 public class Main {
 
-    static DinnerConstructor dc;
+    static DinnerConstructor dinnerConstructor;
     static Scanner scanner;
 
     public static void main(String[] args) {
-        dc = new DinnerConstructor();
+        dinnerConstructor = new DinnerConstructor();
         scanner = new Scanner(System.in);
         while (true) {
             printMenu();
@@ -16,10 +17,10 @@ public class Main {
 
             switch (command) {
                 case "1":
-                    addNewDish();
+                    dinnerConstructor.addNewDishes();
                     break;
                 case "2":
-//                    generateDishCombo();
+                    dinnerConstructor.generateDishCombos();
                     break;
                 case "3":
                     return;

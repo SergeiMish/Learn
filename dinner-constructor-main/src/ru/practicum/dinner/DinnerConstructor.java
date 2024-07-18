@@ -7,7 +7,7 @@ import java.util.Map;
 import static ru.practicum.dinner.Main.scanner;
 
 public class DinnerConstructor {
-    Map<String, ArrayList<String>> newDish;
+    Map<String, ArrayList<String>> newDish = new HashMap<>();
     ArrayList<String> nameOfDish = new ArrayList<>();
 
     private static void addNewDish() {
@@ -15,9 +15,11 @@ public class DinnerConstructor {
         String dishType = scanner.nextLine();
         System.out.println("Введите название блюда:");
         String dishName = scanner.nextLine();
-
-
+        
         // добавьте новое блюдо
+    }
+    public void addNewDishes(){
+        addNewDish();
     }
 
     private static void generateDishCombo() {
@@ -37,5 +39,8 @@ public class DinnerConstructor {
 
         // сгенерируйте комбинации блюд и выведите на экран
 
+    }
+    public void generateDishCombos(){
+        generateDishCombo();
     }
 }
