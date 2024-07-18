@@ -17,11 +17,12 @@ public class DinnerConstructor {
     name.add(dishName);
     dishes.put(dishType, name);
         for (String names : name) {
-            if (names.equals(dishName)){
+            if (names.equals(dishName)) {
                 System.out.println("Название этого блюда уже присутствует в списке");
-            }
-            else {
-                name.add(dishName);
+            } else {
+                for (int i = 0; i < name.size(); i++) {
+                    name.add(String.valueOf(i));
+                }
             }
         }
         // добавьте новое блюдо
