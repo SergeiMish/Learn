@@ -10,14 +10,13 @@ public class Main {
     public static void main(String[] args) {
         dc = new DinnerConstructor();
         scanner = new Scanner(System.in);
-
         while (true) {
             printMenu();
             String command = scanner.nextLine();
 
             switch (command) {
                 case "1":
-                    dc.addNewDish();
+                    addNewDish();
                     break;
                 case "2":
 //                    generateDishCombo();

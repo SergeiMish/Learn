@@ -7,7 +7,7 @@ import java.util.Map;
 import static ru.practicum.dinner.Main.scanner;
 
 public class DinnerConstructor {
-    Map<String, ArrayList<String>> newDish = new HashMap<>();
+    Map<String, ArrayList<String>> newDish;
     ArrayList<String> nameOfDish = new ArrayList<>();
 
     private static void addNewDish() {
@@ -16,8 +16,6 @@ public class DinnerConstructor {
         System.out.println("Введите название блюда:");
         String dishName = scanner.nextLine();
 
-        nameOfDish.add(dishName);
-        newDish.put(dishType, nameOfDish);
 
         // добавьте новое блюдо
     }
