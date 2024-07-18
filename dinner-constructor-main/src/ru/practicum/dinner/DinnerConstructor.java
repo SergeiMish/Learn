@@ -36,8 +36,7 @@ public class DinnerConstructor {
     private static void generateDishCombo(int numberOfCombos, ArrayList<String> list) {
             Random random = new Random();
         for (int i = 0; i < numberOfCombos; i++) {
-            ArrayList<String>combination = new ArrayList<>();
-            random.nextInt(combination);
+
         }
 
             }
