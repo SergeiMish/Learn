@@ -44,7 +44,8 @@ public class DinnerConstructor {
     public void generateDishCombos(int numberOfCombos, ArrayList<String> list){
         generateDishCombo(numberOfCombos, list);
     }
-    public void checkType(String type){
+    public static void checkType(String type){
+        if (dishes.containsKey());
 
     }
 }
