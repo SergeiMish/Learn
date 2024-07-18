@@ -9,13 +9,26 @@ import static ru.practicum.dinner.Main.scanner;
 
 public class DinnerConstructor {
 
+    static HashMap<String, ArrayList<String>> dishes = new HashMap<>();
+
 
     private static void addNewDish(String dishType, String dishName) {
-
+    ArrayList<String>name = new ArrayList<>();
+    name.add(dishName);
+    dishes.put(dishType, name);
+        for (String names : name) {
+            if (names.equals(dishName)){
+                System.out.println("Название этого блюда уже присутствует в списке");
+            }
+            else {
+                name.add(dishName);
+            }
+        }
         // добавьте новое блюдо
     }
     public void addNewDishes(String dishType, String dishName){
         addNewDish(dishType, dishName);
+        System.out.println(dishes);
     }
 
     private static void generateDishCombo() {

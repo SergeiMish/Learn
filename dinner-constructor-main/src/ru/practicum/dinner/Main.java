@@ -38,6 +38,4 @@ public class Main {
         System.out.println("2 - Сгенерировать комбинации блюд");
         System.out.println("3 - Выход");
     }
-
-
-    }
+}
