@@ -21,6 +21,7 @@ public class Main {
                     String dishType = scanner.nextLine();
                     System.out.println("Введите название блюда:");
                     String dishName = scanner.nextLine();
+
                     dinnerConstructor.addNewDishes(dishType, dishName);
                     break;
                 case "2":

@@ -2,10 +2,11 @@ package ru.practicum.dinner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class DinnerConstructor {
 
-    static HashMap<String, ArrayList<String>> dishes = new HashMap<>();
+    static Map<String, ArrayList<String>> dishes = new HashMap<>();
 
 
     private static void addNewDish(String dishType, String dishName) {
@@ -32,7 +33,8 @@ public class DinnerConstructor {
     }
 
     private static void generateDishCombo(int numberOfCombos, String nextItem) {
-
+        Map<Integer, HashMap<String, ArrayList<String>>> generateMap = new HashMap<>();
+        generateMap(numberOfCombos, dishes);
         //реализуйте ввод типов блюд
         while (!nextItem.isEmpty()) {
 
