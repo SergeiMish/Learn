@@ -2,10 +2,6 @@ package ru.practicum.dinner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-
-import static ru.practicum.dinner.Main.dinnerConstructor;
-import static ru.practicum.dinner.Main.scanner;
 
 public class DinnerConstructor {
 
