@@ -4,27 +4,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static ru.practicum.dinner.Main.dinnerConstructor;
 import static ru.practicum.dinner.Main.scanner;
 
 public class DinnerConstructor {
-    Map<String, ArrayList<String>> newDish = new HashMap<>();
-    ArrayList<String> nameOfDish = new ArrayList<>();
 
-    private static void addNewDish() {
-        System.out.println("Введите тип блюда:");
-        String dishType = scanner.nextLine();
-        System.out.println("Введите название блюда:");
-        String dishName = scanner.nextLine();
-        
+
+    private static void addNewDish(String dishType, String dishName) {
+
         // добавьте новое блюдо
     }
-    public void addNewDishes(){
-        addNewDish();
+    public void addNewDishes(String dishType, String dishName){
+        addNewDish(dishType, dishName);
     }
 
     private static void generateDishCombo() {
         System.out.println("Начинаем конструировать обед...");
-
         System.out.println("Введите количество наборов, которые нужно сгенерировать:");
         int numberOfCombos = scanner.nextInt();
         scanner.nextLine();

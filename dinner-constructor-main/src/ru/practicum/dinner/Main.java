@@ -17,7 +17,11 @@ public class Main {
 
             switch (command) {
                 case "1":
-                    dinnerConstructor.addNewDishes();
+                    System.out.println("Введите тип блюда:");
+                    String dishType = scanner.nextLine();
+                    System.out.println("Введите название блюда:");
+                    String dishName = scanner.nextLine();
+                    dinnerConstructor.addNewDishes(dishType, dishName);
                     break;
                 case "2":
                     dinnerConstructor.generateDishCombos();
