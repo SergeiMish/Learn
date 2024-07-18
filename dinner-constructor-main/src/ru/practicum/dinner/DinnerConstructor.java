@@ -33,21 +33,19 @@ public class DinnerConstructor {
         System.out.println(dishes);
     }
 
-    private static void generateDishCombo(int numberOfCombos, String nextItem) {
-        ArrayList<String> list = new ArrayList<>();
-        //реализуйте ввод типов блюд
-        while (nextItem.isEmpty()) {
-            list.add(nextItem);
-
-            if (!nextItem.isEmpty()) {
-                break;
-            }
+    private static void generateDishCombo(int numberOfCombos, ArrayList<String> list) {
+            Random random = new Random();
+        for (int i = 0; i < numberOfCombos; i++) {
+            ArrayList<String>combination = new ArrayList<>();
+            random.nextInt(combination);
         }
-    }
 
+            }
         // сгенерируйте комбинации блюд и выведите на экран
+    public void generateDishCombos(int numberOfCombos, ArrayList<String> list){
+        generateDishCombo(numberOfCombos, list);
+    }
+    public void checkType(String type){
 
-    public void generateDishCombos(int numberOfCombos, String nextItem){
-        generateDishCombo(numberOfCombos, nextItem);
     }
 }
