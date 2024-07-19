@@ -27,7 +27,6 @@ public class DinnerConstructor {
         }
     }
 
-    // добавьте новое блюдо
     public void addNewDishes(String dishType, String dishName) {
         addNewDish(dishType, dishName);
         System.out.println(dishes);
