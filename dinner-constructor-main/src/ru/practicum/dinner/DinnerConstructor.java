@@ -34,12 +34,15 @@ public class DinnerConstructor {
     }
 
     private static void generateDishCombo(int numberOfCombos, ArrayList<String> list) {
-            Random random = new Random();
+        Random random = new Random();
         for (int i = 0; i < numberOfCombos; i++) {
-
-        }
-
+            for (String type : list) {
+                ArrayList<String>dishOfTypes = dishes.get(type);
+                String randomOfDish = dishOfTypes.get(random.nextInt(dishOfTypes.size()));
+                System.out.println(randomOfDish);
             }
+        }
+    }
         // сгенерируйте комбинации блюд и выведите на экран
     public void generateDishCombos(int numberOfCombos, ArrayList<String> list){
         generateDishCombo(numberOfCombos, list);
