@@ -33,12 +33,16 @@ public class Main {
                     System.out.println("Вводите типы блюда, разделяя символом переноса строки (enter). Для завершения ввода введите пустую строку");
                     String nextItem = scanner.nextLine();
                     dinnerConstructor.checkType(nextItem);
-
                     ArrayList<String> list = new ArrayList<>();
                     while (!nextItem.isEmpty()) {
-                        list.add(nextItem);
+                        if (dinnerConstructor.checkType(nextItem)) {
+                            System.out.println("Такой категории нет, введите верное значение. Вы ввели " + nextItem);
+                        } else {
+                            list.add(nextItem);
+                        }
                         nextItem = scanner.nextLine();
                         if (nextItem.isEmpty()) {
+                            System.out.println("Erat magnus dies, sed suus ' super. Mox te videre.");
                             break;
                         }
                     }
