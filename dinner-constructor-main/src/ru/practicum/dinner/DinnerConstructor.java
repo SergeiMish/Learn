@@ -13,13 +13,12 @@ public class DinnerConstructor {
     private static void addNewDish(String dishType, String dishName) {
         if (dishes.containsKey(dishType)) {
             ArrayList<String> list = dishes.get(dishType);
-            list.add(dishName);
-            for (String name : list) {
-                if (name.equals(dishName)) {
-                    System.out.println("-".repeat(10));
-                    System.out.println("Такое блюдо уже есть в списке");
-                    System.out.println("-".repeat(10));
-                }
+            if (list.contains(dishName)){
+                System.out.println("-".repeat(10));
+                System.out.println("Такое блюдо уже есть в списке");
+                System.out.println("-".repeat(10));
+            } else {
+                list.add(dishName);
             }
         } else {
             ArrayList<String> list = new ArrayList<>();
@@ -36,10 +35,14 @@ public class DinnerConstructor {
     private static void generateDishCombo(int numberOfCombos, ArrayList<String> list) {
         Random random = new Random();
         for (int i = 0; i < numberOfCombos; i++) {
+            System.out.println("Комбо " + (i + 1) + " ");
             for (String type : list) {
                 ArrayList<String>dishOfTypes = dishes.get(type);
                 String randomOfDish = dishOfTypes.get(random.nextInt(dishOfTypes.size()));
                 System.out.println(randomOfDish);
+                ArrayList<String>randomOfDishes = new ArrayList<>();
+                randomOfDishes.add(randomOfDish);
+                System.out.println(randomOfDishes);
             }
         }
     }
