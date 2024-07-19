@@ -42,13 +42,13 @@ public class Main {
                         }
                         nextItem = scanner.nextLine();
                         if (nextItem.isEmpty()) {
-                            System.out.println("Erat magnus dies, sed suus ' super. Mox te videre.");
                             break;
                         }
                     }
                     dinnerConstructor.generateDishCombos(numberOfCombos, list);
                     break;
                 case "3":
+                    System.out.println("Erat magnus dies, sed suus ' super. Mox te videre.");
                     return;
             }
         }
