@@ -32,6 +32,7 @@ public class Main {
                     scanner.nextLine();
                     System.out.println("Вводите типы блюда, разделяя символом переноса строки (enter). Для завершения ввода введите пустую строку");
                     String nextItem = scanner.nextLine();
+                    dinnerConstructor.checkType(nextItem);
 
                     ArrayList<String> list = new ArrayList<>();
                     while (!nextItem.isEmpty()) {

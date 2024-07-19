@@ -51,5 +51,8 @@ public class DinnerConstructor {
         generateDishCombo(numberOfCombos, list);
     }
     public void checkType(String type){
+        if (!dishes.containsKey(type)){
+            System.out.println("Такого пункта нет в меню");
+        }
     }
 }
