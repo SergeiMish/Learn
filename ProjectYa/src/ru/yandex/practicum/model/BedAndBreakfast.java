@@ -2,7 +2,7 @@ package ru.yandex.practicum.model;
 
 public class BedAndBreakfast { // сделайте класс общедоступным
 
-    ... // число свободных номеров (10) сохраните в переменную capacity
+    int capacity = 10; // число свободных номеров (10) сохраните в переменную capacity
 
             ... // сохраните в переменную full значение false - есть номера в наличии
 
