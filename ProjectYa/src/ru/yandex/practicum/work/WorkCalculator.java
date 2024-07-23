@@ -6,7 +6,7 @@ public class WorkCalculator {
     String workerName;
     private double coefficient;
 
-    WorkCalculator(String newName) {
+    public WorkCalculator(String newName) {
         workerName = newName;
     }
 
