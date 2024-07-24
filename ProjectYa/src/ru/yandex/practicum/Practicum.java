@@ -11,8 +11,6 @@ public class Practicum {
 }
 
 class BankAccount {
-    private long moneyAmount;
-
     public long getMoneyAmount() {
         return moneyAmount;
     }
@@ -21,11 +19,12 @@ class BankAccount {
         this.moneyAmount = moneyAmount;
     }
 
-    public void withdrawAll(){
-        System.out.println("Со счет снято " + getMoneyAmount());
-        long newMoneyAmount = moneyAmount;
-        moneyAmount = moneyAmount - newMoneyAmount;
-    }
+    private long moneyAmount;
+
     // допишите код методов
     // используйте параметр newMoneyAmount для установки нового значения
+    public void withdrawAll(){
+        System.out.println("Со счёта снято " + moneyAmount + " р.");
+        moneyAmount = 0;
+    }
 }
