@@ -1,4 +1,4 @@
-package ru.yandex.practicum.booking;
+package ru.yandex.practicum;
 
  // импортируйте классы BedAndBreakfast и Scanner
 
