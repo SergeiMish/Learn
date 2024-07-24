@@ -36,7 +36,7 @@ public class BookingService {
                     hotel.free();
                     break;
                 case 3:
-                    if (hotel.full) {
+                    if (hotel.isFull()) {
                         System.out.println("Больше нет мест¯\\_(ツ)_/¯");
                     } else {
                         System.out.println("Есть свободные номера!");

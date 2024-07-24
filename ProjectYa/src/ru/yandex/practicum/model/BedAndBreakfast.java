@@ -2,14 +2,14 @@ package ru.yandex.practicum.model;
 
 public class BedAndBreakfast { // сделайте класс общедоступным
 
-    int capacity = 10; // число свободных номеров (10) сохраните в переменную capacity
+    private int capacity = 10; // число свободных номеров (10) сохраните в переменную capacity
 
-            ... // сохраните в переменную full значение false - есть номера в наличии
+    private boolean full; // сохраните в переменную full значение false - есть номера в наличии
 
-    void book() { // метод для бронирования комнат
-        if (...) { // если есть свободные номера
+    public void book() { // метод для бронирования комнат
+        if (!full) { // если есть свободные номера
             System.out.println("Забронирован ещё один номер!");
-            ... // уменьшите количество свободных номеров на один
+            capacity--; // уменьшите количество свободных номеров на один
             printRooms();
             if (capacity == 0) {
                 full = true;
@@ -19,13 +19,13 @@ public class BedAndBreakfast { // сделайте класс общедосту
         }
     }
 
-    void printRooms() {
-        System.out.println("Свободных номеров - " + ...);
+    public void printRooms() {
+        System.out.println("Свободных номеров - " + capacity);
     }
 
-    void free() { // метод для освобождения комнат
-        if (...) { // если свободных комнат меньше 10
-            ... // увеличиваем количество свободных мест на одно
+    public void free() { // метод для освобождения комнат
+        if (capacity < 10) { // если свободных комнат меньше 10
+            capacity++; // увеличиваем количество свободных мест на одно
             System.out.println("Освободился номер!");
             printRooms();
             full = false;
@@ -34,7 +34,7 @@ public class BedAndBreakfast { // сделайте класс общедосту
         }
     }
 
-    boolean isFull() {
+    public boolean isFull() {
         return full;
     }
 }
