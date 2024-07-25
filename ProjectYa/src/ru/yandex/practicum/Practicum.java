@@ -2,29 +2,43 @@ package ru.yandex.practicum;
 
 public class Practicum {
     public static void main(String[] args) {
-        BankAccount bankAccount = new BankAccount();
-        bankAccount.setMoneyAmount(1000);// передайте в банкомат сумму на счету
-        System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
-        bankAccount.withdrawAll(); // вызовите метод вывода средств
-        System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
+        Circle circle = new Circle();
+        Square square = new Square();
+        Rectangle rectangle = new Rectangle();
+        Ellipse ellipse = new Ellipse();
+        circle.drawCircle();
+        square.drawSquare();
+        rectangle.drawRectangle();
+        ellipse.drawCircle();
+        ellipse.circleToEllipse();
     }
 }
 
-class BankAccount {
-    public long getMoneyAmount() {
-        return moneyAmount;
+class Figure {
+    public void drawCircle() {
+        System.out.println("Рисуем круг");
     }
 
-    public void setMoneyAmount(long moneyAmount) {
-        this.moneyAmount = moneyAmount;
+    public void drawSquare() {
+        System.out.println("Рисуем квадрат");
     }
 
-    private long moneyAmount;
+    public void drawRectangle() {
+        System.out.println("Рисуем прямоугольник");
+    }
+}
 
-    // допишите код методов
-    // используйте параметр newMoneyAmount для установки нового значения
-    public void withdrawAll(){
-        System.out.println("Со счёта снято " + moneyAmount + " р.");
-        moneyAmount = 0;
+class Circle extends Figure {
+}
+
+class Square extends Figure {
+}
+
+class Rectangle extends Figure {
+}
+
+class Ellipse extends  Circle {
+    public void circleToEllipse() {
+        System.out.println("Превращаем круг в овал");
     }
 }
