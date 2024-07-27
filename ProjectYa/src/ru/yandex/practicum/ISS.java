@@ -3,10 +3,8 @@ package ru.yandex.practicum;
 class ISS extends Zarya{
     // доступ к изменению параметров запрещён
     public ISS(double initialOxygenLevel, double initialEnergyLevel, double initialFuel) {
-        super(Zarya);
         // требуется увеличить уровень кислорода и энергетических резервов
-       super.oxygenLevel = initialOxygenLevel;
-       super.energyReserve = initialEnergyLevel;
+        super(initialOxygenLevel, initialEnergyLevel);
 
         // доступ к изменению полей запрещён
         fuel = initialFuel;
