@@ -22,8 +22,8 @@ class Texla extends Automobile {
         if (speed < maxSpeed) {
             speed += acceleration;
         }
-        else if (speed == maxSpeed){
-            maxSpeed = 300;
+        else {
+            speed = maxSpeed;
         }
     }
     @Override
@@ -32,8 +32,8 @@ class Texla extends Automobile {
         if (speed > 0){
             speed -= brakingSpeed;
         }
-        else { speed = 0;
-
+        else {
+            speed = 0;
         }
         // переопределите метод для торможения
     }
