@@ -1,43 +1,35 @@
 package ru.yandex.practicum;
 
-public class Practicum { // доступ к любым изменениям класса запрещён, при проверке будет подставлен оригинальный файл
-    private static final double ACCEPTABLE_VIBRATION = 1;
-
+public class Practicum {
     public static void main(String[] args) {
-        ISS spaceStation = new ISS(10, 50, 800);
-        System.out.println("Международная космическая станция.");
-        System.out.println("Тест #745-093.");
-        System.out.println("Уровень кислорода: " + spaceStation.getOxygenLevel());
-        System.out.println("Уровень энергии: " + spaceStation.getEnergyReserve());
-        System.out.println("Потребление энергии: " + spaceStation.getEnergyConsumption());
-        System.out.println("Уровень топлива: " + spaceStation.fuel);
+        System.out.println("Готовим основу:");
+        SoupBase soupBase = new SoupBase(2, 5);
+        soupBase.printIngredients();
 
-        System.out.println("\nСтыковка нового модуля...");
+        System.out.println("\nИз основы приготовим вегетарианский суп и бульон:");
+        Bouillon bouillon = new Bouillon(soupBase, 300);
+        bouillon.printIngredients();
+        VegetarianSoup vegetarianSoup = new VegetarianSoup(soupBase, 200);
+        vegetarianSoup.printIngredients();
 
-        Zvezda newModule = new Zvezda();
+        System.out.println("\nПриготовим вегетарианский суп с нуля");
+        VegetarianSoup vegetarianSoupWithoutBase = new VegetarianSoup(1.5, 5, 200);
+        vegetarianSoupWithoutBase.printIngredients();
 
-        spaceStation.moduleDocking(newModule);
+        System.out.println("\nПриготовим другой бульон для картофельного супа:");
+        Bouillon anotherBouillon = new Bouillon(5, 10, 800);
+        anotherBouillon.printIngredients();
 
-        System.out.println("Модуль пристыкован. Проверка систем...");
+        System.out.println("\nИз этого бульона приготовим суп с картошкой:");
+        PotatoSoup potatoSoup = new PotatoSoup(anotherBouillon, 4, 1);
+        potatoSoup.printIngredients();
 
-        System.out.println("Уровень кислорода: " + spaceStation.getOxygenLevel());
-        System.out.print("Потребление энергии: " + spaceStation.getEnergyConsumption());
-        System.out.println(" (Уровень энергии: " + spaceStation.getEnergyReserve() + ")");
-        System.out.print("Уровень вибраций: " + spaceStation.vibration);
-        System.out.println(" (Допустимый уровень: " + ACCEPTABLE_VIBRATION + ")");
-        System.out.println();
+        System.out.println("\nСуп с картошкой можно приготовить и из суповой основы:");
+        PotatoSoup potatoSoupFromBase = new PotatoSoup(soupBase, 200, 3, 0);
+        potatoSoupFromBase.printIngredients();
 
-        if ((spaceStation.oxygenLevel < 0)
-                || (spaceStation.getEnergyConsumption() > spaceStation.energyReserve)
-                || (spaceStation.vibration > ACCEPTABLE_VIBRATION)) {
-            System.out.println("⚠️ АВАРИЯ! ⚠️");
-            System.out.println("Жизненно важные показатели на недопустимом уровне.");
-            System.out.println("Тест #745-093 провален.");
-        } else {
-            System.out.println("Все показатели в норме.");
-            System.out.println("Тест #745-093 успешно пройден.");
-            System.out.println("Ваше звание повышено.");
-            System.out.println("Тест #745-094 разблокирован.");
-        }
+        System.out.println("\nА можно и совсем с нуля:");
+        PotatoSoup totallyNewPotatoSoup = new PotatoSoup(5, 10, 400, 5, 1);
+        totallyNewPotatoSoup.printIngredients();
     }
 }
