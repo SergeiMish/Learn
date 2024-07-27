@@ -1,68 +1,41 @@
-package ru.yandex.practicum;
+public class Practicum { // доступ к любым изменениям класса запрещён, при проверке будет подставлен оригинальный файл
+    private static final double ACCEPTABLE_VIBRATION = 1;
 
-class Practicum {
     public static void main(String[] args) {
-        ModelQ testCar = new ModelQ();
+        ISS spaceStation = new ISS(10, 50, 800);
+        System.out.println("Международная космическая станция.");
+        System.out.println("Тест #745-093.");
+        System.out.println("Уровень кислорода: " + spaceStation.getOxygenLevel());
+        System.out.println("Уровень энергии: " + spaceStation.getEnergyReserve());
+        System.out.println("Потребление энергии: " + spaceStation.getEnergyConsumption());
+        System.out.println("Уровень топлива: " + spaceStation.fuel);
 
-        System.out.println("Характеристики модели:");
-        System.out.println("Ускорение: " + testCar.acceleration + " км/(ч*с)");
-        System.out.println("Максимальная скорость: " + testCar.maxSpeed + " км/ч");
+        System.out.println("\nСтыковка нового модуля...");
 
-        System.out.println("\nНачало теста!");
+        Zvezda newModule = new Zvezda();
 
-        System.out.println("Едем на автопилоте:");
-        for (int second = 0; second < 5; second++) {
-            testCar.accelerateByAutopilot();
-        }
-        System.out.print("Скорость Q спустя 5с на автопилоте: " + testCar.speed + " км/ч");
-        checkResult(55.0, testCar.speed);
+        spaceStation.moduleDocking(newModule);
 
-        for (int second = 0; second < 5; second++) {
-            testCar.accelerateByAutopilot();
-        }
-        System.out.print("Скорость Q спустя ещё 5с на автопилоте: " + testCar.speed + " км/ч");
-        checkResult(60.0, testCar.speed);
+        System.out.println("Модуль пристыкован. Проверка систем...");
 
+        System.out.println("Уровень кислорода: " + spaceStation.getOxygenLevel());
+        System.out.print("Потребление энергии: " + spaceStation.getEnergyConsumption());
+        System.out.println(" (Уровень энергии: " + spaceStation.getEnergyReserve() + ")");
+        System.out.print("Уровень вибраций: " + spaceStation.vibration);
+        System.out.println(" (Допустимый уровень: " + ACCEPTABLE_VIBRATION + ")");
+        System.out.println();
 
-        System.out.println("Переходим в ручной режим:");
-        for (int second = 0; second < 2; second++) {
-            testCar.accelerate();
-        }
-        System.out.print("Скорость Q спустя 2с в ручном режиме: " + testCar.speed + " км/ч");
-        checkResult(260.0, testCar.speed);
-
-        for (int second = 0; second < 2; second++) {
-            testCar.accelerate();
-        }
-        System.out.print("Скорость Q спустя ещё 2с в ручном режиме: " + testCar.speed + " км/ч");
-        checkResult(300.0, testCar.speed);
-
-
-        System.out.println("Проверяем торможение:");
-        int brakingTime = 0;
-        while (testCar.speed > 0) {
-            testCar.brake();
-            brakingTime++;
-        }
-        System.out.print("Время торможения до полной остановки: " + brakingTime + "c");
-        checkResult(3, brakingTime);
-        System.out.print("Скорость Q: " + testCar.speed + " км/ч");
-        checkResult(0.0, testCar.speed);
-    }
-
-    private static void checkResult(double expect, double actual) {
-        if (expect == actual) {
-            System.out.println(" ✅");
+        if ((spaceStation.oxygenLevel < 0)
+                || (spaceStation.getEnergyConsumption() > spaceStation.energyReserve)
+                || (spaceStation.vibration > ACCEPTABLE_VIBRATION)) {
+            System.out.println("⚠️ АВАРИЯ! ⚠️");
+            System.out.println("Жизненно важные показатели на недопустимом уровне.");
+            System.out.println("Тест #745-093 провален.");
         } else {
-            System.out.println(" ❌");
-        }
-    }
-
-    private static void checkResult(int expect, int actual) {
-        if (expect == actual) {
-            System.out.println(" ✅");
-        } else {
-            System.out.println(" ❌");
+            System.out.println("Все показатели в норме.");
+            System.out.println("Тест #745-093 успешно пройден.");
+            System.out.println("Ваше звание повышено.");
+            System.out.println("Тест #745-094 разблокирован.");
         }
     }
 }
