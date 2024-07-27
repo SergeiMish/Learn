@@ -21,7 +21,9 @@ class Texla extends Automobile {
     public void accelerate() {
         if (speed < maxSpeed) {
             speed += acceleration;
-            speed = maxSpeed;
+        }
+        else if (speed == maxSpeed){
+            maxSpeed = 300;
         }
     }
     @Override
