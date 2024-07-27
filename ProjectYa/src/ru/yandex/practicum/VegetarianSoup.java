@@ -3,6 +3,18 @@ package ru.yandex.practicum;
 public class VegetarianSoup extends SoupBase {
     double vegetables;
 
+    public VegetarianSoup(double water, double salt) {
+        super(water, salt);
+    }
+
+    public VegetarianSoup(double water, int salt, int i) {
+        super();
+    }
+
+    public VegetarianSoup(SoupBase soupBase, int salt) {
+        super();
+    }
+
 
     // реализуйте необходимые конструкторы
 
