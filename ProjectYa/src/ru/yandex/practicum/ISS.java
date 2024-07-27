@@ -19,11 +19,11 @@ class ISS extends Zarya{
         connectEnergyCableTo(module);
         connectOxygenCableTo(module);
         stabilize();
-        stabilize();
-        stabilize();
     }
     public void  stabilize(){
-        super.stabilize();
+        stabilizeBySmallEngines();
+        stabilizeBySmallEngines();
+        stabilizeBySmallEngines();
     }
     // получен доступ к переопределению метода стабилизации
 
