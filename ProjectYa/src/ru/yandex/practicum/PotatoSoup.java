@@ -4,9 +4,6 @@ public class PotatoSoup extends Bouillon {
     double potato;
     double carrot;
 
-    public PotatoSoup(double water, double salt) {
-        super(water, salt);
-    }
 
     // реализуйте необходимые конструкторы
 
