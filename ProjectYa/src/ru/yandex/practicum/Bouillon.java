@@ -8,11 +8,11 @@ public class Bouillon extends SoupBase {
     }
 
     public Bouillon(SoupBase soupBase, int salt) {
-        super(, salt);
+        super(soupBase.water, salt);
     }
 
     public Bouillon(int i, int i1, int i2) {
-        super(i, i1, i2);
+        super();
     }
 
 

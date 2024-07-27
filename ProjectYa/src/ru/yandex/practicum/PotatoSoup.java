@@ -5,11 +5,11 @@ public class PotatoSoup extends Bouillon {
     double carrot;
 
     public PotatoSoup(Bouillon anotherBouillon, int i, int i1) {
-        super();
+        super(anotherBouillon.meat, anotherBouillon.salt);
     }
 
     public PotatoSoup(SoupBase soupBase, int i, int i1, int i2) {
-        super();
+        super(soupBase.water, soupBase.salt);
     }
 
     public PotatoSoup(int i, int i1, int i2, int i3, int i4) {
