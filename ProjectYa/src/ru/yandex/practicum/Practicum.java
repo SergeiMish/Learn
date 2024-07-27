@@ -1,3 +1,5 @@
+package ru.yandex.practicum;
+
 public class Practicum { // доступ к любым изменениям класса запрещён, при проверке будет подставлен оригинальный файл
     private static final double ACCEPTABLE_VIBRATION = 1;
 
