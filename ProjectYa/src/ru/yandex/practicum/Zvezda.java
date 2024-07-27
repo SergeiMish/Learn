@@ -8,6 +8,8 @@ class Zvezda extends Zarya {
         activateModule();
     }
     // доступ к созданию новых конструкторов запрещён
-
+    public void activateModule(){
+        turnSolarPanels();
+    }
     // разрешено переопределение методов
 }

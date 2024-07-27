@@ -1,6 +1,6 @@
 package ru.yandex.practicum;
 
-class ISS extends Mir {
+class ISS extends Zarya{
     // доступ к изменению параметров запрещён
     public ISS(double initialOxygenLevel, double initialEnergyLevel, double initialFuel) {
 
@@ -19,8 +19,12 @@ class ISS extends Mir {
         connectEnergyCableTo(module);
         connectOxygenCableTo(module);
         stabilize();
+        stabilize();
+        stabilize();
     }
-
+    public void  stabilize(){
+        super.stabilize();
+    }
     // получен доступ к переопределению метода стабилизации
 
     // доступ к изменению метода запрещён
