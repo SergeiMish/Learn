@@ -10,11 +10,29 @@ class Texla extends Automobile {
     }
 
     public void accelerateByAutopilot() {
-        speed += autoPilotAcceleration;
-        // исправьте метод для ускорения при автопилоте
+        if (speed < autoPilotMaxSpeed) {
+            speed += autoPilotAcceleration;
+        } else {
+            speed = autoPilotMaxSpeed;
+            // исправьте метод для ускорения при автопилоте
+        }
     }
-
+    @Override
+    public void accelerate() {
+        if (speed < maxSpeed) {
+            speed += acceleration;
+            speed = maxSpeed;
+        }
+    }
+    @Override
     // переопределите метод для ускорения
+    public void brake() {
+        if (speed > 0){
+            speed -= brakingSpeed;
+        }
+        else { speed = 0;
 
-    // переопределите метод для торможения
+        }
+        // переопределите метод для торможения
+    }
 }
