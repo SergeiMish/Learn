@@ -3,6 +3,10 @@ package ru.yandex.practicum;
 public class VegetarianSoup extends SoupBase {
     double vegetables;
 
+    public VegetarianSoup(double water, double salt) {
+        super(water, salt);
+    }
+
     // реализуйте необходимые конструкторы
 
     @Override
