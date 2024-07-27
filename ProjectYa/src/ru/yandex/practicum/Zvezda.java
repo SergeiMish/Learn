@@ -7,6 +7,7 @@ class Zvezda extends Zarya {
         energyConsumption = 44;
         activateModule();
     }
+    @Override
     // доступ к созданию новых конструкторов запрещён
     public void activateModule(){
         turnSolarPanels();

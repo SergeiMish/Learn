@@ -18,7 +18,7 @@ class ISS extends Zarya {
         connectOxygenCableTo(module);
         stabilize();
     }
-
+    @Override
     public void stabilize() {
         stabilizeBySmallEngines();
         stabilizeBySmallEngines();
