@@ -7,9 +7,10 @@ public class LostAndFoundOffice {
     public void put(Object element){
         things.add(element);
         }
-    }
-    public check(Object){
-
+    public boolean check(Object target){
+        if(target == null){
+            return false;
+        }
     }
 
     // реализуйте метод check()
