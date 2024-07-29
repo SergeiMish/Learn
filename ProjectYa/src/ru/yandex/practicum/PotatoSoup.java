@@ -5,7 +5,8 @@ public class PotatoSoup extends Bouillon {
     double carrot;
 
     public PotatoSoup(Bouillon anotherBouillon, int potato, int carrot) {
-        super(anotherBouillon.meat, anotherBouillon.salt);
+        super(anotherBouillon.water, anotherBouillon.salt);
+        this.meat = anotherBouillon.meat;
         this.carrot = carrot;
         this.potato = potato;
     }

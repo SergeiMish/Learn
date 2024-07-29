@@ -12,8 +12,8 @@ public class VegetarianSoup extends SoupBase {
         this.vegetables = vegetables;
     }
 
-    public VegetarianSoup(SoupBase soupBase, int salt) {
-        super(soupBase.water, salt);
+    public VegetarianSoup(SoupBase soupBase, int vegetables) {
+        super(soupBase.water, vegetables);
     }
 
 
