@@ -4,7 +4,8 @@ public class SoupBase {
     double water;
     double salt;
     public SoupBase(double water, double salt){
-
+        this.water = water;
+        this.salt = salt;
     }
     // реализуйте конструктор
 

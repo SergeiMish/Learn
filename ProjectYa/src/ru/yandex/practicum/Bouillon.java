@@ -7,12 +7,9 @@ public class Bouillon extends SoupBase {
         super(water, salt);
     }
 
-    public Bouillon(SoupBase soupBase, int salt) {
-        super(soupBase.water, salt);
-    }
-
-    public Bouillon(int i, int i1, int i2) {
-        super();
+    public Bouillon(double soupBase, int salt, int meat) {
+        super(soupBase, salt);
+        this.meat = meat;
     }
 
 
