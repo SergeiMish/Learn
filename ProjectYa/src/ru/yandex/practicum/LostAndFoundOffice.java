@@ -11,6 +11,10 @@ public class LostAndFoundOffice {
         if(target == null){
             return false;
         }
+        else if (target.equals(things)){
+            return true;
+        }
+        return false;
     }
 
     // реализуйте метод check()
