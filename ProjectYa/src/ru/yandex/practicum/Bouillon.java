@@ -7,12 +7,14 @@ public class Bouillon extends SoupBase {
         super(water, salt);
     }
 
-    public Bouillon(double water, int salt, int meat) {
+    public Bouillon(double water, int salt, double meat) {
         super(water, salt);
         this.meat = meat;
     }
 
-
+    public Bouillon(SoupBase soupBase, double vegetables) {
+        super(soupBase.water, vegetables);
+    }
 
 
     // реализуйте необходимые конструкторы
