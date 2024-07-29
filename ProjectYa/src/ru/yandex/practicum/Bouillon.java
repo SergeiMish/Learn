@@ -14,6 +14,7 @@ public class Bouillon extends SoupBase {
 
     public Bouillon(SoupBase soupBase, double vegetables) {
         super(soupBase.water, vegetables);
+        this.salt = soupBase.salt;
     }
 
 

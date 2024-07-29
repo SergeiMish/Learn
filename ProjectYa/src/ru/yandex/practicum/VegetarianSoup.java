@@ -3,10 +3,6 @@ package ru.yandex.practicum;
 public class VegetarianSoup extends SoupBase {
     double vegetables;
 
-    public VegetarianSoup(double water, double salt) {
-        super(water, salt);
-    }
-
     public VegetarianSoup(double water, int salt, double vegetables) {
         super(water, salt);
         this.vegetables = vegetables;
@@ -14,6 +10,8 @@ public class VegetarianSoup extends SoupBase {
 
     public VegetarianSoup(SoupBase soupBase, int vegetables) {
         super(soupBase.water, vegetables);
+        this.salt = soupBase.salt;
+        this.vegetables = vegetables;
     }
 
 
