@@ -1,35 +1,37 @@
 package ru.yandex.practicum;
 
+class Ball { }      // Класс "мяч"
+class Accordion { } // Класс "аккордеон"
+class Hat { }       // Класс "шляпа"
+class Umbrella { }  // Класс "зонт"
+
 public class Practicum {
+    // Бюро находок
+    static LostAndFoundOffice lostAndFound = new LostAndFoundOffice();
+
     public static void main(String[] args) {
-        System.out.println("Готовим основу:");
-        SoupBase soupBase = new SoupBase(2, 5);
-        soupBase.printIngredients();
+        Ball ball = new Ball();
+        Accordion accordion = new Accordion();
+        Umbrella umbrella = new Umbrella();
+        Hat hat = new Hat();
 
-        System.out.println("\nИз основы приготовим вегетарианский суп и бульон:");
-        Bouillon bouillon = new Bouillon(soupBase, 300);
-        bouillon.printIngredients();
-        VegetarianSoup vegetarianSoup = new VegetarianSoup(soupBase, 200);
-        vegetarianSoup.printIngredients();
+        // Сдаём в бюро находок найденные вещи
+        lostAndFound.put(ball);
+        lostAndFound.put(accordion);
+        lostAndFound.put(umbrella);
 
-        System.out.println("\nПриготовим вегетарианский суп с нуля");
-        VegetarianSoup vegetarianSoupWithoutBase = new VegetarianSoup(1.5, 5, 200);
-        vegetarianSoupWithoutBase.printIngredients();
+        checkObject(accordion, "Aккордеон");
+        checkObject(ball, "Мяч");
+        checkObject(null, "Пустая ссылка");
+        checkObject(umbrella, "Зонт");
+        checkObject(hat, "Шляпа");
+    }
 
-        System.out.println("\nПриготовим другой бульон для картофельного супа:");
-        Bouillon anotherBouillon = new Bouillon(5, 10, 800);
-        anotherBouillon.printIngredients();
-
-        System.out.println("\nИз этого бульона приготовим суп с картошкой:");
-        PotatoSoup potatoSoup = new PotatoSoup(anotherBouillon, 4, 1);
-        potatoSoup.printIngredients();
-
-        System.out.println("\nСуп с картошкой можно приготовить и из суповой основы:");
-        PotatoSoup potatoSoupFromBase = new PotatoSoup(soupBase, 200, 3, 0);
-        potatoSoupFromBase.printIngredients();
-
-        System.out.println("\nА можно и совсем с нуля:");
-        PotatoSoup totallyNewPotatoSoup = new PotatoSoup(5, 10, 400, 5, 1);
-        totallyNewPotatoSoup.printIngredients();
+    private static void checkObject(Object object, String description) {
+        if(lostAndFound.check(object)) {
+            System.out.println('\'' + description + "' нашёлся!");
+        } else {
+            System.out.println('\'' + description + "' в бюро находок никто не приносил :(");
+        }
     }
 }
