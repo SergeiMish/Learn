@@ -4,16 +4,22 @@ public class PotatoSoup extends Bouillon {
     double potato;
     double carrot;
 
-    public PotatoSoup(Bouillon anotherBouillon, int i, int i1) {
+    public PotatoSoup(Bouillon anotherBouillon, int potato, int carrot) {
         super(anotherBouillon.meat, anotherBouillon.salt);
+        this.carrot = carrot;
+        this.potato = potato;
     }
 
-    public PotatoSoup(SoupBase soupBase, int i, int i1, int i2) {
-        super(soupBase, soupBase.salt);
+    public PotatoSoup(SoupBase soupBase, int vegetables, int potato, int carrot) {
+        super(soupBase, vegetables);
+        this.carrot = carrot;
+        this.potato = potato;
     }
 
-    public PotatoSoup(int i, int i1, int i2, int i3, int i4) {
-        super();
+    public PotatoSoup(int water, int salt, int vegetables, int potato, int carrot) {
+        super(water, salt, vegetables);
+        this.carrot = carrot;
+        this.potato = potato;
     }
 
 
