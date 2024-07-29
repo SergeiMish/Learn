@@ -1,7 +1,5 @@
 package ru.yandex.practicum;
 
-import java.util.Objects;
-
 public class Song {
     public final String title;
     public final String artist;
