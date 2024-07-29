@@ -12,9 +12,9 @@ public class Bouillon extends SoupBase {
         this.meat = meat;
     }
 
-    public Bouillon(SoupBase soupBase, double vegetables) {
-        super(soupBase.water, vegetables);
-        this.salt = soupBase.salt;
+    public Bouillon(SoupBase soupBase, double meat) {
+        super(soupBase.water, soupBase.salt);
+        this.meat = meat;
     }
 
 
