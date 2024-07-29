@@ -9,7 +9,7 @@ public class PotatoSoup extends Bouillon {
     }
 
     public PotatoSoup(SoupBase soupBase, int i, int i1, int i2) {
-        super(soupBase.water, soupBase.salt);
+        super(soupBase, soupBase.salt);
     }
 
     public PotatoSoup(int i, int i1, int i2, int i3, int i4) {
