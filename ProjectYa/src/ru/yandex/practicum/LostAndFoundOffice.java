@@ -1,27 +1,19 @@
 package ru.yandex.practicum;
-import java.util.ArrayList;
-public class LostAndFoundOffice {
-    // создайте список things
-    ArrayList<Object> things = new ArrayList<>();
 
-    // реализуйте метод put()
-    public void put(Object element) {
-        things.add(element);
+import java.util.Objects;
+
+public class Song {
+    public final String title;
+    public final String artist;
+    public final String songwriter;
+
+    public Song(String title, String artist, String songwriter) {
+        this.title = title;
+        this.artist = artist;
+        this.songwriter = songwriter;
     }
 
-    public boolean check(Object target) {
-        if (target == null) {
-            return false;
-        }
-        for (Object object : things) { // логика проверки вещи в списке
-            if (object.equals(target)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    // переопределите метод equals(Object)
+    ...
+
 }
-
-    // реализуйте метод check()
-
-
