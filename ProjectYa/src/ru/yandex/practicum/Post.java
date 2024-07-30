@@ -3,7 +3,7 @@ package ru.yandex.practicum;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Post {
+public class Post extends PostComment {
     private String title; // заголовок
     private String content; // содержание
     private String[] tags; // теги
@@ -29,7 +29,7 @@ public class Post {
     public String toString() {
         return "Post{" +
                 "title='" + title + '\'' +
-                ", content='" + content + '\'' +
+                ", length='" + content.length() + '\'' +
                 ", tags=" + Arrays.toString(tags) +
                 ", comments=" + comments +
                 '}';
