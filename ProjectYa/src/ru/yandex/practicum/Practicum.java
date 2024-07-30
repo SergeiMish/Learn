@@ -1,67 +1,42 @@
 package ru.yandex.practicum;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Practicum {
     public static void main(String[] args) {
-        Song theRockBandSong = new Song("Popular Song", "The Rock Band", "John Doe");
-        Song johnDoeSong = new Song("Popular Song", "The Rock Band", "John Doe");
+        // Таблицы для хранения рейтингов фильмов и фильмографии актёров
+        HashMap<Actor, ArrayList<Movie>> filmography = new HashMap<>();
+        HashMap<Movie, Double> ratings = new HashMap<>();
 
-        Song rapSong = new Song("A song about a hard life", "Popular Rapper", "Popular Rapper");
+        Movie ivanVasilievichMovie = new Movie("Иван Васильевич меняет профессию", 1973);
+        Movie gentlemenOfFortuneMovie = new Movie("Джентльмены удачи", 1971);
+        Movie operationYMovie = new Movie("Операция «Ы» и другие приключения Шурика", 1965);
+        ratings.put(ivanVasilievichMovie, 8.6);
+        ratings.put(gentlemenOfFortuneMovie, 8.5);
+        ratings.put(operationYMovie, 8.7);
 
-        Song richardRoeSong = new Song("A song about a hard life", "Popular Rapper", "Richard Roe");
+        Actor aDemyanenko = new Actor("Александр", "Демьяненко");
 
-        // проверяем рефлексивность
-        boolean check0 = false;
-        if (johnDoeSong.equals(johnDoeSong)) {
-            check0 = true;
-        }
+        ArrayList<Movie> actorMovies = new ArrayList<>();
+        actorMovies.add(ivanVasilievichMovie);
+        actorMovies.add(operationYMovie);
 
-        // проверяем симметричность
-        boolean check1 = false;
-        if (theRockBandSong.equals(johnDoeSong) &&
-                johnDoeSong.equals((Object) theRockBandSong)) {
-            check1 = true;
-        }
+        filmography.put(aDemyanenko, actorMovies);
 
-        // проверяем на неравенство объекту другого класса
-        boolean check2 = false;
-        if (!rapSong.equals(42)) {
-            check2 = true;
-        }
-
-        // проверяем на неравенство пустой ссылке
-        boolean check3 = false;
-        if (!theRockBandSong.equals(null)) {
-            check3 = true;
-        }
-
-        // проверяем на правильное сравнение объектов одного класса
-        boolean check4 = true;
-        if (richardRoeSong.equals(johnDoeSong)) {
-            check4 = false;
-        }
-
-        // проверяем транзитивность
-        boolean check5 = false;
-        Song popularSong = new Song("Popular Song", "The Rock Band", "John Doe");
-        if (popularSong.equals(theRockBandSong) && theRockBandSong.equals(johnDoeSong)
-                && popularSong.equals(johnDoeSong)) {
-            check5 = true;
-        }
-
-        // проверяем согласованность
-        boolean check6 = true;
-        boolean result = rapSong.equals(richardRoeSong);
-        for (int i = 0; i < 10; i++) {
-            if (rapSong.equals(richardRoeSong) != result) {
-                check6 = false;
+        if (filmography.containsKey(new Actor("Александр", "Демьяненко"))) {
+            ArrayList<Movie> foundMovies = filmography.get(new Actor("Александр", "Демьяненко"));
+            System.out.println("В фильмографии актёра А. Демьяненко найдены следующие фильмы: ");
+            for (Movie movie : foundMovies) {
+                if (ratings.containsKey(new Movie(movie.title, movie.releaseYear))) {
+                    double rating = ratings.get(movie);
+                    System.out.println("Фильм " + movie.description() + " с рейтингом " + rating);
+                } else {
+                    System.out.println("Что-то пошло не так... Проверьте реализацию equals и hashCode в классе Movie.");
+                }
             }
-        }
-
-        if (check0 && check1 && check2 &&
-                check3 && check4 && check5 && check6) {
-            System.out.println("Поздравляем! Метод equals реализован верно.");
         } else {
-            System.out.println("Что-то здесь не так. Подумайте над реализацией ещё немного.");
+            System.out.println("Что-то пошло не так... Проверьте реализацию equals и hashCode в классе Actor.");
         }
     }
 }
