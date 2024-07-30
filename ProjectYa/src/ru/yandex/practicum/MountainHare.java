@@ -12,6 +12,9 @@ public class MountainHare {
         this.jumpLength = jumpLength;
     }
 
+    public static void setColor(String color) {
+        MountainHare.color = color;
+    }
     // добавьте переменные и конструктор
 
     @Override

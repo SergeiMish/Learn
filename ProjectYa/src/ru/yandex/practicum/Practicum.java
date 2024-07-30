@@ -12,14 +12,15 @@ public class Practicum {
 
         System.out.println("В лесу лето!");
         // создайте объект "летний лес с зайцами"
-        Forest forestSummer = new Forest();
+        Forest forestSummer = new Forest(hares);
+        Forest.setSeason("лето");
         System.out.println("Список зайцев:");
         // напечатайте список всех зайцев
         forestSummer.printHares();
-
         System.out.println("В лесу зима!");
+        Forest.setSeason("зима");
         // поменяйте время года на зиму
-        Forest forestWinter = new Forest();
+        Forest forestWinter = new Forest(hares);
         System.out.println("Список зайцев:");
         // напечатайте список всех зайцев
         forestWinter.printHares();

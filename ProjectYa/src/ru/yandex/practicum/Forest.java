@@ -4,29 +4,29 @@ import java.util.ArrayList;
 
 public class Forest {
     private ArrayList<MountainHare> hares;
-
     private static String season;
 
-    // объявите недостающие переменные и добавьте конструктор
-    public static void setSeason(String newSeason){
-        season = newSeason;
+    public static void setSeason(String newSeason) {
+        Forest.season = newSeason;
         if (newSeason.equals("зима")){
-            System.out.println("белый");
+        MountainHare.setColor("белый");
         }
         else {
-            System.out.println("серо-рыжий");
+            MountainHare.setColor("серо-рыжий");
         }
     }
 
-    public static String getSeason() {
-        return season;
+    public Forest(ArrayList<MountainHare> hares) {
+        this.hares = hares;
     }
+    // объявите недостающие переменные и добавьте конструктор
+
     // добавьте метод setSeason(String newSeason)
     // в этом методе реализуйте логику смены цвета шубок зайцев-беляков
 
     // добавьте метод printHares()
     public void printHares(){
-        for (MountainHare hare : hares){
+        for (MountainHare hare : hares) {
             System.out.println(hare);
         }
     }
