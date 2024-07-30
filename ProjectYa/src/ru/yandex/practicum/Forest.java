@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public class Forest {
     private ArrayList<MountainHare> hares;
+    private static String season;
 
     // объявите недостающие переменные и добавьте конструктор
-
+    public static void setSeason(String newSeason){
+        if (newSeason.equals(season))
+    }
     // добавьте метод setSeason(String newSeason)
     // в этом методе реализуйте логику смены цвета шубок зайцев-беляков
 

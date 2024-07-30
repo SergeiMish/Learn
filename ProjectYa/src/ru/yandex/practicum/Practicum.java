@@ -1,7 +1,6 @@
 package ru.yandex.practicum;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Practicum {
 
