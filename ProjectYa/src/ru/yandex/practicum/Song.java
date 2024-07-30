@@ -18,7 +18,7 @@ public class Song {
         if (this == Obj) {
             return true;
         }
-        if (Obj == null || getClass() != Obj.getClass()) {
+        else if (Obj == null) {
             return false;
         } return false;
     }
