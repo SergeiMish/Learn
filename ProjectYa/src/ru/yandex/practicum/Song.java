@@ -12,6 +12,14 @@ public class Song {
     }
 
     // переопределите метод equals(Object)
-    ...
 
+    @Override
+    public boolean equals(Object Obj) {
+        if (this == Obj) {
+            return true;
+        }
+        if (Obj == null || getClass() != Obj.getClass()) {
+            return false;
+        } return false;
+    }
 }
