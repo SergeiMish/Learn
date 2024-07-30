@@ -8,10 +8,9 @@ public class Forest {
 
     public static void setSeason(String newSeason) {
         Forest.season = newSeason;
-        if (newSeason.equals("зима")){
-        MountainHare.setColor("белый");
-        }
-        else {
+        if (newSeason.equals("зима")) {
+            MountainHare.setColor("белый");
+        } else {
             MountainHare.setColor("серо-рыжий");
         }
     }
@@ -25,7 +24,7 @@ public class Forest {
     // в этом методе реализуйте логику смены цвета шубок зайцев-беляков
 
     // добавьте метод printHares()
-    public void printHares(){
+    public void printHares() {
         for (MountainHare hare : hares) {
             System.out.println(hare);
         }
