@@ -5,38 +5,33 @@ import java.util.HashMap;
 
 public class Practicum {
     public static void main(String[] args) {
-        // Таблицы для хранения рейтингов фильмов и фильмографии актёров
-        HashMap<Actor, ArrayList<Movie>> filmography = new HashMap<>();
-        HashMap<Movie, Double> ratings = new HashMap<>();
+        Post post = new Post();
+        post.setTitle("Почему второй язык программирования выучить проще, чем первый?");
+        post.setContent("Если вы научились водить автомобиль на механике, " +
+                "вы можете сесть плюс-минус за любой автомобиль и поехать. " +
+                "Вам необязательно ездить именно за тем рулём, " +
+                "за которым вы учились в автошколе. " +
+                "Может быть, первое время вам будет непривычно в новой машине," +
+                " но вы быстро освоитесь.");
+        post.setTags(new String[]{"Образование", "Карьера в IT"});
 
-        Movie ivanVasilievichMovie = new Movie("Иван Васильевич меняет профессию", 1973);
-        Movie gentlemenOfFortuneMovie = new Movie("Джентльмены удачи", 1971);
-        Movie operationYMovie = new Movie("Операция «Ы» и другие приключения Шурика", 1965);
-        ratings.put(ivanVasilievichMovie, 8.6);
-        ratings.put(gentlemenOfFortuneMovie, 8.5);
-        ratings.put(operationYMovie, 8.7);
+        PostComment comment1 = new PostComment();
+        comment1.setText("Отличная статья!");
+        comment1.setWhoLiked(new String[] { "Lera93", "934Vasya1" });
 
-        Actor aDemyanenko = new Actor("Александр", "Демьяненко");
+        PostComment comment2 = new PostComment();
+        comment2.setText("Тема не раскрыта :(");
+        comment2.setWhoLiked(new String[] { "Petya070707", "Masha90" });
 
-        ArrayList<Movie> actorMovies = new ArrayList<>();
-        actorMovies.add(ivanVasilievichMovie);
-        actorMovies.add(operationYMovie);
+        PostComment comment3 = new PostComment();
+        comment3.setText("❤❤❤");
 
-        filmography.put(aDemyanenko, actorMovies);
+        ArrayList<PostComment> comments = new ArrayList<>();
+        comments.add(comment1);
+        comments.add(comment2);
+        comments.add(comment3);
+        post.setComments(comments);
 
-        if (filmography.containsKey(new Actor("Александр", "Демьяненко"))) {
-            ArrayList<Movie> foundMovies = filmography.get(new Actor("Александр", "Демьяненко"));
-            System.out.println("В фильмографии актёра А. Демьяненко найдены следующие фильмы: ");
-            for (Movie movie : foundMovies) {
-                if (ratings.containsKey(new Movie(movie.title, movie.releaseYear))) {
-                    double rating = ratings.get(movie);
-                    System.out.println("Фильм " + movie.description() + " с рейтингом " + rating);
-                } else {
-                    System.out.println("Что-то пошло не так... Проверьте реализацию equals и hashCode в классе Movie.");
-                }
-            }
-        } else {
-            System.out.println("Что-то пошло не так... Проверьте реализацию equals и hashCode в классе Actor.");
-        }
+        System.out.println(post);
     }
 }
