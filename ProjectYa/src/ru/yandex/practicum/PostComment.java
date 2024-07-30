@@ -1,24 +1,16 @@
 package ru.yandex.practicum;
 
-import java.util.Arrays;
+public class MountainHare {
 
-public class PostComment {
-    private String text; // содержание комментария
-    private String[] whoLiked; // кто поддержал
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public void setWhoLiked(String[] whoLiked) {
-        this.whoLiked = whoLiked;
-    }
+    // добавьте переменные и конструктор
 
     @Override
     public String toString() {
-        return "PostComment{" +
-                "text='" + text + '\'' +
-                ", whoLiked=" + Arrays.toString(whoLiked) +
-                '}';
+        return "Заяц-беляк: " +
+                "age=" + age +
+                ", weight=" + weight +
+                ", jumpLength=" + jumpLength +
+                ", color=" + color +
+                '.';
     }
 }
