@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class Practicum {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        ArrayList<Task> tasks = new ArrayList<>();
+        tasks.add(new Task(TaskPriority.HIGH, "Оплатить интернет."));
+        tasks.add(new Task(TaskPriority.LOW, "Сходить в парикмахерскую."));
+        tasks.add(new Task(TaskPriority.MEDIUM, "Выбрать подарок подруге на ДР."));
+        tasks.add(new Task(TaskPriority.MEDIUM, "Купить билеты в театр."));
+        tasks.add(new Task(TaskPriority.HIGH, "Посетить вебинар по английскому языку."));
+        tasks.add(new Task(TaskPriority.LOW, "Купить пылесос."));
 
-        System.out.println("Пожалуйста, введите сумму перевода в рублях.");
-        // считайте сумму перевода при помощи scanner.nextDouble()
-        double amount = scanner.nextDouble();
-
-        boolean isValid = TransactionValidator.isValidAmount(amount); // добавьте вызов метод isValidAmount
-        if (isValid)
-            System.out.println("Спасибо! Ваш перевод на сумму " + amount + " р. успешно выполнен.");
+        System.out.println("Задачи с наивысшим приоритетом на сегодня:");
+        ... // цикл for для поиска задач
     }
 }
