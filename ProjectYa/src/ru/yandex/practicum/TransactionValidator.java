@@ -2,6 +2,8 @@ package ru.yandex.practicum;
 
 public class TransactionValidator {
     // объявите константы
+    final static int MIN_AMOUNT = 1;
+    final static int MAX_AMOUNT = 5000;
 
     // объявите метод isValidAmount()
     // внутри метода добавьте проверки на минимальную и максимальную сумму перевода

@@ -9,6 +9,7 @@ public class Practicum {
 
         System.out.println("Пожалуйста, введите сумму перевода в рублях.");
         // считайте сумму перевода при помощи scanner.nextDouble()
+        scanner.nextDouble();
 
         boolean isValid = ... // добавьте вызов метод isValidAmount
         if (isValid)
