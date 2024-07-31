@@ -1,29 +1,10 @@
 package ru.yandex.practicum;
 
-public class MountainHare {
-    private int age;
-    private double weight;
-    private int jumpLength;
-    private static String color;
+public class TransactionValidator {
+    // объявите константы
 
-    public MountainHare(int age, double weight, int jumpLength) {
-        this.age = age;
-        this.weight = weight;
-        this.jumpLength = jumpLength;
-    }
-
-    public static void setColor(String color) {
-        MountainHare.color = color;
-    }
-    // добавьте переменные и конструктор
-
-    @Override
-    public String toString() {
-        return "Заяц-беляк: " +
-                "age=" + age +
-                ", weight=" + weight +
-                ", jumpLength=" + jumpLength +
-                ", color=" + color +
-                '.';
-    }
+    // объявите метод isValidAmount()
+    // внутри метода добавьте проверки на минимальную и максимальную сумму перевода
+    System.out.println("Минимальная сумма перевода: " + ... + " р. Попробуйте ещё раз!");
+    System.out.println("Максимальная сумма перевода: " + ... + " р. Попробуйте ещё раз!");
 }
