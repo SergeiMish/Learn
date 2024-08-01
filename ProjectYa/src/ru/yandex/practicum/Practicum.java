@@ -15,9 +15,11 @@ public class Practicum {
         tasks.add(new Task(TaskPriority.LOW, "Купить пылесос."));
 
         System.out.println("Задачи с наивысшим приоритетом на сегодня:");
+        TaskPriority maxPriority = TaskPriority.HIGH;
         for (Task task : tasks) {
-            System.out.println(task);
-
-        } // цикл for для поиска задач
+            if (task.getPriority() == maxPriority) {
+                System.out.println(task.getDescription());
+            }
+        }
     }
 }
