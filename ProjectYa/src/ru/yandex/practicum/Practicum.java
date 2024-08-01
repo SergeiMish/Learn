@@ -1,5 +1,6 @@
 package ru.yandex.practicum;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Practicum {
@@ -14,6 +15,9 @@ public class Practicum {
         tasks.add(new Task(TaskPriority.LOW, "Купить пылесос."));
 
         System.out.println("Задачи с наивысшим приоритетом на сегодня:");
-        ... // цикл for для поиска задач
+        for (Task task : tasks) {
+            System.out.println(task);
+
+        } // цикл for для поиска задач
     }
 }

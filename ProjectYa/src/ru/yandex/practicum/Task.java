@@ -2,17 +2,23 @@ package ru.yandex.practicum;
 
 public class Task {
 
-    ... // добавьте переменную priority с приоритетом задачи
+    static String priority; // добавьте переменную priority с приоритетом задачи
 
+    private String description;
     public Task(String description) {
         this.description = description;
     }
+    // добавьте конструктор класса
 
-    private String description;
+    public static String getPriority() {
+        if (priority.equals(TaskPriority.HIGH)){
+            System.out.println("ываыа");
+        }
 
-    ...// добавьте конструктор класса
+        return priority;
+    }
 
-            ... // добавьте метод get для приоритета
+    // добавьте метод get для приоритета
 
     public String getDescription() {
         return description;
