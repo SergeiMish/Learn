@@ -1,22 +1,29 @@
 package ru.yandex.practicum;
 
-public class Task {
+public class RecyclableMaterial {
 
-    private TaskPriority priority; // добавьте переменную priority с приоритетом задачи
-    private String description;
-    public Task(TaskPriority priority, String description) {
+    // объявите переменные с правильными модификаторами
+
+    RecyclableMaterial(int code, MaterialType type, boolean isRecyclable, String description) {
+        this.code = code;
+        this.type = type;
+        this.isRecyclable = isRecyclable;
         this.description = description;
-        this.priority = priority;
     }
-    // добавьте конструктор класса
 
-    // добавьте метод get для приоритета
+    public int getCode() {
+        return code;
+    }
+
+    public MaterialType getType() {
+        return type;
+    }
+
+    public boolean isRecyclable() {
+        return isRecyclable;
+    }
 
     public String getDescription() {
         return description;
-    }
-
-    public TaskPriority getPriority() {
-        return priority;
     }
 }
