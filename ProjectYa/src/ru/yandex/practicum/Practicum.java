@@ -18,14 +18,14 @@ public class Practicum {
         switch (ChatCommand.valueOf(commandValue)) {
             case MAP:
                 System.out.println(MAP_LINK);
+                break;
             case RECYCLABILITY:
                 System.out.println("Введите код переработки:");
                 isRecycled(scanner.nextInt());
-                scanner.nextLine();
+                break;
             case BONUS:
                 System.out.println("Введите количество вторсырья, кг:");
                 int bonus = scanner.nextInt();
-                scanner.nextLine();
                 int coef;
                 if (bonus < 10) {
                     coef = 10;
@@ -33,7 +33,10 @@ public class Practicum {
                     coef = 15;
                 }
                 bonus = coef * bonus;
-                System.out.println("Количество бонусных баллов: " + bonus);
+                System.out.println("Количество бонусных баллов: " + bonus + ".");
+                break;
+            default:
+                System.out.println("Такой команды нет.");
         }
         /* в зависимости от команды выполните следующие действия:
            map - вывести на экран ссылку на карту;
@@ -50,7 +53,7 @@ public class Practicum {
     }
 
     // добавьте модификаторы в заголовок метода
-    static void isRecycled(int code) {
+   public static void isRecycled(int code) {
         for (RecyclableMaterial material : materials) {
             if (material.getCode() == code) {
                 System.out.print("Это " + material.getDescription() + ". ");
