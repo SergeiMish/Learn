@@ -1,10 +1,10 @@
 package ru.yandex.practicum;
 
 public class RecyclableMaterial {
-    private int code;
-    private MaterialType type;
-    private boolean isRecyclable;
-    private String description;
+    private final int code;
+    private final MaterialType type;
+    private final boolean isRecyclable;
+    private final String description;
     // объявите переменные с правильными модификаторами
 
     RecyclableMaterial(int code, MaterialType type, boolean isRecyclable, String description) {
