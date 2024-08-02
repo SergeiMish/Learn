@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Practicum {
     // объявите поле для ссылки на карту (англ. map link)
-    ... = "https://recyclemap.ru/";
+    public String link = "https://recyclemap.ru/";
     public static final ArrayList<RecyclableMaterial> materials = getMaterials();
     public static final HashMap<MaterialType, String> containers = getContainers();
 
