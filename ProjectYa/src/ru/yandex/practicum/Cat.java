@@ -1,8 +1,11 @@
 package ru.yandex.practicum;
 
 public class Cat extends Pet{
+    public Cat(int pawsCount) {
+        super(pawsCount);
+    }
 
-    public catchMouse(){
+    public void catchMouse(){
         System.out.println("Поймала мышку!");
     }
 }
