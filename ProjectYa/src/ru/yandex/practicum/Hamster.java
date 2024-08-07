@@ -1,8 +1,6 @@
 package ru.yandex.practicum;
 
 public class Hamster extends Pet{
-
-
     public Hamster(String voice) {
         super(voice);
     }
