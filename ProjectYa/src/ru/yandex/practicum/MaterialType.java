@@ -1,10 +1,18 @@
 package ru.yandex.practicum;
 
-// создайте перечисление MaterialType со следующими значениями:
-public enum MaterialType {
-    PLASTIC,
-    METAL,
-    GLASS,
-    PAPER,
-    UNSORTED_WASTE
+public abstract class Pet{
+    public void sleep(){
+        System.out.println("Сплю");
+    }
+
+    public void paly(){
+        System.out.println("Играю");
+    }
+    Pet(String voice){
+        return getvoice();
+    }
+
+
+    public unt pawsCount;
+
 }
