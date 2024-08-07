@@ -1,8 +1,10 @@
 package ru.yandex.practicum;
 
 public class Hamster extends Pet{
-    public Hamster(int pawsCount) {
-        super(pawsCount);
+
+
+    public Hamster(String voice) {
+        super(voice);
     }
 
     public void hideFood(){

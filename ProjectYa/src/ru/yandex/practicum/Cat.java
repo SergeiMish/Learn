@@ -1,8 +1,10 @@
 package ru.yandex.practicum;
 
 public class Cat extends Pet{
-    public Cat(int pawsCount) {
-        super(pawsCount);
+
+
+    public Cat(String voice) {
+        super(voice);
     }
 
     public void catchMouse(){

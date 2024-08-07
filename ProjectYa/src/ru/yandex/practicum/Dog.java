@@ -1,8 +1,9 @@
 package ru.yandex.practicum;
 
-public class Dog extends Pet{
-    public Dog(int pawsCount) {
-        super(pawsCount);
+public class Dog extends Pet {
+
+    public Dog(String voice) {
+        super(voice);
     }
 
     public void bringStick(){

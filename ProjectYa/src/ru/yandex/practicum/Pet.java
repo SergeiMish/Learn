@@ -1,7 +1,7 @@
 package ru.yandex.practicum;
 
 public abstract class Pet{
-    private String voice;
+    private final String voice;
     public void sleep(){
         System.out.println("Сплю");
     }
@@ -11,12 +11,13 @@ public abstract class Pet{
     }
 
 
-    public String giveVoice(){
-        return voice;
+    public Pet(String voice) {
+        this.voice = voice;
     }
 
-
-
+    public String giveVoice() {
+        return voice;
+    }
 
     public int getPawsCount() {
         return pawsCount;
