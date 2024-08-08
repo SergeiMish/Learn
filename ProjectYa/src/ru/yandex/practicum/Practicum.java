@@ -1,19 +1,39 @@
 package ru.yandex.practicum;
 
+import java.util.Scanner;
+
 public class Practicum {
 
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle(4, 6);
-        System.out.println("Площадь прямоугольника 4см*6см = " + rectangle.getArea());
+        System.out.println("Вас приветствует виртуальная АТС!");
 
-        Square square = new Square(3);
-        System.out.println("Площадь квадрата 3см*3см = " + square.getArea());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите ваш номер телефона:");
+        String number = scanner.next();
+        System.out.println("Введите номер пользователя, которому хотите позвонить:");
+        String friendNumber = scanner.next();
+        System.out.println("Выберите модель телефона собеседника, 1 - стационарный телефон, 2 - мобильный телефон, 3 - смартфон:");
+        int type = scanner.nextInt();
 
-        Rhombus rhombus = new Rhombus(4, 3);
-        System.out.println("Площадь ромба со стороной 4см и высотой 3см = " + rhombus.getArea());
+        if (type < 1 || type > 3) {
+            System.out.println("Введена неверная модель телефона");
+            return;
+        }
 
-        Circle circle = new Circle(2);
-        System.out.println("Площадь круга с радиусом 2см = " + circle.getArea());
+        getPhone(type, number).makeCall(friendNumber);
+    }
+
+    public static ... getPhone(int type, String number) {
+        if (...) {
+            // если выбран стационарный телефон, создайте объект класса LandlinePhone
+            return new LandlinePhone(number);
+        } else if (...) {
+            // если выбран мобильный телефон, создайте объект класса MobilePhone
+            return new MobilePhone(number);
+        } else {
+            // иначе создайте экземпляр класса Smartphone
+            ...
+        }
     }
 
 }
