@@ -1,6 +1,6 @@
 package ru.yandex.practicum;
 
-public ... Phone {
+public abstract class Phone {
 private final String number;
 
 public Phone(String number) {
