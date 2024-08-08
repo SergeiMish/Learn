@@ -3,23 +3,17 @@ package ru.yandex.practicum;
 public class Practicum {
 
     public static void main(String[] args) {
-        Cat cat = new Cat("Мяу");
-        cat.catchMouse();
-        cat.giveVoice();
+        Rectangle rectangle = new Rectangle(4, 6);
+        System.out.println("Площадь прямоугольника 4см*6см = " + rectangle.getArea());
 
-        Dog dog = new Dog("Гав");
-        dog.bringStick();
-        dog.play();
+        Square square = new Square(3);
+        System.out.println("Площадь квадрата 3см*3см = " + square.getArea());
 
-        Hamster hamster = new Hamster("Фыр");
-        hamster.hideFood();
-        hamster.sleep();
+        Rhombus rhombus = new Rhombus(4, 3);
+        System.out.println("Площадь ромба со стороной 4см и высотой 3см = " + rhombus.getArea());
 
-        Fish fish = new Fish("-");
-        fish.sleep();
-
-        Spider spider = new Spider("=");
-        System.out.println("У паука " + spider.getPawsCount() + " лапок.");
+        Circle circle = new Circle(2);
+        System.out.println("Площадь круга с радиусом 2см = " + circle.getArea());
     }
 
 }
