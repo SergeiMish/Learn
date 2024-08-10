@@ -1,16 +1,15 @@
 package ru.yandex.practicum;
 
-public class Smartphone extends MobilePhone {
+import java.util.List;
 
-    public void makeCall(String targetNumber, String appName){
-        System.out.println("Позвоним через приложение " + appName + " по номеру " + targetNumber);
-    }
-            // объявите метод sendEmail()
-            public void sendEmail (String messageText, String email){
-        System.out.println("Напишем другу сообщение " + messageText + " по email " + email);
+public class Calculator {
+
+    private Calculator() {}
+
+    public static ... calculate(List<MediaItem> mediaItems) {
+        // Напишите реализацию метода, который будет возвращать общее количество дней,
+        // потраченных на просмотр фильмов и сериалов
+        ...
     }
 
-    public Smartphone(String number) {
-        super(number);
-    }
 }
