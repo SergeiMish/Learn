@@ -1,8 +1,6 @@
 package ru.yandex.practicum;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Practicum {
 
@@ -34,7 +32,9 @@ public class Practicum {
                 int runtime = scanner.nextInt();
 
                 // Создайте сериал и добавьте его в список просмотренных
-                ...
+                Map<String, Integer> movie = new HashMap<>();
+                movie.put(title, seriesCount);
+
             } else if (command == 0) {
                 printMediaItemsList(mediaItems);
 
