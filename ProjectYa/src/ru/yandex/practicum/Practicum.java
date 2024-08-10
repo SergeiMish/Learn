@@ -32,9 +32,8 @@ public class Practicum {
                 int runtime = scanner.nextInt();
 
                 // Создайте сериал и добавьте его в список просмотренных
-                Map<String, Integer> movie = new HashMap<>();
-                movie.put(title, seriesCount);
-
+                Series series = new Series(title, runtime, seriesCount);
+                mediaItems.add(series);
             } else if (command == 0) {
                 printMediaItemsList(mediaItems);
 
