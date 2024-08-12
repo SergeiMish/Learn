@@ -3,14 +3,14 @@ package ru.yandex.practicum;
 import ru.yandex.practicum.ValidationRule;
 
 // Дополните класс для проверки трудоустроенности пользователя
-public class EmploymentValidationRule extends ValidationRule <Boolean>{
+public class EmploymentValidationRule extends ValidationRule<Boolean> {
 
-public EmploymentValidationRule(Boolean value) {
+    public EmploymentValidationRule(Boolean value) {
         super(value, "Ипотека выдается только трудоустроенным");
-        }
+    }
 
-@Override
-public boolean isValid() {
+    @Override
+    public boolean isValid() {
         return value;
-        }
+    }
 }
