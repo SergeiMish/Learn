@@ -12,5 +12,4 @@ public AgeValidationRule(Byte age) {
 public boolean isValid() {
         return value >= 18;
         }
-
-        }
+}

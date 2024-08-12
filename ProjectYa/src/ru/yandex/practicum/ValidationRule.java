@@ -1,10 +1,10 @@
 package ru.yandex.practicum;
 
     public abstract class ValidationRule<T> {
-    protected final ... value;
+    protected final T value;
     private final String errorMessage;
 
-    protected ValidationRule(... value, String errorMessage) {
+    protected ValidationRule(T value, String errorMessage) {
         this.value = value;
         this.errorMessage = errorMessage;
     }

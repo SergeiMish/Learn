@@ -13,4 +13,4 @@ public EmploymentValidationRule(Boolean value) {
 public boolean isValid() {
         return value;
         }
-        }
+}
