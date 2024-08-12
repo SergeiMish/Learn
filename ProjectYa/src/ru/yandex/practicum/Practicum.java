@@ -40,21 +40,22 @@ public void put(K1 key1, K2 key2, V value) {
           innerHashMap.put(key2, value);
         }
 
-public ... get(...) {
+    public V get(K1 key1, K2 key2)  {
         //получаем хеш-таблицу по первому ключу
-        ... innerHashMap = ...;
+        HashMap<K2, V> innerHashMap = internalHashMap.get(key1);
         if (innerHashMap == null) {
         return null;
         }
         //получаем элемент из вложенной хеш-таблицы
-        return ...;
+        return innerHashMap.get(key2);
         }
 
-public ... getAll(...) {
-        ... innerHashMap = ...;
-        if (innerHashMap == null) {
-        return new ArrayList<>();
+    public ArrayList<V> getAll(K1 key1) {
+        ArrayList<V> result = new ArrayList<>();
+        HashMap<K2, V> nestedMap = internalHashMap.get(key1);
+        if (nestedMap != null) {
+            result.addAll(nestedMap.values());
         }
-        return new ArrayList<>(innerHashMap.values());
-        }
+        return result;
+    }
         }
