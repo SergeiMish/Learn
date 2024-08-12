@@ -1,6 +1,6 @@
 package ru.yandex.practicum;
 
-public abstract class ValidationRule {
+    public abstract class ValidationRule<T> {
     protected final ... value;
     private final String errorMessage;
 

@@ -1,6 +1,5 @@
 package ru.yandex.practicum;
 
-// допишите реализацию класса LandlinePhone
 public class MortgageRequest {
 
     private final String name;
