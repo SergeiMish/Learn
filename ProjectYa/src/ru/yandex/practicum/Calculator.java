@@ -6,7 +6,7 @@ public class Calculator {
 
     private Calculator() {}
 
-    public static int calculate(List<MediaItem> mediaItems) {
+    public static double calculate(List<MediaItem> mediaItems) {
         int totalMinutes = 0;
 
         for (MediaItem item : mediaItems) {
@@ -14,8 +14,8 @@ public class Calculator {
         }
 
         // Переводим минуты в дни (1 день = 24 часа * 60 минут)
+        double totalDays = (double) totalMinutes / (24 * 60);
 
-        return totalMinutes / (24 * 60);
+        return totalDays;
     }
-
 }
