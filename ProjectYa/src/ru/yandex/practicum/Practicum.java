@@ -55,7 +55,7 @@ public class Practicum {
         System.out.println("Вы посмотрели фильмов и сериалов: " + mediaItems.size());
         // Допишите вывод названий всех просмотренных фильмов и сериалов
         for (MediaItem mediaItem : mediaItems) {
-            System.out.println(mediaItem);
+            System.out.println(mediaItem.getTitle());
         }
     }
 
