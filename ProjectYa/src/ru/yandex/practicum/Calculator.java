@@ -7,11 +7,15 @@ public class Calculator {
     private Calculator() {}
 
     public static int calculate(List<MediaItem> mediaItems) {
-        // Напишите реализацию метода, который будет возвращать общее количество дней,
-        // потраченных на просмотр фильмов и сериалов
+        int totalMinutes = 0;
 
+        for (MediaItem item : mediaItems) {
+            totalMinutes += item.getRuntime();
+        }
 
+        // Переводим минуты в дни (1 день = 24 часа * 60 минут)
 
+        return totalMinutes / (24 * 60);
     }
 
 }
