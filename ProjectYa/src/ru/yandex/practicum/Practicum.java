@@ -26,18 +26,18 @@ public class Practicum {
 
 class AdvancedHashMap <K1, K2, V>  {
         //данные будем хранить в хеш-таблице из хеш-таблиц
-        HashMap<Integer, String > internalHashMap = new HashMap<>();
+        Map<K1, HashMap<K2, V>> internalHashMap = new HashMap<>();
 
-public void put(...) {
+public void put(K1 key1, K2 key2, V value) {
         //получаем хеш-таблицу по первому ключу
-        ... innerHashMap = ...;
+        HashMap<K2, V> innerHashMap = internalHashMap.get(key1);
         if (innerHashMap == null) {
         //вложенной хеш-таблицы по первому ключу пока нет — создаём её и добавляем в internalHashMap
-        innerHashMap = new HashMap<>();
-        ...
+            innerHashMap = new HashMap<>();
+            internalHashMap.put(key1, innerHashMap);
         }
         //добавляем элемент во вложенную хеш-таблицу
-        ...
+          innerHashMap.put(key2, value);
         }
 
 public ... get(...) {
