@@ -2,29 +2,71 @@ package ru.yandex.practicum;
 
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class Practicum {
 
+    // Дополните объявление поля friendsContactBook, которое будет хранить в себе список номеров телефонов друзей
+    private static ContactBook... friendsContactBook = ...
+            // Напишите объявления полей colleaguesContactBook, classmatesContactBook и relativesContactBook,
+            // которые будут хранить списки электронных адресов, соцсетей и почтовых адресов соответственно
+            ...
+
+
     public static void main(String[] args) {
+        fillBooks();
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Заполните данные для ипотечной заявки и узнайте статус одобрения");
-        System.out.println("Введите ФИО:");
-        String name = scanner.nextLine();
+        while (true) {
+            System.out.println("Сегодня Новый Год! 1 - Отправить поздравление, 0 - Напомнить позднее");
+            int mainCommand = scanner.nextInt();
+            if (mainCommand == 1) {
+                System.out.println("Какую книгу контактов открыть?");
+                System.out.println("1 - Друзья, 2 - Коллеги, 3 - Одногруппники, 4 - Родственники");
 
-        System.out.println("Ваш возраст:");
-        byte age = scanner.nextByte();
+                int bookIndex = scanner.nextInt();
+                if (bookIndex == 1) {
+                    friendsContactBook.printList();
+                } else if (bookIndex == 2) {
+                    colleaguesContactBook.printList();
+                } else if (bookIndex == 3) {
+                    classmatesContactBook.printList();
+                } else if (bookIndex == 4) {
+                    relativesContactBook.printList();
+                }
 
-        System.out.println("Планируемая сумма ипотеки:");
-        int mortgageAmount = scanner.nextInt();
+                System.out.println("Кого вы хотите поздравить? Введите имя:");
+                String name = scanner.next();
+                if (bookIndex == 1) {
+                    friendsContactBook.congratulate(name);
+                } else if (bookIndex == 2) {
+                    colleaguesContactBook.congratulate(name);
+                } else if (bookIndex == 3) {
+                    classmatesContactBook.congratulate(name);
+                } else if (bookIndex == 4) {
+                    relativesContactBook.congratulate(name);
+                }
+            } else if (mainCommand == 0) {
+                break;
+            }
+        }
+    }
 
-        scanner.nextLine();
-        System.out.println("Трудоустроены ли вы сейчас? (д/н)");
-        String employedString = scanner.nextLine();
-        boolean employed = employedString.equalsIgnoreCase("д");
+    private static void fillBooks() {
+        friendsContactBook.addContact(new Phone("Иван", "+7-909-000-11-22"));
+        friendsContactBook.addContact(new Phone("Маша", "+7-999-555-11-22"));
+        friendsContactBook.addContact(new Phone("Кирилл", "+7-979-698-00-22"));
 
-        MortgageRequest mortgageRequest = new MortgageRequest(name, age, mortgageAmount, employed);
-        mortgageRequest.validate();
+        colleaguesContactBook.addContact(new Email("Александр", "sasha@sasha.ru"));
+        colleaguesContactBook.addContact(new Email("Павел", "pasha@pasha.ru"));
+        colleaguesContactBook.addContact(new Email("Олег", "oleg@oleg.ru"));
 
+        classmatesContactBook.addContact(new SocialNetworkContact("Оля", "НаСвязи", "olya"));
+        classmatesContactBook.addContact(new SocialNetworkContact("Женя", "Фотопризма", "zhenya"));
+
+        relativesContactBook.addContact(new Address("Бабуля", "Москва", "Тверская, д.8"));
+        relativesContactBook.addContact(new Address("Дедуля", "Воронеж", "Ленина, д.10"));
     }
 
 }
