@@ -7,12 +7,12 @@ import java.util.Scanner;
 public class Practicum {
 
     // Дополните объявление поля friendsContactBook, которое будет хранить в себе список номеров телефонов друзей
-    private static final ContactBook<String> friendsContactBook = new ContactBook();
+    private static final ContactBook<Contact> friendsContactBook = new ContactBook();
     // Напишите объявления полей colleaguesContactBook, classmatesContactBook и relativesContactBook,
     // которые будут хранить списки электронных адресов, соцсетей и почтовых адресов соответственно
-    private static final ContactBook<String> colleaguesContactBook = new ContactBook<>();
-    private static final ContactBook<String> classmatesContactBook = new ContactBook<>();
-    private static final ContactBook<String> relativesContactBook = new ContactBook<>();
+    private static final ContactBook<Contact> colleaguesContactBook = new ContactBook<>();
+    private static final ContactBook<Contact> classmatesContactBook = new ContactBook<>();
+    private static final ContactBook<Contact> relativesContactBook = new ContactBook<>();
     public static void main(String[] args) {
         fillBooks();
 
