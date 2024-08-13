@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Practicum {
 
     // Дополните объявление поля friendsContactBook, которое будет хранить в себе список номеров телефонов друзей
-    private static ContactBook... friendsContactBook = ...
+    private static ContactBook <String, String>  friendsContactBook = new ContactBook();
             // Напишите объявления полей colleaguesContactBook, classmatesContactBook и relativesContactBook,
             // которые будут хранить списки электронных адресов, соцсетей и почтовых адресов соответственно
             ...

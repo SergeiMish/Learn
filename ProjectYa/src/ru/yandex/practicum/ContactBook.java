@@ -1,7 +1,7 @@
 package ru.yandex.practicum;
 
 // Дополните класс для проверки суммы ипотеки пользователя
-public class ContactBook ... {
+public class ContactBook <T,V> {
         // Объявите поле класса contacts - список контактов книги
         ...
 
