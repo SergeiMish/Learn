@@ -1,22 +1,22 @@
 package ru.yandex.practicum;
 
 // Дополните класс для проверки суммы ипотеки пользователя
-public class ContactBook <T,V> {
-        // Объявите поле класса contacts - список контактов книги
+public class ContactBook<T> {
+    // Объявите поле класса contacts - список контактов книги
         ...
 
-public void addContact(... contact) {
+    public void addContact(...contact) {
         contacts.add(contact);
-        }
+    }
 
-public void printList() {
+    public void printList() {
         // Выведите на экран весь список контактов книги
         ...
         System.out.println("Имя: " + contact.getName());
         contact.print();
-        }
+    }
 
-public void congratulate(String name) {
+    public void congratulate(String name) {
         boolean contactPresented = false; //проверяем есть ли контакт в базе
         // Найдите контакт в книге по имени, и отправьте ему сообщение с помощью метода sendMessage()
         ...
@@ -25,6 +25,6 @@ public void congratulate(String name) {
 
         // Если контакт не найден, выведите соответствующее сообщение
         System.out.println("Не найден контакт с указанным именем.");
-        }
+    }
 
-        }
+}

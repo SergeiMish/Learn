@@ -1,10 +1,10 @@
 package ru.yandex.practicum;
 
-public class Phone ... {
+public class Phone extends Contact {
 private final String phoneNumber;
 
 public Phone(String name, String phoneNumber) {
-        ...
+        super(name);
         this.phoneNumber = phoneNumber;
         }
 
