@@ -1,11 +1,8 @@
 package ru.yandex.practicum;
 
-
 // Дополните класс для проверки возраста пользователя
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BankAccountTest {
 
@@ -22,7 +19,21 @@ public class BankAccountTest {
         assertEquals(Integer.valueOf(0), account.getAmount());
         assertEquals("RUB", account.getCurrency());
     }
-    public void shouldBeBlockedAfterBlockIsCalled(){
-
+    @Test
+    public void shouldBeBlockedAfterBlockIsCalled() {
+        BankAccount account = new BankAccount("a", "b");
+        account.block();
+        assertTrue(account.isBlocked());
+    }
+    @Test
+    public void shouldReturnFirstNameThenSecondName() {
+        BankAccount account = new BankAccount("a", "b");
+        String[] fullName = account.getFullName();
+        assertArrayEquals(new String[]{"a", "b"}, fullName);
+    }
+    @Test
+    public void shouldReturnNullAmountWhenNotActive() {
+        BankAccount account = new BankAccount("a", "b");
+        assertNull(account.getCurrency());
     }
 }
