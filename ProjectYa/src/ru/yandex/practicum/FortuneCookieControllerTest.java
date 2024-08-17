@@ -1,6 +1,6 @@
 package ru.yandex.practicum;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -9,35 +9,33 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FortuneCookieControllerTest {
 
-    private static FortuneCookieController goodFactoryController;
-    private static FortuneCookieController badFactoryController;
+    private FortuneCookieFactory goodFactory;
+    private FortuneCookieFactory badFactory;
 
-    @BeforeAll
-    public static void setUp() {
-        goodFactoryController = create(true);
-        badFactoryController = create(false);
-    }
-
-    private static FortuneCookieController create(boolean isPositive) {
-        FortuneConfig config = new FortuneConfig(isPositive);
+    @BeforeEach
+    public void setUp() {
         ArrayList<String> positive = new ArrayList<>();
         positive.add("positive");
         ArrayList<String> negative = new ArrayList<>();
         negative.add("negative");
-        FortuneCookieFactory factory = new FortuneCookieFactory(config, positive, negative);
-        return new FortuneCookieController(factory);
+
+        FortuneConfig goodConfig = new FortuneConfig(true);
+        FortuneConfig badConfig = new FortuneConfig(false);
+
+        goodFactory = new FortuneCookieFactory(goodConfig, positive, negative);
+        badFactory = new FortuneCookieFactory(badConfig, positive, negative);
     }
 
     @Test
     public void shouldReturnPositiveFortune() {
-        String fortune = goodFactoryController.getFortune();
-        assertEquals("positive", fortune);
+        FortuneCookie cookie = goodFactory.bakeFortuneCookie();
+        assertEquals("positive", cookie.getFortuneText());
     }
 
     @Test
     public void shouldReturnNegativeFortune() {
-        String fortune = badFactoryController.getFortune();
-        assertEquals("negative", fortune);
+        FortuneCookie cookie = badFactory.bakeFortuneCookie();
+        assertEquals("negative", cookie.getFortuneText());
     }
 }
 
