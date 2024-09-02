@@ -8,7 +8,7 @@ public class Practicum {
 
     public static int find(int[] array, int elem) {
         int index = -1;
-        for (int i : array) {
+        for (int i = 0; i < array.length; i++) {
             if (elem == i) {
                 return elem;
             }
