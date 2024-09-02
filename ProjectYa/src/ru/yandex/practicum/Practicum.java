@@ -1,5 +1,8 @@
 package ru.yandex.practicum;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Practicum {
     public static void main(String[] args) {
         Random random = new Random();
@@ -10,5 +13,19 @@ public class Practicum {
         int userGuess = -1;
 
         // Считывайте числа от пользователя пока не найдёте число, равное target
+        while (userGuess != target){
+            if (userGuess > target){
+                System.out.println("Ваше число больше");
+                s.nextInt();
+            }
+            else if (userGuess < target){
+                System.out.println("Ваше число меньше");
+                s.nextInt();
+            }
+            else {
+                System.out.println("Правильный ответ");
+                break;
+            }
+        }
     }
 }
