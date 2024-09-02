@@ -7,6 +7,6 @@ public class Practicum {
     }
 
     public static int find(int[] array, int elem) {
-        ...
-    }
+        int index = -1;
+
 }
