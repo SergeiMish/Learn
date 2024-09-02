@@ -2,17 +2,13 @@ package ru.yandex.practicum;
 
 public class Practicum {
     public static void main(String[] args) {
-        int[] array = {1, 2, 65, 3, 5, 7, 54, 12, 46, 4, 2};
-        System.out.println("Индекс искомого элемента: " + find(array, 3));
-    }
+        Random random = new Random();
+        int target = random.nextInt(1000) + 1;
+        System.out.println("Я загадал число. Попробуйте угадать!");
 
-    public static int find(int[] array, int elem) {
-        int index = -1;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == elem){
-                return i;
-            }
-        }
-        return index;
+        Scanner s = new Scanner(System.in);
+        int userGuess = -1;
+
+        // Считывайте числа от пользователя пока не найдёте число, равное target
     }
 }
