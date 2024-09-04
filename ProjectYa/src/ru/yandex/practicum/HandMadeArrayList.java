@@ -1,61 +1,89 @@
 package ru.yandex.practicum;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
-public class HandMadeArrayList<T> {
+public class HandMadeLinkedList<T> {
+
+    class Node<E> {
+        public E data;
+        public Node<E> next;
+        public Node<E> prev;
+
+        public Node(Node<E> prev, E data, Node<E> next) {
+            this.data = data;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
+
+    /**
+     * Указатель на первый элемент списка. Он же first
+     */
+    private Node<T> head;
+
+    /**
+     * Указатель на последний элемент списка. Он же last
+     */
+    private Node<T> tail;
 
     private int size = 0;
-    private Object[] elements;
 
-    public HandMadeArrayList() {
-        this.elements = new Object[10];
+    public void addFirst(T element) {
+        final Node<T> oldHead = head;
+        final Node<T> newNode = new Node<>(null, element, oldHead);
+        head = newNode;
+        if (oldHead == null)
+            tail = newNode;
+        else
+            oldHead.prev = newNode;
+        size++;
     }
 
-    /**
-     * Сначала проверяем, достиг ли размер массива вместимости.
-     * Если достиг — увеличиваем вместимость, иначе сразу добавляем элемент
-     */
-    public void add(T newElement) {
-        // Допишите проверку
-        if (size == elements.length) {
-            grow();
-        }
-            elements[size] = newElement;
-            size++;
-        /* Допишите код, который добавит очередной элемент в массив
-           и увеличит размер массива на единицу.*/
+    public T getFirst() {
+        final Node<T> curHead = head;
+        if (curHead == null)
+            throw new NoSuchElementException();
+        return head.data;
     }
 
-    public T get(int index) {
-        if (index < 0 || index >= size) {
-            throw new ArrayIndexOutOfBoundsException("Element with index " + index + " does not exist");
-        }
-        return (T) this.elements[index];
+    public void addLast(T element) {
+        final Node<T> oldHead = tail;
+        final Node<T> newNode = new Node<>(null, element, oldHead);
+        tail = newNode;
+        if (oldHead == null)
+            head = newNode;
+        else
+            oldHead.next = newNode;
+        size++;
+        // Реализуйте метод
     }
 
-    /**
-     * Заменяем текущий массив элементов elements на новый с вместимостью +50%
-     */
-    private void grow() {
-        // Новый массив
-        Object[] newArray = new Object[elements.length + elements.length / 2];
-        for (int i = 0; i < elements.length; i++) {
-            newArray[i] = elements[i];
-        }
-        // Допишите цикл, который копирует все элементы из массива elements в новый массив newArray
-        // Копируем элементы из старого массива в новый
-        // Возвращаемый новый массив
-        this.elements = newArray;
+    public T getLast() {
+        final Node<T> curHead = tail;
+        if (curHead == null)
+            throw new NoSuchElementException();
+        return tail.data;
+        // Реализуйте метод
+    }
+
+    public int size() {
+        return this.size;
     }
 
     public static void main(String[] args) {
-        final var ar = new HandMadeArrayList<Integer>();
-        for (int i = 0; i < 20; i++) {
-            ar.add(i);
-        }
-        System.out.println(ar.size);
+        HandMadeLinkedList<Integer> integers = new HandMadeLinkedList<>();
+
+        integers.addFirst(1);
+        integers.addFirst(2);
+        integers.addFirst(3);
+        integers.addLast(4);
+        integers.addLast(5);
+        integers.addFirst(1);
+
+        System.out.println(integers.getFirst());
+        System.out.println(integers.size());
+        System.out.println(integers.getLast());
+        System.out.println(integers.size());
     }
 }
