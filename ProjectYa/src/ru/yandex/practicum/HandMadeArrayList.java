@@ -22,12 +22,9 @@ public class HandMadeArrayList<T> {
         // Допишите проверку
         if (size == elements.length) {
             grow();
-
-        } else {
+        }
             elements[size] = newElement;
             size++;
-
-        }
         /* Допишите код, который добавит очередной элемент в массив
            и увеличит размер массива на единицу.*/
     }
