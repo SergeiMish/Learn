@@ -1,6 +1,8 @@
 package ru.yandex.practicum;
 
+import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -22,7 +24,7 @@ public class PairGenerator {
         while (!strangers.isEmpty()) {
 
             List<Stranger> pair = getRandomPair(strangers);
-            pair.add((Stranger) strangers);
+            pairs.add(pair);
             // Добавьте новый элемент в набор пар.
         }
 
@@ -47,6 +49,8 @@ public class PairGenerator {
 
         /* Осталось только удалить двух найденных незнакомцев из списка strangers,
            а затем вернуть их в качестве результата! */
-        strangers.removeAll(strangerOne, strangerTwo);
+        strangers.remove(p1Index);
+        strangers.remove(p2Index);
+        return List.of(strangerOne, strangerTwo);
     }
 }
