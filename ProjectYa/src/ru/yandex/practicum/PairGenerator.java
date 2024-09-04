@@ -18,10 +18,11 @@ public class PairGenerator {
     public List <List<Stranger>> splitByPairs(List<Stranger> strangers) {
 
         // Укажите тип ещё раз.
-        List<Stranger> pairs = new ArrayList<>();
+        List <List<Stranger>> pairs = new ArrayList<>();
         while (!strangers.isEmpty()) {
 
             List<Stranger> pair = getRandomPair(strangers);
+            pair.add(pairs);
             // Добавьте новый элемент в набор пар.
         }
 
