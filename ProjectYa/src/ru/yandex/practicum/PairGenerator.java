@@ -49,8 +49,12 @@ public class PairGenerator {
 
         /* Осталось только удалить двух найденных незнакомцев из списка strangers,
            а затем вернуть их в качестве результата! */
-        strangers.remove(p1Index);
-        strangers.remove(p2Index);
+        List<Stranger> toRemove = new ArrayList<>();
+        toRemove.add(strangerOne);
+        toRemove.add(strangerTwo);
+
+        // Удаляем двух найденных незнакомцев из списка strangers
+        strangers.removeAll(toRemove);
         return List.of(strangerOne, strangerTwo);
     }
 }
