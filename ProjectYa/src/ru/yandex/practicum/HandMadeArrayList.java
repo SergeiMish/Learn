@@ -22,11 +22,12 @@ public class HandMadeArrayList<T> {
         // Допишите проверку
         if (size == elements.length) {
             grow();
+
         } else {
             elements[size] = newElement;
-            size = size + 1;
-        }
+            size++;
 
+        }
         /* Допишите код, который добавит очередной элемент в массив
            и увеличит размер массива на единицу.*/
     }
@@ -47,18 +48,15 @@ public class HandMadeArrayList<T> {
         for (int i = 0; i < elements.length; i++) {
             newArray[i] = elements[i];
         }
-
         // Допишите цикл, который копирует все элементы из массива elements в новый массив newArray
         // Копируем элементы из старого массива в новый
-
-
         // Возвращаемый новый массив
         this.elements = newArray;
     }
 
     public static void main(String[] args) {
         final var ar = new HandMadeArrayList<Integer>();
-        for (int i = 0; i < 3000; i++) {
+        for (int i = 0; i < 20; i++) {
             ar.add(i);
         }
         System.out.println(ar.size);
