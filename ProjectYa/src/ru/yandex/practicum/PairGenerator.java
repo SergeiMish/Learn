@@ -22,7 +22,7 @@ public class PairGenerator {
         while (!strangers.isEmpty()) {
 
             List<Stranger> pair = getRandomPair(strangers);
-            pair.add(pairs);
+            pair.add((Stranger) strangers);
             // Добавьте новый элемент в набор пар.
         }
 
@@ -47,6 +47,6 @@ public class PairGenerator {
 
         /* Осталось только удалить двух найденных незнакомцев из списка strangers,
            а затем вернуть их в качестве результата! */
-        ...
+        strangers.removeAll(strangerOne, strangerTwo);
     }
 }
