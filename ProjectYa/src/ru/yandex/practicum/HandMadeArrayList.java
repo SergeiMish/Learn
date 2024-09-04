@@ -23,6 +23,9 @@ public class HandMadeArrayList<T> {
             if (size == elements.length) {
                 grow();
             }
+            else { elements[size] = newElement;
+                size = size + 1;
+            }
 
         /* Допишите код, который добавит очередной элемент в массив
            и увеличит размер массива на единицу.*/
@@ -41,7 +44,9 @@ public class HandMadeArrayList<T> {
         private void grow() {
             // Новый массив
             Object[] newArray = new Object[elements.length + elements.length / 2];
-
+            for (int i = 0; i < elements.length; i++) {
+                newArray[i] = elements[i];
+            }
 
             // Допишите цикл, который копирует все элементы из массива elements в новый массив newArray
             // Копируем элементы из старого массива в новый
@@ -59,4 +64,3 @@ public class HandMadeArrayList<T> {
             System.out.println(ar.size);
         }
     }
-}
