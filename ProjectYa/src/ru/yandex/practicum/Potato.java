@@ -1,5 +1,7 @@
 package ru.yandex.practicum;
 
+import java.util.Objects;
+
 public class Potato implements Comparable<Potato> {
 
     public final int id;
