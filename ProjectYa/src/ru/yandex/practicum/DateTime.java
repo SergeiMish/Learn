@@ -1,11 +1,5 @@
 package ru.yandex.practicum;
 
-import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
-
 public class DateTime {
     public final int day;
     public final int month;
