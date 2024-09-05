@@ -1,5 +1,6 @@
 package ru.yandex.practicum;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Potato implements Comparable<Potato> {
@@ -27,10 +28,13 @@ public class Potato implements Comparable<Potato> {
         this.length = length;
         this.girth = girth;
     }
-
+    public int calculateAlpha() {
+        double alpha = (weight * 0.5) + (length * 0.65) + (girth * 0.8);
+        return (int) alpha;
+    }
     @Override
     public int compareTo(Potato o) {
-        // Сравните картофелины по альфа характеристике
+        return Integer.compare(this.calculateAlpha(), o.calculateAlpha());
     }
 
     @Override
