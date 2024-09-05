@@ -24,6 +24,7 @@ public class PotatoLaboratory {
 
     private static List<Potato> findPotatoesForExperiment(List<Potato> potatoes) {
         ArrayList<Potato> potatoes1 = new ArrayList<>(potatoes);
+        Collections.sort(potatoes1);
         Potato smallest1 = potatoes1.get(0);
         Potato smallest2 = potatoes1.get(1);
         Potato largest1 = potatoes1.get(potatoes1.size() - 1);
