@@ -1,62 +1,30 @@
 package ru.yandex.practicum;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class Potato implements Comparable<Potato> {
+public class Practicum {
+    // Пример списка пассажиров (на самом деле их больше)
+    private static List<String> passengerNames = List.of(
+            "Василий Петров",
+            "Анна Ягирская",
+            "Виктория Сотова",
+            "Игорь Серов",
+            "Людмила Ульянова"
+    );
 
-    public final int id;
-
-    /**
-     * Масса
-     */
-    public final int weight;
-
-    /**
-     * Длина
-     */
-    public final int length;
-
-    /**
-     * Ширина
-     */
-    public final int girth;
-
-    public Potato(int id, int weight, int length, int girth) {
-        this.id = id;
-        this.weight = weight;
-        this.length = length;
-        this.girth = girth;
-    }
-    public int calculateAlpha() {
-        double alpha = (weight * 0.5) + (length * 0.65) + (girth * 0.8);
-        return (int) alpha;
-    }
-    @Override
-    public int compareTo(Potato o) {
-        return Integer.compare(this.calculateAlpha(), o.calculateAlpha());
+    public static void main(String[] args) {
+        Map<String, Integer> seats = assignSeats(passengerNames);
+        System.out.println("Места пассажиров: " + seats);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Potato potato = (Potato) o;
-        return id == potato.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return "Potato{" +
-                "id=" + id +
-                ", weight=" + weight +
-                ", length=" + length +
-                ", girth=" + girth +
-                '}';
+    public static Map<String, Integer> assignSeats(List<String> passengerNames) {
+        // Тут нужно написать код, который будет распределять места в самолёте ✈️
+        Map<String, Integer> seats = new HashMap<>();
+        int seat = 1;
+        for (String s : seats.keySet()) {
+            s = passengerNames;
+        }
     }
 }
