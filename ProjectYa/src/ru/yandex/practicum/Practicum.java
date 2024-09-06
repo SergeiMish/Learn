@@ -1,5 +1,6 @@
 package ru.yandex.practicum;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,8 +24,9 @@ public class Practicum {
         // Тут нужно написать код, который будет распределять места в самолёте ✈️
         Map<String, Integer> seats = new HashMap<>();
         int seat = 1;
-        for (String s : seats.keySet()) {
-            s = passengerNames;
+        for (String name : passengerNames) {
+            seats.put(name, seat++);
         }
+        return seats;
     }
 }
