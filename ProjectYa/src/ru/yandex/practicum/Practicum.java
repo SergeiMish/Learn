@@ -27,6 +27,9 @@ public class Practicum {
     }
 
     private void newOrder(String clientName) {
+        for (String s : orders.keySet()) {
+            
+        }
         // Сохраните новый заказ в хеш-таблицу. При обновлении счётчика заказов
         // не забудьте учесть заказы, которые уже были сделаны ранее.
     }
