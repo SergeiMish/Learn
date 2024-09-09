@@ -1,42 +1,34 @@
 package ru.yandex.practicum;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 class Practicum {
-    private static Map<Long, User> users = new HashMap<>();
+    private static List<String> allPurchases = List.of(
+            "яблоки",
+            "молоко",
+            "колбаса",
+            "огурцы",
+            "сок",
+            "хлеб",
+            "виноград",
+            "молоко",
+            "йогурт",
+            "хлеб",
+            "пельмени"
+    );
 
     public static void main(String[] args) {
-        // создадим 1 миллион пользователей
-        for (long i = 1; i <= 1_000_000L; i++) {
-            users.put(i, (new User(i, "Имя " + i)));
-        }
+        // переменная uniquePurchases должна содержать множество уникальных товаров
+        Set<String> uniquePurchases = findUniquePurchases(allPurchases);
 
-        final long startTime = System.nanoTime();
-        User user = findUser(378_366L);
-        final long endTime = System.nanoTime();
-
-        System.out.println("Найден пользователь: " + user);
-        System.out.println("Поиск занял " + (endTime - startTime) + " наносекунд.");
+        // допишите вывод количества уникальных товаров
+        System.out.println( "За месяц было куплено " + uniquePurchases.size() + " уникальных товаров.");
     }
 
-    private static User findUser(Long userId) {
-        return users.get(userId);
-    }
-
-    static class User {
-        Long id;
-        String name;
-
-        public User(Long id, String name) {
-            this.id = id;
-            this.name = name;
-        }
-
-        public String toString() {
-            return "User{id=" + id + ", name='" + name + "'}";
-        }
+    // реализуйте этот метод
+    public static Set<String> findUniquePurchases(List<String> allPurchases) {
+        return new HashSet<>(allPurchases);
     }
 }
