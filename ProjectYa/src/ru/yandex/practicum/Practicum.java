@@ -1,74 +1,47 @@
 package ru.yandex.practicum;
 
-import java.util.Comparator;
-import java.util.HashSet;
+import java.time.LocalDate;
+import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Practicum {
+    private static Set<Letter> letters = new LinkedHashSet<>();
+
     public static void main(String[] args) {
-        Comparator<Ticket> comparator = new Comparator<Ticket>(){
-            @Override
-            public int compare(Ticket o1, Ticket o2) {
-                return o1.priceInUsd - o2.priceInUsd;
-            }
-        };
+        // информация о письмах (в порядке занесения в систему)
+        letters.add(new Letter("Джон Смит", LocalDate.of(2021, 7, 7), "текст письма №1 ..."));
+        letters.add(new Letter("Аманда Линс", LocalDate.of(2021, 6, 17), "текст письма №2 ..."));
+        letters.add(new Letter("Джо Кью", LocalDate.of(2021, 7, 5), "текст письма №3 ..."));
+        letters.add(new Letter("Мишель Фернандес", LocalDate.of(2021, 8, 23), "текст письма №4 ..."));
 
-    Set<Ticket> tickets = new TreeSet<>();
-    fillTickets(tickets);
-
-        System.out.println("Доступные билеты: ");
-        for (Ticket ticket : tickets) {
-        System.out.println("  * " + ticket);
-    }
-}
-
-    private static void fillTickets(Set<Ticket> tickets) {
-        tickets.add(new Ticket("Лондон", "Париж", 376));
-        tickets.add(new Ticket("Милан", "Москва", 298));
-        tickets.add(new Ticket("Берлин", "Бостон", 1273));
-        tickets.add(new Ticket("Пекин", "Рим", 846));
-        tickets.add(new Ticket("Санкт-Петербург", "Афины", 284));
-        tickets.add(new Ticket("Сидней", "Токио", 1738));
-        tickets.add(new Ticket("Мюнхен", "Дубай", 974));
+        printOrderedById(letters);
+        printOrderedByDateReceived(letters);
     }
 
-public static class Ticket {
-    public String from;
-    public String to;
-    public int priceInUsd;
+    private static void printOrderedById(Set<Letter> letters) {
+        System.out.println("Все письма с сортировкой по ID: ");
 
-    public Ticket(String from, String to, int priceInUsd) {
-        this.from = from;
-        this.to = to;
-        this.priceInUsd = priceInUsd;
+        for (Letter letter : letters) {
+            System.out.println("    * Письмо от " + letter.authorName + " поступило " + letter.dateReceived);
+        }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    private static void printOrderedByDateReceived(Set<Letter> letters) {
+        System.out.println("Все письма с сортировкой по дате получения: ");
 
-        Ticket ticket = (Ticket) o;
-
-        if (priceInUsd != ticket.priceInUsd) return false;
-        if (!from.equals(ticket.from)) return false;
-        if (!to.equals(ticket.to)) return false;
-
-        return true;
+        // реализуйте этот метод
+        ...
     }
 
-    @Override
-    public int hashCode() {
-        int result = from.hashCode();
-        result = 31 * result + to.hashCode();
-        result = 31 * result + priceInUsd;
-        return result;
-    }
+    static class Letter {
+        public String authorName;      // имя отправителя
+        public LocalDate dateReceived; // дата получения письма
+        public String text;            // текст письма
 
-    @Override
-    public String toString() {
-        return "Ticket{from=" + from + ", to=" + to + ", priceInUsd=" + priceInUsd + '}';
+        public Letter(String senderName, LocalDate dateReceived, String text) {
+            this.authorName = senderName;
+            this.dateReceived = dateReceived;
+            this.text = text;
+        }
     }
-}
 }
