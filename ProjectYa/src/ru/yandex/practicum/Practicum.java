@@ -30,15 +30,26 @@ public class Practicum {
 
     private static void printOrderedByDateReceived(Set<Letter> letters) {
         System.out.println("Все письма с сортировкой по дате получения: ");
-        Set<Letter> sortOfData = new TreeSet<>(letters);
-
+        Set<Letter> sortOfData = new TreeSet<>(Comparator.comparing(Letter::getDateReceived));
         sortOfData.addAll(letters);
+        for (Letter letter : sortOfData) {
+            System.out.println(letter);
+        }
     }
-
     static class Letter {
         public String authorName;      // имя отправителя
+
+        public LocalDate getDateReceived() {
+            return dateReceived;
+        }
+
         public LocalDate dateReceived; // дата получения письма
         public String text;            // текст письма
+
+        @Override
+        public String toString() {
+            return "    * Письмо от " + authorName + " поступило " + dateReceived;
+        }
 
         public Letter(String senderName, LocalDate dateReceived, String text) {
             this.authorName = senderName;
