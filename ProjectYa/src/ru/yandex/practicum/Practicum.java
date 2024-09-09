@@ -1,8 +1,10 @@
 package ru.yandex.practicum;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Practicum {
     private static Set<Letter> letters = new LinkedHashSet<>();
@@ -28,9 +30,9 @@ public class Practicum {
 
     private static void printOrderedByDateReceived(Set<Letter> letters) {
         System.out.println("Все письма с сортировкой по дате получения: ");
+        Set<Letter> sortOfData = new TreeSet<>(letters);
 
-        // реализуйте этот метод
-        ...
+        sortOfData.addAll(letters);
     }
 
     static class Letter {
