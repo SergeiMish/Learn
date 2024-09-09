@@ -1,17 +1,19 @@
 package ru.yandex.practicum;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Practicum {
     public static void main(String[] args) {
-        Comparator<Ticket> comparator = new Comparator<Ticket>();{
+        Comparator<Ticket> comparator = new Comparator<Ticket>(){
             @Override
             public int compare(Ticket o1, Ticket o2) {
                 return o1.priceInUsd - o2.priceInUsd;
             }
-        }
-    }
+        };
+
     Set<Ticket> tickets = new TreeSet<>();
     fillTickets(tickets);
 
