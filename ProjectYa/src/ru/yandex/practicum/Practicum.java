@@ -11,7 +11,7 @@ class Practicum {
     public static void main(String[] args) {
         // создадим 1 миллион пользователей
         for (long i = 1; i <= 1_000_000L; i++) {
-            users.put(i, (new User(i, "Имя")));
+            users.put(i, (new User(i, "Имя " + i)));
         }
 
         final long startTime = System.nanoTime();
