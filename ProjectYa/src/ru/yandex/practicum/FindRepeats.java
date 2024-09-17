@@ -3,13 +3,13 @@ package ru.yandex.practicum;
 public class FindRepeats {
     int numberOfRepeats(String text, String substring) {
         int repeat = 0;
-            while (text.contains(substring)){
-                if (text.equals(substring)){
-                    repeat++;
-                    text = null;
-                }
-                int index = text.indexOf(substring) + substring.length();
-                return repeat + index;
-            } return repeat;
+        int index = 0;
+
+        while ((index = text.indexOf(substring, index)) != -1) {
+            repeat++;
+            index += substring.length();
         }
+
+        return repeat;
     }
+}
