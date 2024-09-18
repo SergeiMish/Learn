@@ -1,13 +1,11 @@
 package ru.yandex.practicum;
 
 public class FindRepeats {
-    int numberOfRepeats(String text, String substring) {
-        StringBuilder sb = new StringBuilder(text);
-        int count = 0;
-        while (sb.indexOf(substring) != (-1)) {
-            count++;
-            sb.delete(0, count +2);
-        }
-        return count;
+    public boolean isPalindromeWord(String str) {
+        StringBuilder sb = new StringBuilder(str);
+        String pal = sb.reverse().toString();
+        if (str.equals(pal)) {
+            return true;
+        } return false;
     }
 }
