@@ -32,10 +32,10 @@ public class Grades {
         for (String s : split) {
             String [] pureSplit = s.split(",");
             for (String s1 : pureSplit) {
-                pureSplit[0] = capitalize(grades);
-                pureSplit[1] = capitalize(grades);
-                pureSplit[2] = grades.toLowerCase();
-                pureSplit[3] = gradeToString(grades);
+//                pureSplit[0] = capitalize(grades);
+//                pureSplit[1] = capitalize(grades);
+//                pureSplit[2] = grades.toLowerCase();
+//                pureSplit[3] = gradeToString(grades);
                 System.out.println(s1);
             }
         }
