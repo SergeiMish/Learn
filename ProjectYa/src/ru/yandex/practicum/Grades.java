@@ -1,9 +1,13 @@
 package ru.yandex.practicum;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Grades {
 
     private String capitalize(String str) {
-        return str.substring(0,1).toUpperCase() + str.substring(1);
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
     private String gradeToString(String grade) {
@@ -30,29 +34,24 @@ public class Grades {
         StringBuilder sb = new StringBuilder();
         String[] split = grades.split(";");
         for (String s : split) {
-            String [] pureSplit = s.split(",");
-            for (String s1 : pureSplit) {
-//                pureSplit[0] = capitalize(grades);
-//                pureSplit[1] = capitalize(grades);
-//                pureSplit[2] = grades.toLowerCase();
-//                pureSplit[3] = gradeToString(grades);
-                System.out.println(s1);
+            String[] s1 = s.split(",");
+                if (s1.length == 4) {
+                    String firstName = capitalize(s1[0]);
+                    String lastName = capitalize(s1[1]);
+                    String subject = s1[2].toLowerCase();
+                    String grade = gradeToString(s1[3]);
+
+                    sb.append(firstName)
+                            .append(" ")
+                            .append(lastName)
+                            .append(" ")
+                            .append(subject)
+                            .append(" — ")
+                            .append(grade)
+                            .append("\n");
+                }
             }
-        }
 
-
-//            if (i == 0 ){
-//                capitalize(grades);
-//            }
-//            if (i == 1){
-//                capitalize(grades);
-//            }
-//            if (i == 2){
-//                grades.toLowerCase();
-//                System.out.println(" - ");
-//            }
-//            if (i == 3){
-//                gradeToString(grades);
-//            }
-        }
+        System.out.println(sb);
     }
+}
