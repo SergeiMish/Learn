@@ -1,5 +1,9 @@
 package ru.yandex.practicum;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class GradesReversed {
 
     private String gradeStringToInt(String grade) {
@@ -23,6 +27,7 @@ public class GradesReversed {
 
     public String serializeGrades(String[] grades) {
         String join = null;
+        StringBuilder sb = new StringBuilder();
         for (String grade : grades) {
             String[] split = grade.split(" ");
             if(split.length == 5){
@@ -30,9 +35,10 @@ public class GradesReversed {
                 String lastName = split[1];
                 String subject = split[2];
                 String gradee = gradeStringToInt(split[4]);
-                join = String.join(firstName, lastName, subject, gradee);
+                join = String.join(",", firstName, lastName, subject, gradee).replaceAll("\n", " ");
+                sb.append(join).append(";");
             }
-            System.out.println(join);
+            System.out.println(sb);
         }
     return join;
     }
