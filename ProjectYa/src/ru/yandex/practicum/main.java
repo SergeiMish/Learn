@@ -2,8 +2,13 @@ package ru.yandex.practicum;
 
 public class main {
     public static void main(String[] args) {
-    String grades = "вероника,чехова,ФИЗИКА,5;анна,строкова,МАТЕМАТИКА,4;иван,петров,ГЕОМЕТРИЯ,5";
-    Grades gd = new Grades();
-    gd.gradeBeautifier(grades);
+        String[] grades = {
+                "Вероника Чехова физика — Безупречно",
+                "Анна Строкова математика — Потрясающе",
+                "Иван Петров геометрия — Безупречно"
+        };
+        GradesReversed gradesReversed = new GradesReversed();
+        gradesReversed.serializeGrades(grades);
     }
+
 }
