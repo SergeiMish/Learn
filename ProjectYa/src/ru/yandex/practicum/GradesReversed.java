@@ -26,7 +26,7 @@ public class GradesReversed {
     }
 
     public String serializeGrades(String[] grades) {
-        String join = null;
+        String join;
         StringBuilder sb = new StringBuilder();
         for (String grade : grades) {
             String[] split = grade.split(" ");
@@ -35,34 +35,10 @@ public class GradesReversed {
                 String lastName = split[1];
                 String subject = split[2];
                 String gradee = gradeStringToInt(split[4]);
-                join = String.join(",", firstName, lastName, subject, gradee).replaceAll("\n", " ");
-                sb.append(join).append(";");
+                join = String.join(",", firstName, lastName, subject, gradee);
+                sb.append(join.toLowerCase()).append(";");
             }
-            System.out.println(sb);
         }
-    return join;
+    return sb.toString();
     }
 }
-
-//    StringBuilder sb = new StringBuilder();
-//    String[] split = grades.split(";");
-//        for (String s : split) {
-//                String[] s1 = s.split(",");
-//                if (s1.length == 4) {
-//                String firstName = capitalize(s1[0]);
-//                String lastName = capitalize(s1[1]);
-//                String subject = s1[2].toLowerCase();
-//                String grade = gradeToString(s1[3]);
-//
-//                sb.append(firstName)
-//                .append(" ")
-//                .append(lastName)
-//                .append(" ")
-//                .append(subject)
-//                .append(" — ")
-//                .append(grade)
-//                .append("\n");
-//                }
-//                }
-//
-//                System.out.println(sb);
