@@ -5,7 +5,10 @@ import java.util.Scanner;
 public class CheckPrinter {
     public static void printCheck(String[] items) {
         for (String item: items) {
-
+            String[]split = item.split(", ");
+            System.out.printf("%-8s", split[0]);
+            System.out.printf("%-8s", split[1]);
+            System.out.printf("%-8s", split[2]);
         }
     }
 
