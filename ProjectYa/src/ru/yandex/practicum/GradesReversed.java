@@ -1,24 +1,33 @@
 package ru.yandex.practicum;
 
-
 import java.util.Scanner;
 
-public class Exceptions {
-    public static void main(String[] args) {
-        System.out.print("Введите целое число => ");
-        Scanner scanner = new Scanner(System.in);
-        final String inputValue = scanner.next();
-        try {
-            final int parsedValue = IntegerParser.parseInt(inputValue);
-            System.out.println(parsedValue);
-        } catch (NullStringException exception) {
-            System.out.println("Введена пустая строка.");
-        } catch (StringNotNumberException exception) {
-            System.out.println("Вы ввели не целое число.");
-        } catch (StringIsTooBigNumberException exception) {
-            System.out.println("Введённое число слишком большое.");
-        } catch (StringIsTooSmallNumberException exception) {
-            System.out.println("Введённое число слишком маленькое.");
+public class StackTraceExceptions {
+    public class StackTraceExceptions {
+        public static void main(String[] args) {
+            System.out.print("Введите целое число => ");
+            Scanner scanner = new Scanner(System.in);
+            final String inputValue = scanner.next();
+            try {
+                final int parsedValue = IntegerParser.parseInt(inputValue);
+                System.out.println(parsedValue);
+            } catch (NullStringException | EmptyStringException exception) {
+                printException("Введена пустая строка.", exception);
+            } catch (StringNotNumberException exception) {
+                printException("Вы ввели не целое число.", exception);
+            } catch (StringIsTooBigNumberException exception) {
+                printException("Введённое число слишком большое.", exception);
+            } catch (StringIsTooSmallNumberException exception) {
+                printException("Введённое число слишком маленькое.", exception);
+            }
+        }
+
+        private static void printException(final String message, final Throwable throwable) {
+            System.out.println(message);
+            if (throwable.getMessage()  != null) {
+                System.out.println(throwable.getMessage());
+            } else {
+                throwable.printStackTrace();
+            }
         }
     }
-}
