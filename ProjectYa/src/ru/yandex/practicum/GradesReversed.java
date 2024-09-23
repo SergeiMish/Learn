@@ -1,21 +1,24 @@
 package ru.yandex.practicum;
 
 
-import java.net.URI;
+import java.util.Scanner;
 
-public class Practicum {
+public class Exceptions {
     public static void main(String[] args) {
-        System.out.println(parseStringToURI("https://ya.ru"));
-        System.out.println(parseStringToURI("\\\\"));
-        System.out.println(parseStringToURI(null));
-    }
-
-    public static URI parseStringToURI(final String input) {
+        System.out.print("Введите целое число => ");
+        Scanner scanner = new Scanner(System.in);
+        final String inputValue = scanner.next();
         try {
-            return new URI(input);
-        } catch (Throwable e) {
-            System.err.println("Некорректный URI: " + e.getMessage());
-            return null;
+            final int parsedValue = IntegerParser.parseInt(inputValue);
+            System.out.println(parsedValue);
+        } catch (NullStringException exception) {
+            System.out.println("Введена пустая строка.");
+        } catch (StringNotNumberException exception) {
+            System.out.println("Вы ввели не целое число.");
+        } catch (StringIsTooBigNumberException exception) {
+            System.out.println("Введённое число слишком большое.");
+        } catch (StringIsTooSmallNumberException exception) {
+            System.out.println("Введённое число слишком маленькое.");
         }
     }
 }
