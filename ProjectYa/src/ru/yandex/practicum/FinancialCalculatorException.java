@@ -9,7 +9,7 @@ public class FinancialCalculatorException {
         try {
             calculate();
         } catch (LimitException exception) {
-            System.out.println("Превышен лимит ошибок ввода");
+            System.out.println(exception.getMessage());
         }
         // перехват исключения LimitException
     }
@@ -40,7 +40,7 @@ public class FinancialCalculatorException {
                 // сгенерируйте вывод формата "Ошибка ввода: " + информация об исключении
             }
         }
-        throw new LimitException("Превышен лимит ошибок ввода", attempts);
+        throw new LimitException("Превышен лимит ошибок ввода: " + attempts, attempts);
         // сгенерируйте исключение LimitException с сообщением "Превышен лимит ошибок ввода"
     }
 
@@ -62,7 +62,7 @@ public class FinancialCalculatorException {
                 System.out.println("Ошибка ввода: " + exception.getMessage());
             }
         }
-        throw new LimitException("Превышен лимит ошибок ввода", attempts);
+        throw new LimitException("Превышен лимит ошибок ввода: " + attempts, attempts);
         // сгенерируйте исключение LimitException
     }
 
