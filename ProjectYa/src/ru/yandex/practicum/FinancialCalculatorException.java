@@ -4,13 +4,18 @@ import java.util.Scanner;
 
 public class FinancialCalculatorException {
     final static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        calculate();
+        try {
+            calculate();
+        } catch (LimitException exception) {
+            System.out.println("Превышен лимит ошибок ввода");
+        }
         // перехват исключения LimitException
     }
 
     public static double getInterest(final double rate, final int time, final double principal) {
-        final double multiplier = Math.pow(1.0 + rate/100.0, time) - 1.0;
+        final double multiplier = Math.pow(1.0 + rate / 100.0, time) - 1.0;
         return multiplier * principal;
     }
 
@@ -20,16 +25,22 @@ public class FinancialCalculatorException {
                 System.out.println(greeting + " => ");
                 try {
                     final int value = Integer.parseInt(scanner.nextLine());
+                    if (value < 0) {
+                        throw new InputException("Введено отрицательное значение");
+                    }
                     // проверка на отрицательное значение
                     // сгенерируйте исключение "Введено отрицательное значение"
                     return value;
                 } catch (NumberFormatException exception) {
+                    System.out.println("Введено не число");
                     // сгенерируйте исключение "Введено не число"
                 }
             } catch (InputException exception) {
+                System.out.println("Ошибка ввода: " + exception.getMessage());
                 // сгенерируйте вывод формата "Ошибка ввода: " + информация об исключении
             }
         }
+        throw new LimitException("Превышен лимит ошибок ввода", attempts);
         // сгенерируйте исключение LimitException с сообщением "Превышен лимит ошибок ввода"
     }
 
@@ -40,16 +51,18 @@ public class FinancialCalculatorException {
                 // добавьте недостающий код
                 try {
                     final double value = Double.parseDouble(scanner.nextLine());
-                    // ...
-                    // ...
+                    if (value < 0) {
+                        throw new InputException("Введено отрицательное значение");
+                    }
                     return value;
                 } catch (NumberFormatException exception) {
-                    // ...
+                    System.out.println("Введено не число");
                 }
             } catch (InputException exception) {
-                // ...
+                System.out.println("Ошибка ввода: " + exception.getMessage());
             }
         }
+        throw new LimitException("Превышен лимит ошибок ввода", attempts);
         // сгенерируйте исключение LimitException
     }
 
