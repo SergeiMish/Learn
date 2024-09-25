@@ -1,99 +1,97 @@
 package ru.yandex.practicum;
 
 import java.io.IOException;
-import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
-class Practicum {
+public class Practicum {
 
-    private static final Scanner scanner = new Scanner(System.in);
-    private static final List<Validator> passwordValidators = List.of(
-            new PasswordLengthValidator(5), new PasswordStrengthValidator()
-    );
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-    private static final List<Validator> nameValidators = List.of(
-            new NameValidator());// поработайте со списком
-
-    public static void main(String[] args) throws IOException {
-        loop();
-    }
-
-    public static void loop(){
         while (true) {
-            final String action = getAction();
-            if ("1".equals(action)) {
-                addUser();
-            } else if ("2".equals(action)) {
-                showUserPassword();
-            } else {
+            printMenu();
+            String command = scanner.nextLine();
+
+            System.out.println("Введите путь к файлу/директории: ");
+            String enteredPath = scanner.nextLine();
+            Path path = Paths.get(enteredPath); // создайте переменную пути
+            if (!Files.isExecutable(path)) { // проверьте, не ошибся ли пользователь
+                System.out.println("Введённый путь не существует.");
                 break;
             }
+            switch (command) {
+                case "exit":
+                    System.out.println("Выход.");
+                    System.exit(0); // пользователь хочет найти выход, выход есть всегда
+                    break;
+                case "ls":
+                    try {
+                        for (String element : path.toFile().list()) {
+                            System.out.println(element);
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Произошла ошибка при запросе содержимого директории.");
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case "mkdir":
+                    try {
+                        Files.createDirectory(path);
+                    } catch (IOException e) {
+                        System.out.println("Произошла ошибка при создании директории.");
+                        e.printStackTrace();
+                    }
+                    break;
+                case "touch":
+                    try {
+                        Files.createFile(path);
+                    } catch (IOException e) {
+                        System.out.println("Произошла ошибка при создании файла.");
+                        e.printStackTrace();
+                    }
+                    break;
+                case "rename":
+                    System.out.println("Введите новое имя файла/директории: ");
+                    String newName = scanner.nextLine();
+
+                    try {
+                        Files.move(path, Path.of(newName), StandardCopyOption.REPLACE_EXISTING); // с помощью опции StandardCopyOption.REPLACE_EXISTING
+                    } catch (IOException e) {
+                        System.out.println("Произошла ошибка при переименовании файла/директории.");
+                        e.printStackTrace();
+                    }
+                    break;
+                case "rm_file":
+                    try {
+                        if (!Files.isDirectory(path)) {
+                            Files.deleteIfExists(path);
+                        } else {
+                            System.out.println("С помощью этой команды можно удалить только файл!");
+                        }
+                    } catch (IOException e) {
+                        System.out.println("Произошла ошибка при удалении файла.");
+                        e.printStackTrace();
+                    }
+                default:
+                    System.out.println("Извините, такой команды пока нет.");
+            }
+
         }
     }
 
-    private static void checkValidatorRules(
-            final List<Validator> validators, final String value
-    ) throws ValidateException {
-        for (Validator validator: validators) {
-            validator.validate(value);
-        }
+    public static void printMenu() {
+        System.out.println("Что вы хотите сделать? ");
+        System.out.println("ls - посмотреть содержимое директории.");
+        System.out.println("mkdir - создать директорию.");
+        System.out.println("touch - создать файл.");
+        System.out.println("rename - переименовать директорию/файл.");
+        System.out.println("rm_file - удалить файл.");
+        System.out.println("exit - выход.");
     }
 
-    private static void addUser() {
-        final PasswordStorage storage = new PasswordMemoryStorage();
-        // добавьте отлов исключений ValidateNameException и ValidatePasswordException
-        // закройте хранилище
-        try {
-            storage.open();
-            System.out.println("Введите имя пользователя => ");
-            final String name = scanner.nextLine();
-            checkValidatorRules(nameValidators, name);
-            System.out.println("Введите пароль пользователя => ");
-            final String password = scanner.nextLine();
-            checkValidatorRules(passwordValidators, password);
-            storage.store(name, password);
-        }catch (ValidatePasswordException e){
-            System.out.println("Ошибка валидации пароля: " + e.getMessage());
-        } catch (ValidateNameException e){
-            System.out.println("Ошибка валидации имени: " + e.getMessage());
-        } catch (ValidateException e) {
-            System.out.println("Ошибка валидации: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println();
-        } finally {
-            storage.close();
-        }
-    }
-
-    private static void showUserPassword(){
-        final PasswordStorage storage = new PasswordMemoryStorage();
-        // добавьте отлов исключения ValidateNameException
-        // закройте хранилище
-        try {
-            storage.open();
-            System.out.println("Введите имя пользователя => ");
-            final String name = scanner.nextLine();
-            checkValidatorRules(nameValidators, name);
-            final String password = storage.get(name);
-            System.out.println(String.format("Пароль пользователя %s = %s", name, password));
-        }catch (ValidatePasswordException e){
-            System.out.println("Ошибка валидации пароля: " + e.getMessage());
-        } catch (ValidateNameException e){
-            System.out.println("Ошибка валидации имени: " + e.getMessage());
-        } catch (ValidateException e) {
-            System.out.println("Ошибка валидации: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("Ошибка работы с хранилищем: " + e.getMessage());
-        } finally {
-            storage.close();
-        }
-    }
-
-    private static String getAction() {
-        System.out.println("1 - добавить пользователя с паролем");
-        System.out.println("2 - отобразить пароль пользователя");
-        System.out.println("другие символы - выход");
-        System.out.println("Выберите действие => ");
-        return scanner.nextLine();
-    }
 }
