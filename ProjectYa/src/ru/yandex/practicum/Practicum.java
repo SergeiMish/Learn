@@ -14,20 +14,15 @@ public class Practicum {
         FileReader reader = new FileReader("result.txt");
         BufferedReader br = new BufferedReader(reader);
 
-        while (br.ready()) {
-            int count = 0;
-            String name = br.readLine();
-            if (name.equals(br.readLine())) {
-                count++;
-                frequencyMap.put(name, count);
-            }
-            System.out.println(name + ": " + count);
-        } reader.close();
-    }
-
-
+        String line;
+        while ((line = br.readLine()) != null) {
+            frequencyMap.put(line, frequencyMap.getOrDefault(line, 0) + 1);
+        }
+        br.close();
         // читайте файл построчно и сразу обновляйте frequencyMap.
-
         // выведите результат в формате "<буква>: <количество>".
-
+        for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
     }
+}
