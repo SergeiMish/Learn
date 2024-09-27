@@ -1,8 +1,6 @@
 package ru.yandex.practicum;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,11 +16,10 @@ public class Practicum {
         int playersNumber = scanner.nextInt();
 
         List<String> words = readWordsFromFile("words.txt");
-        if (words.size() < playersNumber){
+        if (words.size() < playersNumber) {
             System.out.println("Недостаточно слов в файле. Добавьте слова и обновите файл.");
             return;
-        }
-        else {
+        } else {
             Collections.shuffle(words);
         }
 
@@ -46,9 +43,9 @@ public class Practicum {
     }
 
     private static List<String> readWordsFromFile(String filename) {
-        List<String>list = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename, StandardCharsets.UTF_8))){
-            while (br.ready()){
+        List<String> list = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename, StandardCharsets.UTF_8))) {
+            while (br.ready()) {
                 String line = br.readLine();
                 list.add(line);
             }
@@ -62,8 +59,16 @@ public class Practicum {
     }
 
     private static void writeListToFile(List<String> list, String filename) {
-
-        // добавьте запись слов в файл с помощью FileWriter
-        // в случае ошибки выведите сообщение: "Произошла ошибка во время записи файла."
+        try (FileWriter writer = new FileWriter(filename)) {
+            for (String line : list) {
+                writer.write(line);
+                writer.write(System.lineSeparator());
+            }
+        } catch (IOException e) {
+            System.out.println("Произошла ошибка во время записи файла."); // Обработка исключений
+        }
     }
 }
+        // добавьте запись слов в файл с помощью FileWriter
+        // в случае ошибки выведите сообщение: "Произошла ошибка во время записи файла."
+
