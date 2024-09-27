@@ -2,7 +2,6 @@ package ru.yandex.practicum;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -19,6 +18,13 @@ public class Practicum {
         int playersNumber = scanner.nextInt();
 
         List<String> words = readWordsFromFile("words.txt");
+        if (words.size() < playersNumber){
+            System.out.println("Недостаточно слов в файле. Добавьте слова и обновите файл.");
+            return;
+        }
+        else {
+            Collections.shuffle(words);
+        }
 
         // если слов меньше, чем участников, то выведите сообщение:
         // "Недостаточно слов в файле. Добавьте слова и обновите файл."
@@ -40,11 +46,23 @@ public class Practicum {
     }
 
     private static List<String> readWordsFromFile(String filename) {
+        List<String>list = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename, StandardCharsets.UTF_8))){
+            while (br.ready()){
+                String line = br.readLine();
+                list.add(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Произошла ошибка во время чтения файла.");
+        }
+        return list;
+
         // добавьте построчное чтение из файла с помощью BufferedReader
         // в случае ошибки выведите сообщение: "Произошла ошибка во время чтения файла."
     }
 
     private static void writeListToFile(List<String> list, String filename) {
+
         // добавьте запись слов в файл с помощью FileWriter
         // в случае ошибки выведите сообщение: "Произошла ошибка во время записи файла."
     }
