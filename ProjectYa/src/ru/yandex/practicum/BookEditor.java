@@ -1,65 +1,70 @@
 package ru.yandex.practicum;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
-public class BookEditor {
-
-    private HeaderDecorator headerDecorator;
-    private List<LineProcessor> lineProcessors = new ArrayList<>();
+public class UniversityExample {
 
     public static void main(String[] args) {
-        BookEditor bookEditor = new BookEditor();
+        //множество студентов, успешно сдавших экзамен
+        Set<String> examPassedNames = new HashSet<>();
+        examPassedNames.add("Иванов Иван");
+        examPassedNames.add("Практикумова Яна");
 
-        bookEditor.setHeaderDecorator(header -> header.toUpperCase() + "\n");
+        //соответствие года поступления и названия группы
+        Map<Integer, String> groupNames = new HashMap<>();
+        groupNames.put(2020, "2020-ГР1");
+        groupNames.put(2021, "2021-ГР0");
 
-        bookEditor.addLineProcessor(line -> line.substring(0, 1).toUpperCase() + line.substring(1));
+        //список с адресами email выпускников
+        List<String> graduatesClub = new ArrayList<>();
 
-        bookEditor.addLineProcessor(line -> line + "\n");
+        //студенты, планирующие завершить обучение
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Практикумова", "Яна", "yana@yandex.ru", 2021));
+        students.add(new Student("Иванов", "Иван", "ivan_ivanov@mail.ru", 2020));
+        students.add(new Student("Сергеев", "Дмитрий", "iamdmitry@gmail.com", 2021));
 
-        List<String> content = Arrays.asList(
-                "Приключения Java-программиста",
-                "История началась рано утром, ",
-                "когда программист вышел из дома, ",
-                "решив выпить утренний кофе."
-        );
+        List<Student> graduatedStudents = students.stream()
+                .filter(/* проверка, что студент успешно сдал экзамен */)
+                .map(/* заполнение названия группы студента */)
+                // операция peek выполняет над элементом действие и передаёт далее тот же элемент
+                .peek(/* добавление студента в клуб выпускников */)
+                .collect(Collectors.toList());
 
-        List<String> resultContent = bookEditor.processText(content);
-        System.out.println(resultContent);
-    }
-
-    public List<String> processText(List<String> sourceText) {
-        List<String> resultText = new ArrayList<>();
-
-        String sourceHeader = sourceText.get(0);
-        String decoratedHeader = headerDecorator.decorate(sourceHeader);
-        resultText.add(decoratedHeader);
-
-        for (int i = 1; i < sourceText.size(); i++) {
-            String currentLine = sourceText.get(i);
-            for (LineProcessor processor : lineProcessors) {
-                currentLine = processor.processLine(currentLine);
-            }
-            resultText.add(currentLine);
+        for (Student student : graduatedStudents) {
+            System.out.println(student);
         }
 
-        return resultText;
-    }
+        for (String email: graduatesClub) {
+            System.out.println(email);
+        }
 
-    public void setHeaderDecorator(HeaderDecorator headerDecorator) {
-        this.headerDecorator = headerDecorator;
-    }
-
-    public void addLineProcessor(LineProcessor lineProcessor) {
-        this.lineProcessors.add(lineProcessor);
     }
 }
 
-interface HeaderDecorator {
-    String decorate(String header);
-}
+class Student {
+    String surname;
+    String name;
+    String email;
+    int entranceYear;
+    String groupName;
 
-interface LineProcessor {
-    String processLine(String line);
+    public Student(String surname, String name, String email, int entranceYear) {
+        this.surname = surname;
+        this.name = name;
+        this.email = email;
+        this.entranceYear = entranceYear;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", entranceYear=" + entranceYear +
+                ", groupName='" + groupName + '\'' +
+                '}';
+    }
 }
