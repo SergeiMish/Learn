@@ -26,9 +26,7 @@ public class UniversityExample {
         students.add(new Student("Сергеев", "Дмитрий", "iamdmitry@gmail.com", 2021));
 
         List<Student> graduatedStudents = students.stream()
-                .filter(student -> {
-                    return examPassedNames.contains(student.surname + " " + student.name);
-                })// Проверка, что студент успешно сдал экзамен
+                .filter(student -> examPassedNames.contains(student.surname + " " + student.name))// Проверка, что студент успешно сдал экзамен
                 .map(student -> {
                     student.groupName = groupNames.get(student.entranceYear);
                     return student;
