@@ -1,7 +1,6 @@
 package ru.yandex.practicum;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class UniversityExample {
 
@@ -26,11 +25,12 @@ public class UniversityExample {
         students.add(new Student("Сергеев", "Дмитрий", "iamdmitry@gmail.com", 2021));
 
         List<Student> graduatedStudents = students.stream()
-                .filter(/* проверка, что студент успешно сдал экзамен */)
-                .map(/* заполнение названия группы студента */)
-                // операция peek выполняет над элементом действие и передаёт далее тот же элемент
-                .peek(/* добавление студента в клуб выпускников */)
-                .collect(Collectors.toList());
+                .filter(student -> examPassedNames.contains(student.surname + student.name)) // Проверка, что студент успешно сдал экзамен
+                .map(student -> {
+                    student.groupName = groupNames.get(student.entranceYear); // Заполнение названия группы студента
+                    return student;
+                })
+                .peek(student -> graduatesClub.add(student.email)).toList();
 
         for (Student student : graduatedStudents) {
             System.out.println(student);
