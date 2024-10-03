@@ -16,17 +16,16 @@ public class ArithmeticOperationExample {
     }
 
     private static BiFunction<Integer, Integer, Integer> getOperation(String sign) {
-        switch (sign) {
-            case "+": return (value1, value2) -> value1 + value2;
-            case "-": return (value1, value2) -> value1 - value2;
-            case "*": return (value1, value2) -> value1 * value2;
-            case "/": return (value1, value2) -> value1 / value2;
-            case "max": return Math::max;
-            case "min": return Math::min;
+        return switch (sign) {
+            case "+" -> Integer::sum;
+            case "-" -> (value1, value2) -> value1 - value2;
+            case "*" -> (value1, value2) -> value1 * value2;
+            case "/" -> (value1, value2) -> value1 / value2;
+            case "max" -> Math::max;
+            case "min" -> Math::min;
             //вставьте код здесь
-            default:
-                throw new IllegalArgumentException("Неизвестная операция");
-        }
+            default -> throw new IllegalArgumentException("Неизвестная операция");
+        };
 
     }
 }
