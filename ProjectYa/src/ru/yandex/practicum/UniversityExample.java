@@ -1,72 +1,32 @@
 package ru.yandex.practicum;
+import java.util.function.BiFunction;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
-public class UniversityExample {
+public class ArithmeticOperationExample {
 
     public static void main(String[] args) {
-        //множество студентов, успешно сдавших экзамен
-        Set<String> examPassedNames = new HashSet<>();
-        examPassedNames.add("Иванов Иван");
-        examPassedNames.add("Практикумова Яна");
+        BiFunction<Integer, Integer, Integer> plusOperation = getOperation("+");
+        BiFunction<Integer, Integer, Integer> divideOperation = getOperation("/");
+        BiFunction<Integer, Integer, Integer> minOperation = getOperation("min");
+        BiFunction<Integer, Integer, Integer> maxOperation = getOperation("max");
 
-        //соответствие года поступления и названия группы
-        Map<Integer, String> groupNames = new HashMap<>();
-        groupNames.put(2020, "2020-ГР1");
-        groupNames.put(2021, "2021-ГР0");
-
-        //список с адресами email выпускников
-        List<String> graduatesClub = new ArrayList<>();
-
-        //студенты, планирующие завершить обучение
-        List<Student> students = new ArrayList<>();
-        students.add(new Student("Практикумова", "Яна", "yana@yandex.ru", 2021));
-        students.add(new Student("Иванов", "Иван", "ivan_ivanov@mail.ru", 2020));
-        students.add(new Student("Сергеев", "Дмитрий", "iamdmitry@gmail.com", 2021));
-
-        List<Student> graduatedStudents = students.stream()
-                .filter(student -> examPassedNames.contains(student.surname + " " + student.name))// Проверка, что студент успешно сдал экзамен
-                .map(student -> {
-                    student.groupName = groupNames.get(student.entranceYear);
-                    return student;
-                })
-                .peek(student -> graduatesClub.add(student.email))
-                .collect(Collectors.toList());
-
-        for (Student student : graduatedStudents) {
-            System.out.println(student);
-        }
-
-        for (String email: graduatesClub) {
-            System.out.println(email);
-        }
-
-    }
-}
-
-class Student {
-    String surname;
-    String name;
-    String email;
-    int entranceYear;
-    String groupName;
-
-    public Student(String surname, String name, String email, int entranceYear) {
-        this.surname = surname;
-        this.name = name;
-        this.email = email;
-        this.entranceYear = entranceYear;
+        System.out.println(plusOperation.apply(5, 11));
+        System.out.println(divideOperation.apply(12, 3));
+        System.out.println(minOperation.apply(15, 7));
+        System.out.println(maxOperation.apply(15, 7));
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", entranceYear=" + entranceYear +
-                ", groupName='" + groupName + '\'' +
-                '}';
+    private static BiFunction<Integer, Integer, Integer> getOperation(String sign) {
+        switch (sign) {
+            case "+": return (value1, value2) -> value1 + value2;
+            case "-": return (value1, value2) -> value1 - value2;
+            case "*": return (value1, value2) -> value1 * value2;
+            case "/": return (value1, value2) -> value1 / value2;
+            case "max": return Math::max;
+            case "min": return Math::min;
+            //вставьте код здесь
+            default:
+                throw new IllegalArgumentException("Неизвестная операция");
+        }
+
     }
 }
