@@ -3,6 +3,7 @@ package ru.yandex.practicum;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 class Candy {
     //название
@@ -45,7 +46,7 @@ class CandyBox {
     //добавьте конструктор
 
     public static boolean isProducerAllowed(Candy candy) {
-        return prohibitedProducers.contains(candy.name);
+        return prohibitedProducers.contains(candy.producer);
         //добаьте тело метода
     }
 
@@ -68,8 +69,12 @@ public class CandyBoxesStore {
         List<Candy> candies = List.of(candy1, candy2, candy3, candy4);
 
         List<Candy> candiesForBox = candies.stream()//добавьте код здесь
+                .filter(candy -> candy.price > 5)
+                .map(candy -> new Candy(candy.name, candy.producer, candy.price - 5, candy.amountSold, candy.alternateNames))
                 .filter(CandyBox::isProducerAllowed)
-                
+                .sorted(Candy::compareByName)
+                .collect(Collectors.toList());
+
 
         CandyBox candyBox = new CandyBox("С Новым Годом", candiesForBox);
 
