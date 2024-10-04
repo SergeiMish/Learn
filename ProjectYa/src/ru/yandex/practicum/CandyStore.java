@@ -25,11 +25,11 @@ class Candy {
 
     public static int compareByPrice(Candy c1, Candy c2) {
         //вставьте код здесь
-        return Math.min(c1.price, c2.price);
+       return Integer.compare(c1.price, c2.price);
     }
 
     public void printNameWithPrice() {
-        System.out.println();
+        System.out.println(name + " " + price);
         //вставьте код здесь
     }
 
