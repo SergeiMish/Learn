@@ -1,9 +1,8 @@
 package ru.yandex.practicum;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Set;
 
 class Candy {
     final String name;
@@ -30,6 +29,7 @@ class Candy {
     }
 
     public void printNameWithPrice() {
+        System.out.println();
         //вставьте код здесь
     }
 
@@ -56,10 +56,10 @@ public class CandyStore {
 
         System.out.println("Сортировка по имени");
         Arrays.sort(candies, Candy::compareByName);
-        Arrays.stream(candies).forEach(/* вставьте код здесь*/);
+        Arrays.stream(candies).forEach(Candy::printNameWithPrice);
 
         System.out.println("Сортировка по цене");
-        Arrays.sort(candies, /* вставьте код здесь*/);
-        Arrays.stream(candies).forEach(/* вставьте код здесь*/);
+        Arrays.sort(candies, Candy::compareByPrice);
+        Arrays.stream(candies).forEach(Candy::printNameWithPrice);
     }
 }
