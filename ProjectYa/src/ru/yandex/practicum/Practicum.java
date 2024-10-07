@@ -1,6 +1,7 @@
 package ru.yandex.practicum;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 
@@ -15,11 +16,11 @@ class Practicum {
 
     private static int decode(LocalDate secretDate, LocalTime secretTime) {
         // объедините secretDate и secretTime
-        ... newTime = ...
+        LocalDateTime newTime = LocalDateTime.of(secretDate, secretTime);
 
         // вычтите 2 месяца, 25 дней и 100 минут
-        ... secretMoment = ...
+        LocalDateTime secretMoment = newTime.minusMonths(2).minusDays(25).minusMinutes(100);
         // найдите произведение порядкового номера дня в году и часов из secretMoment
-        return ... * ...;
+        return secretMoment.getDayOfYear() * secretMoment.getHour();
     }
 }
