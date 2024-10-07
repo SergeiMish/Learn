@@ -1,26 +1,36 @@
 package ru.yandex.practicum;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.Duration;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 
 class Practicum {
     public static void main(String[] args) {
-        LocalDate secretDate = LocalDate.of(2020, 1, 10);
-        LocalTime secretTime = LocalTime.of(12, 30);
+        // время начала работы над задачей — 9:00
+        LocalTime taskStart = LocalTime.of(...);
+        // время окончания работы над задачей — 11:30
+        LocalTime taskFinish = LocalTime.of(...);
 
-        int result = decode(secretDate, secretTime);
-        System.out.println(result);
-    }
+        // опишите формат вывода в виде часы:минуты
+        DateTimeFormatter formatter = ...
 
-    private static int decode(LocalDate secretDate, LocalTime secretTime) {
-        // объедините secretDate и secretTime
-        LocalDateTime newTime = LocalDateTime.of(secretDate, secretTime);
+        // найдите продолжительность между двумя единицами времени
+        Duration duration = ...
 
-        // вычтите 2 месяца, 25 дней и 100 минут
-        LocalDateTime secretMoment = newTime.minusMonths(2).minusDays(25).minusMinutes(100);
-        // найдите произведение порядкового номера дня в году и часов из secretMoment
-        return secretMoment.getDayOfYear() * secretMoment.getHour();
+        // taskStart должен быть выведен в указанном формате
+        System.out.println("В прошлый раз задача была начата в " + ... + ",");
+        // taskFinish должен быть выведен в указанном формате
+        System.out.println("а закончена в " + ... + ".");
+
+        LocalTime now = LocalTime.now();
+        // now должен быть выведен в указанном формате
+        System.out.println("Сейчас " + ... + ".");
+
+        // прибавьте к текущему моменту вычисленную продолжительность
+        LocalTime finishTime = ...;
+
+        // finishTime должен быть выведен в указанном формате
+        System.out.println("Значит, задача будет выполнена к " + ... + ".");
     }
 }
