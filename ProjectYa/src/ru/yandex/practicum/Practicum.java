@@ -13,7 +13,7 @@ class Practicum {
         LocalTime taskFinish = LocalTime.of(11,30);
 
         // опишите формат вывода в виде часы:минуты
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh.mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
         // найдите продолжительность между двумя единицами времени
         Duration duration = Duration.between(taskStart, taskFinish);
