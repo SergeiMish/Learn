@@ -1,5 +1,7 @@
 package ru.yandex.practicum;
 
+import java.util.Comparator;
+import java.util.Objects;
 import java.util.Optional;
 
 public class SearchService {
@@ -15,7 +17,8 @@ public class SearchService {
     // Для поиска товара на складе поставщиков используется метод supplierSearch
     // Если товар нигде не найден, то возвращается пустой Optional
     public Optional<Candy> search(String candyName) {
-
+        return warehouse.search(candyName)
+                .or(() -> supplierSearch(candyName));
         // Реализуйте данный метод, с использованием методов Optional
     }
 
@@ -23,6 +26,10 @@ public class SearchService {
     // Возвращает Optional с самым дешевым вариантом товара среди всех
     // поставщиков или пустой Optional, если товар не найден
     private Optional<Candy> supplierSearch(String candyName) {
+        return srm.listSuppliers().stream()
+                .map(supplier -> srm.getProduct(supplier, candyName))
+                .filter(Objects::nonNull)
+                .min(Comparator.comparingDouble(candy -> candy.price));
         // Реализуйте данный метод при помощи Stream API и Optional,
         // используйте метод min из Stream API для нахождения товара с наименьшей ценой
     }

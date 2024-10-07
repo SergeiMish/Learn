@@ -17,11 +17,9 @@ public class Warehouse {
     // Возвращает пустой Optional, если конфеты отсутствуют
     // или в обратном случае Optional, содержащий соответствующие конфеты
     public Optional<Candy> search(String name) {
-        search(name).ifPresentOrElse(
-                candy -> System.out.println(name),
-        () -> System.out.println("")
-        );
-        return search(name);
+        return candies.stream()
+                .filter(candy -> candy.name.equals(name) || candy.alternativeNames.contains(name))
+                .findFirst();
         // Реализуйте данный метод с использованием Stream API
     }
 }
