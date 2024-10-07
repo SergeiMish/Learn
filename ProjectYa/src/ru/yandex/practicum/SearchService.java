@@ -15,6 +15,7 @@ public class SearchService {
     // Для поиска товара на складе поставщиков используется метод supplierSearch
     // Если товар нигде не найден, то возвращается пустой Optional
     public Optional<Candy> search(String candyName) {
+
         // Реализуйте данный метод, с использованием методов Optional
     }
 
