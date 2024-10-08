@@ -26,7 +26,7 @@ class Practicum {
 
     private static void convertAndPrintTime(DateTimeFormatter formatter, ZonedDateTime moscowDateTime, String cityName, String region) {
         ZoneId newZone = ZoneId.of(region); // создайте ZoneId из region
-        ZonedDateTime newDateTime = moscowDateTime.withZoneSameLocal(newZone); // измените временную зону у moscowDateTime
+        ZonedDateTime newDateTime = moscowDateTime.withZoneSameInstant(newZone); // измените временную зону у moscowDateTime
 
         printTime(formatter, newDateTime, cityName);
     }
