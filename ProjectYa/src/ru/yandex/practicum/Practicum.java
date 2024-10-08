@@ -2,7 +2,6 @@ package ru.yandex.practicum;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 
@@ -40,12 +39,12 @@ class Practicum {
 
         // сравните продолжительность в секундах с количеством секунд в сутках
         // воспользуйтесь константой SECONDS_IN_DAY
-        if (duration >= SECONDS_IN_DAY) {
+        if (duration.getSeconds() == SECONDS_IN_DAY) {
             // выведите продолжительность в днях
-            System.out.println("Дней на гиперпрыжок: " + ...);
+            System.out.println("Дней на гиперпрыжок: " + duration.toDays());
         } else {
             // выведите продолжительность в минутах
-            System.out.println("Минут на гиперпрыжок: " + ...);
+            System.out.println("Минут на гиперпрыжок: " + duration.toMinutes());
         }
         System.out.println();
     }
