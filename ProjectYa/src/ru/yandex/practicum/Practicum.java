@@ -39,7 +39,7 @@ class Practicum {
 
         // сравните продолжительность в секундах с количеством секунд в сутках
         // воспользуйтесь константой SECONDS_IN_DAY
-        if (duration.getSeconds() == SECONDS_IN_DAY) {
+        if (duration.getSeconds() >= SECONDS_IN_DAY) {
             // выведите продолжительность в днях
             System.out.println("Дней на гиперпрыжок: " + duration.toDays());
         } else {
