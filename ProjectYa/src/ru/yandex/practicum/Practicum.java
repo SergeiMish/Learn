@@ -1,36 +1,52 @@
 package ru.yandex.practicum;
 
 import java.time.Duration;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 
 class Practicum {
+    public static final int SECONDS_IN_DAY = 60 * 60 * 24;
+
     public static void main(String[] args) {
-        // время начала работы над задачей — 9:00
-        LocalTime taskStart = LocalTime.of(9,00);
-        // время окончания работы над задачей — 11:30
-        LocalTime taskFinish = LocalTime.of(11,30);
+        LocalDateTime firstStart = LocalDateTime.of(2099, 10, 10, 12, 5);
+        LocalDateTime firstFinish = LocalDateTime.of(2099, 10, 10, 14, 15);
 
-        // опишите формат вывода в виде часы:минуты
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        LocalDateTime secondStart = LocalDateTime.of(2099, 10, 10, 12, 0);
+        LocalDateTime secondFinish = LocalDateTime.of(2099, 10, 11, 15, 30);
 
-        // найдите продолжительность между двумя единицами времени
-        Duration duration = Duration.between(taskStart, taskFinish);
+        LocalDateTime thirdStart = LocalDateTime.of(2099, 10, 10, 23, 10);
+        LocalDateTime thirdFinish = LocalDateTime.of(2099, 10, 11, 10, 25);
 
-        // taskStart должен быть выведен в указанном формате
-        System.out.println("В прошлый раз задача была начата в " + taskStart.format(formatter) + ",");
-        // taskFinish должен быть выведен в указанном формате
-        System.out.println("а закончена в " + taskFinish.format(formatter) + ".");
 
-        LocalTime now = LocalTime.now();
-        // now должен быть выведен в указанном формате
-        System.out.println("Сейчас " + now.format(formatter) + ".");
+        printGap(firstStart, firstFinish);
+        printGap(secondStart, secondFinish);
+        printGap(thirdStart, thirdFinish);
+    }
 
-        // прибавьте к текущему моменту вычисленную продолжительность
-        LocalTime finishTime = now.plus(duration);
+    private static void printGap(LocalDateTime start, LocalDateTime finish) {
+        // используйте паттерн "dd.MM.yyyy, HH:mm"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm");
 
-        // finishTime должен быть выведен в указанном формате
-        System.out.println("Значит, задача будет выполнена к " + finishTime.format(formatter) + ".");
+        System.out.println("Вход в гиперпространство:");
+        // вывод должен быть в корректном формате
+        System.out.println(start.format(formatter));
+        System.out.println("Выход из гиперпространства:");
+        // вывод должен быть в корректном формате
+        System.out.println(finish.format(formatter));
+        // найдите продолжительность
+        Duration duration = Duration.between(start, finish);
+
+        // сравните продолжительность в секундах с количеством секунд в сутках
+        // воспользуйтесь константой SECONDS_IN_DAY
+        if (duration >= SECONDS_IN_DAY) {
+            // выведите продолжительность в днях
+            System.out.println("Дней на гиперпрыжок: " + ...);
+        } else {
+            // выведите продолжительность в минутах
+            System.out.println("Минут на гиперпрыжок: " + ...);
+        }
+        System.out.println();
     }
 }
