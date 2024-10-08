@@ -10,11 +10,11 @@ class Practicum {
         Instant now = Instant.now();
 
         // укажите корректный формат вывода даты
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(...);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy; HH:mm:ss. ZZZZZ");
 
         // создайте экземпляр ZoneId для Москвы
-        ZoneId moscowZone = ...
-        ZonedDateTime moscowDateTime = ...
+        ZoneId moscowZone = ZoneId.of("Europe/Moscow");
+        ZonedDateTime moscowDateTime = ZonedDateTime.ofInstant(now, moscowZone);
 
         printTime(formatter, moscowDateTime, "Москва");
 
@@ -25,8 +25,8 @@ class Practicum {
     }
 
     private static void convertAndPrintTime(DateTimeFormatter formatter, ZonedDateTime moscowDateTime, String cityName, String region) {
-        ZoneId newZone = ... // создайте ZoneId из region
-        ZonedDateTime newDateTime = ... // измените временную зону у moscowDateTime
+        ZoneId newZone = ZoneId.of(region); // создайте ZoneId из region
+        ZonedDateTime newDateTime = moscowDateTime.withZoneSameLocal(newZone); // измените временную зону у moscowDateTime
 
         printTime(formatter, newDateTime, cityName);
     }
@@ -34,6 +34,6 @@ class Practicum {
     private static void printTime(DateTimeFormatter formatter, ZonedDateTime dateTime, String cityName) {
         System.out.println(cityName + ":");
         // выведите dateTime в указанном в formatter формате
-        System.out.println(...);
+        System.out.println(dateTime.format(formatter));
     }
 }
