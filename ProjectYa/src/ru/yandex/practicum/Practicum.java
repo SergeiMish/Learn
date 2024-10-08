@@ -1,51 +1,80 @@
 package ru.yandex.practicum;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Arrays;
+import java.util.List;
 
+class Watch {
+    private ZonedDateTime currentTime;
+    private int numOfZone;
+    private final List<String> zones = Arrays.asList("America/New_York", "Asia/Vladivostok", "Europe/Moscow");
 
-class Practicum {
-    public static final int SECONDS_IN_DAY = 60 * 60 * 24;
-
-    public static void main(String[] args) {
-        LocalDateTime firstStart = LocalDateTime.of(2099, 10, 10, 12, 5);
-        LocalDateTime firstFinish = LocalDateTime.of(2099, 10, 10, 14, 15);
-
-        LocalDateTime secondStart = LocalDateTime.of(2099, 10, 10, 12, 0);
-        LocalDateTime secondFinish = LocalDateTime.of(2099, 10, 11, 15, 30);
-
-        LocalDateTime thirdStart = LocalDateTime.of(2099, 10, 10, 23, 10);
-        LocalDateTime thirdFinish = LocalDateTime.of(2099, 10, 11, 10, 25);
-
-
-        printGap(firstStart, firstFinish);
-        printGap(secondStart, secondFinish);
-        printGap(thirdStart, thirdFinish);
+    public Watch() {
+        numOfZone = 0;
+        ZoneId zone = ZoneId.of(zones.get(numOfZone));
+        LocalDateTime dateTime = LocalDateTime.of(2021, 1, 26, 0, 0);
+        currentTime = ZonedDateTime.of(dateTime, zone);
     }
 
-    private static void printGap(LocalDateTime start, LocalDateTime finish) {
-        // используйте паттерн "dd.MM.yyyy, HH:mm"
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm");
+    public void changeTimeZone() {
+        numOfZone = (numOfZone + 1) % 3;
+        ZoneId newZone = ZoneId.of(zones.get(numOfZone));
+        // смените временную зону (время должно остаться прежним)
+        currentTime = currentTime.withZoneSameLocal(newZone);
+    }
 
-        System.out.println("Вход в гиперпространство:");
-        // вывод должен быть в корректном формате
-        System.out.println(start.format(formatter));
-        System.out.println("Выход из гиперпространства:");
-        // вывод должен быть в корректном формате
-        System.out.println(finish.format(formatter));
-        // найдите продолжительность
-        Duration duration = Duration.between(start, finish);
+    public void addTenHours() {
+        // увеличьте текущее время на 10 часов
+        currentTime = currentTime.plusHours(10);
+    }
 
-        // сравните продолжительность в секундах с количеством секунд в сутках
-        // воспользуйтесь константой SECONDS_IN_DAY
-        if (duration.getSeconds() >= SECONDS_IN_DAY) {
-            // выведите продолжительность в днях
-            System.out.println("Дней на гиперпрыжок: " + duration.toDays());
-        } else {
-            // выведите продолжительность в минутах
-            System.out.println("Минут на гиперпрыжок: " + duration.toMinutes());
-        }
-        System.out.println();
+    public void addHour() {
+        // увеличьте текущее время на 1 час
+        currentTime = currentTime.plusHours(1);
+    }
+
+    public void addTenMinutes() {
+        // увеличьте текущее время на 10 минут
+        currentTime = currentTime.plusMinutes(10);
+    }
+
+    public void addMinute() {
+        // увеличьте текущее время на 1 минуту
+        currentTime = currentTime.plusMinutes(1);
+    }
+
+    public ZonedDateTime getCurrentTime() {
+        // верните текущее время
+        return this.currentTime;
+    }
+}
+
+class Practicum {
+    public static void main(String[] args) {
+        Watch watch = new Watch();
+
+        // Переключаем временную зону на Europe/Moscow
+        watch.changeTimeZone(); // Переключаем на Asia/Vladivostok
+        watch.changeTimeZone(); // Переключаем на Europe/Moscow
+
+        // Добавляем 18 часов и 26 минут
+        watch.addTenHours();
+        watch.addTenHours(); // Добавляем 20 часов
+        watch.addHour(); // Убираем 2 часа (20 - 2 = 18)
+        watch.addHour();
+        watch.addTenMinutes();
+        watch.addTenMinutes();
+
+        watch.addMinute();
+        watch.addMinute();
+        watch.addMinute();
+        watch.addMinute();
+        watch.addMinute();
+        watch.addMinute();
+
+        // Выводим текущее время
+        System.out.println(watch.getCurrentTime());
     }
 }
