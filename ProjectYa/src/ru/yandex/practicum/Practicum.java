@@ -1,80 +1,39 @@
 package ru.yandex.practicum;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.Arrays;
-import java.util.List;
-
-class Watch {
-    private ZonedDateTime currentTime;
-    private int numOfZone;
-    private final List<String> zones = Arrays.asList("America/New_York", "Asia/Vladivostok", "Europe/Moscow");
-
-    public Watch() {
-        numOfZone = 0;
-        ZoneId zone = ZoneId.of(zones.get(numOfZone));
-        LocalDateTime dateTime = LocalDateTime.of(2021, 1, 26, 0, 0);
-        currentTime = ZonedDateTime.of(dateTime, zone);
-    }
-
-    public void changeTimeZone() {
-        numOfZone = (numOfZone + 1) % 3;
-        ZoneId newZone = ZoneId.of(zones.get(numOfZone));
-        // смените временную зону (время должно остаться прежним)
-        currentTime = currentTime.withZoneSameLocal(newZone);
-    }
-
-    public void addTenHours() {
-        // увеличьте текущее время на 10 часов
-        currentTime = currentTime.plusHours(10);
-    }
-
-    public void addHour() {
-        // увеличьте текущее время на 1 час
-        currentTime = currentTime.plusHours(1);
-    }
-
-    public void addTenMinutes() {
-        // увеличьте текущее время на 10 минут
-        currentTime = currentTime.plusMinutes(10);
-    }
-
-    public void addMinute() {
-        // увеличьте текущее время на 1 минуту
-        currentTime = currentTime.plusMinutes(1);
-    }
-
-    public ZonedDateTime getCurrentTime() {
-        // верните текущее время
-        return this.currentTime;
-    }
-}
+import java.time.format.DateTimeFormatter;
 
 class Practicum {
     public static void main(String[] args) {
-        Watch watch = new Watch();
+        Instant now = Instant.now();
 
-        // Переключаем временную зону на Europe/Moscow
-        watch.changeTimeZone(); // Переключаем на Asia/Vladivostok
-        watch.changeTimeZone(); // Переключаем на Europe/Moscow
+        // укажите корректный формат вывода даты
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(...);
 
-        // Добавляем 18 часов и 26 минут
-        watch.addTenHours();
-        watch.addTenHours(); // Добавляем 20 часов
-        watch.addHour(); // Убираем 2 часа (20 - 2 = 18)
-        watch.addHour();
-        watch.addTenMinutes();
-        watch.addTenMinutes();
+        // создайте экземпляр ZoneId для Москвы
+        ZoneId moscowZone = ...
+        ZonedDateTime moscowDateTime = ...
 
-        watch.addMinute();
-        watch.addMinute();
-        watch.addMinute();
-        watch.addMinute();
-        watch.addMinute();
-        watch.addMinute();
+        printTime(formatter, moscowDateTime, "Москва");
 
-        // Выводим текущее время
-        System.out.println(watch.getCurrentTime());
+        convertAndPrintTime(formatter, moscowDateTime, "Осло", "Europe/Oslo");
+        convertAndPrintTime(formatter, moscowDateTime, "Чикаго", "America/Chicago");
+        convertAndPrintTime(formatter, moscowDateTime, "Шанхай", "Asia/Shanghai");
+        convertAndPrintTime(formatter, moscowDateTime, "Аддис-Абеба", "Africa/Addis_Ababa");
+    }
+
+    private static void convertAndPrintTime(DateTimeFormatter formatter, ZonedDateTime moscowDateTime, String cityName, String region) {
+        ZoneId newZone = ... // создайте ZoneId из region
+        ZonedDateTime newDateTime = ... // измените временную зону у moscowDateTime
+
+        printTime(formatter, newDateTime, cityName);
+    }
+
+    private static void printTime(DateTimeFormatter formatter, ZonedDateTime dateTime, String cityName) {
+        System.out.println(cityName + ":");
+        // выведите dateTime в указанном в formatter формате
+        System.out.println(...);
     }
 }
