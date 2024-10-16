@@ -5,54 +5,35 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.time.DayOfWeek;
-import java.util.Random;
+import java.nio.charset.StandardCharsets;
+
+class HelloHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange httpExchange) throws IOException {
+        // считываем тело запроса и преобразуем в строку
+        InputStream inputStream = httpExchange.getRequestBody();
+        String name = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+        System.out.println("Тело запроса:\n" + name);
+
+        httpExchange.sendResponseHeaders(200, 0);
+
+        try (OutputStream os = httpExchange.getResponseBody()) {
+            String response = "Привет " + name + "! Рады видеть на нашем сервере.";
+            os.write(response.getBytes());
+        }
+    }
+}
 
 public class Practicum {
     private static final int PORT = 8080;
 
-    // IOException могут сгенерировать методы create() и bind(...)
     public static void main(String[] args) throws IOException {
-        HttpServer httpServer = HttpServer.create();
-
-        httpServer.bind(new InetSocketAddress(PORT), 0);
+        HttpServer httpServer = HttpServer.create(new InetSocketAddress(PORT), 0);
         httpServer.createContext("/hello", new HelloHandler());
-        httpServer.createContext("/day", new HelloHand());
-        // добавьте новый обработчик для /day тут
-        httpServer.start(); // запускаем сервер
-
+        httpServer.start();
         System.out.println("HTTP-сервер запущен на " + PORT + " порту!");
-        httpServer.stop(1); // завершение сервера необходимо для тренажёра
     }
-
-    static class HelloHandler implements HttpHandler {
-        @Override
-        public void handle(HttpExchange httpExchange) throws IOException {
-            System.out.println("Началась обработка /day запроса от клиента.");
-
-            String response = "Hey! Glad to see you on our server.";
-            httpExchange.sendResponseHeaders(200, 0);
-
-            try (OutputStream os = httpExchange.getResponseBody()) {
-                os.write(response.getBytes());
-            }
-        }
-    }
-    static class HelloHand implements HttpHandler {
-        @Override
-        public void handle(HttpExchange exchange) throws IOException {
-            System.out.println("Началась обработка /day запроса от клиента.");
-            Random random = new Random();
-            int day = random.nextInt(7) + 1;
-            String dayOfWeek = String.valueOf(DayOfWeek.of(day));
-            exchange.sendResponseHeaders(200,0);
-
-            try (OutputStream os = exchange.getResponseBody()){
-                os.write(dayOfWeek.getBytes());
-            }
-        }
-    }
-    // объявите класс-обработчик тут
 }
