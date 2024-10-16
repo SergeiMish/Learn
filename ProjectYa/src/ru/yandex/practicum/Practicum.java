@@ -4,81 +4,67 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
-import java.util.List;
-import java.util.Map;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
-class HelloHandler implements HttpHandler {
+class PostsHandler implements HttpHandler {
+    private static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
     @Override
-    public void handle(HttpExchange httpExchange) throws IOException {
-        String response;
+    public void handle(HttpExchange exchange) throws IOException {
 
-        // извлеките метод из запроса
-        String method = httpExchange.getRequestMethod();
+        // получите информацию об эндпоинте, к которому был запрос
+        Endpoint endpoint = ...
 
-        switch (method) {
-            case "POST":
-                response = handlePostRequest(httpExchange);
+        switch (endpoint) {
+            case GET_POSTS: {
+                writeResponse(exchange, "Получен запрос на получение постов", 200);
                 break;
-            case "GET":
-                response = handleGetRequest(httpExchange);
+            }
+            case GET_COMMENTS: {
+                writeResponse(exchange, "Получен запрос на получение комментариев", 200);
                 break;
-            // не забудьте про ответ для остальных методов
+            }
+            case POST_COMMENT: {
+                writeResponse(exchange, "Получен запрос на добавление комментария", 200);
+                break;
+            }
             default:
-                response = "Вы использовали какой-то другой метод!";
-        }
-
-        httpExchange.sendResponseHeaders(200, 0);
-        try (OutputStream os = httpExchange.getResponseBody()) {
-            os.write(response.getBytes());
+                writeResponse(exchange, "Такого эндпоинта не существует", 404);
         }
     }
 
-    private static String handleGetRequest(HttpExchange httpExchange) throws IOException {
-        return "Здравствуйте!";
+    private Endpoint getEndpoint(String requestPath, String requestMethod) {
+        // реализуйте этот метод, проанализировав путь и метод запроса
+        // ...
     }
 
-    private static String handlePostRequest(HttpExchange httpExchange) throws IOException {
-        // Извлеките path из запроса
-        String path = httpExchange.getRequestURI().getPath();
-        String[] splitStrings = path.split("/");
-        // Извлеките профессию и имя из path
-        String profession = splitStrings.length > 2 ? splitStrings[2] : "неизвестная профессия";
-        String name = splitStrings.length > 3 ? splitStrings[3] : "неизвестное имя";
-
-        // Извлеките тело запроса
-        InputStream inputStream = httpExchange.getRequestBody();
-        StringBuilder body = new StringBuilder();
-        int i;
-        while ((i = inputStream.read()) != -1) {
-            body.append((char) i);
-        }
-
-        // Объедините полученные данные из тела и пути запроса
-        String response = name + " " + profession + " " + body.toString();
-
-        // Извлеките заголовок и в зависимости от условий дополните ответ
-        Map<String, List<String>> requestHeaders = httpExchange.getRequestHeaders();
-        List<String> wishGoodDay = requestHeaders.get("X-Wish-Good-Day");
-        if (wishGoodDay != null && wishGoodDay.contains("true")) {
-            response += ". Желаем хорошего дня!";
-        }
-
-        return response;
+    private void writeResponse(HttpExchange exchange,
+                               String responseString,
+                               int responseCode) throws IOException {
+            /*
+             Реализуйте отправку ответа, который содержит responseString в качестве тела ответа
+             и responseCode в качестве кода ответа.
+             Учтите, что если responseString — пустая строка, то её не нужно передавать в ответе.
+             В этом случае ответ отправляется без тела.
+             */
+        // ...
     }
+
+    enum Endpoint {GET_POSTS, GET_COMMENTS, POST_COMMENT, UNKNOWN}
 }
 
 public class Practicum {
     private static final int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
-        HttpServer httpServer = HttpServer.create(new InetSocketAddress(PORT), 0);
-        httpServer.createContext("/hello", new HelloHandler());
-        httpServer.start();
+
+        // добавьте код для конфигурирования и запуска сервера
+        // ...
+
         System.out.println("HTTP-сервер запущен на " + PORT + " порту!");
-        httpServer.stop(2);
+        // завершаем работу сервера для корректной работы тренажёра
+        httpServer.stop(1);
     }
 }
