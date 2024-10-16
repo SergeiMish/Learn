@@ -1,6 +1,5 @@
 package ru.yandex.practicum;
 
-import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -9,8 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 
 class HelloHandler implements HttpHandler {
     @Override
@@ -20,14 +19,14 @@ class HelloHandler implements HttpHandler {
         // извлеките метод из запроса
         String method = httpExchange.getRequestMethod();
 
-        switch(method) {
+        switch (method) {
             case "POST":
                 response = handlePostRequest(httpExchange);
                 break;
             case "GET":
                 response = handleGetRequest(httpExchange);
                 break;
-                // не забудьте про ответ для остальных методов
+            // не забудьте про ответ для остальных методов
             default:
                 response = "Вы использовали какой-то другой метод!";
         }
@@ -39,35 +38,36 @@ class HelloHandler implements HttpHandler {
     }
 
     private static String handleGetRequest(HttpExchange httpExchange) throws IOException {
-        try (OutputStream os = httpExchange.getResponseBody()) {
-            System.out.println("Здравствуйте!");
-        }
-        // обработайте GET-запрос в соответствии с условиями задания
-        return null;
+        return "Здравствуйте!";
     }
 
     private static String handlePostRequest(HttpExchange httpExchange) throws IOException {
-        // обработайте POST-запрос в соответствии с условиями задания
-
-        // извлеките path из запроса
+        // Извлеките path из запроса
         String path = httpExchange.getRequestURI().getPath();
         String[] splitStrings = path.split("/");
-        // а из path — профессию и имя
-        String profession = splitStrings[2];
-        String name = splitStrings[3];
+        // Извлеките профессию и имя из path
+        String profession = splitStrings.length > 2 ? splitStrings[2] : "неизвестная профессия";
+        String name = splitStrings.length > 3 ? splitStrings[3] : "неизвестное имя";
 
-        // извлеките тело запроса
+        // Извлеките тело запроса
         InputStream inputStream = httpExchange.getRequestBody();
-        String body = inputStream.toString();
-
-        // объедините полученные данные из тела и пути запроса
-        String response = name + " " + profession;
-
-        // извлеките заголовок и в зависимости от условий дополните ответ
-        List<String> wishGoodDay = requestHeaders.get("X-Wish-Good-Day");
-        if ((wishGoodDay != null) && (wishGoodDay.contains("true"))) {
-      ...
+        StringBuilder body = new StringBuilder();
+        int i;
+        while ((i = inputStream.read()) != -1) {
+            body.append((char) i);
         }
+
+        // Объедините полученные данные из тела и пути запроса
+        String response = name + " " + profession + " " + body.toString();
+
+        // Извлеките заголовок и в зависимости от условий дополните ответ
+        Map<String, List<String>> requestHeaders = httpExchange.getRequestHeaders();
+        List<String> wishGoodDay = requestHeaders.get("X-Wish-Good-Day");
+        if (wishGoodDay != null && wishGoodDay.contains("true")) {
+            response += ". Желаем хорошего дня!";
+        }
+
+        return response;
     }
 }
 
