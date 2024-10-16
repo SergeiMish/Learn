@@ -7,6 +7,8 @@ import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.time.DayOfWeek;
+import java.util.Random;
 
 public class Practicum {
     private static final int PORT = 8080;
@@ -17,11 +19,12 @@ public class Practicum {
 
         httpServer.bind(new InetSocketAddress(PORT), 0);
         httpServer.createContext("/hello", new HelloHandler());
+        httpServer.createContext("/day", new HelloHand());
         // добавьте новый обработчик для /day тут
         httpServer.start(); // запускаем сервер
 
         System.out.println("HTTP-сервер запущен на " + PORT + " порту!");
-        httpServer.stop(1); // завершение сервера необходимо для тренажёра
+//        httpServer.stop(1); // завершение сервера необходимо для тренажёра
     }
 
     static class HelloHandler implements HttpHandler {
@@ -37,6 +40,17 @@ public class Practicum {
             }
         }
     }
+    static class HelloHand implements HttpHandler {
+        @Override
+        public void handle(HttpExchange exchange) throws IOException {
+            Random random = new Random();
+            int day = random.nextInt(7) + 1;
+            String dayOfWeek = String.valueOf(DayOfWeek.of(day));
 
+            try (OutputStream os = exchange.getResponseBody()){
+                os.write(dayOfWeek.getBytes());
+            }
+        }
+    }
     // объявите класс-обработчик тут
 }
