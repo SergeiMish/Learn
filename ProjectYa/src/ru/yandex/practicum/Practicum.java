@@ -18,15 +18,18 @@ class HelloHandler implements HttpHandler {
         String response;
 
         // извлеките метод из запроса
-        String method = ...
+        String method = httpExchange.getRequestMethod();
 
-        switch(...) {
-            case ...:
+        switch(method) {
+            case "POST":
                 response = handlePostRequest(httpExchange);
-            case ...:
+                break;
+            case "GET":
                 response = handleGetRequest(httpExchange);
+                break;
                 // не забудьте про ответ для остальных методов
-            ...
+            default:
+                response = "Вы использовали какой-то другой метод!";
         }
 
         httpExchange.sendResponseHeaders(200, 0);
@@ -35,31 +38,36 @@ class HelloHandler implements HttpHandler {
         }
     }
 
-    private static String handleGetRequest(HttpExchange httpExchange) {
+    private static String handleGetRequest(HttpExchange httpExchange) throws IOException {
+        try (OutputStream os = httpExchange.getResponseBody()) {
+            System.out.println("Здравствуйте!");
+        }
         // обработайте GET-запрос в соответствии с условиями задания
-        ...
+        return null;
     }
 
     private static String handlePostRequest(HttpExchange httpExchange) throws IOException {
         // обработайте POST-запрос в соответствии с условиями задания
 
         // извлеките path из запроса
-        String path = ...
+        String path = httpExchange.getRequestURI().getPath();
+        String[] splitStrings = path.split("/");
         // а из path — профессию и имя
-        String profession = ...
-        String name = ...
+        String profession = splitStrings[2];
+        String name = splitStrings[3];
 
         // извлеките тело запроса
-        ...
-        String body = ...
+        InputStream inputStream = httpExchange.getRequestBody();
+        String body = inputStream.toString();
 
         // объедините полученные данные из тела и пути запроса
-        String response = ...
+        String response = name + " " + profession;
 
         // извлеките заголовок и в зависимости от условий дополните ответ
-        List<String> wishGoodDay = ...
-        // верните полученную строку ответа
-        ...
+        List<String> wishGoodDay = requestHeaders.get("X-Wish-Good-Day");
+        if ((wishGoodDay != null) && (wishGoodDay.contains("true"))) {
+      ...
+        }
     }
 }
 
