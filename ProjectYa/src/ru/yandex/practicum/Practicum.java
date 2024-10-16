@@ -24,7 +24,7 @@ public class Practicum {
         httpServer.start(); // запускаем сервер
 
         System.out.println("HTTP-сервер запущен на " + PORT + " порту!");
-//        httpServer.stop(1); // завершение сервера необходимо для тренажёра
+        httpServer.stop(1); // завершение сервера необходимо для тренажёра
     }
 
     static class HelloHandler implements HttpHandler {
@@ -43,9 +43,11 @@ public class Practicum {
     static class HelloHand implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
+            System.out.println("Началась обработка /day запроса от клиента.");
             Random random = new Random();
             int day = random.nextInt(7) + 1;
             String dayOfWeek = String.valueOf(DayOfWeek.of(day));
+            exchange.sendResponseHeaders(200,0);
 
             try (OutputStream os = exchange.getResponseBody()){
                 os.write(dayOfWeek.getBytes());
