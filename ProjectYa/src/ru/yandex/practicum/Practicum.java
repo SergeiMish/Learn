@@ -15,7 +15,7 @@ class PostsHandler implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
 
         // получите информацию об эндпоинте, к которому был запрос
-        Endpoint endpoint = ...
+        Endpoint endpoint = getEndpoint(exchange.getRequestURI().getPath(), exchange.getRequestMethod());
 
         switch (endpoint) {
             case GET_POSTS: {
@@ -36,13 +36,28 @@ class PostsHandler implements HttpHandler {
     }
 
     private Endpoint getEndpoint(String requestPath, String requestMethod) {
-        // реализуйте этот метод, проанализировав путь и метод запроса
-        // ...
+        String[] pathParts = requestPath.split("/");
+        // Реализуйте этот метод, проанализировав путь и метод запроса
+        if ("GET".equalsIgnoreCase(requestMethod) && pathParts.length == 2 && "posts".equals(pathParts[1])) {
+            return Endpoint.GET_POSTS;
+        } else if ("GET".equalsIgnoreCase(requestMethod) && pathParts.length == 4 && "posts".equals(pathParts[1]) && "comments".equals(pathParts[3])) {
+            return Endpoint.GET_COMMENTS;
+        } else if ("POST".equalsIgnoreCase(requestMethod) && pathParts.length == 4 && "posts".equals(pathParts[1]) && "comments".equals(pathParts[3])) {
+            return Endpoint.POST_COMMENT;
+        } else {
+            return Endpoint.UNKNOWN;
+        }
     }
 
-    private void writeResponse(HttpExchange exchange,
-                               String responseString,
-                               int responseCode) throws IOException {
+    private void writeResponse(HttpExchange exchange, String responseString, int responseCode) throws IOException {
+        byte[] responseBytes = responseString.getBytes(DEFAULT_CHARSET);
+        exchange.sendResponseHeaders(responseCode, responseString.isEmpty() ? -1 : responseBytes.length);
+
+        try (OutputStream os = exchange.getResponseBody()) {
+            if (!responseString.isEmpty()) {
+                os.write(responseBytes);
+            }
+        }
             /*
              Реализуйте отправку ответа, который содержит responseString в качестве тела ответа
              и responseCode в качестве кода ответа.
@@ -59,9 +74,10 @@ public class Practicum {
     private static final int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
-
+        HttpServer httpServer = HttpServer.create(new InetSocketAddress(PORT), 0);
+        httpServer.createContext("/posts", new PostsHandler());
         // добавьте код для конфигурирования и запуска сервера
-        // ...
+        httpServer.start();
 
         System.out.println("HTTP-сервер запущен на " + PORT + " порту!");
         // завершаем работу сервера для корректной работы тренажёра
