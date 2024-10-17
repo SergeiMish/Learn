@@ -45,26 +45,38 @@ class PostsHandler implements HttpHandler {
     }
 
     private void handleGetPosts(HttpExchange exchange) throws IOException {
+        writeResponse(exchange, posts.toString(), 200);
         // верните ответ, представляющий список постов. Код ответа должен быть 200.
         // информация по каждому посту должна начинаться с новой строки.
         // для преобразования объекта поста в строку воспользуйтесь его методом toString
-        ...
     }
 
     private void handleGetComments(HttpExchange exchange) throws IOException {
         Optional<Integer> postIdOpt = getPostId(exchange);
+        if (postIdOpt.isPresent()) {
+            // Ищем пост с указанным ID
+            Optional<Post> postOpt = posts.stream()
+                    .filter(post -> post.getId() == postIdOpt.get())
+                    .findFirst();
+            if (postOpt.isPresent()) {
+                System.out.println(postOpt.toString() + "\"");
+            } else {
+                System.out.println("404");
+            }
+        } else {
+            System.out.println("400");
+        }
+    }
 
         /* Верните комментарии указанного поста. Информация о каждом комментарии
            должна начинаться с новой строки. Код статуса — 200.
            Если запрос был составлен неверно, верните сообщение об ошибке с кодом 400.
            Если пост с указанным идентификатором не найден, верните сообщение об этом с кодом 404. */
-        ...
-    }
 
     private Optional<Integer> getPostId(HttpExchange exchange) {
         /* Реализуйте метод получения идентификатора поста.
            Если идентификатор не является числом, верните Optional.empty(). */
-        ...
+
     }
 
     private void handlePostComments(HttpExchange exchange) throws IOException {
