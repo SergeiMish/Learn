@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 class PostsHandler implements HttpHandler {
     private static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
@@ -44,67 +45,69 @@ class PostsHandler implements HttpHandler {
         }
     }
 
-    private void handleGetPosts(HttpExchange exchange) throws IOException {
-        StringBuilder builder = new StringBuilder();
-        posts.forEach(post -> {
-            builder.append(post.toString()).append("\n");
-        });
+    private void handlePostComments(HttpExchange exchange) throws IOException {
+        // реализуйте обработку запроса на добавление комментария
 
-        writeResponse(exchange, builder.toString(), 200);
+        // извлеките идентификатор поста и обработайте исключительные ситуации
+        ...
+        int postId = ...;
+
+        // получите комментарий из тела запроса
+        // не забудьте обработать исключительные ситуации
+        ... parseComment(exchange.getRequestBody());
+        ...
+        Comment comment = ...;
+
+        // добавьте комментарий к указанном посту
+        // не забудьте обработать ситуацию, когда пост не найден
+        ...
     }
-        // верните ответ, представляющий список постов. Код ответа должен быть 200.
-        // информация по каждому посту должна начинаться с новой строки.
-        // для преобразования объекта поста в строку воспользуйтесь его методом toString
+
+    private Optional<Comment> parseComment(InputStream bodyInputStream) throws IOException {
+        // реализуйте код, разбирающий тело запроса и конструирующий объект комментария
+
+        String body = ...;
+
+        /* Проанализируйте тело запроса и получите из него имя пользователя и текст комментария.
+           Вам могут помочь методы indexOf и substring класса String. */
+        ...
+    }
+
+    private void handleGetPosts(HttpExchange exchange) throws IOException {
+        String response = posts.stream()
+                .map(Post::toString)
+                .collect(Collectors.joining("\n"));
+        writeResponse(exchange, response, 200);
+    }
 
     private void handleGetComments(HttpExchange exchange) throws IOException {
         Optional<Integer> postIdOpt = getPostId(exchange);
+        if(postIdOpt.isEmpty()) {
+            writeResponse(exchange, "Некорректный идентификатор поста", 400);
+            return;
+        }
+        int postId = postIdOpt.get();
 
-        if (postIdOpt.isPresent()) {
-            Optional<Post> post = posts.stream()
-                    .filter(post1 -> post1.getId() == postIdOpt.get())
-                    .findFirst();
-
-            if (post.isPresent()) {
-                if (!post.get().getComments().isEmpty()) {
-                    StringBuilder builder = new StringBuilder();
-
-                    post.get().getComments().forEach(comm -> {
-                        builder.append(comm).append("\n");
-                    });
-
-                    writeResponse(exchange, builder.toString(), 200);
-
-                } else {
-                    writeResponse(exchange, "Пост с идентификатором "
-                            + postIdOpt.get() + " не найден", 404);
-                }
-
-            } else {
-                writeResponse(exchange, "Некорректный идентификатор поста", 400);
+        for (Post post : posts) {
+            if (post.getId() == postId) {
+                String response = post.getComments().stream()
+                        .map(Comment::toString)
+                        .collect(Collectors.joining("\n"));
+                writeResponse(exchange, response, 200);
+                return;
             }
         }
+
+        writeResponse(exchange, "Пост с идентификатором " + postId + " не найден", 404);
     }
-        /* Верните комментарии указанного поста. Информация о каждом комментарии
-           должна начинаться с новой строки. Код статуса — 200.
-           Если запрос был составлен неверно, верните сообщение об ошибке с кодом 400.
-           Если пост с указанным идентификатором не найден, верните сообщение об этом с кодом 404. */
 
     private Optional<Integer> getPostId(HttpExchange exchange) {
-        /* Реализуйте метод получения идентификатора поста.
-           Если идентификатор не является числом, верните Optional.empty(). */
-        String path = exchange.getRequestURI().getPath();
-        Integer id;
+        String[] pathParts = exchange.getRequestURI().getPath().split("/");
         try {
-            id = Integer.parseInt(path.split("/")[2]);
-            return Optional.of(id);
-        } catch (NumberFormatException ex) {
-            ex.printStackTrace();
+            return Optional.of(Integer.parseInt(pathParts[2]));
+        } catch (NumberFormatException exception) {
+            return Optional.empty();
         }
-        return Optional.empty();
-    }
-
-    private void handlePostComments(HttpExchange exchange) throws IOException {
-        writeResponse(exchange, "Этот эндпоинт пока не реализован", 200);
     }
 
     private Endpoint getEndpoint(String requestPath, String requestMethod) {
