@@ -4,14 +4,14 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 class PostsHandler implements HttpHandler {
     private static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
@@ -45,29 +45,45 @@ class PostsHandler implements HttpHandler {
     }
 
     private void handleGetPosts(HttpExchange exchange) throws IOException {
-        writeResponse(exchange, posts.toString(), 200);
+        StringBuilder builder = new StringBuilder();
+        posts.forEach(post -> {
+            builder.append(post.toString()).append("\n");
+        });
+
+        writeResponse(exchange, builder.toString(), 200);
+    }
         // верните ответ, представляющий список постов. Код ответа должен быть 200.
         // информация по каждому посту должна начинаться с новой строки.
         // для преобразования объекта поста в строку воспользуйтесь его методом toString
-    }
 
     private void handleGetComments(HttpExchange exchange) throws IOException {
         Optional<Integer> postIdOpt = getPostId(exchange);
+
         if (postIdOpt.isPresent()) {
-            // Ищем пост с указанным ID
-            Optional<Post> postOpt = posts.stream()
-                    .filter(post -> post.getId() == postIdOpt.get())
+            Optional<Post> post = posts.stream()
+                    .filter(post1 -> post1.getId() == postIdOpt.get())
                     .findFirst();
-            if (postOpt.isPresent()) {
-                System.out.println(postOpt.toString() + "\"");
+
+            if (post.isPresent()) {
+                if (!post.get().getComments().isEmpty()) {
+                    StringBuilder builder = new StringBuilder();
+
+                    post.get().getComments().forEach(comm -> {
+                        builder.append(comm).append("\n");
+                    });
+
+                    writeResponse(exchange, builder.toString(), 200);
+
+                } else {
+                    writeResponse(exchange, "Пост с идентификатором "
+                            + postIdOpt.get() + " не найден", 404);
+                }
+
             } else {
-                System.out.println("404");
+                writeResponse(exchange, "Некорректный идентификатор поста", 400);
             }
-        } else {
-            System.out.println("400");
         }
     }
-
         /* Верните комментарии указанного поста. Информация о каждом комментарии
            должна начинаться с новой строки. Код статуса — 200.
            Если запрос был составлен неверно, верните сообщение об ошибке с кодом 400.
@@ -76,7 +92,15 @@ class PostsHandler implements HttpHandler {
     private Optional<Integer> getPostId(HttpExchange exchange) {
         /* Реализуйте метод получения идентификатора поста.
            Если идентификатор не является числом, верните Optional.empty(). */
-
+        String path = exchange.getRequestURI().getPath();
+        Integer id;
+        try {
+            id = Integer.parseInt(path.split("/")[2]);
+            return Optional.of(id);
+        } catch (NumberFormatException ex) {
+            ex.printStackTrace();
+        }
+        return Optional.empty();
     }
 
     private void handlePostComments(HttpExchange exchange) throws IOException {
