@@ -4,8 +4,7 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -49,28 +48,57 @@ class PostsHandler implements HttpHandler {
         // реализуйте обработку запроса на добавление комментария
 
         // извлеките идентификатор поста и обработайте исключительные ситуации
-        ...
-        int postId = ...;
+        Optional<Integer> postIdOpt = getPostId(exchange);
+        if (postIdOpt.isEmpty()) {
+            writeResponse(exchange, "Некорректный идентификатор поста", 400);
+            return;
+        }
+        int postId = postIdOpt.get();
 
-        // получите комментарий из тела запроса
-        // не забудьте обработать исключительные ситуации
-        ... parseComment(exchange.getRequestBody());
-        ...
-        Comment comment = ...;
+        // Получаем комментарий из тела запроса
+        Optional<Comment> commentOpt = parseComment(exchange.getRequestBody());
+        if (commentOpt.isEmpty()) {
+            writeResponse(exchange, "Поля комментария не могут быть пустыми", 400);
+            return;
+        }
+        Comment comment = commentOpt.get();
 
-        // добавьте комментарий к указанном посту
-        // не забудьте обработать ситуацию, когда пост не найден
-        ...
+        // Ищем пост с указанным идентификатором и добавляем комментарий
+        for (Post post : posts) {
+            if (post.getId() == postId) {
+                post.addComment(comment);
+                writeResponse(exchange, "Комментарий добавлен", 201);
+                return;
+            }
+        }
+
+        // Если пост не найден
+        writeResponse(exchange, "Пост с идентификатором " + postId + " не найден", 404);
     }
+//        ...
+//        Comment comment = ...;
+//
+//        // добавьте комментарий к указанном посту
+//        // не забудьте обработать ситуацию, когда пост не найден
+//        ...
 
     private Optional<Comment> parseComment(InputStream bodyInputStream) throws IOException {
         // реализуйте код, разбирающий тело запроса и конструирующий объект комментария
+        BufferedReader reader = new BufferedReader(new InputStreamReader(bodyInputStream, DEFAULT_CHARSET));
+        String username = reader.readLine();
+        StringBuilder textBuilder = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            textBuilder.append(line).append("\n");
+        }
+        String text = textBuilder.toString().trim();
 
-        String body = ...;
+        // Проверяем, что имя пользователя и текст не пустые
+        if (username == null || username.isEmpty() || text.isEmpty()) {
+            return Optional.empty();
+        }
 
-        /* Проанализируйте тело запроса и получите из него имя пользователя и текст комментария.
-           Вам могут помочь методы indexOf и substring класса String. */
-        ...
+        return Optional.of(new Comment(username, text));
     }
 
     private void handleGetPosts(HttpExchange exchange) throws IOException {
@@ -163,7 +191,7 @@ public class Practicum {
 
         System.out.println("HTTP-сервер запущен на " + PORT + " порту!");
         // завершаем работу сервера для корректной работы тренажёра
-        httpServer.stop(1);
+//        httpServer.stop(1);
     }
 }
 
