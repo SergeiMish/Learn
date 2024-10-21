@@ -1,119 +1,109 @@
 package ru.yandex.practicum;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.TypeAdapter;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
-class LastLikeInfo {
-   private String user;
-   private int hours;
-   private int minutes;
+
+??? SubtitleLanguage {
+
+        }
+
+class SubtitleItem {
+    ... values = new HashMap<>();
+
+    ... begin;
+
+    ... end;
+
+    // геттеры и сеттеры
 
     @Override
-    public String toString() {
-        return "LastLikeInfo{" +
-                "user='" + user + '\'' +
-                ", hours=" + hours +
-                ", minutes=" + minutes +
-                '}';
+    public boolean equals(Object o) {
+       ...
     }
 
-    // ваш код
-    public LastLikeInfo (String user, int hours, int minutes){
-        this.user = user;
-        this.hours = hours;
-        this.minutes = minutes;
+    @Override
+    public int hashCode() {
+       ...
+    }
+
+    public SubtitleItem(...) {
+			...
     }
 }
+
+class SubtitleListTypeToken extends ??? {
+
+        }
+
+class LocalTimeTypeAdapter extends ??? {
+private final DateTimeFormatter timeFormatter = ???
+
+@Override
+public void write(???) throws IOException {
+
+        }
+
+@Override
+public LocalTime read(???) throws IOException {
+
+        }
+        }
 
 public class Practicum {
 
-    public static void main(String[] args) throws IOException {
-        String lastLikeInfoStr = "{ \"user\": \"Алексей\", \"hours\": 12, \"minutes\": 30}";
+    public static void main(String[] args) {
+        List<SubtitleItem> subtitles = Arrays.asList(
+                new SubtitleItem(Map.of(SubtitleLanguage.ru, "Здравствуйте!",
+                        SubtitleLanguage.en, "Hello!",
+                        SubtitleLanguage.cn, "Ni hao"),
+                        LocalTime.of(0, 0, 15),
+                        LocalTime.of(0, 0, 17)
+                ),
+                new SubtitleItem(Map.of(SubtitleLanguage.ru, "Привет!",
+                        SubtitleLanguage.en, "Hi!",
+                        SubtitleLanguage.cn, "Ni hao"),
+                        LocalTime.of(0, 0, 21),
+                        LocalTime.of(0, 0, 24)
+                ),
+                new SubtitleItem(Map.of(SubtitleLanguage.ru, "Как дела?",
+                        SubtitleLanguage.en, "How are you?",
+                        SubtitleLanguage.cn, "Ni hao ma"),
+                        LocalTime.of(0, 0, 28),
+                        LocalTime.of(0, 0, 31)
+                ),
+                new SubtitleItem(Map.of(SubtitleLanguage.ru, "Всё хорошо, спасибо!",
+                        SubtitleLanguage.en, "I'm fine, thank you!",
+                        SubtitleLanguage.cn, "Wo hen hao, xie xie"),
+                        LocalTime.of(0, 0, 34),
+                        LocalTime.of(0, 0, 37)
+                )
+        );
 
-        // код для десериализации
-        Gson gson = new Gson();
-        LastLikeInfo lastLikeInfo = gson.fromJson(lastLikeInfoStr, LastLikeInfo.class);
-        System.out.println(lastLikeInfo);
-        LikesInfo likesInfo = new LikesInfo();
-        likesInfo.setRepostsCount(10);
-        likesInfo.setHasOwnerLiked(true);
-        likesInfo.setLikes(new Like[]{
-                new Like("Алексей", "http://example.com/avatars/aleksey.jpg"),
-                new Like("Елена", "http://example.com/avatars/elena.jpg"),
-                new Like("Света", "http://example.com/avatars/sveta.jpg"),
-        });
+        // адаптер для преобразования типа LocalTime в String в формате субтитров
+        ??? localTimeTypeAdapter = ???
 
-        likesInfo.setLastLikeInfo(lastLikeInfo);
-        String likesInfoJson = gson.toJson(likesInfo);
-        System.out.println(likesInfoJson);
-        // код сериализации и вывода на экран
-    }
-}
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.???
+        Gson gson = gsonBuilder.???
 
-class LikesInfo {
-    private boolean hasOwnerLiked;
-    private Like[] likes;
-    private int repostsCount;
-    private LastLikeInfo lastLikeInfo;
+        String subtitlesJson = gson.toJson(???);
+        System.out.println(subtitlesJson);
 
-    public boolean isHasOwnerLiked() {
-        return hasOwnerLiked;
-    }
-
-    public void setHasOwnerLiked(boolean hasOwnerLiked) {
-        this.hasOwnerLiked = hasOwnerLiked;
-    }
-
-    public Like[] getLikes() {
-        return likes;
-    }
-
-    public void setLikes(Like[] likes) {
-        this.likes = likes;
-    }
-
-    public int getRepostsCount() {
-        return repostsCount;
-    }
-
-    public void setRepostsCount(int repostsCount) {
-        this.repostsCount = repostsCount;
-    }
-
-    public LastLikeInfo getLastLikeInfo() {
-        return lastLikeInfo;
-    }
-
-    public void setLastLikeInfo(LastLikeInfo info) {
-        this.lastLikeInfo = info;
-    }
-}
-
-class Like {
-    private String name;
-    private String avatarUrl;
-
-    public Like() {}
-
-    public Like(String name, String avatarUrl) {
-        this.name = name;
-        this.avatarUrl = avatarUrl;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
+        List<SubtitleItem> parsed = gson.fromJson(???, ???);
+        if(parsed.equals(subtitles)) {
+            System.out.println("Субтитры десериализованы корректно.");
+        } else {
+            System.out.println("Произошла ошибка при десериализации.");
+        }
     }
 }
