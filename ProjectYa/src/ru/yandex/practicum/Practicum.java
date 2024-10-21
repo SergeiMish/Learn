@@ -13,16 +13,16 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 
-??? SubtitleLanguage {
+class SubtitleLanguage {
 
         }
 
 class SubtitleItem {
-    ... values = new HashMap<>();
+    HashMap<Integer, Integer> values = new HashMap<>();
 
-    ... begin;
+    int begin;
 
-    ... end;
+    int end;
 
     // геттеры и сеттеры
 
