@@ -13,51 +13,78 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 
-class SubtitleLanguage {
-
+enum SubtitleLanguage {
+    ru, en, cn
         }
 
 class SubtitleItem {
-    HashMap<Integer, Integer> values = new HashMap<>();
+    HashMap<SubtitleLanguage, String> values = new HashMap<>();
+    LocalTime begin;
+    LocalTime end;
 
-    int begin;
+    public SubtitleItem(Map<SubtitleLanguage, String> values, LocalTime begin, LocalTime end) {
+        this.values = new HashMap<>(values);
+        this.begin = begin;
+        this.end = end;
+    }
 
-    int end;
+    public HashMap<SubtitleLanguage, String> getValues() {
+        return values;
+    }
 
-    // геттеры и сеттеры
+    public void setValues(HashMap<SubtitleLanguage, String> values) {
+        this.values = values;
+    }
+
+    public LocalTime getBegin() {
+        return begin;
+    }
+
+    public void setBegin(LocalTime begin) {
+        this.begin = begin;
+    }
+
+    public LocalTime getEnd() {
+        return end;
+    }
+
+    public void setEnd(LocalTime end) {
+        this.end = end;
+    }
 
     @Override
     public boolean equals(Object o) {
-       ...
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SubtitleItem that = (SubtitleItem) o;
+        return Objects.equals(values, that.values) && Objects.equals(begin, that.begin) && Objects.equals(end, that.end);
     }
 
     @Override
     public int hashCode() {
-       ...
-    }
-
-    public SubtitleItem(...) {
-			...
+        return Objects.hash(values, begin, end);
     }
 }
 
-class SubtitleListTypeToken extends ??? {
+
+class SubtitleListTypeToken extends TypeToken<HashMap<SubtitleLanguage, String>> {
 
         }
 
-class LocalTimeTypeAdapter extends ??? {
-private final DateTimeFormatter timeFormatter = ???
+class LocalTimeTypeAdapter extends TypeAdapter<LocalTime> {
+    private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
 
-@Override
-public void write(???) throws IOException {
+    @Override
+    public void write(JsonWriter jsonWriter, LocalTime time) throws IOException {
+        jsonWriter.value(time.format(timeFormatter));
+    }
 
-        }
+    @Override
+    public LocalTime read(JsonReader jsonReader) throws IOException {
+        return LocalTime.parse(jsonReader.nextString(), timeFormatter);
+    }
+}
 
-@Override
-public LocalTime read(???) throws IOException {
-
-        }
-        }
 
 public class Practicum {
 
@@ -89,18 +116,21 @@ public class Practicum {
                 )
         );
 
-        // адаптер для преобразования типа LocalTime в String в формате субтитров
-        ??? localTimeTypeAdapter = ???
+        // Адаптер для преобразования типа LocalTime в String в формате субтитров
+        LocalTimeTypeAdapter localTimeTypeAdapter = new LocalTimeTypeAdapter();
 
         GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.???
-        Gson gson = gsonBuilder.???
+        gsonBuilder.registerTypeAdapter(LocalTime.class, localTimeTypeAdapter);
+        gsonBuilder.setPrettyPrinting();
+        Gson gson = gsonBuilder.create();
 
-        String subtitlesJson = gson.toJson(???);
+        // Сериализация
+        String subtitlesJson = gson.toJson(subtitles);
         System.out.println(subtitlesJson);
 
-        List<SubtitleItem> parsed = gson.fromJson(???, ???);
-        if(parsed.equals(subtitles)) {
+        // Десериализация
+        List<SubtitleItem> parsed = gson.fromJson(subtitlesJson, new TypeToken<List<SubtitleItem>>(){}.getType());
+        if (parsed.equals(subtitles)) {
             System.out.println("Субтитры десериализованы корректно.");
         } else {
             System.out.println("Произошла ошибка при десериализации.");
