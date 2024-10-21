@@ -67,7 +67,7 @@ class SubtitleItem {
 }
 
 
-class SubtitleListTypeToken extends TypeToken<HashMap<SubtitleLanguage, String>> {
+class SubtitleListTypeToken extends TypeToken<List<SubtitleItem>> {
 
         }
 
@@ -129,7 +129,7 @@ public class Practicum {
         System.out.println(subtitlesJson);
 
         // Десериализация
-        List<SubtitleItem> parsed = gson.fromJson(subtitlesJson, new TypeToken<List<SubtitleItem>>(){}.getType());
+        List<SubtitleItem> parsed = gson.fromJson(subtitlesJson,  new SubtitleListTypeToken().getType());
         if (parsed.equals(subtitles)) {
             System.out.println("Субтитры десериализованы корректно.");
         } else {
