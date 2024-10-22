@@ -20,11 +20,12 @@ class Practicum {
 
         // получите стандартный обработчик тела запроса
         // с конвертацией содержимого в строку
-        HttpResponse.BodyHandler<String> handler = ... ;
+        HttpResponse.BodyHandler<String> handler = HttpResponse.BodyHandlers.ofString();
 
         // отправьте запрос
-        HttpResponse<String> response = ... ;
-
+        HttpResponse<String> response = client.send(request, handler);;
+        System.out.println("Код ответа: " + response.statusCode());
+        System.out.println("Тело ответа: " + response.body());
         // выведите код состояния и тело ответа
     }
 }
