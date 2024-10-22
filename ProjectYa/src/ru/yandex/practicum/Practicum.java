@@ -7,34 +7,26 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Practicum {
-    public static void main(String[] args) {
-        int requestedStatus = 200;
-        // используем код состояния как часть URL-адреса
-        URI uri = URI.create("http://httpbin.org/status/" + requestedStatus);
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(uri).build();
 
+    public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
+
+        // укажите URL запроса, включая его параметры
+        URI url = URI.create("https://functions.yandexcloud.net/d4ed1i6t3f80hf0p7mer?base=RUB&symbols=USD,EUR");
+
+        // создайте объект, описывающий запрос с необходимой информацией
+        HttpRequest request =  HttpRequest.newBuilder()
+                .uri(url)
+                .header("Accept", "application/json")
+                .GET()
+                .build();
 
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            switch (response.statusCode()) {
-                case 400:
-                    System.out.println("В запросе содержится ошибка. Проверьте параметры и повторите запрос.");
-                    break;
-                case 404:
-                    System.out.println("По указанному адресу нет ресурса. Проверьте URL-адрес ресурса и повторите запрос.");
-                case 500:
-                    System.out.println("На стороне сервера произошла непредвиденная ошибка.");
-                case 503:
-                    System.out.println("Сервер временно недоступен. Попробуйте повторить запрос позже.");
-                default: response.request();
-            }
-        // обработайте указанные в задании коды состояния
-            // используйте конструкцию switch...case
-
-        } catch (IOException | InterruptedException e) { // обрабатываем ошибки отправки запроса
-            System.out.println("Во время выполнения запроса ресурса по url-адресу: '" + uri + "' возникла ошибка.\n" +
+            System.out.println("Код статуса: " + response.statusCode());
+            System.out.println("Ответ: " + response.body());
+        } catch (IOException | InterruptedException e) { // обработка ошибки отправки запроса
+            System.out.println("Во время выполнения запроса ресурса по URL-адресу: '" + url + "' возникла ошибка.\n" +
                     "Проверьте, пожалуйста, адрес и повторите попытку.");
         }
     }
