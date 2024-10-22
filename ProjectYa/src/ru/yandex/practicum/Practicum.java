@@ -6,26 +6,31 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-class Practicum {
+public class Practicum {
+    public static void main(String[] args) {
+        String url = "https://www.ya.ru/";
+        try {
+            // добавьте отлов и обработку исключений вокруг кода ниже
+            URI uri = URI.create(url);
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-        // укажите URL-адрес ресурса
-        URI uri = URI.create("https://ya.ru/white");
+            // создаём запрос
+            HttpRequest request = HttpRequest.newBuilder().GET().uri(uri).build();
 
-        // создайте объект, описывающий HTTP-запрос
-        HttpRequest request = HttpRequest.newBuilder().uri(uri).GET().build();
+            // создаём HTTP-клиент
+            HttpClient client = HttpClient.newHttpClient();
 
-        // создайте HTTP-клиент с настройками по умолчанию
-        HttpClient client = HttpClient.newHttpClient();
+            // отправляем запрос
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        // получите стандартный обработчик тела запроса
-        // с конвертацией содержимого в строку
-        HttpResponse.BodyHandler<String> handler = HttpResponse.BodyHandlers.ofString();
+            // выводим код состояния и тело ответа
+            System.out.println("Код состояния: " + response.statusCode());
+            System.out.println("Тело ответа: " + response.body());
+        } catch (IOException | InterruptedException e) {
+            System.out.println("Во время выполнения запроса возникла ошибка. Проверьте, пожалуйста, URL-адрес и повторите попытку");
+            ;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Введённый вами адрес не соответствует формату URL. Попробуйте, пожалуйста, снова");
+        }
 
-        // отправьте запрос
-        HttpResponse<String> response = client.send(request, handler);;
-        System.out.println("Код ответа: " + response.statusCode());
-        System.out.println("Тело ответа: " + response.body());
-        // выведите код состояния и тело ответа
     }
 }
