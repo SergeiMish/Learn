@@ -8,29 +8,34 @@ import java.net.http.HttpResponse;
 
 public class Practicum {
     public static void main(String[] args) {
-        String url = "https://www.ya.ru/";
+        int requestedStatus = 200;
+        // используем код состояния как часть URL-адреса
+        URI uri = URI.create("http://httpbin.org/status/" + requestedStatus);
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(uri).build();
+
+        HttpClient client = HttpClient.newHttpClient();
+
         try {
-            // добавьте отлов и обработку исключений вокруг кода ниже
-            URI uri = URI.create(url);
-
-            // создаём запрос
-            HttpRequest request = HttpRequest.newBuilder().GET().uri(uri).build();
-
-            // создаём HTTP-клиент
-            HttpClient client = HttpClient.newHttpClient();
-
-            // отправляем запрос
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            // выводим код состояния и тело ответа
-            System.out.println("Код состояния: " + response.statusCode());
-            System.out.println("Тело ответа: " + response.body());
-        } catch (IOException | InterruptedException e) {
-            System.out.println("Во время выполнения запроса возникла ошибка. Проверьте, пожалуйста, URL-адрес и повторите попытку");
-            ;
-        } catch (IllegalArgumentException e) {
-            System.out.println("Введённый вами адрес не соответствует формату URL. Попробуйте, пожалуйста, снова");
-        }
+            switch (response.statusCode()) {
+                case 400:
+                    System.out.println("В запросе содержится ошибка. Проверьте параметры и повторите запрос.");
+                    break;
+                case 404:
+                    System.out.println("По указанному адресу нет ресурса. Проверьте URL-адрес ресурса и повторите запрос.");
+                case 500:
+                    System.out.println("На стороне сервера произошла непредвиденная ошибка.");
+                case 503:
+                    System.out.println("Сервер временно недоступен. Попробуйте повторить запрос позже.");
+                default: response.request();
+            }
+        // обработайте указанные в задании коды состояния
+            // используйте конструкцию switch...case
 
+        } catch (IOException | InterruptedException e) { // обрабатываем ошибки отправки запроса
+            System.out.println("Во время выполнения запроса ресурса по url-адресу: '" + uri + "' возникла ошибка.\n" +
+                    "Проверьте, пожалуйста, адрес и повторите попытку.");
+        }
     }
 }
