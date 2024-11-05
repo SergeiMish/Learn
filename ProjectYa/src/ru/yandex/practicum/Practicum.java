@@ -1,8 +1,8 @@
 package ru.yandex.practicum;
 
 @interface ObjectInfo {
-        Class<?> type() ... Object....;
-        Class<?>[] args() default  {};
+        Class<?> type() = Object.class;
+        Class<?>[] args() default {};
         ... ... ... ...;
         }
 
