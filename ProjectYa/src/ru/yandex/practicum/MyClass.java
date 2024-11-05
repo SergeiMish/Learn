@@ -2,7 +2,9 @@ package ru.yandex.practicum;
 
 @interface ObjectInfo {
     Class<?> type() default Object.class;
+
     Class<?>[] args() default {};
+
     boolean required() default false;
 }
 
