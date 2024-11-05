@@ -7,7 +7,7 @@ package ru.yandex.practicum;
         }
 
 // Класс для аннотирования
-        @ObjectInfo(type = int.class)
+        @ObjectInfo(type = MyClass.class)
 public class MyClass {
 
     // Элементы класса
@@ -15,13 +15,13 @@ public class MyClass {
     private String myField;
 
     // Конструктор
-    @ObjectInfo(type = int.class, args = {}, required = true)
+    @ObjectInfo(type = MyClass.class, args = {}, required = true)
     public MyClass(int initialValue) {
         // Код конструктора
     }
 
     // Метод
-    @ObjectInfo(type = MyClass.class, args = {int.class, String.class}, required = true)
+    @ObjectInfo(type = Void.class, args = {int.class, String.class}, required = true)
     public void myMethod(int number, String text) {
         // Код метода
     }
