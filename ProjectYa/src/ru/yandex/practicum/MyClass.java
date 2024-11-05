@@ -21,7 +21,7 @@ public class MyClass {
     }
 
     // Метод
-    ...(type = ...сlass, args = {int.class, ....}, ... = true)
+    @ObjectInfo(type = MyClass.class, args = {int.class, String.class}, required = true)
     public void myMethod(int number, String text) {
         // Код метода
     }
