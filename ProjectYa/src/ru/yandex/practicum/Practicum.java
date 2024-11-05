@@ -1,21 +1,21 @@
 package ru.yandex.practicum;
 
 @interface ObjectInfo {
-        Class<?> type() = Object.class;
+        Class<?> type() default Object.class;
         Class<?>[] args() default {};
-        ... ... ... ...;
+        boolean required() default false;
         }
 
 // Класс для аннотирования
-        ......(... = ....class)
+        @ObjectInfo(type = int.class)
 public class MyClass {
 
     // Элементы класса
-    ....(type = String. ...)
+    @ObjectInfo(type = String.class)
     private String myField;
 
     // Конструктор
-    @....(type = ..., args = {...}, ... = true)
+    @ObjectInfo(type = int.class, args = {}, required = true)
     public MyClass(int initialValue) {
         // Код конструктора
     }
