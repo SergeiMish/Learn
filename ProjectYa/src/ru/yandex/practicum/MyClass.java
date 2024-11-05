@@ -1,13 +1,13 @@
 package ru.yandex.practicum;
 
 @interface ObjectInfo {
-        Class<?> type() default Object.class;
-        Class<?>[] args() default {};
-        boolean required() default false;
-        }
+    Class<?> type() default Object.class;
+    Class<?>[] args() default {};
+    boolean required() default false;
+}
 
 // Класс для аннотирования
-        @ObjectInfo(type = MyClass.class)
+@ObjectInfo(type = MyClass.class)
 public class MyClass {
 
     // Элементы класса
@@ -15,13 +15,13 @@ public class MyClass {
     private String myField;
 
     // Конструктор
-    @ObjectInfo(type = MyClass.class, args = {}, required = true)
+    @ObjectInfo(type = MyClass.class, args = {int.class}, required = true)
     public MyClass(int initialValue) {
         // Код конструктора
     }
 
     // Метод
-    @ObjectInfo(type = Void.class, args = {int.class, String.class}, required = true)
+    @ObjectInfo(type = void.class, args = {int.class, String.class}, required = true)
     public void myMethod(int number, String text) {
         // Код метода
     }
