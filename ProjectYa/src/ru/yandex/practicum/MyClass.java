@@ -1,5 +1,10 @@
 package ru.yandex.practicum;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 @interface ObjectInfo {
     Class<?> type() default Object.class;
 
@@ -26,5 +31,12 @@ public class MyClass {
     @ObjectInfo(type = void.class, args = {int.class, String.class}, required = true)
     public void myMethod(int number, String text) {
         // Код метода
+    }
+
+
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.TYPE)
+    public @interface CustomAnnotation {
     }
 }
