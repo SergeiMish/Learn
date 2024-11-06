@@ -1,18 +1,20 @@
 package ru.yandex.practicum;
 
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-
 @Retention(RetentionPolicy.RUNTIME) // указывает, что аннотация будет доступна во время выполнения программы
-@Target(ElementType.TYPE)  // указывает,что аннотация будет использоваться для пометки методов, подлежащих проверке
+@Target(ElementType.METHOD)  // указывает,что аннотация будет использоваться для пометки методов, подлежащих проверке
         @interface CorrectImplementation {
         // ожидаемый возвращаемый тип метода
         Class<?> expectedReturnType() default void.class;
 
 // ожидаемые типы параметров метода
-         Annotation [] expectedParameterTypes = AnnotationValidator.class.getAnnotations();
+        Class<?>[] expectedParameterTypes() default {};
           }
 
 class AnnotationValidator {
@@ -25,13 +27,13 @@ class AnnotationValidator {
         // итерируем по методам класса
         for (Method method : clazz.getMethods()) {
             // проверяем наличие аннотации
-            if (method.isAnnotationPresent(Annotation.class)) {
+            if (method.isAnnotationPresent(CorrectImplementation.class)) {
                 // получаем аннотацию
-        Annotation annotation = method.getAnnotation(Annotation.class);
+             CorrectImplementation annotation = method.getAnnotation(CorrectImplementation.class);
 
                 // получаем ожидаемый возвращаемый тип и типы параметров из аннотации
-        ... expectedReturnType = annotation....();
-        ...[] expectedParameterTypes = annotation....();
+        Class<?> expectedReturnType = annotation.expectedReturnType();
+        Class <?> [] expectedParameterTypes = annotation.expectedParameterTypes();
 
                 // проверяем, соответствует ли фактический возвращаемый тип ожидаемому
                 if (!method.getReturnType().equals(expectedReturnType)) {
@@ -45,7 +47,7 @@ class AnnotationValidator {
                 }
 
                 // получаем фактические типы параметров
-                Class<?>[] actualParameterTypes = method....();
+                Class<?>[] actualParameterTypes = method.getParameterTypes();
 
                 // проверяем, соответствуют ли фактические типы параметров ожидаемым
                 if (!Arrays.equals(expectedParameterTypes, actualParameterTypes)) {
@@ -69,9 +71,9 @@ class AnnotationValidator {
 
 public class MathOperations {
     // метод для сложения
-    @...(
-            ... = int...,
-            ... = {int.class, ...})
+    @CorrectImplementation(
+            expectedReturnType = int.class,
+            expectedParameterTypes = {int.class, int.class})
     public int add(int a, int b) {
         return a + b;
     }
