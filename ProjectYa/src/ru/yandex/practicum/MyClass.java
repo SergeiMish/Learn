@@ -79,9 +79,9 @@ public class MathOperations {
     }
 
     // метод для деления
-  ...(
-          ... = ...,
-          ... = {..., ...})
+    @CorrectImplementation(
+          expectedReturnType = double.class,
+          expectedParameterTypes = {double.class, double.class})
     public double divide(double a, double b) {
         if (b == 0) {
             throw new IllegalArgumentException("Невозможно разделить на ноль");
@@ -90,9 +90,9 @@ public class MathOperations {
     }
 
     // метод для умножения
-  ...(
-          ... = ...,
-          .... = {..., ...})
+  @CorrectImplementation(
+          expectedReturnType = double.class,
+          expectedParameterTypes = {double.class, double.class})
     public double multiply(double a, double b) {
         return a * b;
     }
@@ -100,6 +100,6 @@ public class MathOperations {
     public static void main(String[] args) {
         MathOperations mathOperations = new MathOperations();
         // вызываем метод валидации аннотаций
-        AnnotationValidator.validateMethods(...);
+        AnnotationValidator.validateMethods(mathOperations);
     }
 }
