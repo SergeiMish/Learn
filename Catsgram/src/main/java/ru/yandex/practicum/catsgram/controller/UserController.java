@@ -5,6 +5,7 @@ import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
 import ru.yandex.practicum.catsgram.exception.DuplicatedDataException;
 import ru.yandex.practicum.catsgram.model.User;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +32,7 @@ private final Map<Long, User> users = new HashMap<>();
         }
         user.setEmail(user.getEmail());
         user.setId(getNextId());
+        user.setRegistrationDate(Instant.now());
 
         users.put(user.getId(), user);
         return user;
@@ -46,11 +48,11 @@ private final Map<Long, User> users = new HashMap<>();
             throw new DuplicatedDataException("Этот имейл уже используется");
         }
         if (user.getPassword() == null || user.getUsername() == null || user.getEmail() == null){
-            return null;
+            return user;
         }
         user.setEmail(user.getEmail());
         user.setId(getNextId());
-
+        user.setRegistrationDate(Instant.now());
         users.put(user.getId(), user);
         return user;
     }
