@@ -25,7 +25,7 @@ private Map<Long, User> users = new HashMap<>();
         if (user.getPassword() == null || user.getPassword().isBlank()){
             throw new ConditionsNotMetException("Имейл должен быть указан");
         }
-        else if (user.getPassword() == users.values()){
+        if (user.getPassword() == users.values()){
             throw new DuplicatedDataException("Этот имейл уже используется");
         }
         user.setEmail(user.getPassword());
