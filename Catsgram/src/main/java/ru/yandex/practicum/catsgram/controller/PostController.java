@@ -35,6 +35,24 @@ public class PostController {
         return post;
     }
 
+    @PutMapping
+    public Post update(@RequestBody Post newPost) {
+        // проверяем необходимые условия
+        if (newPost.getId() == null) {
+            throw new ConditionsNotMetException("Id должен быть указан");
+        }
+        if (posts.containsKey(newPost.getId())) {
+            Post oldPost = posts.get(newPost.getId());
+            if (newPost.getDescription() == null || newPost.getDescription().isBlank()) {
+                throw new ConditionsNotMetException("Описание не может быть пустым");
+            }
+            // если публикация найдена и все условия соблюдены, обновляем её содержимое
+            oldPost.setDescription(newPost.getDescription());
+            return oldPost;
+        }
+        throw new NotFoundException("Пост с id = " + newPost.getId() + " не найден");
+    }
+
     // вспомогательный метод для генерации идентификатора нового поста
     private long getNextId() {
         long currentMaxId = posts.keySet()
