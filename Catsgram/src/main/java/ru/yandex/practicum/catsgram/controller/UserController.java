@@ -1,6 +1,8 @@
 package ru.yandex.practicum.catsgram.controller;
 
 import org.springframework.web.bind.annotation.*;
+import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
+import ru.yandex.practicum.catsgram.exception.DuplicatedDataException;
 import ru.yandex.practicum.catsgram.model.User;
 
 import java.util.Collection;
@@ -20,6 +22,35 @@ private Map<Long, User> users = new HashMap<>();
 
     @PostMapping
     public User create (@RequestBody User user){
+        if (user.getPassword() == null || user.getPassword().isBlank()){
+            throw new ConditionsNotMetException("Имейл должен быть указан");
+        }
+        else if (user.getPassword() == users.values()){
+            throw new DuplicatedDataException("Этот имейл уже используется");
+        }
+        user.setEmail(user.getPassword());
+        user.setId(getNextId());
 
+        users.put(user.getId(), user);
+        return user;
+    }
+
+    @PutMapping
+    public User put (@RequestBody User user){
+        if (user.getId() == null){
+            throw new ConditionsNotMetException("Id должен быть указан");
+        }
+
+    }
+
+
+
+    private long getNextId() {
+        long currentMaxId = users.keySet()
+                .stream()
+                .mapToLong(id -> id)
+                .max()
+                .orElse(0);
+        return ++currentMaxId;
     }
 }
