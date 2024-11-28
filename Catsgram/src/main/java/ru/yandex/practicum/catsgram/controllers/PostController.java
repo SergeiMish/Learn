@@ -1,4 +1,4 @@
-package ru.yandex.practicum.catsgram.controller;
+package ru.yandex.practicum.catsgram.controllers;
 
 import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
@@ -15,7 +15,6 @@ import java.util.Map;
 public class PostController {
 
     private final Map<Long, Post> posts = new HashMap<>();
-
     @GetMapping
     public Collection<Post> findAll() {
         return posts.values();
